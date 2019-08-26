@@ -4,24 +4,22 @@
 }
 .logo-image{
     width: 150px;
-    height: 50px;
+    height: 60px;
     margin-left: 100px;
-    margin-top: 12px;
+    margin-top: 7px;
 }
-
-
-.layout-style {
+.layout-style{
+    padding-top: 20px;
 
 }
 .layout-nav-bar{
     margin-left: 40px;
 }
 .footer-control{
-    position: relative;
+    position: fixed;
     left: 0;
-    right: 0;
     bottom: 0;
-     width: 100%;
+    width: 100%;
     background-color: #2ea3f2;
     color: white;
     margin: 0;
