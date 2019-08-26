@@ -6,6 +6,45 @@
     width: 150px;
     height: 50px;
     margin-left: 100px;
+    margin-top: 12px;
+}
+
+
+.layout-style {
+
+}
+.layout-nav-bar{
+    margin-left: 40px;
+}
+.footer-control{
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+     width: 100%;
+    background-color: #2ea3f2;
+    color: white;
+    margin: 0;
+}
+.footer-control .col-3 ul li a{
+    color: white;
+
+}
+.footer-control ul{
+    list-style: none;
+    margin-top: 20px;
+}
+.footer-control .footer-detail h2{
+    margin-left: 38px;
+}
+.footer-control .footer-detail{
+    padding-left: 46px;
+}
+.copyright-footer-text{
+    text-align: center;
+}
+.copyright-footer{
+    width: 100%;
 }
 .layout-header{
     padding-top: 20px;

@@ -15,41 +15,86 @@
     <title>Document</title>
 </head>
 <body>
+<div class="container-fluid">
 <div class="row layout-header">
     <div class="col-4 ">
         <img src="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" alt="..."
              class="img-thumbnail logo-image">
     </div>
-    <div class="col-6">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light layout-nav-bar">
-            <a class="navbar-brand" href="#">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="col-6 layout-style">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light layout-nav-bar ">
+            {{--                <a class="navbar-brand" href="#">Home</a>--}}
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Online Personal Training <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link active" href="#">MYPT Fitness App <span
-                            class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link active" href="#">Blog <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link active" href="#">Contact <span class="sr-only">(current)</span></a>
+                    <a class="navbar-brand nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="navbar-brand nav-link active" href="#">Online Personal Training <span class="sr-only">(current)</span></a>
+                    <a class="navbar-brand nav-link active" href="#">Blog <span class="sr-only">(current)</span></a>
+                    <a class="navbar-brand nav-link active" href="#">Contact <span class="sr-only">(current)</span></a>
                 </div>
             </div>
         </nav>
     </div>
     <div class="col-2">
+        <div class="mt-3 ml-5 dropdown  ">
+            <i class="fas fa-user  dropdown-toggle " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
+            <div class="dropdown-menu master-dropdown-menu " aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Login</a>
+                <a class="dropdown-item" href="#">Register</a>
 
+            </div>
+        </div>
     </div>
-</div>
-<div>
+    </div>
+    <div>
     @section('content')
     @show()
 </div>
-<div class="row ">
-    <div class="col-12  footer-control">
-        {{--                <h5>Copyright © PTOnline</h5>--}}
+<div class="row footer-control">
+    <div class="col-3 footer-detail">
+        <h2 class="mt-4">LINKS</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Online Training</a></li>
+            <li><a href="#">Contact-us</a></li>
+        </ul>
     </div>
+    <div class="col-3 footer-detail">
+        <h2 class="mt-4 ">BLOG</h2>
+        <ul>
+            <li>is simply dummy</li>
+            <li>is simply dummy</li>
+            <li>is simply dummy</li>
+            <li>is simply dummy</li>
+        </ul>
+    </div>
+    <div class="col-3 footer-detail">
+        <h2 class="mt-4">CONTACT</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-paper-plane mr-1"><span class="ml-2">myptonline@gmail.com</span></i></a></li>
+            <li><a href="#"><i class="fa fa-phone mt-2 mr-1"> <span class="ml-1">+0912345678</span></i></a></li>
+            <li><a href="#"><i class="fas fa-map-marker-alt mt-2 "><span class="ml-2">Số 8 Tôn Thất Thuyết</span></i></a></li>
+        </ul>
+    </div>
+    <div class="col-3  footer-detail">
+        <h2 class="mt-4">SERVICES</h2>
+        <ul>
+            <li><a href="#">Algemene voorwaarden</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </div>
+    <div class="row copyright-footer">
+        <div class="col-3"></div>
+        <div class="col-6 copyright-footer-text mt-lg-5 "> <p>Copyright MY-PT.Online 2018  | Ontworpen door inDSGN
+                Algemene voorwaarden | Cookies</p></div>
+        <div class="col-3 "></div>
+    </div>
+</div>
 </div>
 </body>
 </html>
