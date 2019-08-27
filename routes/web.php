@@ -11,6 +11,14 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('client/layout//master');
 });
+Route::get('/', function () {
+    return view('client/main-blog');
+});
+Route::get('/item-detail-blog', function () {
+    return view('client/detail-item-blog');
+});
+
