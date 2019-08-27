@@ -2,6 +2,10 @@
     font-family: 'Livvic', sans-serif;
     font-size: 20px;
 }
+
+.pt-content{
+    background: white;
+}
 .logo-image{
     width: 150px;
     height: 50px;
@@ -23,23 +27,42 @@
 }
 
 .pt-item-title{
-    color: #0072ff;
+    padding-left: 130px;
 }
 .pt-img{
     border-radius: 10%;
 }
 
 .pt-service{
-    text-decoration: none;
+    text-decoration: none !important;
+    color: black;
+
+}
+.pt-service:hover{
+    color: #0072ff;
+}
+.pt-name{
+    text-decoration: none !important;
+    color: black;
 }
 
-.pt-name{
-    text-decoration: none;
+.pt-name:hover{
+    color: #0072ff;
+}
+.pt-cate{
+    text-decoration: none !important;
+    color: black;
+    font-weight: bold;
+}
+.pt-cate:hover{
+    color: #0072ff;
+}
+
+.list-cate{
 }
 .rate {
-    float: left;
     height: 46px;
-    padding-right: 90px;
+    padding-right: 100px;
 }
 .rate:not(:checked) > input {
     position:absolute;
