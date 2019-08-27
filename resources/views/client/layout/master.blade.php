@@ -29,10 +29,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav dropdown link-header ml-2">
-                        <a class="navbar-brand nav-link " href="#">Home </a>
-                        <a class="navbar-brand nav-link " href="#">Online Personal Training </a>
+                        <a class="navbar-brand nav-link " href="#">Trang chủ </a>
+                        <a class="navbar-brand nav-link " href="#">Tập luyện trực tuyến</a>
                         <a class="navbar-brand nav-link " href="#">Blog</a>
-                        <a class="navbar-brand nav-link " href="#">Contact</a>
+                        <a class="navbar-brand nav-link " href="#">Liên hệ</a>
 
                     </div>
                 </div>
@@ -71,73 +71,69 @@
                 <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
                     <!-- Content -->
-                    <h6 class="text-uppercase font-weight-bold">Company name</h6>
+                    <h6 class="text-uppercase font-weight-bold">My pt online</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                    <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                        consectetur
-                        adipisicing elit.</p>
+                    <p>Chúng tôi luôn mang lại sự hài lòng và những bài hướng dẫn tốt nhất cho các bạn với dịch vụ tập luyện trực tuyến mới mẻ và bổ ích của My PT Online.</p>
 
                 </div>
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-footer-control">
 
                     <!-- Links -->
-                    <h6 class="text-uppercase font-weight-bold">links</h6>
+                    <h6 class="text-uppercase font-weight-bold">liên kết</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#">Home</a>
+                        <a href="#">Trang chủ</a>
                     </p>
                     <p>
-                        <a href="#">Pakketten</a>
+                        <a href="#">Gói tập</a>
                     </p>
                     <p>
                         <a href="#">Blog</a>
                     </p>
                     <p>
-                        <a href="#">Contact</a>
+                        <a href="#">Liên hệ</a>
                     </p>
 
                 </div>
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-footer-control">
 
                     <!-- Links -->
-                    <h6 class="text-uppercase font-weight-bold">Services</h6>
+                    <h6 class="text-uppercase font-weight-bold">Dịch vụ</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#">Algemene voorwaarden</a>
+                        <a href="#">Điều khoản</a>
                     </p>
                     <p>
                         <a href="#">Cookies</a>
                     </p>
                     <p>
-                        <a href="#">Shipping Rates</a>
+                        <a href="#">Gửi phản hồi</a>
                     </p>
                     <p>
-                        <a href="#">Help</a>
+                        <a href="#">Trợ giúp</a>
                     </p>
 
                 </div>
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 ">
 
                     <!-- Links -->
-                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <h6 class="text-uppercase font-weight-bold">Liên hệ</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                        <i class="fas fa-home mr-3"></i> Số 8 Tôn Thất Thuyết</p>
                     <p>
-                        <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                        <i class="fas fa-envelope mr-3 mt-3"></i> mypt@gmail.com</p>
                     <p>
-                        <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                    <p>
-                        <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                        <i class="fas fa-phone mr-3 mt-3"></i> + 0987654321</p>
 
                 </div>
             </div>

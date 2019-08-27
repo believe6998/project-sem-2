@@ -72,6 +72,19 @@
     text-decoration: none;
 }
 
+.social-icon-layout .flex-center a:hover{
+    color: #32383e;
+}
+
+.text-footer-control p a{
+    text-decoration: none;
+
+}
+
+.text-footer-control p a:hover{
+    color:  #727273;
+}
+
 /*footer-style*/
 
 .pt-img-banner {
