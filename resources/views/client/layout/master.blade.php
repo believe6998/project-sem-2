@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-<div class="container-fluid">
+
     <div class="row mt-2 header-style">
         <div class="col-2 col-md-3 col-sm-4 logo-header mt-2 ">
             <img src="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" alt="..."
@@ -201,6 +201,5 @@
     </footer>
     <!-- Footer -->
 
-</div>
 </body>
 </html>
