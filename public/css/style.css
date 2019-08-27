@@ -94,3 +94,22 @@
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
+
+.banner{
+    padding-left: 400px;
+}
+
+.img-responsive{
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+}
+.text-register{
+    font-weight: 700!important;
+    font-size: 34px!important;
+}
+.detail{
+    color: #0072ff;
+}
+
+

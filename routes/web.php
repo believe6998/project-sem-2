@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('/personal-training', function () {
     return view('client/list-pt');
 });
+Route::get('/blog', function () {
+    return view('client/main-blog');
+});
