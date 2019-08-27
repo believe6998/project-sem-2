@@ -1,108 +1,137 @@
-*{
+* {
     font-family: 'Livvic', sans-serif;
     font-size: 20px;
 }
-.logo-image{
-    width: 150px;
+/*header-style*/
+.header-style {
+
+}
+
+.navbar-header nav {
+    float: inherit;
+
+}
+
+.dropdown-layout {
+    float: left;
+
+}
+
+.icon-user-header {
+    overflow: hidden;
+}
+
+.icon-user-header a i {
+    color: rgba(0, 0, 0, .5);
+}
+
+.icon-user-header a i:hover {
+    color: #1b1e21;
+}
+
+.link-header a:hover {
+
+}
+
+.logo-header img {
+    width: 140px;
     height: 50px;
-    margin-left: 100px;
-    margin-top: 12px;
+    margin-left: 15%;
 }
 
-
-.layout-style {
-
+.logo-header {
+    align-items: center;
 }
-.layout-nav-bar{
-    margin-left: 40px;
-}
-.footer-control{
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 0;
-     width: 100%;
+
+/*header-style*/
+
+/*footer-style*/
+.footer-layout {
     background-color: #2ea3f2;
     color: white;
-    margin: 0;
+    padding-top: 1%
+
 }
-.footer-control .col-3 ul li a{
+
+.footer-layout a {
     color: white;
-
-}
-.footer-control ul{
-    list-style: none;
-    margin-top: 20px;
-}
-.footer-control .footer-detail h2{
-    margin-left: 38px;
-}
-.footer-control .footer-detail{
-    padding-left: 46px;
-}
-.copyright-footer-text{
-    text-align: center;
-}
-.copyright-footer{
-    width: 100%;
-}
-.layout-header{
-    padding-top: 20px;
-}
-.layout-nav-bar{
-    margin-left: 50px;
 }
 
-.pt-img-banner{
+.social-icon {
+    border-top: 1px solid white;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.social-icon-layout {
+    margin-top: 4%
+}
+
+.social-icon-layout a {
+    text-decoration: none;
+}
+
+/*footer-style*/
+
+.pt-img-banner {
     width: 100%;
 }
 
-.list-pt-title{
+.list-pt-title {
     color: #0072ff;
 }
 
-.pt-item-title{
+.pt-item-title {
     color: #0072ff;
 }
-.pt-img{
+
+.pt-img {
     border-radius: 10%;
 }
 
-.pt-service{
+.pt-service {
     text-decoration: none;
 }
 
-.pt-name{
+.pt-name {
     text-decoration: none;
 }
+
 .rate {
     float: left;
     height: 46px;
     padding-right: 90px;
 }
+
 .rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+    position: absolute;
+    top: -9999px;
 }
+
 .rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
 }
+
 .rate:not(:checked) > label:before {
     content: '★ ';
 }
+
 .rate > input:checked ~ label {
     color: #ffc700;
 }
+
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
     color: #deb217;
 }
+
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
