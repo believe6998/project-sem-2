@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('client/layout//master');
 });
+Route::get('/home', function () {
+    return view('client/home');
+});
