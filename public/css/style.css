@@ -3,56 +3,110 @@
     font-size: 20px;
 }
 
+/*start-header*/
+.navbar-header nav {
+    float: inherit;
+
+}
+.header-style{
+}
+.dropdown-layout {
+    float: left;
+
+}
+
+.icon-user-header {
+    overflow: hidden;
+    margin-top: 18px;
+
+}
+
+.icon-user-header a i {
+    color: rgba(0, 0, 0, .5);
+}
+
+.icon-user-header a i:hover {
+    color: #1b1e21;
+}
+
+.link-header a:hover {
+
+}
+
+.logo-header img {
+    width: 140px;
+    height: 50px;
+    margin-left: 50%;
+}
+
 .pt-content{
     background: white;
 }
-.logo-image{
-    width: 150px;
-    height: 50px;
-    margin-left: 100px;
+.logo-header {
+    align-items: center;
+}
+
+.text-title-header a{
+    font-size: 16px;
+    color:rgba(0,0,0,0.6);
+    font-weight: bold;
+    padding-top: 8px;
+}
+.text-title-header{
+    margin-top: 3px;
+    padding-left: 40%;
+}
+.text-title-header a i{
     margin-top: 12px;
 }
 
+/*end-header*/
 
-.layout-style {
+/*start-footer*/
 
-}
-.layout-nav-bar{
-    margin-left: 40px;
-}
-.footer-control{
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 0;
-     width: 100%;
+.footer-layout {
     background-color: #2ea3f2;
     color: white;
-    margin: 0;
+    padding-top: 5%;
 }
-.footer-control .col-3 ul li a{
+
+.footer-layout a {
     color: white;
+}
+.social-icon {
+    border-top: 1px solid white;
+    margin-left: 5%;
+    margin-right: 5%;
 
 }
-.footer-control ul{
-    list-style: none;
-    margin-top: 20px;
+
+.social-icon-layout {
+    margin-top: 4%
 }
-.footer-control .footer-detail h2{
-    margin-left: 38px;
+
+.social-icon-layout a {
+    text-decoration: none;
 }
-.footer-control .footer-detail{
-    padding-left: 46px;
+
+.social-icon-layout .flex-center a:hover{
+    color: #32383e;
 }
-.copyright-footer-text{
-    text-align: center;
+
+.text-footer-control p a{
+    text-decoration: none;
+
 }
-.copyright-footer{
-    width: 100%;
+
+.text-footer-control p a:hover{
+    color:  #727273;
 }
-.layout-header{
-    padding-top: 20px;
+
+
+/*end-footer*/
+.pt-content{
+    background: white;
 }
+
 .layout-nav-bar{
     margin-left: 50px;
 }
@@ -133,3 +187,7 @@
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
+.dropdowww i:hover{
+    display: block;
+}
+
