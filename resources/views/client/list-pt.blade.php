@@ -1,6 +1,5 @@
 @extends('client.layout.master')
 @section('content')
-
     <div class="list-pt pt-content"
          style="background:linear-gradient(180deg,#0072ff 0%,#00c6ff 100%) !important">
         <h1 class="list-pt-title font-weight-bold text-center " style="line-height: 140px">Danh sách huấn luyện
