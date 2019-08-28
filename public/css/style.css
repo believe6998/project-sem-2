@@ -9,3 +9,42 @@
 .layout-nav-bar{
     margin-left: 50px;
 }
+
+.head-contact{
+    padding-top: 6%;
+}
+
+.body-contact{
+    padding-top: 100px;
+}
+.contact-hd{
+    font-size: 21px;
+    color: white;
+    line-height: 1.9em;
+    text-shadow: 0em 0.3em 0.5em rgba(0, 0, 0, 0.4);
+}
+.contact-h1{
+    font-size: 80px;
+    font-weight: 500;
+    vertical-align: inherit;
+}
+.contact-bd{
+    line-height: 1.2em;
+    margin-bottom: 6%;
+}
+.contact-h2{
+    text-align: center;
+    padding-bottom: 70px;
+}
+.contact-h4{
+    color: #0072ff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.contact-curved-end {
+    background-size: 100% 100px;
+    height: 100px;
+    width: 100%;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0zMjAgMjhjMzIwIDAgMzIwIDg0IDY0MCA4NCAxNjAgMCAyNDAtMjEgMzIwLTQydjcwSDBWNzBjODAtMjEgMTYwLTQyIDMyMC00MnoiLz48L2c+PC9zdmc+");
+}
