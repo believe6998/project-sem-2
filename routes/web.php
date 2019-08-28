@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('client/layout//master');
+    return view('client/layout/master');
+});
+
+Route::get('/personal-training', function () {
+    return view('client/list-pt');
 });
 Route::get('/home', function () {
     return view('client/home');
