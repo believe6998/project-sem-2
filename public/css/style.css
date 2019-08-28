@@ -318,6 +318,8 @@ rotateY(180 deg)
     font-size: 50px;
     font-weight: bold;
     vertical-align: inherit;
+    line-height: 1;
+    margin-bottom: 4%;
 }
 
 .text-title-pt {
