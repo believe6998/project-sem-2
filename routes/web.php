@@ -27,6 +27,10 @@ Route::get('/contact-us', function () {
     return view('client/contact');
 });
 
+Route::get('/detail-blog', function () {
+    return view('client/detail-blog');
+
+
 Route::get('/ad', function () {
     return view('admin/home');
 });
