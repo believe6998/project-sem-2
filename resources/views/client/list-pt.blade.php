@@ -1,6 +1,6 @@
 @extends('client.layout.master')
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" style="font-size: 18px">
         <div class="row">
             <div class="col-12">
                 <img class="pt-img-banner" src="img/pt.png" alt="">

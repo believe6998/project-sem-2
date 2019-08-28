@@ -597,7 +597,28 @@ rotateY(180 deg)
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
+<<<<<<< HEAD
 .dropdowww i:hover{
     display: block;
 }
+=======
+
+.banner{
+    padding-left: 400px;
+}
+
+.img-responsive{
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+}
+.text-register{
+    font-weight: 700!important;
+    font-size: 34px!important;
+}
+.detail{
+    color: #0072ff;
+}
+
+>>>>>>> 632f5d510d2054c78e0aab6abc5164e3075038f7
 
