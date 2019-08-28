@@ -30,7 +30,7 @@ Route::get('/contact-us', function () {
 
 Route::get('/detail-blog', function () {
     return view('client/detail-blog');
-
+});
 
 Route::get('/ad', function () {
     return view('admin/home');
