@@ -21,8 +21,8 @@ Route::get('/personal-training', function () {
 
 Route::get('/blog', function () {
     return view('client/main-blog');
-
-Route::get('/home', function () {
-    return view('client/home');
-
 });
+Route::get('/home', function () {
+        return view('client/home');
+
+    });

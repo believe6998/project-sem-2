@@ -32,7 +32,7 @@
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="#">Online Personal Training <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link active" href="#">MYPT Fitness App <span
-                            class="sr-only">(current)</span></a>
+                                class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link active" href="#">Blog <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link active" href="#">Contact <span class="sr-only">(current)</span></a>
                 </div>
