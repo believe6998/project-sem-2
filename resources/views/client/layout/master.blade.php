@@ -16,23 +16,24 @@
     <title>Document</title>
 </head>
 <body>
-<div class="row  header-style mr-5">
-    <div class="col-2 logo-header mt-2 mb-2 ">
+<div class="row  header-style  ">
+    <div class="col-3 logo-header mt-2 mb-2 ">
         <img src="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" alt="..."
              class="img-thumbnail logo-image">
     </div>
-    <div class="col-8  navbar-header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light layout-nav-bar ">
+    <div class="col-7  navbar-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light layout-nav-bar navbar-header-control ">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav dropdown link-header  text-title-header ml-5">
-                    <a class="navbar-brand nav-link " href="#">Trang chủ </a>
-                    <a class="navbar-brand nav-link " href="#">Tập luyện trực tuyến</a>
-                    <a class="navbar-brand nav-link " href="#">Blog</a>
-                    <a class="navbar-brand nav-link " href="#">Liên hệ</a>
+                    <a class="navbar-brand nav-link " href="/">Trang chủ </a>
+                    <a class="navbar-brand nav-link " href="/personal-training">Tập luyện trực tuyến</a>
+                    <a class="navbar-brand nav-link " href="/blog">Blog</a>
+                    <a class="navbar-brand nav-link " href="/contact-us">Liên hệ</a>
+                    <a class="navbar-brand nav-link " href="/">Điều khoản</a>
                 </div>
             </div>
         </nav>
@@ -41,12 +42,12 @@
     {{--        <a href="#"></a>--}}
     {{--    </div>--}}
 
-    <div class=" col-1 dropdown icon-user-header ">
+    <div class=" col-2 dropdown icon-user-header ">
         <i class="fas fa-user fa dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
            aria-expanded="false"></i>
         <div class="dropdown-menu icon-item" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item " data-toggle="modal" data-target="#exampleModalCenter" href="#">Login</a>
-            <a class="dropdown-item" href="#">Register</a>
+            <a class="dropdown-item " data-toggle="modal" data-target="#exampleModalCenter" href="#">Đăng nhập</a>
+            <a class="dropdown-item" href="#">Đăng ký</a>
         </div>
     </div>
 </div>
@@ -125,6 +126,7 @@
         </div>
     </div>
 </div>
+<i  class="fas fa-chevron-up" onclick="topFunction()" id="myBtn" title="Go to top"></i>
 
 <div>
     @section('content')
@@ -158,16 +160,16 @@
                 <h6 class="text-uppercase font-weight-bold">liên kết</h6>
                 <hr class="deep-purple accent-2 mb-2 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <a href="#">Trang chủ</a>
+                    <a href="/">Trang chủ</a>
                 </p>
                 <p>
-                    <a href="#">Gói tập</a>
+                    <a href="/personal-training">Tập luyện trực tuyến</a>
                 </p>
                 <p>
-                    <a href="#">Blog</a>
+                    <a href="/blog">Blog</a>
                 </p>
                 <p>
-                    <a href="#">Liên hệ</a>
+                    <a href="/contact-us">Liên hệ</a>
                 </p>
 
             </div>
@@ -186,10 +188,10 @@
                     <a href="#">Cookies</a>
                 </p>
                 <p>
-                    <a href="#">Gửi phản hồi</a>
+                    <a href="/contact-us">Gửi phản hồi</a>
                 </p>
                 <p>
-                    <a href="#">Trợ giúp</a>
+                    <a href="/contact-us">Trợ giúp</a>
                 </p>
 
             </div>
@@ -217,7 +219,6 @@
     <!-- Copyright -->
     <!-- Footer -->
 
-
     <div class="social-icon d-flex justify-content-center">
 
         <!-- Grid row-->
@@ -225,6 +226,8 @@
 
             <!-- Grid column -->
             <div class="col-md-12  py-5 social-icon-layout">
+{{--                <div class="text-center mb-4">Theo dõi chúng tôi trên internet</div>--}}
+
                 <div class=" flex-center">
 
                     <!-- Facebook -->
@@ -272,6 +275,23 @@
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/client/layout.js')}}"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
 <script>
     AOS.init({
         offset: 120,
