@@ -265,8 +265,26 @@ margin: 10px 10px 0;
     background: #507cc0;
 }
 
-
+.text-btn-login-client{
+    font-size: 14px;
+    font-weight: bold;
+}
 /*end-login-form*/
+
+/*-------register-client--------*/
+.text-btn-register-client{
+    font-size: 14px;
+    font-weight: bold;
+}
+.accept-form-register {
+    font-size: 13px;
+    margin-left: 34px;
+}
+.accept-form-register a{
+font-style: italic;
+}
+/*-------register-client--------*/
+
 .pt-content{
     background: white;
 }
@@ -1066,3 +1084,5 @@ figure.effect-goliath p {
     padding-left: 3%;
     font-size: 15px;
 }
+
+

@@ -47,7 +47,111 @@
            aria-expanded="false"></i>
         <div class="dropdown-menu icon-item" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item " data-toggle="modal" data-target="#exampleModalCenter" href="#">Đăng nhập</a>
-            <a class="dropdown-item" href="#">Đăng ký</a>
+            <a class="dropdown-item"data-toggle="modal" data-target="#exampleModalCenter2" href="#">Đăng ký</a>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" alt="..."
+                     class="img-thumbnail logo-login-form-client">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" class="form-login-client">
+                    <h4 class="text-center ">Đăng Ký</h4>
+                    <div class="row mt-4 d-flex justify-content-center">
+                        <div class="col-10 ">
+                            <div class="input-group ">
+                                <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                    class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Tên đầy đủ" aria-label="Username"
+                                       aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row d-flex justify-content-center mt-3">
+                        <div class="col-10">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                    class="fas fa-at"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Địa chỉ email"
+                                       aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-10">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                    class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Mật khẩu" aria-label="Username"
+                                       aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-10">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                    class="fas fa-unlock-alt"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Nhập lại mật khẩu" aria-label="Username"
+                                       aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ml-3">
+                        <div class="col-6 ml-1">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                    class="fas fa-venus-mars"></i></span>
+                                </div>
+              <select class="form-control" >
+               <option selected>Giới tính</option>
+              <option>Nam</option>
+              <option>Nữ</option>
+              <option>Khác</option>
+              </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12  ">
+                            <label class="accept-form-register" for=""><input type="checkbox"> Tôi đã đọc và đồng ý với các  <a
+                                        href="#">điều khoản sử dụng</a>. </label>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center mt-4">
+                        <div class="col-4">
+                            <button type="button" class="btn btn-outline-primary btn-lg btn-block text-btn-register-client">Đăng Ký
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="text-center mb-3">
+                <div class="footer-login-form-client">
+                    <label for="">Bạn đã có tài khoản? &nbsp;<a href="#" data-toggle="modal" data-target="#exampleModalCenter">Đăng nhập ngay!</a> </label>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -100,7 +204,7 @@
                     </div>
                     <div class="row d-flex justify-content-center mt-2">
                         <div class="col-4">
-                            <button type="button" class="btn btn-outline-primary btn-sm btn-block">Đăng nhập
+                            <button type="button" class="btn btn-outline-primary btn-lg btn-block text-btn-login-client">Đăng nhập
                             </button>
                         </div>
                     </div>
@@ -120,7 +224,7 @@
             </div>
             <div class="text-center mb-3">
                 <div class="footer-login-form-client">
-                    <label for="">Bạn chưa có tài khoản? &nbsp;<a href="#">Đăng ký ngay!</a> </label>
+                    <label for="">Bạn chưa có tài khoản? &nbsp;<a href="#" data-toggle="modal" data-target="#exampleModalCenter">Đăng ký ngay!</a> </label>
                 </div>
             </div>
         </div>
