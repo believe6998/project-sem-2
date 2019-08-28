@@ -1,186 +1,109 @@
 @extends('client.layout.master')
 @section('content')
-    <div class="container-fluid">
+    <div class="list-pt pt-content"
+         style="background:linear-gradient(180deg,#0072ff 0%,#00c6ff 100%) !important">
+        <h1 class="list-pt-title font-weight-bold text-center " style="line-height: 140px">Danh sách huấn luyện
+            viên</h1>
+        <div class="curved-end"></div>
+    </div>
+    <div class="container " style="margin-top: 5%">
         <div class="row">
-            <div class="col-12">
-                <img class="pt-img-banner" src="img/pt.png" alt="">
+            <div class="col-3">
+                <div class=" list-cate">
+                    <div><a href="" class="pt-cate">Tất cả</a></div>
+                    <div><img class="mr-3" width="40px"
+                              src="https://img.icons8.com/ios-filled/50/000000/personal-trainer.png"><a href=""
+                                                                                                        class="pt-cate">Personal
+                            Training</a></div>
+                    <div><img class="mr-3" width="40px" src="https://img.icons8.com/ios-filled/50/000000/yoga.png"> <a
+                                href="" class="pt-cate">Yoga</a></div>
+                    <div><img class="mr-3" width="40px"
+                              src="https://img.icons8.com/ios-filled/50/000000/swimming.png"><a href="" class="pt-cate">Swimming</a>
+                    </div>
+                    <div><img class="mr-3" width="40px"
+                              src="https://img.icons8.com/ios-glyphs/60/000000/boxing-2.png"><a href="" class="pt-cate">Kick
+                            Boxing</a></div>
+                    <div><img class="mr-3" width="40px" src="https://img.icons8.com/ios-filled/50/000000/dancing.png"><a
+                                href="" class="pt-cate">Dancing</a></div>
+                </div>
             </div>
-        </div>
-        <div class="list-pt pl-5 pr-5 pt-content">
-            <h1 class="list-pt-title font-weight-bold text-center pt-5 pb-5">Danh sách huấn luyện viên</h1>
-            <div class="row">
-                <div class="col-3">
-                    <div class="border-top border-bottom p-4 list-cate">
-                        <div><a href="" class="pt-cate">Tất cả</a></div>
-                        <div><a href="" class="pt-cate">Personal Training</a></div>
-                        <div><a href="" class="pt-cate">Yoga</a></div>
-                        <div><a href="" class="pt-cate">Swimming</a></div>
-                        <div><a href="" class="pt-cate">Kick Boxing</a></div>
-                        <div><a href="" class="pt-cate">Dancing</a></div>
+            <div class="col-9">
+                <div class="row">
+                    <div class="grid col-sm-6">
+                        <figure class="effect-goliath" data-aos="zoom-in">
+                            <img width="100%" height="auto"
+                                 src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png"
+                                 alt="img23"/>
+                            <figcaption>
+                                <h2>Ngọc Dũng<br>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </h2>
+                                <p>When Goliath comes out, you should run.</p>
+                                <a href="#">View more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="grid col-sm-6">
+                        <figure class="effect-goliath" data-aos="zoom-in">
+                            <img src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/65924059_270076713843517_153033129320251392_n.jpg"
+                                 alt="img24"/>
+                            <figcaption>
+                                <h2>Tùng Nguyễn<br>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </h2>
+
+                                <p style="font-size:15px">Huấn Luyện Viên Yoga</p>
+
+                                <a href="#">View more</a>
+                            </figcaption>
+                        </figure>
                     </div>
                 </div>
-                <div class="col-9">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="pt-item pb-4">
-                                <div class="row">
-                                    <a href=""><img class="col-12 pt-img"
-                                                    src="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/08/12/Pictures/_ca1ae8d6-bcf4-11e9-9bc9-c6f10a5dc6e3.jpg"
-                                                    alt=""></a>
-                                    <div class="font-weight-bold pt-2 pt-item-title text-center "><a href=""
-                                                                                                     class="pt-name">Tony
-                                            Stark</a></div>
-                                    <div class="rate col-12">
-                                        <input type="radio" id="star5" name="rate" value="5"/>
-                                        <label for="star5" title="text">5</label>
-                                        <input type="radio" id="star4" name="rate" value="4"/>
-                                        <label for="star4" title="text">4</label>
-                                        <input type="radio" id="star3" name="rate" value="3"/>
-                                        <label for="star3" title="text">3</label>
-                                        <input type="radio" id="star2" name="rate" value="2"/>
-                                        <label for="star2" title="text">2</label>
-                                        <input type="radio" id="star1" name="rate" value="1"/>
-                                        <label for="star1" title="text">1</label>
-                                    </div>
-                                    <div class="col-12 text-center"><a href="" class="pt-service">Personal Training,
-                                            Yoga</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="pt-item pb-4">
-                                <div class="row">
-                                    <a href=""><img class="col-12 pt-img"
-                                                    src="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/08/12/Pictures/_ca1ae8d6-bcf4-11e9-9bc9-c6f10a5dc6e3.jpg"
-                                                    alt=""></a>
-                                    <div class="font-weight-bold pt-2 pt-item-title text-center"><a href=""
-                                                                                                    class="pt-name">Tony
-                                            Stark</a></div>
-                                    <div class="rate col-12">
-                                        <input type="radio" id="star5" name="rate" value="5"/>
-                                        <label for="star5" title="text">5</label>
-                                        <input type="radio" id="star4" name="rate" value="4"/>
-                                        <label for="star4" title="text">4</label>
-                                        <input type="radio" id="star3" name="rate" value="3"/>
-                                        <label for="star3" title="text">3</label>
-                                        <input type="radio" id="star2" name="rate" value="2"/>
-                                        <label for="star2" title="text">2</label>
-                                        <input type="radio" id="star1" name="rate" value="1"/>
-                                        <label for="star1" title="text">1</label>
-                                    </div>
-                                    <div class="col-12 text-center"><a href="" class="pt-service">Personal Training,
-                                            Yoga</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="pt-item pb-4">
-                                <div class="row">
-                                    <a href=""><img class="col-12 pt-img"
-                                                    src="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/08/12/Pictures/_ca1ae8d6-bcf4-11e9-9bc9-c6f10a5dc6e3.jpg"
-                                                    alt=""></a>
-                                    <div class="font-weight-bold pt-2 pt-item-title text-center"><a href=""
-                                                                                                    class="pt-name">Tony
-                                            Stark</a></div>
-                                    <div class="rate col-12">
-                                        <input type="radio" id="star5" name="rate" value="5"/>
-                                        <label for="star5" title="text">5</label>
-                                        <input type="radio" id="star4" name="rate" value="4"/>
-                                        <label for="star4" title="text">4</label>
-                                        <input type="radio" id="star3" name="rate" value="3"/>
-                                        <label for="star3" title="text">3</label>
-                                        <input type="radio" id="star2" name="rate" value="2"/>
-                                        <label for="star2" title="text">2</label>
-                                        <input type="radio" id="star1" name="rate" value="1"/>
-                                        <label for="star1" title="text">1</label>
-                                    </div>
-                                    <div class="col-12 text-center"><a href="" class="pt-service">Personal Training,
-                                            Yoga</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="pt-item pb-4">
-                                <div class="row">
-                                    <a href=""><img class="col-12 pt-img"
-                                                    src="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/08/12/Pictures/_ca1ae8d6-bcf4-11e9-9bc9-c6f10a5dc6e3.jpg"
-                                                    alt=""></a>
-                                    <div class="font-weight-bold pt-2 pt-item-title text-center"><a href=""
-                                                                                                    class="pt-name">Tony
-                                            Stark</a></div>
-                                    <div class="rate col-12">
-                                        <input type="radio" id="star5" name="rate" value="5"/>
-                                        <label for="star5" title="text">5</label>
-                                        <input type="radio" id="star4" name="rate" value="4"/>
-                                        <label for="star4" title="text">4</label>
-                                        <input type="radio" id="star3" name="rate" value="3"/>
-                                        <label for="star3" title="text">3</label>
-                                        <input type="radio" id="star2" name="rate" value="2"/>
-                                        <label for="star2" title="text">2</label>
-                                        <input type="radio" id="star1" name="rate" value="1"/>
-                                        <label for="star1" title="text">1</label>
-                                    </div>
-                                    <div class="col-12 text-center"><a href="" class="pt-service">Personal Training,
-                                            Yoga</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="pt-item pb-4">
-                                <div class="row">
-                                    <a href=""><img class="col-12 pt-img"
-                                                    src="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/08/12/Pictures/_ca1ae8d6-bcf4-11e9-9bc9-c6f10a5dc6e3.jpg"
-                                                    alt=""></a>
-                                    <div class="font-weight-bold pt-2 pt-item-title text-center"><a href=""
-                                                                                                    class="pt-name">Tony
-                                            Stark</a></div>
-                                    <div class="rate col-12">
-                                        <input type="radio" id="star5" name="rate" value="5"/>
-                                        <label for="star5" title="text">5</label>
-                                        <input type="radio" id="star4" name="rate" value="4"/>
-                                        <label for="star4" title="text">4</label>
-                                        <input type="radio" id="star3" name="rate" value="3"/>
-                                        <label for="star3" title="text">3</label>
-                                        <input type="radio" id="star2" name="rate" value="2"/>
-                                        <label for="star2" title="text">2</label>
-                                        <input type="radio" id="star1" name="rate" value="1"/>
-                                        <label for="star1" title="text">1</label>
-                                    </div>
-                                    <div class="col-12 text-center"><a href="" class="pt-service">Personal Training,
-                                            Yoga</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="pt-item pb-4">
-                                <div class="row">
-                                    <a href=""><img class="col-12 pt-img"
-                                                    src="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/08/12/Pictures/_ca1ae8d6-bcf4-11e9-9bc9-c6f10a5dc6e3.jpg"
-                                                    alt=""></a>
-                                    <div class="font-weight-bold pt-2 pt-item-title text-center"><a href=""
-                                                                                                    class="pt-name">Tony
-                                            Stark</a></div>
-                                    <div class="rate col-12">
-                                        <input type="radio" id="star5" name="rate" value="5"/>
-                                        <label for="star5" title="text">5</label>
-                                        <input type="radio" id="star4" name="rate" value="4"/>
-                                        <label for="star4" title="text">4</label>
-                                        <input type="radio" id="star3" name="rate" value="3"/>
-                                        <label for="star3" title="text">3</label>
-                                        <input type="radio" id="star2" name="rate" value="2"/>
-                                        <label for="star2" title="text">2</label>
-                                        <input type="radio" id="star1" name="rate" value="1"/>
-                                        <label for="star1" title="text">1</label>
-                                    </div>
-                                    <div class="col-12 text-center"><a href="" class="pt-service">Personal Training,
-                                            Yoga</a></div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="grid col-sm-6">
+                        <figure class="effect-goliath" data-aos="zoom-in">
+                            <img width="100%" height="auto"
+                                 src="https://tympanus.net/Development/HoverEffectIdeas/img/23.jpg" alt="img23"/>
+                            <figcaption>
+                                <h2>Thoughtful <br>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </h2>
+                                <p>When Goliath comes out, you should run.</p>
+                                <a href="#">View more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="grid col-sm-6">
+                        <figure class="effect-goliath " data-aos="zoom-in">
+                            <img src="https://tympanus.net/Development/HoverEffectIdeas/img/24.jpg" alt="img24"/>
+                            <figcaption>
+                                <h2>Thoughtful <br>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </h2>
+                            </figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
+
+
 @endsection

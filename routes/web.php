@@ -11,10 +11,39 @@
 |
 */
 
-Route::get('/', function () {
-    return view('client/layout/master');
-});
 
 Route::get('/personal-training', function () {
     return view('client/list-pt');
+});
+
+Route::get('/blog', function () {
+    return view('client/main-blog');
+});
+\
+Route::get('/', function () {
+    return view('client/home');
+});
+
+Route::get('/contact-us', function () {
+    return view('client/contact');
+});
+
+Route::get('/detail-blog', function () {
+    return view('client/detail-blog');
+
+
+Route::get('/ad', function () {
+    return view('admin/home');
+});
+
+Route::get('/ad/personal-training', function () {
+    return view('admin/pt');
+});
+
+Route::get('/ad/blog', function () {
+    return view('admin/blog');
+});
+
+Route::get('/ad/user', function () {
+    return view('admin/user');
 });
