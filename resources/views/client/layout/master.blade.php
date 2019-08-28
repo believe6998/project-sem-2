@@ -33,7 +33,6 @@
                     <a class="navbar-brand nav-link " href="#">Tập luyện trực tuyến</a>
                     <a class="navbar-brand nav-link " href="#">Blog</a>
                     <a class="navbar-brand nav-link " href="#">Liên hệ</a>
-
                 </div>
             </div>
         </nav>

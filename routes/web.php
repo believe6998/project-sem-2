@@ -19,6 +19,7 @@ Route::get('/personal-training', function () {
 Route::get('/blog', function () {
     return view('client/main-blog');
 });
+\
 Route::get('/', function () {
     return view('client/home');
 });
@@ -46,4 +47,3 @@ Route::get('/ad/blog', function () {
 Route::get('/ad/user', function () {
     return view('admin/user');
 });
-
