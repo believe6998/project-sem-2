@@ -26,3 +26,7 @@ Route::get('/home', function () {
     return view('client/home');
 
 });
+
+Route::get('/contact-us', function () {
+    return view('client/contact');
+});
