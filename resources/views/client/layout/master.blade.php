@@ -67,74 +67,71 @@
             </div>
             <div class="modal-body">
                 <form action="" method="post" class="form-login-client">
-                    <h4 class="text-center ">Đăng Ký</h4>
-                    <div class="row mt-4 d-flex justify-content-center">
-                        <div class="col-10 ">
-                            <div class="input-group ">
-                                <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i
-                                                    class="fas fa-user"></i></span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Tên đầy đủ" aria-label="Username"
-                                       aria-describedby="basic-addon1">
+                    <h3 class="text-center font-weight-bold ">Đăng Ký</h3>
+                    <div class="row mt-5 d-flex justify-content-center">
+                        <div class="col-6 ">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-user"></i>&nbsp;Họ</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Họ của bạn"name="firstName">
                             </div>
                         </div>
-
-                    </div>
-                    <div class="row d-flex justify-content-center mt-3">
-                        <div class="col-10">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i
-                                                    class="fas fa-at"></i></span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Địa chỉ email"
-                                       aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-10">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i
-                                                    class="fas fa-lock"></i></span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Mật khẩu" aria-label="Username"
-                                       aria-describedby="basic-addon1">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-10">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i
-                                                    class="fas fa-unlock-alt"></i></span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Nhập lại mật khẩu"
-                                       aria-label="Username"
-                                       aria-describedby="basic-addon1">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row ml-3">
-                        <div class="col-6 ml-1">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i
-                                                    class="fas fa-venus-mars"></i></span>
-                                </div>
-                                <select class="form-control">
-                                    <option selected>Giới tính</option>
-                                    <option>Nam</option>
-                                    <option>Nữ</option>
-                                    <option>Khác</option>
-                                </select>
+                        <div class="col-6 ">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-user"></i>&nbsp;Tên</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tên của bạn"name="lastName">
                             </div>
                         </div>
                     </div>
 
+                    <div class="row d-flex justify-content-center mt-2">
+                        <div class="col-6 ">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-phone-alt"></i>&nbsp;Số điện thoại</label>
+                                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Số điện thoại." name="phoneNumber">
+                            </div>
+                        </div>
+                        <div class="col-6 ">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-venus-mars"></i>&nbsp;Giới tính</label>
+                                <br>
+
+                                    <div class="form-check form-check-inline mt-2">
+                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">
+                                        <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="famale">
+                                        <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row d-flex justify-content-center mt-2">
+                        <div class="col-9 ">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-envelope" ></i>&nbsp;Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"name="email" placeholder="Địa chỉ email.">
+                            </div>
+                        </div>
+                      <div class="col-3"></div>
+
+                    </div>
+                    <div class="row d-flex justify-content-center mt-2">
+                        <div class="col-6 ">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-lock"></i>&nbsp;Mật khẩu</label>
+                                <input type="password" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mật khẩu.">
+                            </div>
+                        </div>
+                        <div class="col-6 ">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-lock"></i>&nbsp;Nhập lại mật khẩu</label>
+                                <input type="text" class="form-control" name="repeatpassword" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập lại mật khẩu.">
+                            </div>
+                        </div>
+
+                    </div>
                     <div class="row">
                         <div class="col-12  ">
                             <label class="accept-form-register" for=""><input type="checkbox"> Tôi đã đọc và đồng ý với
@@ -182,9 +179,9 @@
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i
-                                                    class="fas fa-user"></i></span>
+                                                    class="fas fa-at"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Tài khoản"
+                                <input type="email" class="form-control" placeholder="Địa chỉ email"
                                        aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </div>
@@ -196,7 +193,7 @@
                                         <span class="input-group-text" id="basic-addon1"><i
                                                     class="fas fa-lock"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Mật khẩu" aria-label="Username"
+                                <input type="password" class="form-control" placeholder="Mật khẩu" aria-label="Username"
                                        aria-describedby="basic-addon1">
                             </div>
                         </div>
@@ -232,16 +229,13 @@
             </div>
             <div class="text-center mb-3">
                 <div class="footer-login-form-client">
-                    <label for="">Bạn chưa có tài khoản? &nbsp;<a href="#" data-toggle="modal"
-                                                                  data-target="#exampleModalCenter">Đăng ký ngay!</a>
-                    </label>
+                    <label for="">Bạn chưa có tài khoản? &nbsp;<a href="#" data-toggle="modal" data-target="#exampleModalCenter2">Đăng ký ngay!</a> </label>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<i class="fas fa-chevron-up" onclick="topFunction()" id="myBtn" title="Go to top"></i>
-
+<i  class="fas fa-chevron-up" onclick="topFunction()" id="myBtn" title="Go to top"></i>
 <div>
     @section('content')
     @show()
