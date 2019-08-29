@@ -4,20 +4,21 @@
         <figure class="intro">
             <img src="{{asset('image/Online-personal-training-1.jpg')}}" alt=""/>
             <figcaption class=" caption item item--primary"
-                        data-aos="fade-left"
-                        data-aos-anchor="#trigger-left">
+                        data-aos="fade-left">
                 <h1>MY-PT Online</h1>
                 <h4>Đào tạo cá nhân trực tuyến - cách hiệu quả và tiết kiệm nhất để đạt được mục tiêu tập thể dục của
                     bạn.
                     Huấn luyện viên cá nhân của bạn bất cứ nơi nào và bất cứ khi nào bạn muốn!</h4>
             </figcaption>
             <span class="overlay">
-<svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-     y="0px"
-     viewBox="0 0 500 250" enable-background="new 0 0 500 250" xml:space="preserve" PreserveAspectRatio="none">
-<path fill="#FFFFFF"
-      d="M250,246.5c-97.85,0-186.344-40.044-250-104.633V250h500V141.867C436.344,206.456,347.85,246.5,250,246.5z"></path>
-</svg>
+              <svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg"
+                   xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                   y="0px"
+                   viewBox="0 0 500 250" enable-background="new 0 0 500 250" xml:space="preserve"
+                   PreserveAspectRatio="none">
+          <path fill="#FFFFFF"
+                d="M250,246.5c-97.85,0-186.344-40.044-250-104.633V250h500V141.867C436.344,206.456,347.85,246.5,250,246.5z"></path>
+    </svg>
   </span>
         </figure>
 
@@ -157,7 +158,9 @@
                         khóa
                         đào tạo trong ngành thể dục trong những năm gần đây. </h4>
                     <h4>Các NASM CPT là viết tắt của Viện Hàn Lâm Y học thể thao (Certified Trainer cá nhân)
-                        Đây là một lãnh đạo giữa năm và từ nguồn gốc đào tạo 'Mỹ' bao gồm các bài học lý thuyết và thực tiễn và kết thúc bằng một bài thi lý thuyết và thực hành mà trong nhiều năm cũng được đưa ra tại một số địa điểm ở Hà Lan. NASM thường được coi là "tốt nhất trên toàn thế giới"gi</h4>
+                        Đây là một lãnh đạo giữa năm và từ nguồn gốc đào tạo 'Mỹ' bao gồm các bài học lý thuyết và thực
+                        tiễn và kết thúc bằng một bài thi lý thuyết và thực hành mà trong nhiều năm cũng được đưa ra tại
+                        một số địa điểm ở Hà Lan. NASM thường được coi là "tốt nhất trên toàn thế giới"gi</h4>
                     <h4>Và tôi có bằng tốt nghiệp NASM CPT.</h4>
                     <h4>Tôi cũng đang sở hữu bằng tốt nghiệp Thể dục & Thể hình, huấn luyện viên Fit! Vak Fitness Bằng
                         tốt nghiệp và chứng chỉ AALO Dinh dưỡng.
@@ -187,13 +190,14 @@
         <div class="row">
             <div class="col-sm-5" style="padding-top: 10%;padding-right: 5%" data-aos="zoom-in">
                 <div data-aos="zoom-in">
-                <h4 class="mb-3" style="line-height: 2.5rem">Tôi làm việc với các gói khác nhau.
-                    Trường hợp các dịch vụ khác nhau được cung cấp.</h4>
-                <h4 style="line-height:2.5rem">Dưới đây là một mô tả ngắn gọn về các dịch vụ tôi cung cấp với các gói
-                    đào tạo cá nhân trực tuyến
-                    của chúng tôi. Để biết thêm thông tin bấm vào nút bên dưới.</h4>
+                    <h4 class="mb-3" style="line-height: 2.5rem">Tôi làm việc với các gói khác nhau.
+                        Trường hợp các dịch vụ khác nhau được cung cấp.</h4>
+                    <h4 style="line-height:2.5rem">Dưới đây là một mô tả ngắn gọn về các dịch vụ tôi cung cấp với các
+                        gói
+                        đào tạo cá nhân trực tuyến
+                        của chúng tôi. Để biết thêm thông tin bấm vào nút bên dưới.</h4>
                 </div>
-                <div  data-aos="zoom-in" class="container-gt-pt">
+                <div data-aos="zoom-in" class="container-gt-pt">
                     <a href="#" class="btn-gt-pt">
                         <svg width="277" height="62">
                             <defs>
@@ -309,7 +313,9 @@
                      src="https://my-pt.online/wp-content/uploads/2018/03/etiektten-lezen-1080x628.png" alt="">
                 <div class="mt-5"><h2>Đọc nhãn: Chọn thực phẩm lành mạnh và nhận ra thủ thuật bán hàng.</h2></div>
                 <div class="mt-4 "><a style="text-decoration: none" href=""><h4>Training</h4></a></div>
-                <div class="mt-4"><h5 style="line-height: 1.7em">Có nhiều hình, bảng, văn bản và chữ viết tắt trên bao bì của sản phẩm. Nó không phải lúc nào cũng rõ ràng, điều này làm cho việc đọc nhãn khó khăn. Các nhà sản xuất cũng thích sử dụng các văn bản thú vị và hình ảnh đẹp trên ...</h5></div>
+                <div class="mt-4"><h5 style="line-height: 1.7em">Có nhiều hình, bảng, văn bản và chữ viết tắt trên bao
+                        bì của sản phẩm. Nó không phải lúc nào cũng rõ ràng, điều này làm cho việc đọc nhãn khó khăn.
+                        Các nhà sản xuất cũng thích sử dụng các văn bản thú vị và hình ảnh đẹp trên ...</h5></div>
                 <div class="mt-4"><a style="text-decoration: none;color: gray" href=""><h4>Đọc tiếp</h4></a></div>
             </div>
         </div>
@@ -320,7 +326,10 @@
                      src="https://my-pt.online/wp-content/uploads/2018/02/plnk-1080x628.png" alt="">
                 <div class="mt-5"><h2>Ván đúng cách</h2></div>
                 <div class="mt-4 "><a style="text-decoration: none" href=""><h4>Training</h4></a></div>
-                <div class="mt-4"><h5 style="line-height: 1.7em">Đôi khi chúng ta đi quá xa trong ngành thể dục .. đặc biệt là khi nói đến bụng và đào tạo cốt lõi. Chẳng hạn như các kệ kỷ lục thế giới vào lúc 8 giờ và 1 phút và đã đạt được bởi Mao Weidong vào ngày 16 tháng 5 năm 2016. Một khóa đào tạo cốt lõi tốt giúp sử dụng ...</h5></div>
+                <div class="mt-4"><h5 style="line-height: 1.7em">Đôi khi chúng ta đi quá xa trong ngành thể dục .. đặc
+                        biệt là khi nói đến bụng và đào tạo cốt lõi. Chẳng hạn như các kệ kỷ lục thế giới vào lúc 8 giờ
+                        và 1 phút và đã đạt được bởi Mao Weidong vào ngày 16 tháng 5 năm 2016. Một khóa đào tạo cốt lõi
+                        tốt giúp sử dụng ...</h5></div>
                 <div class="mt-4"><a style="text-decoration: none;color: gray" href=""><h4>Đọc tiếp</h4></a></div>
             </div>
 
@@ -329,7 +338,10 @@
                      src="https://my-pt.online/wp-content/uploads/2018/01/optimale-aantal-eiwitten-1080x628.png" alt="">
                 <div class="mt-5"><h2>Số lượng protein tối ưu mỗi bữa ăn</h2></div>
                 <div class="mt-4 "><a style="text-decoration: none" href=""><h4>Training</h4></a></div>
-                <div class="mt-4"><h5 style="line-height: 1.7em">Hôm nay tôi sẽ thảo luận về một trong những câu hỏi dinh dưỡng phổ biến nhất, đó là: Tôi nên ăn bao nhiêu gram protein mỗi bữa? Vấn đề là hầu hết mọi người hỏi câu hỏi này không chính xác. Các câu hỏi được đặt ra như: 'có bao nhiêu protein có thể ...</h5></div>
+                <div class="mt-4"><h5 style="line-height: 1.7em">Hôm nay tôi sẽ thảo luận về một trong những câu hỏi
+                        dinh dưỡng phổ biến nhất, đó là: Tôi nên ăn bao nhiêu gram protein mỗi bữa? Vấn đề là hầu hết
+                        mọi người hỏi câu hỏi này không chính xác. Các câu hỏi được đặt ra như: 'có bao nhiêu protein có
+                        thể ...</h5></div>
                 <div class="mt-4"><a style="text-decoration: none;color: gray" href=""><h4>Đọc tiếp</h4></a></div>
             </div>
         </div>
