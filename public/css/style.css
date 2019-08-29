@@ -278,11 +278,17 @@ margin: 10px 10px 0;
 }
 .accept-form-register {
     font-size: 13px;
-    margin-left: 34px;
+
 }
 .accept-form-register a{
 font-style: italic;
 }
+
+.gender-register-client{
+    margin-left: 10px;
+}
+
+
 /*-------register-client--------*/
 
 .pt-content{
@@ -1084,5 +1090,8 @@ figure.effect-goliath p {
     padding-left: 3%;
     font-size: 15px;
 }
+
+
+
 
 
