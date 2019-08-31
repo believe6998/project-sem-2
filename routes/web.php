@@ -33,6 +33,19 @@ Route::get('/contact-us', function () {
 Route::get('/detail-blog', function () {
     return view('client/detail-blog');
 });
+Route::get('/index-body', function () {
+    return view('client/index-body/do-chi-so-co-the');
+});
+Route::get('/index-body-2', function () {
+    return view('client/index-body/index-body-2');
+});
+Route::get('/index-body-3', function () {
+    return view('client/index-body/index-body-3');
+});
+Route::get('/index-body-4', function () {
+    return view('client/index-body/index-body-4');
+});
+
 
 Route::get('/ad', function () {
     return view('admin/home');
