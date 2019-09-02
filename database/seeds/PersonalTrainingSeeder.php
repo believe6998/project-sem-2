@@ -16,6 +16,7 @@ class PersonalTrainingSeeder extends Seeder
             [
                 'id' => 1,
                 'name' => 'Phạm Văn Dung',
+                'service' => 'Personal Training',
                 'description' => 'Tập thể hình thay đổi chính bạn',
                 'qualification' => 'Đại học thể dục thể thao tphcm',
                 'experience' => 'Olympus gym, Green garden fitness center, Vinhomes central park',
@@ -27,6 +28,7 @@ class PersonalTrainingSeeder extends Seeder
             [
                 'id' => 2,
                 'name' => 'Nguyễn Văn Tư',
+                'service' => 'Personal Training, KickBoxing',
                 'description' => 'Cao 1m79 - nặng 74kg - PT Gym - PT Boxing, Kickboxing',
                 'qualification' => 'Cử nhân chuyên ngành Huấn luyện viên Thể dục thể thao trường Đại học Thể dục Thể Thao TP.HCM, Huấn luyện viên Kickboxing quóc gia, Huấn luyện viên Võ cổ truyền, HCV Vô địch thế giới Võ cổ truyền 2018',
                 'experience' => '3 năm',
@@ -38,10 +40,11 @@ class PersonalTrainingSeeder extends Seeder
             [
                 'id' => 3,
                 'name' => 'Trần Khả Đạt',
+                'service' => 'Personal Training',
                 'description' => 'Kinh niệm 2 năm giảng dạy tại trung tâm và tự do. Giúp rất nhiều khách hàng đat đc mục tiêu. Tận tình và chuyên nghiệp',
                 'qualification' => 'Chứng chỉ huấn luyện viên - Liên đoàn thể hình, Certificate of Nutrifort - American',
                 'experience' => 'Personal trainer ( 12/2015 - 09/2018 )',
-                'image' => 'http://www.thegioitruyenhinh.vn/uploads/nam_2019/thang_3_2019/peww/So_ket_Vietnam_Fitness_Model_2019_-_Mien_Trung_H6_Copy.jpg',
+                'image' => 'https://2.bp.blogspot.com/-Z7zY0AKDqzQ/XCcIDB_yQMI/AAAAAAAACWA/f_Jo6REK6roxVqc6u3buMMXS57sefnewACLcBGAs/s1600/IMG_9899.jpg',
                 'rating' => '50%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')

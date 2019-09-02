@@ -17,7 +17,7 @@
                                                                                                         class="pt-cate">Personal
                             Training</a></div>
                     <div><img class="mr-3" width="40px" src="https://img.icons8.com/ios-filled/50/000000/yoga.png"> <a
-                                href="" class="pt-cate">Yoga</a></div>
+                            href="" class="pt-cate">Yoga</a></div>
                     <div><img class="mr-3" width="40px"
                               src="https://img.icons8.com/ios-filled/50/000000/swimming.png"><a href="" class="pt-cate">Swimming</a>
                     </div>
@@ -25,123 +25,29 @@
                               src="https://img.icons8.com/ios-glyphs/60/000000/boxing-2.png"><a href="" class="pt-cate">Kick
                             Boxing</a></div>
                     <div><img class="mr-3" width="40px" src="https://img.icons8.com/ios-filled/50/000000/dancing.png"><a
-                                href="" class="pt-cate">Dancing</a></div>
+                            href="" class="pt-cate">Dancing</a></div>
                 </div>
             </div>
             <div class="col-9 mt-4">
                 <div class="row">
-                    <div class="grid col-sm-4">
-                        <figure class="effect-goliath" data-aos="zoom-in">
-                            <img width="100%" height="auto"
-                                 src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png"
-                                 alt="img23"/>
-                            <figcaption>
-                                <h2 class="text-center">Ngọc Dũng<br>
-                                    <div class="star-ratings-sprite"><span style="width:80%" class="star-ratings-sprite-rating"></span></div>
-                                </h2>
-                                <p>When Goliath comes out, you should run.</p>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-
-
-                    <div class="grid col-sm-4">
-                        <figure class="effect-goliath" data-aos="zoom-in">
-                            <img width="100%" height="auto"
-                                 src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png"
-                                 alt="img23"/>
-                            <figcaption>
-                                <h2>Ngọc Dũng<br>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </h2>
-                                <p>When Goliath comes out, you should run.</p>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="grid col-sm-4">
-                        <figure class="effect-goliath" data-aos="zoom-in">
-                            <img src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/65924059_270076713843517_153033129320251392_n.jpg"
-                                 alt="img24"/>
-                            <figcaption>
-                                <h2>Tùng Nguyễn<br>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </h2>
-
-                                <p>Huấn Luyện Viên Yoga</p>
-
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="grid col-sm-4">
-                        <figure class="effect-goliath" data-aos="zoom-in">
-                            <img width="100%" height="auto"
-                                 src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png"
-                                 alt="img23"/>
-                            <figcaption>
-                                <h2>Ngọc Dũng<br>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </h2>
-                                <p>When Goliath comes out, you should run.</p>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-
-
-                    <div class="grid col-sm-4">
-                        <figure class="effect-goliath" data-aos="zoom-in">
-                            <img width="100%" height="auto"
-                                 src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png"
-                                 alt="img23"/>
-                            <figcaption>
-                                <h2>Ngọc Dũng<br>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </h2>
-                                <p>When Goliath comes out, you should run.</p>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="grid col-sm-4">
-                        <figure class="effect-goliath" data-aos="zoom-in">
-                            <img src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/65924059_270076713843517_153033129320251392_n.jpg"
-                                 alt="img24"/>
-                            <figcaption>
-                                <h2>Tùng Nguyễn<br>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </h2>
-
-                                <p>Huấn Luyện Viên Yoga</p>
-
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                    </div>
+                    @foreach($list as $item)
+                        <div class="grid col-sm-4">
+                            <figure class="effect-goliath" data-aos="zoom-in">
+                                <img width="100%" height="auto"
+                                     src="{{$item->image}}"
+                                     alt="img23"/>
+                                <figcaption>
+                                    <h2 class="text-center">{{$item->name}}<br>
+                                        <div class="star-ratings-sprite"><span style="width:{{$item->rating}}"
+                                                                               class="star-ratings-sprite-rating"></span>
+                                        </div>
+                                    </h2>
+                                    <p class="pb-3">{{$item->service}}</p>
+                                    <a href="#">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -16,6 +16,7 @@ class CreatePersonalTrainingsTable extends Migration
         Schema::create('personal_trainings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('service');
             $table->text('description');
             $table->text('qualification');
             $table->text('experience');

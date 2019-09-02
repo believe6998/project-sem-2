@@ -14,9 +14,7 @@ Route::get('/login', function () {
     return view('client/login');
 });
 
-Route::get('/personal-training', function () {
-    return view('client/list-pt');
-});
+Route::resource('personal-training', 'PersonalTrainingController');
 
 Route::get('/blog', function () {
     return view('client/main-blog');

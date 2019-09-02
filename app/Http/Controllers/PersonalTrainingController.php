@@ -14,7 +14,8 @@ class PersonalTrainingController extends Controller
      */
     public function index()
     {
-        //
+        $list = personalTraining::paginate(3);
+        return view('client/list-pt')->with(['list' => $list]);
     }
 
     /**
@@ -30,7 +31,7 @@ class PersonalTrainingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +42,7 @@ class PersonalTrainingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\personalTraining  $personalTraining
+     * @param \App\personalTraining $personalTraining
      * @return \Illuminate\Http\Response
      */
     public function show(personalTraining $personalTraining)
@@ -52,7 +53,7 @@ class PersonalTrainingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\personalTraining  $personalTraining
+     * @param \App\personalTraining $personalTraining
      * @return \Illuminate\Http\Response
      */
     public function edit(personalTraining $personalTraining)
@@ -63,8 +64,8 @@ class PersonalTrainingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\personalTraining  $personalTraining
+     * @param \Illuminate\Http\Request $request
+     * @param \App\personalTraining $personalTraining
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, personalTraining $personalTraining)
@@ -75,7 +76,7 @@ class PersonalTrainingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\personalTraining  $personalTraining
+     * @param \App\personalTraining $personalTraining
      * @return \Illuminate\Http\Response
      */
     public function destroy(personalTraining $personalTraining)
