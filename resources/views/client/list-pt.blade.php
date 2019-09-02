@@ -36,12 +36,8 @@
                                  src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png"
                                  alt="img23"/>
                             <figcaption>
-                                <h2>Ngọc Dũng<br>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
+                                <h2 class="text-center">Ngọc Dũng<br>
+                                    <div class="star-ratings-sprite"><span style="width:80%" class="star-ratings-sprite-rating"></span></div>
                                 </h2>
                                 <p>When Goliath comes out, you should run.</p>
                                 <a href="#">View more</a>
