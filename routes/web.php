@@ -60,3 +60,7 @@ Route::get('/ad/blog', function () {
 Route::get('/ad/user', function () {
     return view('admin/user');
 });
+
+Route::get('/ad/form', function () {
+    return view('admin/form');
+});
