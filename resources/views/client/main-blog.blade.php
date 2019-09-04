@@ -2,7 +2,7 @@
 @section('content')
     <div class="banner-header">
         <img src="https://www.fusionfitnessacademy.org/wp-content/uploads/2018/05/slider2.jpg" class="rounded img-fluid"
-             alt="Responsive image" style="padding-top: 20px">
+             alt="Responsive image">
     </div>
     <div class="detail" style="padding-top: 40px">
         <h1 class="text-center">Oefening diensten en</h1>
@@ -24,8 +24,7 @@
                         <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
                     </div>
                     <div class="text2-img">
-                        <a href="#">TRAINING</a>
-                    </div>
+                        <a style="text-decoration: none" href=""><h4 href="#">Training</h4></a></div>
                     <p>
                         In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
                         en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
@@ -52,8 +51,7 @@
                         <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
                     </div>
                     <div class="text2-img">
-                        <a href="#">TRAINING</a>
-                    </div>
+                        <a style="text-decoration: none" href=""><h4 href="#">Training</h4></a></div>
                     <p>
                         In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
                         en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
@@ -78,8 +76,7 @@
                         <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
                     </div>
                     <div class="text2-img">
-                        <a href="#">TRAINING</a>
-                    </div>
+                        <a style="text-decoration: none" href=""><h4 href="#">Training</h4></a></div>
                     <p>
                         In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
                         en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
@@ -104,8 +101,7 @@
                         <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
                     </div>
                     <div class="text2-img">
-                        <a href="#">TRAINING</a>
-                    </div>
+                        <a style="text-decoration: none" href=""><h4 href="#">Training</h4></a></div>
                     <p>
                         In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
                         en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
@@ -140,4 +136,5 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection

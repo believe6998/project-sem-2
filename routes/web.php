@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Route;
+
 Route::get('/login', function () {
     return view('client/login');
 });
@@ -18,16 +21,18 @@ Route::get('/personal-training', function () {
     return view('client/list-pt');
 });
 
-Route::get('/blog', function () {
+Route::get('cl/blog', function () {
     return view('client/main-blog');
 });
-\
 Route::get('/', function () {
     return view('client/home');
 });
 
 Route::get('/contact-us', function () {
     return view('client/contact');
+});
+Route::get('/blog', function () {
+    return view('client/main-blog');
 });
 
 Route::get('/detail-blog', function () {
@@ -42,10 +47,11 @@ Route::get('/ad/personal-training', function () {
     return view('admin/pt');
 });
 
-Route::get('/ad/blog', function () {
-    return view('admin/blog');
-});
 
 Route::get('/ad/user', function () {
     return view('admin/user');
 });
+Route::get('/pt/detail', function () {
+    return view('client/pt-detail');
+});
+Route::resource('ad/blog','BlogController');

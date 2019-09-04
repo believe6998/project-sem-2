@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{csrf_token()}}">
 
     <title>SB Admin 2 - Dashboard</title>
-
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <!-- Custom fonts for this template-->
     <link href="{{ URL::asset("admin/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">
     <link
@@ -73,6 +74,13 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Blog</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/ad/blog/create">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Form-Blog</span></a>
+        </li>
+
+
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -231,6 +239,8 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+
 <script src="{{ URL::asset("admin/vendor/jquery/jquery.min.js")}}"></script>
 <script src="{{ URL::asset("admin/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
 
@@ -251,7 +261,29 @@
 
 <!-- Page level custom scripts -->
 <script src="{{ URL::asset("admin/js/demo/datatables-demo.js")}}"></script>
+@yield('js')
 
+<script>
+    $('.btn-delete').click(function () {
+        if (confirm('Are you sure wanna delete this game?')) {
+            var deleteId = $(this).attr('id').replace('id-delete-', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/ad/blog/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    // language=JQuery-CSS
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                error: function () {
+                    alert('Success');
+                    location.reload();
+                }
+            });
+        }
+    });
+
+</script>
 </body>
 
 </html>
