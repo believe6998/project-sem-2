@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\personalTraining;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PersonalTrainingController extends Controller
 {
@@ -15,7 +16,7 @@ class PersonalTrainingController extends Controller
     public function index()
     {
         $list = personalTraining::paginate(3);
-        return view('client/list-pt')->with(['list' => $list]);
+        return view('client/list-pt',compact('list'));
     }
 
     /**

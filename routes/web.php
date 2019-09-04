@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::resource('personal-training', 'PersonalTrainingController');
+Route::resource('category', 'CategoryController');
 
 Route::get('/blog', function () {
     return view('client/main-blog');

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePersonalTrainingsTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreatePersonalTrainingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('personal_trainings', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->text('description');
-            $table->text('qualification');
-            $table->text('experience');
-            $table->string('image');
-            $table->string('rating');
-            $table->timestamps();
             $table->integer('status')->default(1);
+            $table->timestamps();
         });
     }
 
@@ -33,6 +28,6 @@ class CreatePersonalTrainingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_trainings');
+        Schema::dropIfExists('categories');
     }
 }
