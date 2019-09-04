@@ -12,6 +12,23 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
     <script src="{{asset('js/app.js')}}"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{asset('js/client/layout.js')}}"></script>
     <title>Document</title>
 </head>
@@ -48,8 +65,8 @@
                aria-haspopup="true"
                aria-expanded="false"></i>
             <div class="dropdown-menu icon-item" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item " data-toggle="modal" data-target="#exampleModalCenter" href="#">Đăng nhập</a>
-                <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter2" href="#">Đăng ký</a>
+                <a class="dropdown-item" href="#">Đăng nhập</a>
+                <a class="dropdown-item" href="register">Đăng ký</a>
             </div>
         </div>
     </div>

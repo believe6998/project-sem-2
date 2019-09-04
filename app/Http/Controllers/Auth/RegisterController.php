@@ -49,7 +49,6 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -63,13 +62,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = config('roles.models.defaultUser')::create([
-            'name' => $data['name'],
+        return User::create([
+            'firstName' => $data['firstName'],
+            'lastName' => $data['lastName'],
+            'phone' => $data['phone'],
+            'gender' => $data['gender'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
 
-        $role = config('roles.models.role')::where('name', '=', 'User')->first();  //choose the default role upon user creation.
+        $role = config('roles.models.role')::where('firstName + lastName', '=', 'User')->first();  //choose the default role upon user creation.
         $user->attachRole($role);
 
         return $user;
