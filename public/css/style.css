@@ -281,11 +281,17 @@ margin: 10px 10px 0;
 }
 .accept-form-register {
     font-size: 13px;
-    margin-left: 34px;
+
 }
 .accept-form-register a{
 font-style: italic;
 }
+
+.gender-register-client{
+    margin-left: 10px;
+}
+
+
 /*-------register-client--------*/
 
 .pt-content{
@@ -932,7 +938,78 @@ font-style: italic;
     -webkit-transition-delay: .2s;
     transition-delay: .2s;
 }
-
+.img-body-index{
+    width: 90%;
+    height: 700px;
+    padding-right: 70px;
+}
+.span{
+    height: 40px!important;
+    padding: 10px 15px!important;
+    background: #c1c1c1!important;
+    color: #fff!important;
+    border-color: #ababab!important;
+    font-family: utm_avoregular,sans-serif!important;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    margin-left: -4px;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+    box-sizing: border-box;
+}
+.input-mini-all{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border linear .2s,box-shadow linear .2s;
+    -moz-transition: border linear .2s,box-shadow linear .2s;
+    -o-transition: border linear .2s,box-shadow linear .2s;
+    transition: border linear .2s,box-shadow linear .2s;
+    width: 85px;
+    height: 40px;
+    font-size: 16px;
+    font-family: utm_avoregular,sans-serif;
+    border-color: #ababab;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+.fas{
+    padding-bottom: 10px;
+}
+.form-text{
+    font-family: 'Averta Regular', Helvetica, Arial, Lucida, sans-serif;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}.input-mini-all-2{
+     background-color: #fff;
+     width: 125px;
+     height: 40px;
+     border-color: #ababab;
+     border-radius: 4px 4px 4px 4px;
+     padding-bottom: 40px;
+ }
+ .btn-index-body{
+     padding-top: 30px;
+     padding-right: 20px;
+ }
+ .input-mini-all-calender{
+     width: 150px;
+     height: 40px;
+     padding-left: 10px;
+     border-color: #ababab;
+     border-radius: 4px 4px 4px 4px;
+ }
 .grid {
     position: relative;
     clear: both;
@@ -947,11 +1024,8 @@ font-style: italic;
     position: relative;
     float: left;
     overflow: hidden;
-    min-width: 260px;
-    max-width: 260px;
-    max-height: 370px;
-    width: 100%;
-    height: auto;
+    width: 260px;
+    height: 340px;
     background: #3085a3;
     text-align: center;
     cursor: pointer;
@@ -1070,8 +1144,10 @@ figure.effect-goliath:hover img {
 }
 
 figure.effect-goliath:hover h2 {
-    -webkit-transform: translate3d(0,-90px,0);
-    transform: translate3d(0,-90px,0);
+    -webkit-transform: translate3d(0,-150px,0);
+    transform: translate3d(0,-500px,0);
+    transition: transform 1s;
+
 }
 
 figure.effect-goliath:hover p {
@@ -1095,8 +1171,6 @@ figure.effect-goliath p {
     padding-left: 3%;
     font-size: 15px;
 }
-
-
 .floatingNav {
     width: 100%;
     border-radius: 2px;
@@ -1119,7 +1193,6 @@ figure.effect-goliath p {
 .item-main-blog p{
     font-size: 13px;
     line-height: 1.7;
-
 }
 .text-img h4{
     margin-top: 20px;
@@ -1394,3 +1467,22 @@ figure.effect-goliath p {
     color:#eee;
     background-color:#01355a;
 }
+.star-ratings-sprite {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+    font-size: 0;
+    height: 21px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 110px;
+    margin: 0 auto;
+}
+
+.star-ratings-sprite-rating {
+     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+     background-position: 0 100%;
+     float: left;
+     height: 21px;
+     display:block;
+ }
+

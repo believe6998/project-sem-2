@@ -11,15 +11,15 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', function () {
     return view('client/login');
 });
 
-Route::get('/personal-training', function () {
-    return view('client/list-pt');
-});
+Route::resource('personal-training', 'PersonalTrainingController');
+Route::resource('category', 'CategoryController');
 
 Route::get('cl/blog', function () {
     return view('client/main-blog');
@@ -38,20 +38,52 @@ Route::get('/blog', function () {
 Route::get('/detail-blog', function () {
     return view('client/detail-blog');
 });
+Route::get('/index-body', function () {
+    return view('client/index-body/do-chi-so-co-the');
+});
+Route::get('/index-body-2', function () {
+    return view('client/index-body/index-body-2');
+});
+Route::get('/index-body-3', function () {
+    return view('client/index-body/index-body-3');
+});
+Route::get('/index-body-4', function () {
+    return view('client/index-body/index-body-4');
+});
 
-Route::get('/ad', function () {
+
+Route::get('/ad','RoleController@roleAdmin', function () {
     return view('admin/home');
 });
 
-Route::get('/ad/personal-training', function () {
+Route::get('/ad/personal-training','RoleController@roleAdmin', function () {
     return view('admin/pt');
 });
 
 
-Route::get('/ad/user', function () {
+Route::get('/ad/blog','RoleController@roleAdmin', function () {
+    return view('admin/blog');
+});
+
+Route::get('/ad/user','RoleController@roleAdmin', function () {
     return view('admin/user');
 });
+
 Route::get('/pt/detail', function () {
     return view('client/pt-detail');
 });
 Route::resource('ad/blog','BlogController');
+
+
+
+Route::get('/ad/form', function () {
+    return view('admin/form');
+});
+
+Route::get('/guest-role', 'RoleController@roleGuest');
+Route::get('/user-role', 'RoleController@roleUser');
+Route::get('/admin-role', 'RoleController@roleAdmin');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
