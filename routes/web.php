@@ -10,9 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/login', function () {
-    return view('client/login');
-});
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+//Route::get('/login', function () {
+//    return view('client/login');
+//});
 
 Route::resource('personal-training', 'PersonalTrainingController');
 
@@ -45,22 +49,31 @@ Route::get('/index-body-4', function () {
 });
 
 
-Route::get('/ad', function () {
+Route::get('/ad','RoleController@roleAdmin', function () {
     return view('admin/home');
 });
 
-Route::get('/ad/personal-training', function () {
+Route::get('/ad/personal-training','RoleController@roleAdmin', function () {
     return view('admin/pt');
 });
 
-Route::get('/ad/blog', function () {
+Route::get('/ad/blog','RoleController@roleAdmin', function () {
     return view('admin/blog');
 });
 
-Route::get('/ad/user', function () {
+Route::get('/ad/user','RoleController@roleAdmin', function () {
     return view('admin/user');
 });
+
 
 Route::get('/ad/form', function () {
     return view('admin/form');
 });
+
+Route::get('/guest-role', 'RoleController@roleGuest');
+Route::get('/user-role', 'RoleController@roleUser');
+Route::get('/admin-role', 'RoleController@roleAdmin');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
