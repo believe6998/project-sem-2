@@ -62,6 +62,7 @@ rotateY(180 deg)
 
 }
 
+
 .icon-user-header {
     margin-top: 21px;
 }
@@ -126,6 +127,8 @@ rotateY(180 deg)
 .dropdown>.dropdown-toggle:active {
     pointer-events: none;
 }
+
+
 /*end-header*/
 
 /*start-footer*/
@@ -194,65 +197,128 @@ color:  rgba(0, 0, 0, .5) ;
 /*login-form*/
 
 
-.btn-login button span{
-    font-size: 15px;
+/*.btn-login button span{*/
+/*    font-size: 15px;*/
+/*}*/
+/*.remember-me-login{*/
+/*    font-size: 15px;*/
+/*    margin-left: 40px;*/
+/*}*/
+/*.forgot-password{*/
+/*    margin-left: 50px;*/
+/*;*/
+/*}*/
+/*.forgot-password a{*/
+/*    text-decoration: none;*/
+/*    font-size:15px;*/
+/*}*/
+/*.login-form-i{*/
+/*    text-align: center;*/
+/*    border-top: 1px solid #cccccc;*/
+/*}*/
+/*.social-btn-login a{*/
+/*    font-size: 14px;*/
+/*    text-decoration: none;*/
+/*}*/
+/*.social-btn-login .btn{*/
+/*margin: 10px 10px 0;*/
+/*    padding: 6px 12px;*/
+/*    text-align: center;*/
+/*    font-weight: 400;*/
+/*    border: none;*/
+/*    display: inline-block;*/
+/*}*/
+/*.img-thumbnail{*/
+/*    background: none !important;*/
+/*    border: none;!important;*/
+/*}*/
+/*.text-body-login-form label{*/
+/*    font-size: 15px;*/
+/*}*/
+/*.form-login-client{*/
+/*    margin-bottom: 15px;*/
+/*    box-shadow: 0px 2px 2px rgba(0,0,0,0.3);*/
+/*    padding: 30px;*/
+/*}*/
+/*.footer-login-form-client a{*/
+/*    text-decoration: none;*/
+/*    font-size: 15px;*/
+/*}*/
+/*.logo-login-form-client{*/
+/*    width: 120px;*/
+/*    height: auto;*/
+/*}*/
+/*.footer-login-form-client a:hover{*/
+/*    opacity: 0.7;*/
+/*}*/
+/*.footer-login-form-client label{*/
+/*    font-size: 15px;*/
+/*}*/
+
+
+/*.social-btn-login .btn:hover{*/
+/*    opacity: 0.8;*/
+/*}*/
+/*.social-btn-login .btn-danger{*/
+/*    background: #df4930;*/
+/*    color: #ffffff;*/
+/*}*/
+/*.social-btn-login .btn-info{*/
+/*    background: #64ccf1;*/
+/*    color: #ffffff;*/
+/*}*/
+/*.social-btn-login .btn-primary{*/
+/*    color: #ffffff;*/
+/*    background: #507cc0;*/
+/*}*/
+
+/*.text-btn-login-client{*/
+/*    font-size: 14px;*/
+/*    font-weight: bold;*/
+/*}*/
+.logged-cl{
+    margin-top: -8px;
+    margin-left: 40%;
 }
-.remember-me-login{
-    font-size: 15px;
-    margin-left: 40px;
+
+.rmbm-login-cl .form-check{
+    padding-left: 68%;
+    padding-top: 3px;
 }
-.forgot-password{
-    margin-left: 50px;
-;
+.fg-pass-login-cl a{
+    padding-left: 6%;
+
 }
-.forgot-password a{
-    text-decoration: none;
-    font-size:15px;
+
+.card-lg-form-cl{
+    font-size: 20px;
+    font-weight: bold;
+    background: #3f9ae5;
+    color: whitesmoke;
 }
-.login-form-i{
-    text-align: center;
-    border-top: 1px solid #cccccc;
+.card-body-lg-form-cl{
+    background: #f7f7f7;
 }
+
+.txt-or-lg-cl{
+    border-top: gray 1px solid;
+text-align: center;
+
+}
+
 .social-btn-login a{
-    font-size: 14px;
+    /*margin: 0px 7px 0px;*/
     text-decoration: none;
 }
+
 .social-btn-login .btn{
-margin: 10px 10px 0;
+    margin: 10px 10px 0;
     padding: 6px 12px;
     text-align: center;
     font-weight: 400;
     border: none;
     display: inline-block;
 }
-.img-thumbnail{
-    background: none !important;
-    border: none;!important;
-}
-.text-body-login-form label{
-    font-size: 15px;
-}
-.form-login-client{
-    margin-bottom: 15px;
-    box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
-    padding: 30px;
-}
-.footer-login-form-client a{
-    text-decoration: none;
-    font-size: 15px;
-}
-.logo-login-form-client{
-    width: 120px;
-    height: auto;
-}
-.footer-login-form-client a:hover{
-    opacity: 0.7;
-}
-.footer-login-form-client label{
-    font-size: 15px;
-}
-
-
 .social-btn-login .btn:hover{
     opacity: 0.8;
 }
@@ -269,10 +335,16 @@ margin: 10px 10px 0;
     background: #507cc0;
 }
 
-.text-btn-login-client{
-    font-size: 14px;
+.txt-form-lg-cl label{
     font-weight: bold;
+    margin-bottom: 0px;
+    font-size: 15px;
+    color: #1b4b72;
 }
+.txt-form-lg-cl label i{
+    color: #1b4b72;
+}
+
 /*end-login-form*/
 
 /*-------register-client--------*/
