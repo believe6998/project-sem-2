@@ -1,7 +1,7 @@
 @extends('client.layout.master')
 @section('content')
     <header>
-        <figure class="intro">
+        <figure class="intro" id="intro">
             <img src="{{asset('image/Online-personal-training-1.jpg')}}" alt=""/>
             <figcaption class=" caption item item--primary"
                         data-aos="fade-left">
@@ -312,7 +312,7 @@
                 <img width="100%" height="auto"
                      src="https://my-pt.online/wp-content/uploads/2018/03/etiektten-lezen-1080x628.png" alt="">
                 <div class="mt-5"><h2>Đọc nhãn: Chọn thực phẩm lành mạnh và nhận ra thủ thuật bán hàng.</h2></div>
-                <div class="mt-4 "><a style="text-decoration: none" href=""><h4>Training</h4></a></div>
+                <div class="mt-4 "><a style="text-decoration: none" href=""><h4 href="#">Training</h4></a></div>
                 <div class="mt-4"><h5 style="line-height: 1.7em">Có nhiều hình, bảng, văn bản và chữ viết tắt trên bao
                         bì của sản phẩm. Nó không phải lúc nào cũng rõ ràng, điều này làm cho việc đọc nhãn khó khăn.
                         Các nhà sản xuất cũng thích sử dụng các văn bản thú vị và hình ảnh đẹp trên ...</h5></div>

@@ -17,16 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::resource('personal-training', 'PersonalTrainingController');
 Route::resource('category', 'CategoryController');
 
-Route::get('/blog', function () {
+Route::get('cl/blog', function () {
     return view('client/main-blog');
 });
-
 Route::get('/', function () {
     return view('client/home');
 });
 
 Route::get('/contact-us', function () {
     return view('client/contact');
+});
+Route::get('/blog', function () {
+    return view('client/main-blog');
 });
 
 Route::get('/detail-blog', function () {
@@ -61,6 +63,12 @@ Route::get('/admin/blog', function () {
 Route::get('/admin/user', function () {
     return view('admin/user');
 });
+
+Route::get('/pt/detail', function () {
+    return view('client/pt-detail');
+});
+Route::resource('ad/blog','BlogController');
+
 
 
 Route::get('/admin/form', function () {
