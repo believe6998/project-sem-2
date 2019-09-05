@@ -14,10 +14,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/login', function () {
-    return view('client/login');
-});
-
 Route::resource('personal-training', 'PersonalTrainingController');
 Route::resource('category', 'CategoryController');
 
@@ -52,20 +48,19 @@ Route::get('/index-body-4', function () {
 });
 
 
-Route::get('/ad','RoleController@roleAdmin', function () {
+Route::get('/admin', function () {
     return view('admin/home');
 });
 
-Route::get('/ad/personal-training','RoleController@roleAdmin', function () {
+Route::get('/admin/personal-training', function () {
     return view('admin/pt');
 });
 
-
-Route::get('/ad/blog','RoleController@roleAdmin', function () {
+Route::get('/admin/blog', function () {
     return view('admin/blog');
 });
 
-Route::get('/ad/user','RoleController@roleAdmin', function () {
+Route::get('/admin/user', function () {
     return view('admin/user');
 });
 
@@ -76,13 +71,11 @@ Route::resource('ad/blog','BlogController');
 
 
 
-Route::get('/ad/form', function () {
+Route::get('/admin/form', function () {
     return view('admin/form');
 });
 
-Route::get('/guest-role', 'RoleController@roleGuest');
-Route::get('/user-role', 'RoleController@roleUser');
-Route::get('/admin-role', 'RoleController@roleAdmin');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
