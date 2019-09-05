@@ -42,7 +42,8 @@
                                                                                class="star-ratings-sprite-rating"></span>
                                         </div>
                                     </h2>
-                                    <p class="pb-3">{{$item->service}}</p>
+                                    <p class="pb-3">
+                                        {{$item->description}}</p>
                                     <a href="#">View more</a>
                                 </figcaption>
                             </figure>

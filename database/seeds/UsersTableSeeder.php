@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $userRole = config('roles.models.role')::where('name', '=', 'User')->first();
-        $adminRole = config('roles.models.role')::where('name', '=', 'Admin')->first();
+        $adminRole = config('roles.models.role')::where('name', '=', 'admin')->first();
         $permissions = config('roles.models.permission')::all();
 
         /*
@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
          */
         if (config('roles.models.defaultUser')::where('email', '=', 'admin@admin.com')->first() === null) {
             $newUser = config('roles.models.defaultUser')::create([
-                'name'     => 'Admin',
+                'name'     => 'admin',
                 'email'    => 'admin@admin.com',
                 'password' => bcrypt('password'),
             ]);
