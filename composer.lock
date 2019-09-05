@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b269bd1e0fae837c799b22208862194a",
+    "content-hash": "681e370cdbf451390ead9ee2dc415ea1",
     "packages": [
         {
             "name": "cloudinary/cloudinary_php",
@@ -160,28 +160,30 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8"
+                "reference": "e17f069ede36f7534b95adec71910ed1b49c74ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/1febd6c3ef84253d7c815bed85fc622ad207a9f8",
-                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/e17f069ede36f7534b95adec71910ed1b49c74ea",
+                "reference": "e17f069ede36f7534b95adec71910ed1b49c74ea",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^7.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.5"
+                "doctrine/coding-standard": "^6.0",
+                "phpstan/phpstan": "^0.11.8",
+                "phpunit/phpunit": "^8.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -195,12 +197,12 @@
             ],
             "authors": [
                 {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
                     "name": "Guilherme Blanco",
                     "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Johannes Schmitt",
@@ -216,7 +218,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-06-08T11:03:04+00:00"
+            "time": "2019-07-30T19:33:28+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -332,20 +334,20 @@
         },
         {
             "name": "eklundkristoffer/seedster",
-            "version": "3.2",
+            "version": "3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eklundkristoffer/seedster.git",
-                "reference": "f69023f35aafb6b745c6be78effefde1ed992b97"
+                "reference": "d5ad35ec2c1937bdce375a0fc6e0eff76c2635f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eklundkristoffer/seedster/zipball/f69023f35aafb6b745c6be78effefde1ed992b97",
-                "reference": "f69023f35aafb6b745c6be78effefde1ed992b97",
+                "url": "https://api.github.com/repos/eklundkristoffer/seedster/zipball/d5ad35ec2c1937bdce375a0fc6e0eff76c2635f5",
+                "reference": "d5ad35ec2c1937bdce375a0fc6e0eff76c2635f5",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "5.5.* || 5.6.* || 5.7.* || 5.8.*"
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0"
             },
             "type": "library",
             "extra": {
@@ -370,7 +372,7 @@
                     "email": "kristoffereklund1@gmail.com"
                 }
             ],
-            "time": "2019-03-01T05:00:16+00:00"
+            "time": "2019-08-31T15:00:39+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -561,7 +563,71 @@
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
-
+            "name": "jeremykenedy/laravel-roles",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeremykenedy/laravel-roles.git",
+                "reference": "614446493a2e7cdba27171085522d62d647f4f53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeremykenedy/laravel-roles/zipball/614446493a2e7cdba27171085522d62d647f4f53",
+                "reference": "614446493a2e7cdba27171085522d62d647f4f53",
+                "shasum": ""
+            },
+            "require": {
+                "eklundkristoffer/seedster": "^3.0",
+                "laravel/framework": "5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|6.*",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "illuminate/support": "^5.8",
+                "laravel/laravel": "5.8.*",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "jeremykenedy\\LaravelRoles\\RolesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "jeremykenedy\\LaravelRoles\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Bičan",
+                    "email": "romanbican@seznam.cz"
+                },
+                {
+                    "name": "Jeremy Kenedy",
+                    "email": "jeremykenedy@gmail.com"
+                }
+            ],
+            "description": "Powerful package for handling roles, permissions, and levels in Laravel. Supports Laravel 5.3 and higher",
+            "keywords": [
+                "acl",
+                "laravel",
+                "laravel-levels",
+                "laravel-permissions",
+                "laravel-roles",
+                "levels",
+                "permissions",
+                "roles"
+            ],
+            "time": "2019-09-05T05:05:43+00:00"
+        },
+        {
             "name": "jrm2k6/cloudder",
             "version": "0.6.0",
             "source": {
@@ -598,42 +664,6 @@
             "autoload": {
                 "psr-0": {
                     "JD\\Cloudder": "src/"
-
-            "name": "jeremykenedy/laravel-roles",
-            "version": "v2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jeremykenedy/laravel-roles.git",
-                "reference": "5855193314490bfb78bc3bd4e146fe512c2ee9e5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jeremykenedy/laravel-roles/zipball/5855193314490bfb78bc3bd4e146fe512c2ee9e5",
-                "reference": "5855193314490bfb78bc3bd4e146fe512c2ee9e5",
-                "shasum": ""
-            },
-            "require": {
-                "eklundkristoffer/seedster": "^3.0",
-                "laravel/framework": "5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
-                "php": ">=5.6.4"
-            },
-            "require-dev": {
-                "illuminate/support": "^5.8",
-                "laravel/laravel": "5.8.*",
-                "orchestra/testbench": "~3.0",
-                "phpunit/phpunit": "^7.5"
-            },
-            "type": "package",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "jeremykenedy\\LaravelRoles\\RolesServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "jeremykenedy\\LaravelRoles\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -660,43 +690,6 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.34",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "c3a870b96c7afe5174f486af74768ccfddeec77b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c3a870b96c7afe5174f486af74768ccfddeec77b",
-                "reference": "c3a870b96c7afe5174f486af74768ccfddeec77b",
-
-                    "name": "Roman Bičan",
-                    "email": "romanbican@seznam.cz"
-                },
-                {
-                    "name": "Ultraware"
-                },
-                {
-                    "name": "Jeremy Kenedy",
-                    "email": "jeremykenedy@gmail.com"
-                }
-            ],
-            "description": "Powerful package for handling roles, permissions, and levels in Laravel. Supports Laravel 5.3 and higher",
-            "keywords": [
-                "acl",
-                "laravel",
-                "laravel-levels",
-                "laravel-permissions",
-                "laravel-roles",
-                "levels",
-                "permissions",
-                "roles"
-            ],
-            "time": "2019-07-31T07:19:06+00:00"
-        },
-        {
-            "name": "laravel/framework",
             "version": "v5.8.35",
             "source": {
                 "type": "git",
@@ -707,7 +700,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/5a9e4d241a8b815e16c9d2151e908992c38db197",
                 "reference": "5a9e4d241a8b815e16c9d2151e908992c38db197",
-
                 "shasum": ""
             },
             "require": {
@@ -842,7 +834,7 @@
                 "framework",
                 "laravel"
             ],
-           "time": "2019-08-27T14:35:59+00:00"
+            "time": "2019-09-03T16:44:30+00:00"
         },
         {
             "name": "laravel/tinker",

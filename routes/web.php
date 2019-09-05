@@ -67,9 +67,7 @@ Route::get('/admin/user', function () {
 Route::get('/pt/detail', function () {
     return view('client/pt-detail');
 });
-Route::resource('ad/blog','BlogController');
-
-
+Route::resource('admin/blog','BlogController');
 
 Route::get('/admin/form', function () {
     return view('admin/form');
