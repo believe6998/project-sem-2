@@ -12,14 +12,14 @@
     <title>SB Admin 2 - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="{{ URL::asset("admin/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset("ad/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ URL::asset("admin/css/sb-admin-2.min.css")}}" rel="stylesheet">
-    <link href="{{ URL::asset("admin")}}" rel="stylesheet">
+    <link href="{{ URL::asset("ad/css/sb-admin-2.min.css")}}" rel="stylesheet">
+    <link href="{{ URL::asset("ad")}}" rel="stylesheet">
 
 
 </head>
@@ -45,7 +45,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="/ad">
+            <a class="nav-link" href="/admin">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -59,17 +59,17 @@
         </div>
 
         <li class="nav-item">
-            <a class="nav-link" href="/ad/user">
+            <a class="nav-link" href="/admin/user">
                 <i class="fas fa-fw fa-table"></i>
                 <span>User</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/ad/personal-training">
+            <a class="nav-link" href="/admin/personal-training">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Personal Training</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/ad/blog">
+            <a class="nav-link" href="/admin/blog">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Blog</span></a>
         </li>
@@ -231,26 +231,25 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="{{ URL::asset("admin")}}"></script>
-<script src="{{ URL::asset("admin/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+<script src="{{ URL::asset("ad")}}"></script>
+<script src="{{ URL::asset("ad/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="{{ URL::asset("admin/vendor/jquery-easing/jquery.easing.min.js")}}"></script>
+<script src="{{ URL::asset("ad/vendor/jquery-easing/jquery.easing.min.js")}}"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="{{ URL::asset("admin/js/sb-admin-2.min.js")}}"></script>
+<script src="{{ URL::asset("ad/js/sb-admin-2.min.js")}}"></script>
 
 <!-- Page level plugins -->
-<script src="{{ URL::asset("admin/vendor/chart.js/Chart.min.js")}}"></script>
+<script src="{{ URL::asset("ad/vendor/chart.js/Chart.min.js")}}"></script>
 
 <!-- Page level custom scripts -->
-<script src="{{ URL::asset("admin")}}"></script>
-<script src="{{ URL::asset("admin/js/demo/chart-pie-demo.js")}}"></script>
-<script src="{{ URL::asset("admin/vendor/datatables/jquery.dataTables.min.js")}}"></script>
-<script src="{{ URL::asset("admin/vendor/datatables/dataTables.bootstrap4.min.js")}}"></script>
+<script src="{{ URL::asset("ad/js/demo/chart-pie-demo.js")}}"></script>
+<script src="{{ URL::asset("ad/vendor/datatables/jquery.dataTables.min.js")}}"></script>
+<script src="{{ URL::asset("ad/vendor/datatables/dataTables.bootstrap4.min.js")}}"></script>
 
 <!-- Page level custom scripts -->
-<script src="{{ URL::asset("admin/js/demo/datatables-demo.js")}}"></script>
+<script src="{{ URL::asset("ad/js/demo/datatables-demo.js")}}"></script>
 
 </body>
 
