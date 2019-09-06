@@ -1,22 +1,23 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PersonalTrainingSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeds.x
      *
      * @return void
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         \Illuminate\Support\Facades\DB::table('personal_trainings')->truncate();
         \Illuminate\Support\Facades\DB::table('personal_trainings')->insert([
             [
                 'id' => 1,
                 'name' => 'Phạm Văn Dung',
-                'service' => 'Personal Training',
                 'description' => 'Tập thể hình thay đổi chính bạn',
                 'qualification' => 'Đại học thể dục thể thao tphcm',
                 'experience' => 'Olympus gym, Green garden fitness center, Vinhomes central park',
@@ -28,7 +29,6 @@ class PersonalTrainingSeeder extends Seeder
             [
                 'id' => 2,
                 'name' => 'Nguyễn Văn Tư',
-                'service' => 'Personal Training, KickBoxing',
                 'description' => 'Cao 1m79 - nặng 74kg - PT Gym - PT Boxing, Kickboxing',
                 'qualification' => 'Cử nhân chuyên ngành Huấn luyện viên Thể dục thể thao trường Đại học Thể dục Thể Thao TP.HCM, Huấn luyện viên Kickboxing quóc gia, Huấn luyện viên Võ cổ truyền, HCV Vô địch thế giới Võ cổ truyền 2018',
                 'experience' => '3 năm',
@@ -40,7 +40,6 @@ class PersonalTrainingSeeder extends Seeder
             [
                 'id' => 3,
                 'name' => 'Trần Khả Đạt',
-                'service' => 'Personal Training',
                 'description' => 'Kinh niệm 2 năm giảng dạy tại trung tâm và tự do. Giúp rất nhiều khách hàng đat đc mục tiêu. Tận tình và chuyên nghiệp',
                 'qualification' => 'Chứng chỉ huấn luyện viên - Liên đoàn thể hình, Certificate of Nutrifort - American',
                 'experience' => 'Personal trainer ( 12/2015 - 09/2018 )',
@@ -51,93 +50,96 @@ class PersonalTrainingSeeder extends Seeder
             ],
             [
                 'id' => 4,
-                'name' => 'Roxy Ted',
-                'service' => 'Personal Training',
-                'description' => 'Theo nữ huấn luyện viên thể hình online, sự quyết tâm là chìa khóa giúp vượt qua chán nản, có động lực tiếp tục nghiên cứu, tìm hiểu về tập luyện và chế độ dinh dưỡng phù hợp với thể trạng.',
-                'qualification' => 'Chứng chỉ huấn luyện viên - Liên đoàn thể hình, Certificate of Nutrifort - American',
-                'experience' => 'Personal trainer ( 07/2011 - 09/2018 )',
-                'image' => 'http://timesoft.vn/Images/huan-luyen-vien-the-hinh-online_11eca093002.jpg',
+                'name' => 'Vương Ngọc Thịnh',
+                'description' => 'Swimming, Personal trainer',
+                'qualification' => 'Chứng nhận tham dự giải vô địch Châu Á trẻ, Chứng chỉ cứu hộ, Chứng chỉ huấn luyện viên bơi lội',
+                'experience' => 'Swimming ( 12/2015 - 09/2018), Personal trainer ( 07/2015 - 09/2018 )',
+                'image' => 'http://www.nshapefitness.vn/wp-content/uploads/2015/11/IMG_7473-crop-1.jpg',
                 'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],[
                 'id' => 5,
-                'name' => 'Tula Nguyễn',
-                'service' => 'Personal Training',
-                'description' => 'Huấn luyện viên thể hình Online chia sẻ đã từng trải qua nhiều thất bại, nhưng sự thất bại lớn nhất đó là để bản thân quá bị lệ thuộc và ám ảnh về vấn đề cân nặng thay vì sức khoẻ", Tula Nguyễn chia sẻ.',
-                'qualification' => 'Chứng chỉ huấn luyện viên - Liên đoàn thể hình quốc tế, Certificate of Nutrifort - American',
-                'experience' => 'Personal trainer ( 12/2016 - 09/2018 )',
-                'image' => 'https://www.witseducation.com/fit/wp-content/uploads/2014/12/lifestyle-wellness-coaching-trainer.jpg',
-                'rating' => '70%',
+                'name' => 'Đào Văn Thăng',
+                'description' => 'Kinh niệm trên 18 năm giảng dạy tại trung tâm và tự do. Giúp rất nhiều khách hàng đat đc mục tiêu. Tận tình và chuyên nghiệp',
+                'qualification' => 'Chứng nhận Huấn luyện viên MuayThai(hạng C) của liên đoàn World Muaythai Bangkok, Khóa đào tạo trọng tài muaythai toàn quốc, Khóa đào tạo HLV Thể lực do tiến sĩ William Sullivan cấp',
+                'experience' => 'Boxing, Personal trainer(2002 - 09/2018 )',
+                'image' => 'https://www.tigermuaythai.com/wp-core/wp-content/uploads/2016/03/tmt-trainer-kay-600x900.jpg',
+                'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],[
                 'id' => 6,
-                'name' => 'Trang Lê',
-                'service' => 'Personal Training',
-                'description' => 'KTheo huấn luyện viên thể hình online 23 tuổi, để có cơ bụng chắc khỏe, cô thường chọn các bài pilates kết hợp cùng hít thở. Đối với vòng 3, cô tập các bài lunges, squat, deadlift, tập gym với mức tạ nặng tăng dần theo thời gian để kích thích phần cơ mông phát triển.',
-                'qualification' => 'Chứng chỉ huấn luyện viên cấp quốc gia',
-                'experience' => 'Personal trainer ( 03/2014- 09/2018 )',
-                'image' => 'http://timesoft.vn/Images/huan-luyen-vien-the-hinh-online-6_a7419095032.jpg',
-                'rating' => '80%',
+                'name' => 'Lê Nguyễn Hoàng Khuyên',
+                'description' => 'Bằng kinh nghiệm nhiều năm và sức trẻ của mình, tôi muốn dành tất cả thời gian cho bộ môn tôi yêu và hướng dẫn cho tất cả mọi người.',
+                'qualification' => 'Chứng nhận huấn luyện viên thể hình fitness,đã dạy tại(California fitness, yoga center), PTX2,... ',
+                'experience' => 'Personal trainer, yoga(07/2014 - 09/2018)',
+                'image' => 'https://www.uaepersonaltrainers.com/wp-content/uploads/2017/04/dubai-ladies-female-personal-trainer-josephine.jpg',
+                'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],[
                 'id' => 7,
-                'name' => 'Trần Bích Hạnh',
-                'service' => 'Personal Training',
-                'description' => 'Với những nỗ lực của bản thân và kinh nghiệm giảm cân của mình, nếu bạn cần thuê huấn luyện viên online giảm cân thì Trần Bích Hạnh là 1 cái tên đáng để lưu lại. Các giáo án, lịch tập sẽ được thiết kế riêng cho từng người để đảm bảo là bạn có thể đạt được hiệu quả cao nhất khi theo học. Trần Bích Hạnh có nhiều gói tập khác nhau với giá cả từ 16 buổi với 2 triệu cho đến 5.5 triệu cho 48 buổi tập luyện.',
-                'qualification' => 'Chứng chỉ huấn luyện viên - Liên đoàn thể hình, Certificate of Nutrifort - American',
-                'experience' => 'Personal trainer ( 12/2015 - 09/2018 )',
-                'image' => 'https://cdn.pose.com.vn/legacy/images/baiviet/201711/hanh.jpg',
+                'name' => 'Trần Thị Thúy diễm',
+                'description' => 'Yoga đến với tôi bằng sự đơn giản. Trả hóa cơ thể và tâm trí. Nắng lượng tích cực suy nghĩ lạc quan và lối sống lành mạnh. Chỉ cần bạn có nền tảng vững chắc mọi thứ sẽ trở nên dễ dàng hơn. Tôi được và bạn cũng sẽ được.',
+                'qualification' => 'Chứng nhận Yoga Siromani, Yoga for children, huấn luyện viên yoga - liên đoàn yoga việt nam cấp',
+                'experience' => 'Yoga ( 11/2017 - 09/2018 )',
+                'image' => 'https://www.uaepersonaltrainers.com/wp-content/uploads/2017/04/dubai-ladies-female-personal-trainer-josephine.jpg',
                 'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],[
                 'id' => 8,
-                'name' => 'Hana Giang Anh',
-                'service' => 'Personal Training',
-                'description' => 'Qua kinh nghiệm của chính mình và với tư cách là một huấn luyện viên thể hình lâu năm, Hana Giang Anh khuyến khích mọi phụ nữ (đặc biệt là các bà mẹ) nên tập luyên thể thao để có một sức khỏe tốt hơn để luôn sẵn sàng đón nhận những gì sẽ xảy ra trong tương lai: những kỉ niệm, những thử thách,…',
-                'qualification' => 'Chứng chỉ huấn luyện viên - Liên đoàn thể hình, Certificate of Nutrifort - American',
-                'experience' => 'Personal trainer ( 12/2015 - 09/2018 )',
-                'image' => 'https://media.doisongvietnam.vn/u/rootimage/editor/2017/04/27/00/35/w825/han1493206531_6925.jpg',
+                'name' => 'Lê Văn Đạt',
+                'description' => 'PT kickboxing, MuayThai, Boxing, Gym',
+                'qualification' => 'HCV môn Whusu năm 2016, HCV võ cổ truyền 2018, HCB vovinam 2017,...',
+                'experience' => 'kickboxing, MuayThai, Boxing, Personal trainer ( 08/2011 - 09/2018 )',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG4sl4r6D3Q-nq_mMbVk68RK5cx6ZyngLQnxSzRJMrokczvYMDyQ',
                 'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],[
                 'id' => 9,
-                'name' => 'Trà Li',
-                'service' => 'Personal Training',
-                'description' => 'Kinh niệm 2 năm giảng dạy tại trung tâm và tự do. Giúp rất nhiều khách hàng đat đc mục tiêu. Tận tình và chuyên nghiệp',
-                'qualification' => 'Chứng chỉ huấn luyện viên - Liên đoàn thể hình, Certificate of Nutrifort - American',
-                'experience' => 'Personal trainer ( 12/2014 - 09/2018 )',
-                'image' => 'https://cdn.pose.com.vn/legacy/images/baiviet/201711/trali2.jpg',
+                'name' => 'Lý Lệ Quân',
+                'description' => 'no pain no gain',
+                'qualification' => 'Chứng nhận huấn luyện viên thể hình -fitness, Huấn luyện viên thể hình liên đoàn cử tạ Việt Nam...',
+                'experience' => 'personal trainer ( 01/2011 - 09/2018 )',
+                'image' => 'https://myrealdomain.com/images/female-athletic-body-3.png',
                 'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],[
                 'id' => 10,
-                'name' => 'Ryan Long Fitness',
-                'service' => 'Personal Training',
-                'description' => 'Sức khỏe là điều quan trọng nhất trong cuộc sống, tập GYM làm sao để giữ vững sức khỏe và thay đổi vóc dáng hiệu quả là điều mọi người mong muốn. Tuy nhiên không phải ai cũng có đủ kiến thức chuyên môn cho việc này, là một HLV chuyên nghiệp, RYAN LONG mong muốn mang lại cho tất cả mọi người cách thức tập luyện, chia sẻ kinh nghiệm và vốn hiểu biết của mình để giúp mọi người khỏe mạnh hơn, đẹp hơn và tận hưởng cuộc sống tốt đẹp hơn. SỨC KHỎE CỦA BẠN - TƯƠNG LAI CỦA BẠN.',
-                'qualification' => 'Chứng chỉ huấn luyện viên - Liên đoàn thể hình, Certificate of Nutrifort - American',
-                'experience' => 'Personal trainer ( 12/2015 - 09/2018 )',
-                'image' => 'http://img.youtube.com/vi/IPNoSTw6YTg/hqdefault.jpg',
-                'rating' => '90%',
+                'name' => 'vũ Quang Minh',
+                'description' => 'Giúp mọi người giảm cân và có body đẹp bằng boxing. Tập luyện vào sáng sớm trước 7h hoặc chiều tối từ 6h.',
+                'qualification' => 'Chứng chỉ boxing liên đoàn boxing Việt Nam,huấn luyện viên kickboxing cấp quốc gia, HCV boxing 2017',
+                'experience' => 'Boxing ( 12/2015 - 09/2018 )',
+                'image' => 'https://www.fightfit.com.au/wp-content/uploads/2016/02/TRAINERS-SM-Dinesh-MarkTrainer-Gallery-3_2.jpg',
+                'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],[
                 'id' => 11,
-                'name' => ' An Nguyen Fitness',
-                'service' => 'Personal Training',
-                'description' => 'Đừng đi theo 1 lỗi mòn mãi, đừng sợ sự khác biệt, hãy thử trải nghiệm. Đặc biệt là hãy luôn in từong vào quyết định bản thân bạn. Thất bại cũng không sao hết, chúng ta vấp ngã thì sẽ đứng lên ở chỗ đấy và đi tiếp. Chúng ta dám chấp nhận những điều chúng ta chưa từng làm thì mới có thể nhận được những điều chúng ta chưa từng có.',
-                'qualification' => 'Chứng chỉ huấn luyện viên - Liên đoàn thể hình, Certificate of Nutrifort - American',
-                'experience' => 'Personal trainer ( 12/2015 - 09/2018 )',
-                'image' => 'http://timesoft.vn/Images/huan-luyen-vien-the-hinh-online-21_8da8c104735.jpg',
-                'rating' => '86%',
+                'name' => 'Phan Trung Lưu',
+                'description' => 'Tốt nghiệp hệ chính quy về thể thao của trường Đh TDTT. ĐÃ tốt nghiệp khóa đà tạo kĩ năng và nghiệp vu sư phạm về dạy bơi theo tiêu chuẩn quốc tế của Úc. Có nhiều năm kinh nghiệm dạy bơi cho trẻ e dưới 6 tuổi.',
+                'qualification' => 'Chứng chỉ dạy bơi theo tiêu chuẩn của Úc, bằng an toàn dưới nước (CPR) AUSTSWIM',
+                'experience' => 'Swimming ( 12/2015 - 09/2018 )',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPXdwsOLtuLt5GeKUle3iPoWZOP6LVOwCy3M7jOSb2UQJmMr42',
+                'rating' => '99,9%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],[
+                'id' => 12,
+                'name' => 'Trần Minh Tân',
+                'description' => 'Sức khỏe và thể hình là 2 yếu tố uan trọng trong cuốc sống. Và chọn được người huấn luyện viên phù hợp là yếu tố tiên quyết dẫn đến thành công. Tôi chính là lừa chọn đúng đăn của bạn.',
+                'qualification' => 'Chứng chỉ huấn luyện viên cá nhân cấp quốc gia, Bằng cử nhân ngành giáo dục thể chất, bằng chứng nhận huấn luyện viên của INTERNATIONAL KETTLEBELL ASOCIATION',
+                'experience' => 'personal trainer ( 12/2015 - 09/2018 )',
+                'image' => 'https://fit23dubai.com/wp-content/uploads/2018/10/Justin_mic.jpg?189db0&189db0',
+                'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
         ]);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }
