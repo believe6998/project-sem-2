@@ -347,6 +347,45 @@ text-align: center;
 
 /*end-login-form*/
 
+/*------------------------------user-detail-page---------------------------*/
+
+.card-header-ifmt-user{
+    background: #1d68a7;
+}
+.card-header-ifmt-user h2{
+color: white;
+    font-weight: bold;
+}
+.img-user-detail{
+    padding-left: 26%;
+}
+.txt-body-user-detail ul li label{
+    font-size: 18px;
+    font-weight: bold;
+    color: #1b4b72;
+
+}
+.txt-body-user-detail ul li a i{
+    color: #3f9ae5;
+    opacity: 0.5;
+}
+.txt-body-user-detail ul li a i:hover{
+    opacity: 1;
+}
+.txt-body-user-detail ul li{
+    font-size: 16px;
+
+}
+.txt-body-user-detail ul{
+    list-style: none;
+}
+.txt-body-user-detail{
+padding-left:5% ;
+}
+
+
+/*------------------------------end-user-detail-page---------------------------*/
+
 /*-------register-client--------*/
 .text-btn-register-client{
     font-size: 14px;
@@ -363,7 +402,10 @@ font-style: italic;
 .gender-register-client{
     margin-left: 10px;
 }
-
+.btn-user-detail .btn{
+    font-weight: bold;
+    font-size: 16px;
+}
 
 /*-------register-client--------*/
 

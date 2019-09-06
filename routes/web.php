@@ -35,6 +35,10 @@ Route::get('/contact-us', function () {
 Route::get('/detail-blog', function () {
     return view('client/detail-blog');
 });
+Route::get('/user-detail', function () {
+    return view('client/user-detail');
+});
+
 Route::get('/index-body', function () {
     return view('client/index-body/do-chi-so-co-the');
 });
