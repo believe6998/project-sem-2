@@ -15,7 +15,7 @@ class PersonalTrainingController extends Controller
      */
     public function index()
     {
-        $list = personalTraining::paginate(3);
+        $list = personalTraining::paginate(10);
         return view('client/list-pt',compact('list'));
     }
 
@@ -48,7 +48,7 @@ class PersonalTrainingController extends Controller
      */
     public function show(personalTraining $personalTraining)
     {
-        //
+        return view('client.pt-detail',compact('personalTraining'));
     }
 
     /**
