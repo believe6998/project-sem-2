@@ -47,7 +47,98 @@ class PersonalTrainingSeeder extends Seeder
                 'rating' => '50%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-            ]
+            ],
+            [
+                'id' => 4,
+                'name' => 'Vương Ngọc Thịnh',
+                'description' => 'Swimming, Personal trainer',
+                'qualification' => 'Chứng nhận tham dự giải vô địch Châu Á trẻ, Chứng chỉ cứu hộ, Chứng chỉ huấn luyện viên bơi lội',
+                'experience' => 'Swimming ( 12/2015 - 09/2018), Personal trainer ( 07/2015 - 09/2018 )',
+                'image' => 'http://www.nshapefitness.vn/wp-content/uploads/2015/11/IMG_7473-crop-1.jpg',
+                'rating' => '100%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],[
+                'id' => 5,
+                'name' => 'Đào Văn Thăng',
+                'description' => 'Kinh niệm trên 18 năm giảng dạy tại trung tâm và tự do. Giúp rất nhiều khách hàng đat đc mục tiêu. Tận tình và chuyên nghiệp',
+                'qualification' => 'Chứng nhận Huấn luyện viên MuayThai(hạng C) của liên đoàn World Muaythai Bangkok, Khóa đào tạo trọng tài muaythai toàn quốc, Khóa đào tạo HLV Thể lực do tiến sĩ William Sullivan cấp',
+                'experience' => 'Boxing, Personal trainer(2002 - 09/2018 )',
+                'image' => 'https://www.tigermuaythai.com/wp-core/wp-content/uploads/2016/03/tmt-trainer-kay-600x900.jpg',
+                'rating' => '100%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],[
+                'id' => 6,
+                'name' => 'Lê Nguyễn Hoàng Khuyên',
+                'description' => 'Bằng kinh nghiệm nhiều năm và sức trẻ của mình, tôi muốn dành tất cả thời gian cho bộ môn tôi yêu và hướng dẫn cho tất cả mọi người.',
+                'qualification' => 'Chứng nhận huấn luyện viên thể hình fitness,đã dạy tại(California fitness, yoga center), PTX2,... ',
+                'experience' => 'Personal trainer, yoga(07/2014 - 09/2018)',
+                'image' => 'https://www.uaepersonaltrainers.com/wp-content/uploads/2017/04/dubai-ladies-female-personal-trainer-josephine.jpg',
+                'rating' => '100%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],[
+                'id' => 7,
+                'name' => 'Trần Thị Thúy diễm',
+                'description' => 'Yoga đến với tôi bằng sự đơn giản. Trả hóa cơ thể và tâm trí. Nắng lượng tích cực suy nghĩ lạc quan và lối sống lành mạnh. Chỉ cần bạn có nền tảng vững chắc mọi thứ sẽ trở nên dễ dàng hơn. Tôi được và bạn cũng sẽ được.',
+                'qualification' => 'Chứng nhận Yoga Siromani, Yoga for children, huấn luyện viên yoga - liên đoàn yoga việt nam cấp',
+                'experience' => 'Yoga ( 11/2017 - 09/2018 )',
+                'image' => 'https://www.uaepersonaltrainers.com/wp-content/uploads/2017/04/dubai-ladies-female-personal-trainer-josephine.jpg',
+                'rating' => '100%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],[
+                'id' => 8,
+                'name' => 'Lê Văn Đạt',
+                'description' => 'PT kickboxing, MuayThai, Boxing, Gym',
+                'qualification' => 'HCV môn Whusu năm 2016, HCV võ cổ truyền 2018, HCB vovinam 2017,...',
+                'experience' => 'kickboxing, MuayThai, Boxing, Personal trainer ( 08/2011 - 09/2018 )',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG4sl4r6D3Q-nq_mMbVk68RK5cx6ZyngLQnxSzRJMrokczvYMDyQ',
+                'rating' => '100%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],[
+                'id' => 9,
+                'name' => 'Lý Lệ Quân',
+                'description' => 'no pain no gain',
+                'qualification' => 'Chứng nhận huấn luyện viên thể hình -fitness, Huấn luyện viên thể hình liên đoàn cử tạ Việt Nam...',
+                'experience' => 'personal trainer ( 01/2011 - 09/2018 )',
+                'image' => 'https://myrealdomain.com/images/female-athletic-body-3.png',
+                'rating' => '100%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],[
+                'id' => 10,
+                'name' => 'vũ Quang Minh',
+                'description' => 'Giúp mọi người giảm cân và có body đẹp bằng boxing. Tập luyện vào sáng sớm trước 7h hoặc chiều tối từ 6h.',
+                'qualification' => 'Chứng chỉ boxing liên đoàn boxing Việt Nam,huấn luyện viên kickboxing cấp quốc gia, HCV boxing 2017',
+                'experience' => 'Boxing ( 12/2015 - 09/2018 )',
+                'image' => 'https://www.fightfit.com.au/wp-content/uploads/2016/02/TRAINERS-SM-Dinesh-MarkTrainer-Gallery-3_2.jpg',
+                'rating' => '100%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],[
+                'id' => 11,
+                'name' => 'Phan Trung Lưu',
+                'description' => 'Tốt nghiệp hệ chính quy về thể thao của trường Đh TDTT. ĐÃ tốt nghiệp khóa đà tạo kĩ năng và nghiệp vu sư phạm về dạy bơi theo tiêu chuẩn quốc tế của Úc. Có nhiều năm kinh nghiệm dạy bơi cho trẻ e dưới 6 tuổi.',
+                'qualification' => 'Chứng chỉ dạy bơi theo tiêu chuẩn của Úc, bằng an toàn dưới nước (CPR) AUSTSWIM',
+                'experience' => 'Swimming ( 12/2015 - 09/2018 )',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPXdwsOLtuLt5GeKUle3iPoWZOP6LVOwCy3M7jOSb2UQJmMr42',
+                'rating' => '99,9%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],[
+                'id' => 12,
+                'name' => 'Trần Minh Tân',
+                'description' => 'Sức khỏe và thể hình là 2 yếu tố uan trọng trong cuốc sống. Và chọn được người huấn luyện viên phù hợp là yếu tố tiên quyết dẫn đến thành công. Tôi chính là lừa chọn đúng đăn của bạn.',
+                'qualification' => 'Chứng chỉ huấn luyện viên cá nhân cấp quốc gia, Bằng cử nhân ngành giáo dục thể chất, bằng chứng nhận huấn luyện viên của INTERNATIONAL KETTLEBELL ASOCIATION',
+                'experience' => 'personal trainer ( 12/2015 - 09/2018 )',
+                'image' => 'https://fit23dubai.com/wp-content/uploads/2018/10/Justin_mic.jpg?189db0&189db0',
+                'rating' => '100%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
         ]);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
