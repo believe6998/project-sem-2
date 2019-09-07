@@ -114,11 +114,12 @@
                             <a href="#" style="color: black"><h4>{{$blogs->title}}</h4></a>
                         </div>
                         <div class="text2-img">
-                            <a style="text-decoration: none" href=""><h4 href="#">Chi tiết</h4></a></div>
+                            <a style="text-decoration: none" href="{{route('blog.show',$blogs->id)}}"><h4 href="#">Chi tiết</h4></a></div>
                         <p>
                             {{$blogs->detail}}
                         </p>
-
+                        <div>
+                        </div>
                         <hr class="coll-divider short-bg-line center">
                         <a href="{{ route('blog.edit',$blogs->id)}}">
                             <button style="width: 50px;border-radius: 3px" class="btn-primary mr-3"> Sửa</button>
@@ -128,9 +129,9 @@
                                     class="btn-danger btn-delete"> Xoá
                             </button>
                         </a>
+                        <i class="far fa-calendar-alt" style="float: right"> {{$blogs->created_at}}</i>
+                        <strong style="float: contour;margin-left: 20%"> {{$blogs->category}} </strong>
 
-
-                        <i class="far fa-calendar-alt" style="float: right"> Mei 22, 2018 </i>
                         <hr class="coll-divider short-bg-line center">
                     </div>
                 @endforeach

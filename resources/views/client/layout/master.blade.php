@@ -20,7 +20,7 @@
     <div class="row  header-style  " id="navbar">
         <div class="col-3 logo-header mt-2 mb-2 ">
             <a href="/"><img src="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" alt="..."
-                 class="img-thumbnail logo-image"></a>
+                 class=" logo-image"></a>
         </div>
         <div class="col-7  navbar-header">
             <nav class="navbar navbar-expand-lg navbar-light bg-light layout-nav-bar navbar-header-control ">
@@ -444,16 +444,17 @@
         startEvent: 'DOMContentLoaded'
     });
 </script>
-<script>function inViewport($el) {
+<script>
+    function inViewport($el) {
         var H = $(window).height(),
-            r = $el[0].getBoundingClientRect(), t = r.top, b = r.bottom;
-        return Math.max(0, t > 0 ? H - t : (b < H ? b : H));
+            r = $el[0].getBoundingClientRect(), t=r.top, b=r.bottom;
+        return Math.max(0, t>0? H-t : (b<H?b:H));
     }
 
-    $(window).on("scroll resize", function () {
+    $(window).on("scroll resize", function(){
         var window_offset = inViewport($('.intro'));
         $(".overlay").height(window_offset);
-        $(".caption").css("bottom", (window_offset / 4));
+        $(".caption").css("bottom", (window_offset / 4) );
     });
 
     class ShapeOverlays {

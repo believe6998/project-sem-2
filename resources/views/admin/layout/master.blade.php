@@ -75,7 +75,7 @@
                 <span>Blog</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/ad/blog/create">
+            <a class="nav-link" href="/admin/blog/create">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Form-Blog</span></a>
         </li>
