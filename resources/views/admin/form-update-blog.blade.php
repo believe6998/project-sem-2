@@ -12,7 +12,8 @@
 
                         <div class="input-group mb-3">
                             <div class="custom-file">
-                                <input multiple type="file" id="inputGroupFile01" name="thumbnail[]">
+                                <input multiple type="file" id="inputGroupFile01" value="{{$blog->thumbnail}}"
+                                       name="thumbnail[]">
                             </div>
                         </div>
                     </div>
@@ -33,13 +34,14 @@
                 <div class="col-sm-7">
                     <div class="form-group">
                         <label for="contentcheck">content</label>
-                        <textarea value="{{$blog->content}}" contenteditable="true" name="contentcheck"
+                        <textarea value="" name="contentcheck"
                                   class="  form-control rounded-0"
                                   id="ckeditor1"
                                   rows="10"></textarea>
                     </div>
 
                 </div>
+                <input type="hidden" value="{{$blog->content}}" id="hidden">
                 <div class="form-group">
 
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -51,6 +53,9 @@
 @section('js')
     <script>
         CKEDITOR.replace('contentcheck');
+
+        $('#ckeditor1').val($('#hidden').val())
+
     </script>
 
 

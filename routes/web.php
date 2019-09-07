@@ -20,9 +20,8 @@ Route::resource('category', 'CategoryController');
 Route::get('cl/blog', function () {
     return view('client/main-blog');
 });
-Route::get('/', function () {
-    return view('client/home');
-});
+Route::get('/', 'ClientBlogController@indexhome');
+
 
 Route::get('/contact-us', function () {
     return view('client/contact');
@@ -68,6 +67,8 @@ Route::get('/pt/detail', function () {
     return view('client/pt-detail');
 });
 Route::resource('admin/blog','BlogController');
+
+Route::resource('/blog','ClientBlogController',['as' => 'client']);
 
 Route::get('/admin/form', function () {
     return view('admin/form');

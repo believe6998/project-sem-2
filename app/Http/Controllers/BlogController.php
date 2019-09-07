@@ -61,7 +61,7 @@ class BlogController extends Controller
         //dd($userImage);
 
 
-        return redirect('ad/blog');
+        return redirect('admin/blog');
     }
 
 
@@ -73,11 +73,11 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        /* $blog = Blog::find($id);
+         $blog = Blog::find($id);
          if ($blog == null) {
              return view('error.404');
          }
-         return view('')->with('blog', $blog);*/
+         return view('admin/detail-blog')->with('blog', $blog);
     }
 
     /**
@@ -114,7 +114,7 @@ class BlogController extends Controller
         }
         $obj->thumbnail = $image_url;
         $obj->save();
-        return redirect('ad/blog');
+        return redirect('admin/blog');
     }
 
     /**
@@ -127,7 +127,7 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $blog->delete();
-        return redirect('ad/blog');
+        return redirect('admin/blog');
 
     }
 
