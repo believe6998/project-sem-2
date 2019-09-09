@@ -15,7 +15,8 @@
                                     <div class="col-6 ">
                                         <div class="form-group">
                                             <label class="font-weight-bold"><i class="fas fa-user"></i>&nbsp;Họ</label>
-                                            <input type="text" class="form-control"  placeholder="Họ của bạn"name="firstName" required autocomplete="firstName">
+                                            <input type="text" class="form-control"  placeholder="Họ của bạn"name="firstName">
+
                                         </div>
                                     </div>
                                     <div class="col-6 ">

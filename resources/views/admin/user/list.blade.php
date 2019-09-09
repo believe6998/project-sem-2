@@ -69,7 +69,7 @@
                                 <td>{{$item->updated_at}}</td>
                                 <td>
                                     <div class="row">
-                                        <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
+                                        <div class="col-6 "><a href="{{route('user.edit',$item->id)}}" class="text-primary"><i class="fas fa-edit"></i></a></div>
                                         <div class="col-6"><a class="btn-delete-user text-danger" href="javascript:void(0)" id="btn-delete-user{{$item->id}}"><i class="fas fa-trash-alt"></i></a></div>
                                     </div>
                                 </td>
