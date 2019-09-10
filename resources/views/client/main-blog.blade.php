@@ -20,10 +20,10 @@
                                  alt="">
 
                         <div class="text-img">
-                            <a href="{{route('blog.show',$blogs->id)}}" style="color: black"><h4>{{$blogs->title}}</h4></a>
+                            <a href="{{route('client.blog.show',$blogs->id)}}" style="color: black"><h4>{{$blogs->title}}</h4></a>
                         </div>
                         <div class="text2-img">
-                            <a style="text-decoration: none" href="{{route('blog.show',$blogs->id)}}"><h4 href="#">Chi tiết</h4></a></div>
+                            <a style="text-decoration: none" href="{{route('client.blog.show',$blogs->id)}}"><h4 href="#">Chi tiết</h4></a></div>
                         <p>
                             {{$blogs->detail}}
                         </p>

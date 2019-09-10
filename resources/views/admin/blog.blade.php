@@ -124,7 +124,7 @@
                         <a href="{{ route('blog.edit',$blogs->id)}}">
                             <button style="width: 50px;border-radius: 3px" class="btn-primary mr-3"> Sửa</button>
                         </a>
-                        <a href="javascript:void(0)">
+                        <a>
                             <button id="id-delete-{{$blogs->id}}" style="width: 50px;border-radius: 3px"
                                     class="btn-danger btn-delete"> Xoá
                             </button>

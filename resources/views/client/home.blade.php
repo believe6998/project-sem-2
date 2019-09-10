@@ -197,7 +197,7 @@
                         của chúng tôi. Để biết thêm thông tin bấm vào nút bên dưới.</h4>
                 </div>
                 <div data-aos="zoom-in" class="container-gt-pt">
-                    <a href="#" class="btn-gt-pt">
+                    <a href="#" style="text-decoration: none" class="btn-gt-pt">
                         <svg width="277" height="62">
                             <defs>
                                 <linearGradient id="grad1">
@@ -208,7 +208,7 @@
                             <rect x="5" y="5" rx="25" fill="none" stroke="url(#grad1)" width="266" height="50"></rect>
                         </svg>
                         <!--<span>Voir mes réalisations</span>-->
-                        <span>Welcome in my world</span>
+                        <span >Welcome in my world</span>
                     </a>
                 </div>
             </div>
@@ -299,11 +299,11 @@
                 <div class="col-sm-5 gt-blog">
                     <img width="100%" height="auto"
                          src="{{$blogs->thumbnail}}" alt="">
-                    <div class="mt-5"><h2>{{$blogs->title}}</h2></div>
-                    <div class="mt-4 "><a style="text-decoration: none" href=""><h4>Training</h4></a></div>
+                    <div class="mt-5"><a class="showmore" style="text-decoration: none;color: #4d4d4d" href="{{route('client.blog.show',$blogs->id)}}"><h2>{{$blogs->title}}</h2></a></div>
+                    <div class="mt-4 "><a style="text-decoration: none" href=""><h4>{{$blogs->category}}</h4></a></div>
                     <div class="mt-4"><h5 style="line-height: 1.7em">{{$blogs->detail}}</h5></div>
-                    <div class="mt-4"><a style="text-decoration: none;color: gray"
-                                         href="{{route('client.blog.show',$blogs->id)}}"><h4>Đọc tiếp</h4></a></div>
+                    <div class="mt-4"><a class="showmore" style="text-decoration: none;color: gray"
+                                         href=""><h4 >Đọc tiếp</h4></a></div>
                 </div>
             @endforeach
         </div>
