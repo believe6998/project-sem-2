@@ -59,8 +59,8 @@ Route::get('/admin/blog', function () {
     return view('admin/blog');
 });
 
-Route::get('/admin/user', function () {
-    return view('admin/user');
+Route::get('/admin/user/edit', function () {
+    return view('admin/user/edit');
 });
 
 Route::get('/pt/detail', function () {
@@ -74,8 +74,10 @@ Route::get('/admin/form', function () {
     return view('admin/form');
 });
 
+Route::resource('/admin/user', 'UserController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 

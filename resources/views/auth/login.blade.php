@@ -9,7 +9,6 @@
 
                     <div class="card-body card-body-lg-form-cl mt-0">
                         <form class="mt-5"  method="POST" action="{{ route('login') }}" >
-
                             @csrf
 
 {{--                            <div class="form-group row">--}}
