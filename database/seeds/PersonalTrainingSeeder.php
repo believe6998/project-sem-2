@@ -114,7 +114,7 @@ class PersonalTrainingSeeder extends Seeder
                 'description' => 'Giúp mọi người giảm cân và có body đẹp bằng boxing. Tập luyện vào sáng sớm trước 7h hoặc chiều tối từ 6h.',
                 'qualification' => 'Chứng chỉ boxing liên đoàn boxing Việt Nam,huấn luyện viên kickboxing cấp quốc gia, HCV boxing 2017',
                 'experience' => 'Boxing ( 12/2015 - 09/2018 )',
-                'image' => 'https://www.fightfit.com.au/wp-content/uploads/2016/02/TRAINERS-SM-Dinesh-MarkTrainer-Gallery-3_2.jpg',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPXdwsOLtuLt5GeKUle3iPoWZOP6LVOwCy3M7jOSb2UQJmMr42',
                 'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -124,7 +124,7 @@ class PersonalTrainingSeeder extends Seeder
                 'description' => 'Tốt nghiệp hệ chính quy về thể thao của trường Đh TDTT. ĐÃ tốt nghiệp khóa đà tạo kĩ năng và nghiệp vu sư phạm về dạy bơi theo tiêu chuẩn quốc tế của Úc. Có nhiều năm kinh nghiệm dạy bơi cho trẻ e dưới 6 tuổi.',
                 'qualification' => 'Chứng chỉ dạy bơi theo tiêu chuẩn của Úc, bằng an toàn dưới nước (CPR) AUSTSWIM',
                 'experience' => 'Swimming ( 12/2015 - 09/2018 )',
-                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPXdwsOLtuLt5GeKUle3iPoWZOP6LVOwCy3M7jOSb2UQJmMr42',
+                'image' => 'http://iptfitness.co.uk/wp-content/uploads/2015/03/aimee-personal-trainer-1.jpg',
                 'rating' => '99,9%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
