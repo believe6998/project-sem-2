@@ -20,7 +20,7 @@ Route::resource('category', 'CategoryController');
 Route::get('cl/blog', function () {
     return view('client/main-blog');
 });
-Route::get('/', 'ClientBlogController@indexhome');
+//Route::get('/', 'ClientBlogController@indexhome');
 
 
 Route::get('/contact-us', function () {
@@ -78,6 +78,6 @@ Route::resource('/admin/user', 'UserController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/','ClientBlogController@indexhome')->name('home');
 
 

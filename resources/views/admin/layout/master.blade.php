@@ -268,22 +268,22 @@
 
 <script>
     $('.btn-delete').click(function () {
-        if (confirm('Are you sure wanna delete this game?')) {
-            var deleteId = $(this).attr('id').replace('id-delete-', '');
-            var currentItem = $(this);
-            $.ajax({
-                url: '/ad/blog/' + deleteId,
-                method: 'DELETE',
-                data: {
-                    // language=JQuery-CSS
-                    '_token': $('meta[name=csrf-token]').attr('content')
-                },
-                error: function () {
-                    alert('Success');
-                    location.reload();
-                }
-            });
+        if (!confirm('Are you sure wanna delete this game?')) {
+            return;
         }
+        var deleteId = $(this).attr('id').replace('id-delete-', '');
+        $.ajax({
+            url: '/admin/blog/' + deleteId,
+            method: 'DELETE',
+            data: {
+                // language=JQuery-CSS
+                '_token': $("meta[name=csrf-token]").attr('content')
+            },
+            error: function () {
+                alert('Success');
+                location.reload();
+            }
+        });
     });
 
     $('.btn-delete-user').click(function () {

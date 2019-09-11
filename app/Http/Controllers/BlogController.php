@@ -15,6 +15,7 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $blog = Blog::latest()->paginate(4);
