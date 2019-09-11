@@ -23,9 +23,10 @@
                             <span class="fa fa-star"></span>
                         </h3>
                     </div>
-                    <div><h2 style="color: #3e70ff">HLV-Yoga</h2></div>
-                    <div class="mt-5"><h3>Heart Bag</h3></div>
-                    <div class="row mt-5">
+                    <div class="text-secondary">(1 đánh giá)</div>
+                    <div class="pt-2"><h3>Phan Hoài Nam</h3></div>
+                    <div class=""><h3>Heart Bag</h3></div>
+                    <div class="row">
                         <div class="col-sm-7 mt-3">
                             <div class="container">
                                 <div class="row">
@@ -46,8 +47,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="mt-5 ml-4 row">
                         <div class="row" style="width: 100%">
@@ -243,8 +242,9 @@
 
                 <div class="item-container">
                     <div class="item-image-wrapper">
-                        <img src="https://thumbs.dreamstime.com/x/afro-american-woman-juggling-objects-beautiful-multiple-over-air-60663715.jpg"
-                             alt=""/>
+                        <img
+                            src="https://thumbs.dreamstime.com/x/afro-american-woman-juggling-objects-beautiful-multiple-over-air-60663715.jpg"
+                            alt=""/>
                     </div>
                     <h2 class="item-title"><a href="#">First Item</a></h2>
                     <p class="item-desc">
@@ -280,8 +280,9 @@
 
                 <div class="item-container">
                     <div class="item-image-wrapper">
-                        <img src="https://thumbs.dreamstime.com/x/business-communications-technology-people-hand-digital-tablet-smartphone-papers-various-office-objects-table-flat-70058937.jpg"
-                             alt=""/>
+                        <img
+                            src="https://thumbs.dreamstime.com/x/business-communications-technology-people-hand-digital-tablet-smartphone-papers-various-office-objects-table-flat-70058937.jpg"
+                            alt=""/>
                     </div>
                     <h2 class="item-title"><a href="#">Third Item</a></h2>
                     <p class="item-desc">
@@ -335,8 +336,9 @@
 
                 <div class="item-container">
                     <div class="item-image-wrapper">
-                        <img src="https://thumbs.dreamstime.com/x/happiness-free-happy-woman-enjoying-sunset-beautiful-white-dress-embracing-golden-sunshine-glow-arms-54515131.jpg"
-                             alt=""/>
+                        <img
+                            src="https://thumbs.dreamstime.com/x/happiness-free-happy-woman-enjoying-sunset-beautiful-white-dress-embracing-golden-sunshine-glow-arms-54515131.jpg"
+                            alt=""/>
                     </div>
                     <h2 class="item-title"><a href="#">sixth Item</a></h2>
                     <p class="item-desc">
@@ -373,8 +375,9 @@
 
                 <div class="item-container">
                     <div class="item-image-wrapper">
-                        <img src="http://www.freeimageslive.com/galleries/workplace/education/preview/computer_learning.jpg"
-                             alt=""/>
+                        <img
+                            src="http://www.freeimageslive.com/galleries/workplace/education/preview/computer_learning.jpg"
+                            alt=""/>
                     </div>
                     <h2 class="item-title"><a href="#">Eighth Item</a></h2>
                     <p class="item-desc">
@@ -392,8 +395,9 @@
 
                 <div class="item-container">
                     <div class="item-image-wrapper">
-                        <img src="http://www.freeimageslive.com/galleries/workplace/education/preview/university_certificate.jpg"
-                             alt=""/>
+                        <img
+                            src="http://www.freeimageslive.com/galleries/workplace/education/preview/university_certificate.jpg"
+                            alt=""/>
                     </div>
                     <h2 class="item-title"><a href="#">Ninth Item</a></h2>
                     <p class="item-desc">

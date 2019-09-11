@@ -286,6 +286,26 @@
         });
     });
 
+    $('.btn-delete-user').click(function () {
+        if (confirm('Are you sure wanna delete this user?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-user', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/user/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                success: function () {
+                    alert('Success');
+                    currentItem.closest("tr").remove();
+                },
+                error: function () {
+                    alert('Error');
+                }
+            });
+        }
+    });
 </script>
 
 </body>

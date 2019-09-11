@@ -15,7 +15,7 @@ class PersonalTrainingController extends Controller
      */
     public function index()
     {
-        $list = personalTraining::paginate(10);
+        $list = personalTraining::paginate(20);
         return view('client/list-pt',compact('list'));
     }
 

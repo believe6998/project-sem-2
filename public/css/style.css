@@ -1773,3 +1773,22 @@ a {
     line-height: 27px;
     text-align: center;
 }
+
+.star-ratings-sprite-pt-detail {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+    font-size: 0;
+    height: 21px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 110px;
+    margin-right: 100px;
+}
+
+.star-ratings-sprite-rating-pt-detail {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x 0 100%;
+    float: left;
+    height: 21px;
+    display:block;
+}
+
