@@ -1791,4 +1791,35 @@ a {
     height: 21px;
     display:block;
 }
+.card-hd-list-category h5 a{
+    text-decoration: none;
+}
+.tr-category-ad th{
+    text-align: center;
+}
+
+.tr-category-ad-item td{
+    text-align: center;
+}
+
+.btn-edit-ct-ad{
+    margin-right: -30px;
+
+}
+.btn-dlt-ct-ad{
+   margin-left: -45px;
+}
+
+.btn-acept-cr-ad-ct{
+    margin-top: 80px;
+    margin-left: 10px;
+}
+.form-cr-cate-ad{
+    padding-top: 40px;
+    padding-left: 15%;
+    padding-bottom: 40px;
+
+}
+
+
 
