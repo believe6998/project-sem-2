@@ -1700,7 +1700,7 @@ a {
 }
 
 #dLabel {
-    width: 240px;
+    width: 160px;
     height: 40px;
     border-radius: 4px;
     background-color: #fff;
@@ -1768,7 +1768,7 @@ a {
 }
 
 .time {
-    border: 1px salmon solid;
+    border: 1px  solid;
     font-size: 15px;
     line-height: 27px;
     text-align: center;
@@ -1782,7 +1782,6 @@ a {
     overflow: hidden;
     text-indent: -999em;
     width: 110px;
-    margin-right: 100px;
 }
 
 .star-ratings-sprite-rating-pt-detail {

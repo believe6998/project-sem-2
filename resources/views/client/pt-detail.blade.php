@@ -15,13 +15,8 @@
                     </div><!--inner-->
                 </div><!-- col-sm-6  -->
                 <div class="col-sm-6" style="margin-left: 9%">
-                    <div>
-                        <h3><span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </h3>
+                    <div class="star-ratings-sprite-pt-detail"><span style="width:70%"
+                                                           class="star-ratings-sprite-rating-pt-detail"></span>
                     </div>
                     <div class="text-secondary">(1 đánh giá)</div>
                     <div class="pt-2"><h3>Phan Hoài Nam</h3></div>
@@ -31,13 +26,13 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="dropdown">
+                                        <div class="dropdown w-25">
                                             <button id="dLabel" class="dropdown-select " type="button"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                 Thời Gian
                                                 <span class="caret"></span>
                                             </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                            <ul class="dropdown-menu w-25" aria-labelledby="dLabel" >
                                                 <li>1 Ngày</li>
                                                 <li>1 Tuần</li>
                                                 <li>1 Tháng</li>
@@ -50,23 +45,19 @@
                     </div>
                     <div class="mt-5 ml-4 row">
                         <div class="row" style="width: 100%">
-                            <div class="col-3 time"> 05:00 - 07:00</div>
-                            <div class="col-3 time"> 05:00 - 07:00</div>
-                            <div class="col-3 time"> 05:00 - 07:00</div>
-                            <div class="col-3 time"> 05:00 - 07:00</div>
-                        </div>
-                        <div class="row" style="width: 100%">
-                            <div class="col-3 time"> 05:00 - 07:00</div>
-                            <div class="col-3 time"> 05:00 - 07:00</div>
-                            <div class="col-3 time"> 05:00 - 07:00</div>
-                            <div class="col-3 time"> 05:00 - 07:00</div>
+                            <div class="col-4 time"> 05:00 - 07:00</div>
+                            <div class="col-4 time"> 07:00 - 09:00</div>
+                            <div class="col-4 time"> 09:00 - 11:00</div>
+                            <div class="col-4 time"> 02:00 - 04:00</div>
+                            <div class="col-4 time"> 04:00 - 06:00</div>
+                            <div class="col-4 time"> 06:00 - 09:00</div>
                         </div>
                     </div>
                     <div class="row mt-5">
                         <div class="col-sm-7"></div>
                         <div class="col-sm-5" style="width: 190px; height: 50px;float: right">
-                            <button style="width: 100%;height: 100%;background: #4a9bbf;color: white;border-radius: 3px;font-size: 16px">
-                                Trải nghiệm ngay
+                            <button class="btn btn-primary pl-3 pr-3 pt-2 pb-2 ">
+                                Đặt lịch
                             </button>
                         </div>
                     </div>
