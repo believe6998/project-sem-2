@@ -65,6 +65,11 @@
                 <span>User</span></a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="/admin/category">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Category</span></a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/admin/personal-training">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Personal Training</span></a>
@@ -79,7 +84,6 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Form-Blog</span></a>
         </li>
-
 
 
         <!-- Divider -->
@@ -306,6 +310,30 @@
             });
         }
     });
+</script>
+<script>
+    $('.btn-delete-ad-category').click(function () {
+        if (confirm('Bạn có chắc muốn xóa danh mục này không?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-ad-category', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/category/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                success: function () {
+                    alert('Xóa danh mục thành công!');
+                    currentItem.closest("tr").remove();
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau!');
+                }
+            });
+        }
+    });
+
+
 </script>
 
 </body>

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('personal-training', 'PersonalTrainingController');
-Route::resource('category', 'CategoryController');
+Route::resource('/admin/category', 'AdminCategoryController');
 
 Route::get('cl/blog', function () {
     return view('client/main-blog');
