@@ -65,8 +65,11 @@ class AdminPTController extends Controller
      * @param \App\AdminPT $adminPT
      * @return \Illuminate\Http\Response
      */
-    public function show(PersonalTraining $PersonalTraining)
+    public function show($id)
     {
+        $PersonalTraining = PersonalTraining::find($id);
+        $data = ['PersonalTraining' => $PersonalTraining];
+        return view('admin.pt.detail', $data);
 
     }
 
