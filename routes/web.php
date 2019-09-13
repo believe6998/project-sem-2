@@ -68,6 +68,8 @@ Route::get('/pt/detail', function () {
 });
 Route::resource('admin/blog','BlogController');
 
+Route::resource('admin/pt','AdminPTController');
+
 Route::resource('/blog','ClientBlogController',['as' => 'client']);
 
 Route::get('/admin/form', function () {

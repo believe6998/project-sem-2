@@ -306,6 +306,26 @@
             });
         }
     });
+    $('.btn-delete-pt').click(function () {
+        if (confirm('Are you sure wanna delete this user?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-pt', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/pt/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                success: function () {
+                    alert('Success');
+                    currentItem.closest("tr").remove();
+                },
+                error: function () {
+                    alert('Error');
+                }
+            });
+        }
+    });
 </script>
 
 </body>
