@@ -15,7 +15,7 @@ class RoleController extends Controller
     public function roleAdmin(){
         $user =Auth::user();
         if ($user->hasRole('admin')) {
-            return  view('admin.home');
+            return  view('admin/home');
         }else{
             return "ban khong phai la admin";
         }

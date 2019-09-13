@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('personal-training', 'PersonalTrainingController');
-Route::resource('category', 'CategoryController');
+Route::resource('/admin/category', 'AdminCategoryController');
 
 Route::get('cl/blog', function () {
     return view('client/main-blog');
 });
-Route::get('/', 'ClientBlogController@indexhome');
+//Route::get('/', 'ClientBlogController@indexhome');
 
 
 Route::get('/contact-us', function () {
@@ -80,6 +80,6 @@ Route::resource('/admin/user', 'UserController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/','ClientBlogController@indexhome')->name('home');
 
 

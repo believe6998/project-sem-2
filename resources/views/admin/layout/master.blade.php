@@ -65,6 +65,11 @@
                 <span>User</span></a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="/admin/category">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Category</span></a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/admin/personal-training">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Personal Training</span></a>
@@ -79,7 +84,6 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Form-Blog</span></a>
         </li>
-
 
 
         <!-- Divider -->
@@ -268,22 +272,22 @@
 
 <script>
     $('.btn-delete').click(function () {
-        if (confirm('Are you sure wanna delete this game?')) {
-            var deleteId = $(this).attr('id').replace('id-delete-', '');
-            var currentItem = $(this);
-            $.ajax({
-                url: '/ad/blog/' + deleteId,
-                method: 'DELETE',
-                data: {
-                    // language=JQuery-CSS
-                    '_token': $('meta[name=csrf-token]').attr('content')
-                },
-                error: function () {
-                    alert('Success');
-                    location.reload();
-                }
-            });
+        if (!confirm('Are you sure wanna delete this game?')) {
+            return;
         }
+        var deleteId = $(this).attr('id').replace('id-delete-', '');
+        $.ajax({
+            url: '/admin/blog/' + deleteId,
+            method: 'DELETE',
+            data: {
+                // language=JQuery-CSS
+                '_token': $("meta[name=csrf-token]").attr('content')
+            },
+            error: function () {
+                alert('Success');
+                location.reload();
+            }
+        });
     });
 
     $('.btn-delete-user').click(function () {
@@ -306,6 +310,29 @@
             });
         }
     });
+</script>
+<script>
+    $('.btn-delete-ad-category').click(function () {
+        if (confirm('Bạn có chắc muốn xóa danh mục này không?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-ad-category', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/category/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                success: function () {
+                    alert('Xóa danh mục thành công!');
+                    currentItem.closest("tr").remove();
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau!');
+                }
+            });
+        }
+    });
+
     $('.btn-delete-pt').click(function () {
         if (confirm('Are you sure wanna delete this user?')) {
             var deleteId = $(this).attr('id').replace('btn-delete-pt', '');
