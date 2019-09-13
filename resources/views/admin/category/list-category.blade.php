@@ -1,7 +1,6 @@
 @extends('admin.layout.master')
 @section('content')
     <div class="container-fluid">
-
         <div class="card">
             <div class="card-header text-center"><h2 class="mt-1 font-weight-bold">Danh sách danh mục</h2></div>
             <div class="card-body card-hd-list-category">
