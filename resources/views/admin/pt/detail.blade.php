@@ -42,7 +42,7 @@
             <div>
                 <h4 style="color: #1f6fb2">Rating:</h4>
                 <div>
-                    <p style="color: red">
+                    <p style="color:red">
                         {{$PersonalTraining->rating}}
                     </p>
                 </div>

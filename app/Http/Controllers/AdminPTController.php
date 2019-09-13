@@ -40,11 +40,11 @@ class AdminPTController extends Controller
     public function store(PT_Validate $request)
     {
         $request->validated();
-        $personalTraining = new PersonalTraining();
-        $personalTraining->name = $request->get('name');
-        $personalTraining->description = $request->get('description');
-        $personalTraining->qualification = $request->get('qualification');
-        $personalTraining->experience = $request->get('experience');
+        $PersonalTraining = new PersonalTraining();
+        $PersonalTraining->name = $request->get('name');
+        $PersonalTraining->description = $request->get('description');
+        $PersonalTraining->qualification = $request->get('qualification');
+        $PersonalTraining->experience = $request->get('experience');
         $files = $request->file('image');
         $image_url = '';
         foreach ($files as $file) {
@@ -52,11 +52,11 @@ class AdminPTController extends Controller
             Cloudder::upload($img, null);
             $image_url .= Cloudder::show(Cloudder::getPublicId());
         }
-        $personalTraining->image = $image_url;
-        $personalTraining->rating = $request->get('rating');
-        $personalTraining->status = $request->get('status');
-        $personalTraining->save();
-        return redirect('/admin/pt');
+        $PersonalTraining->image = $image_url;
+        $PersonalTraining->rating = $request->get('rating');
+        $PersonalTraining->status = $request->get('status');
+        $PersonalTraining->save();
+        return redirect('admin/pt');
     }
 
     /**
@@ -112,7 +112,7 @@ class AdminPTController extends Controller
         $PersonalTraining->rating=$request->get('rating');
         $PersonalTraining->status=$request->get('status');
         $PersonalTraining->save();
-        return redirect('/admin/pt');
+        return redirect('admin/pt');
 
     }
 
