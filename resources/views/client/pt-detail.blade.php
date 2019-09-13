@@ -2,68 +2,65 @@
 @section('content')
 
     <div class="container" style="padding-left: 10% ;margin-top: 80px">
-            <div class="row no-gutters">
-                <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img width="100%" height="auto"
-                                 src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png" alt="">
-                            <div class="content">
-                                <h4>Heading</h4>
-                            </div>
+        <div class="row no-gutters">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img width="100%" height="auto"
+                             src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png" alt="">
+                        <div class="content">
+                            <h4>Heading</h4>
                         </div>
-                    </div><!--inner-->
-                </div><!-- col-sm-6  -->
-                <div class="col-sm-6" style="margin-left: 9%">
-                    <div class="star-ratings-sprite-pt-detail"><span style="width:70%"
-                                                           class="star-ratings-sprite-rating-pt-detail"></span>
                     </div>
-                    <div class="text-secondary">(1 đánh giá)</div>
-                    <div class="pt-2"><h3>Phan Hoài Nam</h3></div>
-                    <div class=""><h3>Heart Bag</h3></div>
-                    <div class="row">
-                        <div class="col-sm-7 mt-3">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="dropdown w-25">
-                                            <button id="dLabel" class="dropdown-select " type="button"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                Thời Gian
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu w-25" aria-labelledby="dLabel" >
-                                                <li>1 Ngày</li>
-                                                <li>1 Tuần</li>
-                                                <li>1 Tháng</li>
-                                            </ul>
-                                        </div>
+                </div><!--inner-->
+            </div><!-- col-sm-6  -->
+            <div class="col-sm-6 ml-5">
+                <div class="star-ratings-sprite-pt-detail"><span style="width:70%"
+                                                                 class="star-ratings-sprite-rating-pt-detail"></span>
+                </div>
+                <div class="text-secondary">(1 đánh giá)</div>
+                <div class="pt-2"><h1>Phan Hoài Nam</h1></div>
+                <div class="text-secondary"><h5>Personal Training</h5></div>
+                <div class="row">
+                    <div class="col-sm-7 mt-3">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="dropdown w-25">
+                                        <button id="dLabel" class="dropdown-select font-weight-bolder" type="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Thời Gian
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu w-25" aria-labelledby="dLabel">
+                                            <li>1 Ngày</li>
+                                            <li>1 Tuần</li>
+                                            <li>1 Tháng</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-5 ml-4 row">
-                        <div class="row" style="width: 100%">
-                            <div class="col-4 time"> 05:00 - 07:00</div>
-                            <div class="col-4 time"> 07:00 - 09:00</div>
-                            <div class="col-4 time"> 09:00 - 11:00</div>
-                            <div class="col-4 time"> 02:00 - 04:00</div>
-                            <div class="col-4 time"> 04:00 - 06:00</div>
-                            <div class="col-4 time"> 06:00 - 09:00</div>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <div class="col-sm-7"></div>
-                        <div class="col-sm-5" style="width: 190px; height: 50px;float: right">
-                            <button class="btn btn-primary pl-3 pr-3 pt-2 pb-2 ">
-                                Đặt lịch
-                            </button>
-                        </div>
+                </div>
+                <div class="mt-4 ml-3 row">
+                    <div class="row list-time" style="width: 100%">
+                        <div class="col-6 time btn btn-primary"> 05:00 - 07:00</div>
+                        <div class="col-6 time btn btn-primary"> 07:00 - 09:00</div>
+                        <div class="col-6 time btn btn-primary"> 09:00 - 11:00</div>
+                        <div class="col-6 time btn btn-primary"> 02:00 - 04:00</div>
+                        <div class="col-6 time btn btn-primary"> 04:00 - 06:00</div>
+                        <div class="col-6 time btn btn-primary"> 06:00 - 09:00</div>
                     </div>
                 </div>
-            </div><!--row-->
-        </div><!--container-->
+                <div style="margin-left: 0.5%;margin-top: 9%">
+                    <button class="btn btn-outline-primary w-100" style="font-size: 20px">
+                        ĐẶT LỊCH
+                    </button>
+                </div>
+            </div>
+        </div><!--row-->
+    </div><!--container-->
     </div>
 
     <div class="accordion container" id="accordionExample" style="margin-top: 10%">
@@ -143,7 +140,7 @@
                             </div>
                             <div class="row ml-1">
                                 <div class="row">
-                                    <div class="nameuser "><strong style="color: black"> nguyendat </strong> </div>
+                                    <div class="nameuser "><strong style="color: black"> nguyendat </strong></div>
                                 </div>
                                 <div class="row w-100">
                                     mình thể với các bạn là sự ra đời của chiếc túi này quả là tuyệt với. Nó ko chỉ to
