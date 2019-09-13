@@ -14,7 +14,7 @@
 
                         <div class="input-group mb-3">
                             <div class="custom-file">
-                                <input multiple type="file"  id="inputGroupFile01" name="thumbnail[]">
+                                <input multiple type="file"   name="thumbnail[]">
                             </div>
                         </div>
                     </div>
