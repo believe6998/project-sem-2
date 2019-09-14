@@ -16,7 +16,10 @@
                                 <div class="">
                                     <div class="form-group">
                                         <label class="font-weight-bold">&nbsp;Tên</label>
-                                        <input type="text" class="form-control" placeholder="Tên của bạn" name="name" value="{{$PersonalTraining->name}}" required autocomplete="name">
+                                        <input type="text" class="form-control" placeholder="Tên của bạn" name="name" value="{{$PersonalTraining->name}}">
+                                        @if ($errors->has('name'))
+                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -24,19 +27,28 @@
                                 <div class="col-6 ">
                                     <div class="form-group">
                                         <label  class="font-weight-bold">&nbsp;Description</label>
-                                        <textarea type="text" rows="4" cols="50" name="description" required autocomplete="description">{{$PersonalTraining->description}}</textarea>
+                                        <textarea type="text" rows="4" cols="50" name="description">{{$PersonalTraining->description}}</textarea>
+                                        @if ($errors->has('description'))
+                                            <span class="text-danger">{{ $errors->first('description') }}</span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-6 ">
                                     <div class="form-group">
                                         <label  class="font-weight-bold">&nbsp;Qualification</label>
-                                        <textarea type="text" rows="4" cols="50" name="qualification" required autocomplete="qualification">{{$PersonalTraining->qualification}}</textarea>
+                                        <textarea type="text" rows="4" cols="50" name="qualification">{{$PersonalTraining->qualification}}</textarea>
+                                        @if ($errors->has('qualification'))
+                                            <span class="text-danger">{{ $errors->first('qualification') }}</span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-6 ">
                                     <div class="form-group">
                                         <label  class="font-weight-bold">&nbsp;Experience</label>
-                                        <textarea type="text" rows="4" cols="50" name="experience"  required autocomplete="experience">{{$PersonalTraining->experience}}</textarea>
+                                        <textarea type="text" rows="4" cols="50" name="experience">{{$PersonalTraining->experience}}</textarea>
+                                        @if ($errors->has('experience'))
+                                            <span class="text-danger">{{ $errors->first('experience') }}</span>
+                                        @endif
                                     </div>
                                 </div>
 
@@ -45,7 +57,10 @@
                                 <div class="col-8 ">
                                     <div class="form-group">
                                         <label class="font-weight-bold">&nbsp;Avatar</label>
-                                        <input type="file" class="form-control" multiple required autocomplete="image" name="image[]" value="{{$PersonalTraining->image}}" placeholder="Avatar">
+                                        <input multiple type="file"  value={{$PersonalTraining->image}} name="image[]">
+                                        @if ($errors->has('image'))
+                                            <span class="text-danger">{{ $errors->first('image') }}</span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-3"></div>
@@ -54,7 +69,10 @@
                                 <div class="col-8 ">
                                     <div class="form-group">
                                         <label class="font-weight-bold">&nbsp;Rating</label>
-                                        <input type="text" class="form-control" required autocomplete="rating" name="rating" value="{{$PersonalTraining->rating}}" placeholder="Rating">
+                                        <input type="text" class="form-control" name="rating" value="{{$PersonalTraining->rating}}" placeholder="Rating">
+                                        @if ($errors->has('rating'))
+                                            <span class="text-danger">{{ $errors->first('rating') }}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +80,10 @@
                                 <div class="col-4 ">
                                     <div class="form-group">
                                         <label class="font-weight-bold">&nbsp;Status</label>
-                                        <input type="number" class="form-control" required autocomplete="rating" name="status" value="{{$PersonalTraining->status}}" placeholder="Status">
+                                        <input type="number" class="form-control" name="status" value="{{$PersonalTraining->status}}" placeholder="Status">
+                                        @if ($errors->has('status'))
+                                            <span class="text-danger">{{ $errors->first('status') }}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

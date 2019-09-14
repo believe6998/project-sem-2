@@ -5,7 +5,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" action="/admin/pt" enctype="multipart/form-data">
+                        <form method="POST" action="admin/pt" enctype="multipart/form-data">
                             @method('post')
                             @csrf
                             <div class="modal-body">
