@@ -303,7 +303,7 @@
                     <div class="mt-4 "><a style="text-decoration: none" href=""><h4>{{$blogs->category}}</h4></a></div>
                     <div class="mt-4"><h5 style="line-height: 1.7em">{{$blogs->detail}}</h5></div>
                     <div class="mt-4"><a class="showmore" style="text-decoration: none;color: gray"
-                                         href=""><h4 >Đọc tiếp</h4></a></div>
+                                         href="{{route('client.blog.show',$blogs->id)}}"><h4 >Đọc tiếp</h4></a></div>
                 </div>
             @endforeach
         </div>

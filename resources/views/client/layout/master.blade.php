@@ -20,7 +20,7 @@
     <div class="row  header-style  " id="navbar">
         <div class="col-3 logo-header mt-2 mb-2 ">
             <a href="/"><img src="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" alt="..."
-                 class=" logo-image"></a>
+                             class=" logo-image"></a>
         </div>
         <div class="col-7  navbar-header">
             <nav class="navbar navbar-expand-lg navbar-light bg-light layout-nav-bar navbar-header-control ">
@@ -45,36 +45,38 @@
 
         <div class=" col-2 dropdown icon-user-header ">
             @guest
-            <i class="fas fa-user fa dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-               aria-haspopup="true"
-               aria-expanded="false"></i>
-            <div class="dropdown-menu icon-item" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item "  href="{{ route('login') }}">Đăng nhập</a>
-                @if (Route::has('register'))
-                <a class="dropdown-item"  href="{{ route('register') }}">Đăng ký</a>
+                <i class="fas fa-user fa dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                   aria-haspopup="true"
+                   aria-expanded="false"></i>
+                <div class="dropdown-menu icon-item" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item " href="{{ route('login') }}">Đăng nhập</a>
+                    @if (Route::has('register'))
+                        <a class="dropdown-item" href="{{ route('register') }}">Đăng ký</a>
                     @endif
-                @else
-                    <div class="nav-item dropdown  logged-cl">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a href="#" class="dropdown-item">Thông tin</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Đăng xuất') }}
+                    @else
+                        <div class="nav-item dropdown  logged-cl">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a href="#" class="dropdown-item">Thông tin</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Đăng xuất') }}
+                                </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
                         </div>
-                    </div>
-            </div>
-                @endguest
+                </div>
+            @endguest
         </div>
     </div>
 </div>
@@ -259,7 +261,7 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</div>--}}
-<i  class="fas fa-chevron-up" onclick="topFunction()" id="myBtn" title="Lên đầu trang"></i>
+<i class="fas fa-chevron-up" onclick="topFunction()" id="myBtn" title="Lên đầu trang"></i>
 <div>
     @section('content')
     @show()
@@ -447,14 +449,14 @@
 <script>
     function inViewport($el) {
         var H = $(window).height(),
-            r = $el[0].getBoundingClientRect(), t=r.top, b=r.bottom;
-        return Math.max(0, t>0? H-t : (b<H?b:H));
+            r = $el[0].getBoundingClientRect(), t = r.top, b = r.bottom;
+        return Math.max(0, t > 0 ? H - t : (b < H ? b : H));
     }
 
-    $(window).on("scroll resize", function(){
+    $(window).on("scroll resize", function () {
         var window_offset = inViewport($('.intro'));
         $(".overlay").height(window_offset);
-        $(".caption").css("bottom", (window_offset / 4) );
+        $(".caption").css("bottom", (window_offset / 4));
     });
 
     class ShapeOverlays {
@@ -498,7 +500,7 @@
     // When the carousel slides, auto update the text
     $('#myCarousel').on('slid.bs.carousel', function (e) {
         var id = $('.item.active').data('slide-number');
-        $('#carousel-text').html($('#slide-content-'+id).html());
+        $('#carousel-text').html($('#slide-content-' + id).html());
     });
     $(document).ready(function () {
         var itemsMainDiv = ('.MultiCarousel');
@@ -514,8 +516,6 @@
         });
 
         ResCarouselSize();
-
-
 
 
         $(window).resize(function () {
@@ -543,20 +543,17 @@
                 if (bodyWidth >= 1200) {
                     incno = itemsSplit[3];
                     itemWidth = sampwidth / incno;
-                }
-                else if (bodyWidth >= 992) {
+                } else if (bodyWidth >= 992) {
                     incno = itemsSplit[2];
                     itemWidth = sampwidth / incno;
-                }
-                else if (bodyWidth >= 768) {
+                } else if (bodyWidth >= 768) {
                     incno = itemsSplit[1];
                     itemWidth = sampwidth / incno;
-                }
-                else {
+                } else {
                     incno = itemsSplit[0];
                     itemWidth = sampwidth / incno;
                 }
-                $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+                $(this).css({'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers});
                 $(this).find(itemClass).each(function () {
                     $(this).outerWidth(itemWidth);
                 });
@@ -584,8 +581,7 @@
                     translateXval = 0;
                     $(el + ' ' + leftBtn).addClass("over");
                 }
-            }
-            else if (e == 1) {
+            } else if (e == 1) {
                 var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
                 translateXval = parseInt(xds) + parseInt(itemWidth * s);
                 $(el + ' ' + leftBtn).removeClass("over");
@@ -613,40 +609,44 @@
 
     var sldElm = $(".item-image-wrapper img");
     var i = 0;
-    while (i<sldElm.length) {
+    while (i < sldElm.length) {
         sldElm[i].setAttribute("draggable", false);
         i++
     }
 
-    var mL = 0, maxX = 200, diff = 0 ;
+    var mL = 0, maxX = 200, diff = 0;
 
     function slide() {
-        mL-=100;
-        if( mL < -maxX ){ mL = 0 ;}
-        sliderCont.animate({"margin-left" : mL + "%"}, 800);
+        mL -= 100;
+        if (mL < -maxX) {
+            mL = 0;
+        }
+        sliderCont.animate({"margin-left": mL + "%"}, 800);
     }
 
     function slideBack() {
         mL += 100;
-        if ( mL > 0 ) { mL = -200 ; }
-        sliderCont.animate({"margin-left" : mL + "%"}, 800);
+        if (mL > 0) {
+            mL = -200;
+        }
+        sliderCont.animate({"margin-left": mL + "%"}, 800);
     }
 
     nextButton.click(slide);
     backButton.click(slideBack);
 
-    $(document).on("mousedown touchstart", con, function(e) {
+    $(document).on("mousedown touchstart", con, function (e) {
 
         var startX = e.pageX || e.originalEvent.touches[0].pageX;
         diff = 0;
 
-        $(document).on("mousemove touchmove", function(e) {
+        $(document).on("mousemove touchmove", function (e) {
 
             var xt = e.pageX || e.originalEvent.touches[0].pageX;
             diff = (xt - startX) * 100 / window.innerWidth;
-            if( mL == 0 && diff > 10 ) {
-                event.preventDefault() ;
-            } else if (  mL == -maxX && diff < -10 ) {
+            if (mL == 0 && diff > 10) {
+                event.preventDefault();
+            } else if (mL == -maxX && diff < -10) {
                 event.preventDefault();
             } else {
                 sliderCont.css("margin-left", mL + diff + "%");
@@ -654,28 +654,38 @@
         });
     });
 
-    $(document).on("mouseup touchend", function(e) {
+    $(document).on("mouseup touchend", function (e) {
         $(document).off("mousemove touchmove");
-        if(  mL == 0 && diff > 4 ) {
-            sliderCont.animate({"margin-left" :  0 + "%"},100);
-        } else if (  mL == -maxX  && diff < 4 ){
-            sliderCont.animate({"margin-left" : -maxX  + "%"},100);
+        if (mL == 0 && diff > 4) {
+            sliderCont.animate({"margin-left": 0 + "%"}, 100);
+        } else if (mL == -maxX && diff < 4) {
+            sliderCont.animate({"margin-left": -maxX + "%"}, 100);
         } else {
             if (diff < -10) {
                 slide();
             } else if (diff > 10) {
                 slideBack();
             } else {
-                sliderCont.animate({"margin-left" :  mL + "%"},300);
+                sliderCont.animate({"margin-left": mL + "%"}, 300);
             }
         }
     });
-    $('.dropdown-menu li').on('click', function() {
+    $('.dropdown-menu li').on('click', function () {
         var getValue = $(this).text();
         $('.dropdown-select').text(getValue)
     });
 
 </script>
-
+<script>
+    $('.time').click(function () {
+        if ($(this).hasClass('btn-secondary')) {
+            $(this).removeClass('btn-secondary').addClass('btn-primary');
+        } else if ($(this).hasClass('btn-primary')) {
+            $(this).removeClass('btn-primary').addClass('btn-secondary');
+        }
+        $('.time').not(this).addClass('btn-secondary').removeClass('btn-primary');
+    })
+    ;
+</script>
 </body>
 </html>

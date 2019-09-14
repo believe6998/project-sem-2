@@ -8,9 +8,6 @@
                     <div class="carousel-item active">
                         <img width="100%" height="auto"
                              src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png" alt="">
-                        <div class="content">
-                            <h4>Heading</h4>
-                        </div>
                     </div>
                 </div><!--inner-->
             </div><!-- col-sm-6  -->
@@ -45,12 +42,12 @@
                 </div>
                 <div class="mt-4 ml-3 row">
                     <div class="row list-time" style="width: 100%">
-                        <div class="col-6 time btn btn-primary"> 05:00 - 07:00</div>
-                        <div class="col-6 time btn btn-primary"> 07:00 - 09:00</div>
-                        <div class="col-6 time btn btn-primary"> 09:00 - 11:00</div>
-                        <div class="col-6 time btn btn-primary"> 02:00 - 04:00</div>
-                        <div class="col-6 time btn btn-primary"> 04:00 - 06:00</div>
-                        <div class="col-6 time btn btn-primary"> 06:00 - 09:00</div>
+                        <div class="col-6 time btn btn-secondary"> 05:00 - 07:00</div>
+                        <div class="col-6 time btn btn-secondary"> 07:00 - 09:00</div>
+                        <div class="col-6 time btn btn-secondary"> 09:00 - 11:00</div>
+                        <div class="col-6 time btn btn-secondary"> 02:00 - 04:00</div>
+                        <div class="col-6 time btn btn-secondary"> 04:00 - 06:00</div>
+                        <div class="col-6 time btn btn-secondary"> 06:00 - 09:00</div>
                     </div>
                 </div>
                 <div style="margin-left: 0.5%;margin-top: 9%">
@@ -61,7 +58,6 @@
             </div>
         </div><!--row-->
     </div><!--container-->
-    </div>
 
     <div class="accordion container" id="accordionExample" style="margin-top: 10%">
         <div class="card">
