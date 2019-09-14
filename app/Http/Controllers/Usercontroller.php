@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateUserAdminRequest;
 use App\Http\Requests\ValidateUser;
 use App\User;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class Usercontroller extends Controller
      */
     public function create()
     {
-
+        return view('admin.user.create-user');
     }
 
     /**
@@ -36,9 +37,18 @@ class Usercontroller extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateUserAdminRequest $request)
     {
-        //
+        $request ->validated();
+        $user = new User();
+        $user->firstName=$request->get('firstName');
+        $user->lastName=$request->get('lastName');
+        $user->phone=$request->get('phone');
+        $user->gender=$request->get('gender');
+        $user->email=$request->get('email');
+        $user->password=$request->get('password');
+        $user->save();
+        return redirect('admin/user');
     }
 
     /**
@@ -49,7 +59,9 @@ class Usercontroller extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        $data = ['user' => $user];
+        return view('admin.user.list', $data);
     }
 
     /**

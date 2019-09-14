@@ -291,7 +291,7 @@
     });
 
     $('.btn-delete-user').click(function () {
-        if (confirm('Are you sure wanna delete this user?')) {
+        if (confirm('Bạn có chắc muốn xóa người dùng này?')) {
             var deleteId = $(this).attr('id').replace('btn-delete-user', '');
             var currentItem = $(this);
             $.ajax({
@@ -301,11 +301,11 @@
                     '_token': $('meta[name=csrf-token]').attr('content')
                 },
                 success: function () {
-                    alert('Success');
+                    alert('Xóa người dùng thành công!');
                     currentItem.closest("tr").remove();
                 },
                 error: function () {
-                    alert('Error');
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau.');
                 }
             });
         }
