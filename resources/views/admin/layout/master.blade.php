@@ -70,7 +70,7 @@
                 <span>Category</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/admin/personal-training">
+            <a class="nav-link" href="/admin/pt">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Personal Training</span></a>
         </li>

@@ -46,7 +46,7 @@ class PT_Validate extends FormRequest
             'qualification.min'=>'*Qualification của bạn quá ngắn, vui lòng nhập ít nhất 10 kí tự.',
             'qualification.max'=>'*Qualification của bạn quá dài, vui lòng nhập  nhất 500 kí tự.',
             'experience.required'=>'*Vui lòng nhập experience của bạn.',
-            'experience.min'=>'Experience của bạn quá ngắn, vui lòng nhập ít nhất 10 kí tự.',
+            'experience.min'=>'*Experience của bạn quá ngắn, vui lòng nhập ít nhất 10 kí tự.',
             'experience.max'=>'*Experience của bạn quá dài, vui lòng nhập  nhất 500 kí tự.',
             'image[].required' => '*Vui chọn ảnh của bạn.',
             'rating.required'=>'*Vui lòng nhập rating của bạn.',
