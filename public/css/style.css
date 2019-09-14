@@ -1677,6 +1677,7 @@ a {
 .btn-link:hover {
     color: black;
 }
+
 .btn-link::after {
     content: '';
     display: block;
@@ -1768,11 +1769,12 @@ a {
 }
 
 .time {
-    border: 1px  solid;
+    border: 1px solid;
     font-size: 15px;
     line-height: 27px;
     text-align: center;
 }
+
 
 .star-ratings-sprite-pt-detail {
     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
@@ -1788,32 +1790,36 @@ a {
     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x 0 100%;
     float: left;
     height: 21px;
-    display:block;
+    display: block;
 }
-.card-hd-list-category h5 a{
+
+.card-hd-list-category h5 a {
     text-decoration: none;
 }
-.tr-category-ad th{
+
+.tr-category-ad th {
     text-align: center;
 }
 
-.tr-category-ad-item td{
+.tr-category-ad-item td {
     text-align: center;
 }
 
-.btn-edit-ct-ad{
+.btn-edit-ct-ad {
     margin-right: -30px;
 
 }
-.btn-dlt-ct-ad{
-   margin-left: -45px;
+
+.btn-dlt-ct-ad {
+    margin-left: -45px;
 }
 
-.btn-acept-cr-ad-ct{
+.btn-acept-cr-ad-ct {
     margin-top: 80px;
     margin-left: 10px;
 }
-.form-cr-cate-ad{
+
+.form-cr-cate-ad {
     padding-top: 40px;
     padding-left: 15%;
     padding-bottom: 40px;

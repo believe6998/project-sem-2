@@ -103,10 +103,9 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
-
 
     {{--    <form action="{{route('user.update',$user->id)}}" method="POST">--}}
     {{--        @method('PUT')--}}
@@ -205,4 +204,5 @@
     {{--            </div>--}}
     {{--        </div>--}}
     {{--    </form>--}}
+
 @endsection
