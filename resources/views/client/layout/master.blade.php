@@ -34,7 +34,7 @@
                         <a class="navbar-brand nav-link " href="/personal-training">Tập luyện trực tuyến</a>
                         <a class="navbar-brand nav-link " href="/blog">Blog</a>
                         <a class="navbar-brand nav-link " href="/contact-us">Liên hệ</a>
-                        <a class="navbar-brand nav-link " href="/">Điều khoản</a>
+                        <a class="navbar-brand nav-link " href="/policy">Điều khoản</a>
                     </div>
                 </div>
             </nav>

@@ -29,6 +29,9 @@ Route::get('/contact-us', function () {
 Route::get('/blog', function () {
     return view('client/main-blog');
 });
+Route::get('/policy', function () {
+    return view('client/policy');
+});
 
 Route::get('/detail-blog', function () {
     return view('client/detail-blog');
