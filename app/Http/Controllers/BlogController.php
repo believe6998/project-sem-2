@@ -18,8 +18,8 @@ class BlogController extends Controller
 
     public function index()
     {
-        $blog = Blog::latest()->paginate(4);
-        return view('admin/blog')->with(['blog' => $blog]);
+        $blog = Blog::latest()->paginate(6);
+        return view('admin/blog/list-blog')->with(['blog' => $blog]);
     }
 
     /**
@@ -29,7 +29,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin/form-blog');
+        return view('admin/blog/create-blog');
 
     }
 
@@ -78,7 +78,7 @@ class BlogController extends Controller
          if ($blog == null) {
              return view('error.404');
          }
-         return view('admin/detail-blog')->with('blog', $blog);
+         return view('admin/blog/detail-blog')->with('blog', $blog);
     }
 
     /**
@@ -89,7 +89,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        return view('admin/form-update-blog')->with('blog', $blog);
+        return view('admin/blog/edit-blog')->with('blog', $blog);
 
     }
 
@@ -104,7 +104,9 @@ class BlogController extends Controller
     {
         $obj = Blog::findOrFail($id);
         $obj->title = $request->input('title');
+        $obj->title = $request->input('category');
         $obj->detail = $request->input('detail');
+        $obj->detail = $request->input('status');
         $obj->content = $request->input('contentcheck');
         $files = $request->file('thumbnail');
         $image_url = '';
@@ -126,9 +128,14 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        $blog = Blog::findOrFail($id);
+
+        error_log('Some message here.');
+        $blog = Blog::find($id);
         $blog->delete();
-        return redirect('admin/blog');
+        return response()->json(['status' => '200', 'message' => 'Okie']);
+//        $blog = Blog::findOrFail($id);
+//        $blog->delete();
+//        return redirect('admin/blog');
 
     }
 

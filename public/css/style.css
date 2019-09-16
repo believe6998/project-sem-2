@@ -1814,6 +1814,7 @@ a {
     margin-left: -45px;
 }
 
+
 .btn-acept-cr-ad-ct {
     margin-top: 80px;
     margin-left: 10px;
@@ -1826,14 +1827,18 @@ a {
 
 }
 
-.name-pt{
+.name-pt {
     font-family: 'Averta Regular', Helvetica, Arial, Lucida, sans-serif;
     padding-left: 420px;
     height: 50px;
+}
 
 .form-create-user-ad{
     margin-right: -16%;
     padding-left: 29%;
+}
+.img-edit-blog{
+    height: 200px;
 }
 
 
