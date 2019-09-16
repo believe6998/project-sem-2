@@ -13,6 +13,7 @@ class PersonalTrainingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $list = personalTraining::paginate(20);

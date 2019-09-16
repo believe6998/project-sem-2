@@ -12,7 +12,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
     <script src="{{asset('js/app.js')}}"></script>
-    <script src="{{asset('client')}}"></script>
+    <!-- Styles -->
     <title>Document</title>
 </head>
 <body>
