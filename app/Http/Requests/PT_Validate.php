@@ -28,7 +28,6 @@ class PT_Validate extends FormRequest
             'description' => 'required|max:500|min:10',
             'qualification' => 'required|max:500|min:10',
             'experience' => 'required|max:500|min:10',
-            'image[]' => 'required',
             'rating' => 'required|max:5|min:2',
             'status' => 'required|max:1',
         ];
@@ -48,7 +47,6 @@ class PT_Validate extends FormRequest
             'experience.required'=>'*Vui lòng nhập experience của bạn.',
             'experience.min'=>'*Experience của bạn quá ngắn, vui lòng nhập ít nhất 10 kí tự.',
             'experience.max'=>'*Experience của bạn quá dài, vui lòng nhập  nhất 500 kí tự.',
-            'image[].required' => '*Vui chọn ảnh của bạn.',
             'rating.required'=>'*Vui lòng nhập rating của bạn.',
             'rating.min'=>'*Rating của bạn quá ngắn, vui lòng nhập ít nhất 0 kí tự.',
             'rating.max'=>'*Rating của bạn quá dài, vui lòng nhập  nhất 5 kí tự.',
