@@ -1,5 +1,9 @@
 <?php
 
+use JD\Cloudder\CloudderServiceProvider;
+use jeremykenedy\LaravelRoles\RolesServiceProvider;
+use Unisharp\Ckeditor\ServiceProvider;
+
 return [
 
     /*
@@ -161,7 +165,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Unisharp\Ckeditor\ServiceProvider::class,
+        JD\Cloudder\CloudderServiceProvider::class,
+        jeremykenedy\LaravelRoles\RolesServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -174,8 +180,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Unisharp\Ckeditor\ServiceProvider::class,
-        JD\Cloudder\CloudderServiceProvider::class,
+
 
 
     ],

@@ -5,10 +5,10 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="/register">
                         @csrf
                         <div class="modal-body">
-                            <div class="title">
+                            <div class="title">\
                                 <h3 class="text-center font-weight-bold ">Đăng Ký</h3>
                             </div>
                                 <div class="row mt-5 d-flex justify-content-center">
