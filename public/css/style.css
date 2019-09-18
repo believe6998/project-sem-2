@@ -1855,6 +1855,7 @@ a {
     margin-left: -45px;
 }
 
+
 .btn-acept-cr-ad-ct {
     margin-top: 80px;
     margin-left: 10px;
@@ -1876,6 +1877,9 @@ a {
 .form-create-user-ad{
     margin-right: -16%;
     padding-left: 29%;
+}
+.img-edit-blog{
+    height: 200px;
 }
 
 

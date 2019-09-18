@@ -106,7 +106,7 @@
             </form>
         </div>
     </div>
-
+    </div>
     {{--    <form action="{{route('user.update',$user->id)}}" method="POST">--}}
     {{--        @method('PUT')--}}
     {{--        @csrf--}}
