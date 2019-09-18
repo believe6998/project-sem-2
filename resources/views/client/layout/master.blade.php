@@ -53,11 +53,18 @@
                     @if (Route::has('register'))
                         <a class="dropdown-item" href="{{ route('register') }}">Đăng ký</a>
                     @endif
-                    @else
-                        <div class="nav-item dropdown  logged-cl">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                @else
+                    <div class="nav-item dropdown  logged-cl">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a href="/user-detail" class="dropdown-item">Thông tin</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Đăng xuất') }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -80,188 +87,7 @@
         </div>
     </div>
 </div>
-{{--<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"--}}
-{{--     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
-{{--    <div class="modal-dialog modal-dialog-centered" role="document">--}}
-{{--        <div class="modal-content">--}}
-{{--            <div class="modal-header">--}}
-{{--                <img src="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" alt="..."--}}
-{{--                     class="img-thumbnail logo-login-form-client">--}}
-{{--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-{{--                    <span aria-hidden="true">&times;</span>--}}
-{{--                </button>--}}
-{{--            </div>--}}
-{{--            <div class="modal-body">--}}
-{{--                <form action="" method="post" class="form-login-client">--}}
-{{--                    <h3 class="text-center font-weight-bold ">Đăng Ký</h3>--}}
-{{--                    <div class="row mt-5 d-flex justify-content-center">--}}
-{{--                        <div class="col-6 ">--}}
-{{--                            <div class="form-group">--}}
-{{--                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-user"></i>&nbsp;Họ</label>--}}
-{{--                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Họ của bạn"name="firstName">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-6 ">--}}
-{{--                            <div class="form-group">--}}
-{{--                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-user"></i>&nbsp;Tên</label>--}}
-{{--                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tên của bạn"name="lastName">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                    <div class="row d-flex justify-content-center mt-2">--}}
-{{--                        <div class="col-6 ">--}}
-{{--                            <div class="form-group">--}}
-{{--                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-phone-alt"></i>&nbsp;Số điện thoại</label>--}}
-{{--                                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Số điện thoại." name="phoneNumber">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-6 ">--}}
-{{--                            <div class="form-group">--}}
-{{--                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-venus-mars"></i>&nbsp;Giới tính</label>--}}
-{{--                                <br>--}}
-
-{{--                                    <div class="form-check form-check-inline mt-2">--}}
-{{--                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">--}}
-{{--                                        <label class="form-check-label" for="inlineRadio1">Nam</label>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="form-check form-check-inline">--}}
-{{--                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="famale">--}}
-{{--                                        <label class="form-check-label" for="inlineRadio2">Nữ</label>--}}
-{{--                                    </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                    </div>--}}
-{{--                    <div class="row d-flex justify-content-center mt-2">--}}
-{{--                        <div class="col-9 ">--}}
-{{--                            <div class="form-group">--}}
-{{--                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-envelope" ></i>&nbsp;Email</label>--}}
-{{--                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"name="email" placeholder="Địa chỉ email.">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                      <div class="col-3"></div>--}}
-
-{{--                    </div>--}}
-{{--                    <div class="row d-flex justify-content-center mt-2">--}}
-{{--                        <div class="col-6 ">--}}
-{{--                            <div class="form-group">--}}
-{{--                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-lock"></i>&nbsp;Mật khẩu</label>--}}
-{{--                                <input type="password" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mật khẩu.">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-6 ">--}}
-{{--                            <div class="form-group">--}}
-{{--                                <label for="exampleInputEmail1" class="font-weight-bold"><i class="fas fa-lock"></i>&nbsp;Nhập lại mật khẩu</label>--}}
-{{--                                <input type="text" class="form-control" name="repeatpassword" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập lại mật khẩu.">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                    </div>--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col-12  ">--}}
-{{--                            <label class="accept-form-register" for=""><input type="checkbox"> Tôi đã đọc và đồng ý với--}}
-{{--                                các <a--}}
-{{--                                        href="#">điều khoản sử dụng</a>. </label>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="row d-flex justify-content-center mt-4">--}}
-{{--                        <div class="col-4">--}}
-{{--                            <button type="button"--}}
-{{--                                    class="btn btn-outline-primary btn-lg btn-block text-btn-register-client">Đăng Ký--}}
-{{--                            </button>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                </form>--}}
-{{--            </div>--}}
-{{--            <div class="text-center mb-3">--}}
-{{--                <div class="footer-login-form-client">--}}
-{{--                    <label for="">Bạn đã có tài khoản? &nbsp;<a href="#" data-toggle="modal"--}}
-{{--                                                                data-target="#exampleModalCenter">Đăng nhập ngay!</a>--}}
-{{--                    </label>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-
-{{--<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"--}}
-{{--     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
-{{--    <div class="modal-dialog modal-dialog-centered" role="document">--}}
-{{--        <div class="modal-content">--}}
-{{--            <div class="modal-header">--}}
-{{--                <img src="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" alt="..."--}}
-{{--                     class="img-thumbnail logo-login-form-client">--}}
-{{--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-{{--                    <span aria-hidden="true">&times;</span>--}}
-{{--                </button>--}}
-{{--            </div>--}}
-{{--            <div class="modal-body">--}}
-{{--                <form action="" method="post" class="form-login-client">--}}
-{{--                    <h4 class="text-center ">Đăng Nhập</h4>--}}
-{{--                    <div class="row d-flex justify-content-center mt-4">--}}
-{{--                        <div class="col-10">--}}
-{{--                            <div class="input-group mb-3">--}}
-{{--                                <div class="input-group-prepend">--}}
-{{--                                        <span class="input-group-text" id="basic-addon1"><i--}}
-{{--                                                    class="fas fa-at"></i></span>--}}
-{{--                                </div>--}}
-{{--                                <input type="email" class="form-control" placeholder="Địa chỉ email"--}}
-{{--                                       aria-label="Username" aria-describedby="basic-addon1">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="row d-flex justify-content-center">--}}
-{{--                        <div class="col-10">--}}
-{{--                            <div class="input-group mb-3">--}}
-{{--                                <div class="input-group-prepend">--}}
-{{--                                        <span class="input-group-text" id="basic-addon1"><i--}}
-{{--                                                    class="fas fa-lock"></i></span>--}}
-{{--                                </div>--}}
-{{--                                <input type="password" class="form-control" placeholder="Mật khẩu" aria-label="Username"--}}
-{{--                                       aria-describedby="basic-addon1">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col-6  ">--}}
-{{--                            <label class="remember-me-login" for=""><input type="checkbox"> &nbsp;Ghi nhớ</label>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-6">--}}
-{{--                            <div class="col forgot-password"><a href="#">Quên mật khẩu?</a></div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="row d-flex justify-content-center mt-2">--}}
-{{--                        <div class="col-4">--}}
-{{--                            <button type="button"--}}
-{{--                                    class="btn btn-outline-primary btn-lg btn-block text-btn-login-client">Đăng nhập--}}
-{{--                            </button>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class=" mt-4 ">--}}
-{{--                        <div class=" login-form-i">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="mt-3 text-center text-body-login-form">--}}
-{{--                        <label for="">Có thể đăng nhập bằng các trang mạng xã hội </label>--}}
-{{--                    </div>--}}
-{{--                    <div class="text-center social-btn-login">--}}
-{{--                        <a href="#" class="btn btn-primary"><i class="fab fa-facebook-f"></i>&nbsp; Facebook</a>--}}
-{{--                        <a href="#" class="btn btn-info"><i class="fab fa-twitter"></i>&nbsp; Twitter</a>--}}
-{{--                        <a href="#" class="btn btn-danger"><i class="fab fa-google"></i>&nbsp; Google</a>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
-{{--            </div>--}}
-{{--            <div class="text-center mb-3">--}}
-{{--                <div class="footer-login-form-client">--}}
-{{--                    <label for="">Bạn chưa có tài khoản? &nbsp;<a href="#" data-toggle="modal" data-target="#exampleModalCenter2">Đăng ký ngay!</a> </label>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-<i class="fas fa-chevron-up" onclick="topFunction()" id="myBtn" title="Lên đầu trang"></i>
+<i  class="fas fa-chevron-up" onclick="topFunction()" id="myBtn" title="Lên đầu trang"></i>
 <div>
     @section('content')
     @show()
@@ -360,7 +186,6 @@
 
             <!-- Grid column -->
             <div class="col-md-12  py-5 social-icon-layout">
-                {{--                <div class="text-center mb-4">Theo dõi chúng tôi trên internet</div>--}}
 
                 <div class=" flex-center">
 
