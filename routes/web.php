@@ -14,22 +14,21 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-//Route::get('/login', function () {
-//    return view('client/login');
-//});
-
 Route::resource('personal-training', 'PersonalTrainingController');
+Route::resource('/admin/category', 'AdminCategoryController');
+Route::resource('category', 'CategoryController');
 
-Route::get('/blog', function () {
+Route::get('cl/blog', function () {
     return view('client/main-blog');
 });
+//Route::get('/', 'ClientBlogController@indexhome');
 
-Route::get('/', function () {
-    return view('client/home');
-});
 
 Route::get('/contact-us', function () {
     return view('client/contact');
+});
+Route::get('/blog', function () {
+    return view('client/main-blog');
 });
 
 Route::get('/detail-blog', function () {
@@ -52,32 +51,37 @@ Route::get('/index-body-4', function () {
     return view('client/index-body/index-body-4');
 });
 
+Route::get('/admin','RoleController@roleAdmin');
 
-Route::get('/ad','RoleController@roleAdmin', function () {
-    return view('admin/home');
-});
-
-Route::get('/ad/personal-training','RoleController@roleAdmin', function () {
+Route::get('/admin/personal-training', function () {
     return view('admin/pt');
 });
 
-Route::get('/ad/blog','RoleController@roleAdmin', function () {
+Route::get('/admin/blog', function () {
     return view('admin/blog');
 });
 
-Route::get('/ad/user','RoleController@roleAdmin', function () {
-    return view('admin/user');
+Route::get('/admin/user/edit', function () {
+    return view('admin/user/edit');
 });
 
+Route::get('/pt/detail', function () {
+    return view('client/pt-detail');
+});
+Route::resource('admin/blog','BlogController');
 
-Route::get('/ad/form', function () {
+Route::resource('/admin/pt','AdminPTController');
+
+Route::resource('/blog','ClientBlogController',['as' => 'client']);
+
+Route::get('/admin/form', function () {
     return view('admin/form');
 });
 
-Route::get('/guest-role', 'RoleController@roleGuest');
-Route::get('/user-role', 'RoleController@roleUser');
-Route::get('/admin-role', 'RoleController@roleAdmin');
+Route::resource('/admin/user', 'UserController');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/','ClientBlogController@indexhome','RoleController@roleUser')->name('home');
+
 

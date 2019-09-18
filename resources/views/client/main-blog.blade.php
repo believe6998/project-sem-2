@@ -2,7 +2,7 @@
 @section('content')
     <div class="banner-header">
         <img src="https://www.fusionfitnessacademy.org/wp-content/uploads/2018/05/slider2.jpg" class="rounded img-fluid"
-             alt="Responsive image" style="padding-top: 20px">
+             alt="Responsive image">
     </div>
     <div class="detail" style="padding-top: 40px">
         <h1 class="text-center">Oefening diensten en</h1>
@@ -12,113 +12,30 @@
     <div class="container">
         <section class="introduce-1">
             <div class="row">
-                <div class="col-lg-6 col-sm-12 introduce-1-img" data-aos="fade-right">
-                    <div class="hovereffect">
-                        <a href="#">
+                @foreach($blog as $blogs)
+                    <div class="col-lg-6 col-sm-12 introduce-1-img" data-aos="fade-left">
+
                             <img class="img-responsive"
-                                 src="https://my-pt.online/wp-content/uploads/2018/01/eff-hiit.png"
+                                 src="{{$blogs->thumbnail}}"
                                  alt="">
+
+                        <div class="text-img">
+                            <a href="{{route('client.blog.show',$blogs->id)}}" style="color: black"><h4>{{$blogs->title}}</h4></a>
+                        </div>
+                        <div class="text2-img">
+                            <a style="text-decoration: none" href="{{route('client.blog.show',$blogs->id)}}"><h4 href="#">Chi tiết</h4></a></div>
+                        <p>
+                            {{$blogs->detail}}
+                        </p>
+                        <hr class="coll-divider short-bg-line center">
+                        <a href="#">
+                            <hr class="coll-divider short-bg-line center">
+                            <i class="fas fa-pen-square"> {{$blogs->category}} </i>
+                            <i class="far fa-calendar-alt" style="float: right"> {{$blogs->created_at}} </i>
+                            <hr class="coll-divider short-bg-line center">
                         </a>
                     </div>
-                    <div class="text-img">
-                        <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
-                    </div>
-                    <div class="text2-img">
-                        <a href="#">TRAINING</a>
-                    </div>
-                    <p>
-                        In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
-                        en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
-
-                        Bij deze studie werd door onderzoekers de spieractivatie van de volgende spieren gemeten:
-                    </p>
-                    <a href="#">
-                        <hr class="coll-divider short-bg-line center">
-                        <i class="fas fa-pen-square"> Michan </i>
-                        <i class="far fa-calendar-alt" style="float: right"> Mei 22, 2018 </i>
-                        <hr class="coll-divider short-bg-line center">
-
-                    </a>
-                </div>
-                <div class="col-lg-6 col-sm-12 introduce-1-img" data-aos="fade-left">
-                    <div class="hovereffect">
-                        <a href="#">
-                            <img class="img-responsive"
-                                 src="https://my-pt.online/wp-content/uploads/2018/01/eff-hiit.png"
-                                 alt="">
-                        </a>
-                    </div>
-                    <div class="text-img">
-                        <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
-                    </div>
-                    <div class="text2-img">
-                        <a href="#">TRAINING</a>
-                    </div>
-                    <p>
-                        In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
-                        en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
-
-                        Bij deze studie werd door onderzoekers de spieractivatie van de volgende spieren gemeten:
-                    </p>
-                    <a href="#">
-                        <hr class="coll-divider short-bg-line center">
-                        <i class="fas fa-pen-square"> Michan </i>
-                        <i class="far fa-calendar-alt" style="float: right"> Mei 22, 2018 </i>
-                        <hr class="coll-divider short-bg-line center">
-
-                    </a>
-                </div>
-                <div class="col-lg-6 col-sm-12 introduce-1-img" data-aos="fade-right">
-                    <a href="#">
-                        <img class="img-responsive"
-                             src="https://my-pt.online/wp-content/uploads/2018/01/eff-hiit.png"
-                             alt="">
-                    </a>
-                    <div class="text-img">
-                        <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
-                    </div>
-                    <div class="text2-img">
-                        <a href="#">TRAINING</a>
-                    </div>
-                    <p>
-                        In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
-                        en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
-
-                        Bij deze studie werd door onderzoekers de spieractivatie van de volgende spieren gemeten:
-                    </p>
-                    <a href="#">
-                        <hr class="coll-divider short-bg-line center">
-                        <i class="fas fa-pen-square"> Michan </i>
-                        <i class="far fa-calendar-alt" style="float: right"> Mei 22, 2018 </i>
-                        <hr class="coll-divider short-bg-line center">
-
-                    </a>
-                </div>
-                <div class="col-lg-6 col-sm-12 introduce-1-img" data-aos="fade-left">
-                    <a href="#">
-                        <img class="img-responsive"
-                             src="https://my-pt.online/wp-content/uploads/2018/01/eff-hiit.png"
-                             alt="">
-                    </a>
-                    <div class="text-img">
-                        <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
-                    </div>
-                    <div class="text2-img">
-                        <a href="#">TRAINING</a>
-                    </div>
-                    <p>
-                        In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
-                        en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
-
-                        Bij deze studie werd door onderzoekers de spieractivatie van de volgende spieren gemeten:
-                    </p>
-                    <a href="#">
-                        <hr class="coll-divider short-bg-line center">
-                        <i class="fas fa-pen-square"> Michan </i>
-                        <i class="far fa-calendar-alt" style="float: right"> Mei 22, 2018 </i>
-                        <hr class="coll-divider short-bg-line center">
-                    </a>
-                </div>
+                @endforeach
             </div>
         </section>
         <div class="detail" style="padding-top: 40px">
@@ -140,4 +57,5 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection

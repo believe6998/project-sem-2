@@ -15,7 +15,7 @@ class RoleController extends Controller
     public function roleAdmin(){
         $user =Auth::user();
         if ($user->hasRole('admin')) {
-            return  view('admin.home');
+            return  view('admin/home');
         }else{
             return "ban khong phai la admin";
         }
@@ -24,13 +24,13 @@ class RoleController extends Controller
     public function roleUser(){
         $user =Auth::user();
         if ($user->hasRole(['user', 'admin'])) {
-            return view('home');
+            return view('client/home');
         }else{
             return redirect('/login');
         }
     }
 
     public  function roleGuest(){
-        return redirect('/home');
+        return redirect('/');
     }
 }

@@ -32,7 +32,8 @@
                         <tr>
                             <td><img width="100px"
                                      src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
+                                     alt="">
+                            </td>
                             <td>Captain America</td>
                             <td>
                                 <div style="overflow:auto;height: 100px;width: 200px">Tôi quan

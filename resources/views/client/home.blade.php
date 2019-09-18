@@ -1,7 +1,7 @@
 @extends('client.layout.master')
 @section('content')
     <header>
-        <figure class="intro">
+        <figure class="intro" id="intro">
             <img src="{{asset('image/Online-personal-training-1.jpg')}}" alt=""/>
             <figcaption class=" caption item item--primary"
                         data-aos="fade-left">
@@ -11,14 +11,13 @@
                     Huấn luyện viên cá nhân của bạn bất cứ nơi nào và bất cứ khi nào bạn muốn!</h4>
             </figcaption>
             <span class="overlay">
-              <svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg"
-                   xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                   y="0px"
-                   viewBox="0 0 500 250" enable-background="new 0 0 500 250" xml:space="preserve"
-                   PreserveAspectRatio="none">
-          <path fill="#FFFFFF"
-                d="M250,246.5c-97.85,0-186.344-40.044-250-104.633V250h500V141.867C436.344,206.456,347.85,246.5,250,246.5z"></path>
-    </svg>
+<svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+     y="0px"
+     viewBox="0 0 500 250" enable-background="new 0 0 500 250" xml:space="preserve" PreserveAspectRatio="none">
+<path fill="#FFFFFF"
+      d="M250,246.5c-97.85,0-186.344-40.044-250-104.633V250h500V141.867C436.344,206.456,347.85,246.5,250,246.5z"
+/>
+</svg>
   </span>
         </figure>
 
@@ -198,7 +197,7 @@
                         của chúng tôi. Để biết thêm thông tin bấm vào nút bên dưới.</h4>
                 </div>
                 <div data-aos="zoom-in" class="container-gt-pt">
-                    <a href="#" class="btn-gt-pt">
+                    <a href="#" style="text-decoration: none" class="btn-gt-pt">
                         <svg width="277" height="62">
                             <defs>
                                 <linearGradient id="grad1">
@@ -209,7 +208,7 @@
                             <rect x="5" y="5" rx="25" fill="none" stroke="url(#grad1)" width="266" height="50"></rect>
                         </svg>
                         <!--<span>Voir mes réalisations</span>-->
-                        <span>Welcome in my world</span>
+                        <span >Welcome in my world</span>
                     </a>
                 </div>
             </div>
@@ -296,55 +295,17 @@
         <div class="home-title mt-5 mb-2" data-aos="fade-down">Blog bài viết</div>
 
         <div class="row" style="padding-left: 11%">
-            <div class="col-sm-5 gt-blog">
-                <img width="100%" height="auto"
-                     src="https://my-pt.online/wp-content/uploads/2018/05/deadlift-post-1-1080x628.png" alt="">
-                <div class="mt-5"><h2>Biến thể Deadlift tốt nhất</h2></div>
-                <div class="mt-4 "><a style="text-decoration: none" href=""><h4>Training</h4></a></div>
-                <div class="mt-4"><h5 style="line-height: 1.7em">Trong một nghiên cứu (Escamilla et al., 2002), 13 cầu
-                        thủ bóng đá Mỹ được đào tạo bài bản phải thực hiện sumo và deadlifts thông thường, có và không
-                        có đai sức mạnh. Trong nghiên cứu này, các nhà nghiên cứu đã đo kích hoạt cơ bắp của các cơ sau:
-                        - Trực tràng ...</h5></div>
-                <div class="mt-4"><a style="text-decoration: none;color: gray" href=""><h4>Đọc tiếp</h4></a></div>
-            </div>
-
-            <div class="col-sm-5 gt-blog">
-                <img width="100%" height="auto"
-                     src="https://my-pt.online/wp-content/uploads/2018/03/etiektten-lezen-1080x628.png" alt="">
-                <div class="mt-5"><h2>Đọc nhãn: Chọn thực phẩm lành mạnh và nhận ra thủ thuật bán hàng.</h2></div>
-                <div class="mt-4 "><a style="text-decoration: none" href=""><h4>Training</h4></a></div>
-                <div class="mt-4"><h5 style="line-height: 1.7em">Có nhiều hình, bảng, văn bản và chữ viết tắt trên bao
-                        bì của sản phẩm. Nó không phải lúc nào cũng rõ ràng, điều này làm cho việc đọc nhãn khó khăn.
-                        Các nhà sản xuất cũng thích sử dụng các văn bản thú vị và hình ảnh đẹp trên ...</h5></div>
-                <div class="mt-4"><a style="text-decoration: none;color: gray" href=""><h4>Đọc tiếp</h4></a></div>
-            </div>
-        </div>
-
-        <div class="row mt-5" style="padding-left: 11%">
-            <div class="col-sm-5 gt-blog">
-                <img width="100%" height="auto"
-                     src="https://my-pt.online/wp-content/uploads/2018/02/plnk-1080x628.png" alt="">
-                <div class="mt-5"><h2>Ván đúng cách</h2></div>
-                <div class="mt-4 "><a style="text-decoration: none" href=""><h4>Training</h4></a></div>
-                <div class="mt-4"><h5 style="line-height: 1.7em">Đôi khi chúng ta đi quá xa trong ngành thể dục .. đặc
-                        biệt là khi nói đến bụng và đào tạo cốt lõi. Chẳng hạn như các kệ kỷ lục thế giới vào lúc 8 giờ
-                        và 1 phút và đã đạt được bởi Mao Weidong vào ngày 16 tháng 5 năm 2016. Một khóa đào tạo cốt lõi
-                        tốt giúp sử dụng ...</h5></div>
-                <div class="mt-4"><a style="text-decoration: none;color: gray" href=""><h4>Đọc tiếp</h4></a></div>
-            </div>
-
-            <div class="col-sm-5 gt-blog">
-                <img width="100%" height="auto"
-                     src="https://my-pt.online/wp-content/uploads/2018/01/optimale-aantal-eiwitten-1080x628.png" alt="">
-                <div class="mt-5"><h2>Số lượng protein tối ưu mỗi bữa ăn</h2></div>
-                <div class="mt-4 "><a style="text-decoration: none" href=""><h4>Training</h4></a></div>
-                <div class="mt-4"><h5 style="line-height: 1.7em">Hôm nay tôi sẽ thảo luận về một trong những câu hỏi
-                        dinh dưỡng phổ biến nhất, đó là: Tôi nên ăn bao nhiêu gram protein mỗi bữa? Vấn đề là hầu hết
-                        mọi người hỏi câu hỏi này không chính xác. Các câu hỏi được đặt ra như: 'có bao nhiêu protein có
-                        thể ...</h5></div>
-                <div class="mt-4"><a style="text-decoration: none;color: gray" href=""><h4>Đọc tiếp</h4></a></div>
-            </div>
+            @foreach($blog as $blogs)
+                <div class="col-sm-5 gt-blog">
+                    <img width="100%" height="auto"
+                         src="{{$blogs->thumbnail}}" alt="">
+                    <div class="mt-5"><a class="showmore" style="text-decoration: none;color: #4d4d4d" href="{{route('client.blog.show',$blogs->id)}}"><h2>{{$blogs->title}}</h2></a></div>
+                    <div class="mt-4 "><a style="text-decoration: none" href=""><h4>{{$blogs->category}}</h4></a></div>
+                    <div class="mt-4"><h5 style="line-height: 1.7em">{{$blogs->detail}}</h5></div>
+                    <div class="mt-4"><a class="showmore" style="text-decoration: none;color: gray"
+                                         href="{{route('client.blog.show',$blogs->id)}}"><h4 >Đọc tiếp</h4></a></div>
+                </div>
+            @endforeach
         </div>
     </div>
-
 @endsection

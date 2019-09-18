@@ -1,362 +1,143 @@
 @extends('admin.layout.master')
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
+        <section class="introduce-1">
+            <div class="row">
+                {{--<div class="col-lg-6 col-sm-12 introduce-1-img" data-aos="fade-left">
+                    <a href="#">
+                        <img class="img-responsive"
+                             src="https://my-pt.online/wp-content/uploads/2018/01/eff-hiit.png"
+                             alt="">
+                    </a>
+                    <div class="text-img">
+                        <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
+                    </div>
+                    <div class="text2-img">
+                        <a style="text-decoration: none" href=""><h4 href="#">Chi tiết</h4></a></div>
+                    <p>
+                        In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
+                        en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
 
-        <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-        <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
-            information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
-                DataTables documentation</a>.</p>
-
-        <!-- DataTales Example -->
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                        <tr>
-                            <th>Ảnh</th>
-                            <th>Tên</th>
-                            <th>Giới thiệu chung</th>
-                            <th>Chuyên môn</th>
-                            <th>Trình độ</th>
-                            <th>Ngày thêm</th>
-                            <th>Ngày cập nhật</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img width="100px"
-                                     src="https://afamilycdn.com/k:thumb_w/600/VKefFccccccccccccSZQX6rFO6Qp9D/Image/2016/1/IMG_5919-4bcc3/nghe-pt-nam.jpg"
-                                     alt=""></td>
-                            <td>Captain America</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Tôi quan
-                                    niệm
-                                    rèn luyện thể chất là một quá trình lâu dài
-                                </div>
-                            </td>
-                            <td>Personal Training</td>
-                            <td>
-                                <div style="overflow:auto;height: 100px;width: 200px">Hoàn thành lớp HLV thể hình -
-                                    fitness
-                                    tại liên đoàn thể hình việt nam
-                                </div>
-                            </td>
-                            <td>28-08-2019</td>
-                            <td>28-08-2019</td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-6 "><a href="" class="text-primary"><i class="fas fa-edit"></i></a></div>
-                                    <div class="col-6"><a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a></div>
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                        Bij deze studie werd door onderzoekers de spieractivatie van de volgende spieren gemeten:
+                    </p>
+                    <a href="#">
+                        <hr class="coll-divider short-bg-line center">
+                        <button href="{}" style="width: 50px;border-radius: 3px" class="btn-primary mr-3"> Sửa </button>
+                        <button href="{}" style="width: 50px;border-radius: 3px" class="btn-danger"> Xoá </button>
+                        <i class="far fa-calendar-alt" style="float: right"> Mei 22, 2018 </i>
+                        <hr class="coll-divider short-bg-line center">
+                    </a>
                 </div>
+                <div class="col-lg-6 col-sm-12 introduce-1-img" data-aos="fade-left">
+                    <a href="#">
+                        <img class="img-responsive"
+                             src="https://my-pt.online/wp-content/uploads/2018/01/eff-hiit.png"
+                             alt="">
+                    </a>
+                    <div class="text-img">
+                        <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
+                    </div>
+                    <div class="text2-img">
+                        <a style="text-decoration: none" href=""><h4 href="#">Chi tiết</h4></a></div>
+                    <p>
+                        In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
+                        en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
+
+                        Bij deze studie werd door onderzoekers de spieractivatie van de volgende spieren gemeten:
+                    </p>
+                    <a href="#">
+                        <hr class="coll-divider short-bg-line center">
+                        <button href="{}" style="width: 50px;border-radius: 3px" class="btn-primary mr-3"> Sửa </button>
+                        <button href="{}" style="width: 50px;border-radius: 3px" class="btn-danger"> Xoá </button>
+                        <i class="far fa-calendar-alt" style="float: right"> Mei 22, 2018 </i>
+                        <hr class="coll-divider short-bg-line center">
+                    </a>
+                </div>
+                <div class="col-lg-6 col-sm-12 introduce-1-img" data-aos="fade-left">
+                    <a href="#">
+                        <img class="img-responsive"
+                             src="https://my-pt.online/wp-content/uploads/2018/01/eff-hiit.png"
+                             alt="">
+                    </a>
+                    <div class="text-img">
+                        <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
+                    </div>
+                    <div class="text2-img">
+                        <a style="text-decoration: none" href=""><h4 href="#">Chi tiết</h4></a></div>
+                    <p>
+                        In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
+                        en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
+
+                        Bij deze studie werd door onderzoekers de spieractivatie van de volgende spieren gemeten:
+                    </p>
+                    <a href="#">
+                        <hr class="coll-divider short-bg-line center">
+                        <button href="{}" style="width: 50px;border-radius: 3px" class="btn-primary mr-3"> Sửa </button>
+                        <button href="{}" style="width: 50px;border-radius: 3px" class="btn-danger"> Xoá </button>
+                        <i class="far fa-calendar-alt" style="float: right"> Mei 22, 2018 </i>
+                        <hr class="coll-divider short-bg-line center">
+                    </a>
+                </div>
+                <div class="col-lg-6 col-sm-12 introduce-1-img" data-aos="fade-left">
+                    <a href="#">
+                        <img class="img-responsive"
+                             src="https://my-pt.online/wp-content/uploads/2018/01/eff-hiit.png"
+                             alt="">
+                    </a>
+                    <div class="text-img">
+                        <a href="#" style="color: black"><h4>Beste Deadilift Variaie</h4></a>
+                    </div>
+                    <div class="text2-img">
+                        <a style="text-decoration: none" href=""><h4 href="#">Chi tiết</h4></a></div>
+                    <p>
+                        In een studie (Escamilla et.al., 2002) moesten 13 goed getrainde American Football spelers sumo
+                        en conventional deadlifts uitvoeren, met en zonder een powerlift riem.
+
+                        Bij deze studie werd door onderzoekers de spieractivatie van de volgende spieren gemeten:
+                    </p>
+                    <a href="#">
+                        <hr class="coll-divider short-bg-line center">
+                       <button href="{}" style="width: 50px;border-radius: 3px" class="btn-primary mr-3"> Sửa </button>
+                       <button href="{}" style="width: 50px;border-radius: 3px" class="btn-danger"> Xoá </button>
+                        <i class="far fa-calendar-alt" style="float: right"> Mei 22, 2018 </i>
+                        <hr class="coll-divider short-bg-line center">
+                    </a>
+                </div>--}}
+                @foreach($blog as $blogs)
+                    <div class="col-lg-6 col-sm-12 introduce-1-img" data-aos="fade-left">
+                        <a href="#">
+                            <img class="img-responsive"
+                                 src="{{$blogs->thumbnail}}"
+                                 alt="">
+                        </a>
+                        <div class="text-img">
+                            <a href="#" style="color: black"><h4>{{$blogs->title}}</h4></a>
+                        </div>
+                        <div class="text2-img">
+                            <a style="text-decoration: none" href="{{route('blog.show',$blogs->id)}}"><h4 href="#">Chi tiết</h4></a></div>
+                        <p>
+                            {{$blogs->detail}}
+                        </p>
+                        <div>
+                        </div>
+                        <hr class="coll-divider short-bg-line center">
+                        <a href="{{ route('blog.edit',$blogs->id)}}">
+                            <button style="width: 50px;border-radius: 3px" class="btn-primary mr-3"> Sửa</button>
+                        </a>
+                        <a>
+                            <button id="id-delete-{{$blogs->id}}" style="width: 50px;border-radius: 3px"
+                                    class="btn-danger btn-delete"> Xoá
+                            </button>
+                        </a>
+                        <i class="far fa-calendar-alt" style="float: right"> {{$blogs->created_at}}</i>
+                        <strong style="float: contour;margin-left: 20%"> {{$blogs->category}} </strong>
+
+                        <hr class="coll-divider short-bg-line center">
+                    </div>
+                @endforeach
+                <div style="width: 20px;height: 50px;margin-left: 70%" class="row">{{$blog->links()}}</div>
             </div>
-        </div>
+        </section>
     </div>
+
 @endsection
