@@ -58,10 +58,6 @@ class BlogController extends Controller
 
         $blog->save();
 
-
-        //dd($userImage);
-
-
         return redirect('admin/blog');
     }
 

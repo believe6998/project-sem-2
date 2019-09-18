@@ -15,8 +15,7 @@ class ClientBlogController extends Controller
 
         public function index()
     {
-        $blog = Blog::latest()->paginate(4);
-        return view('client/main-blog')->with(['blog' => $blog]);
+        //
     }
 
 

@@ -66,11 +66,13 @@ Route::get('/admin/user/edit', function () {
 Route::get('/pt/detail', function () {
     return view('client/pt-detail');
 });
-Route::resource('admin/blog','BlogController');
+Route::resource('admin/blog', 'BlogController');
 
-Route::resource('admin/pt','AdminPTController');
+Route::resource('admin/pt', 'AdminPTController');
 
-Route::resource('/blog','ClientBlogController',['as' => 'client']);
+Route::resource('admin/home', 'HomeController');
+
+Route::resource('/blog', 'ClientBlogController', ['as' => 'client']);
 
 Route::get('/admin/form', function () {
     return view('admin/form');
@@ -80,6 +82,11 @@ Route::resource('/admin/user', 'UserController');
 
 Auth::routes();
 
-Route::get('/','ClientBlogController@indexhome')->name('home');
+
+Route::post('/admin/change-status-home', 'HomeController@changeStatus');
+
+Route::get('/admin/deleted-home', 'HomeController@index2');
+
+Route::get('/', 'HomeController@index3');
 
 

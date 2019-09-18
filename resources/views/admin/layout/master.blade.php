@@ -84,6 +84,11 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Form-Blog</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/home">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Home</span></a>
+        </li>
 
 
         <!-- Divider -->
@@ -353,6 +358,74 @@
             });
         }
     });
+    $('.btn-delete-home').click(function () {
+        if (confirm('Are you sure wanna delete this user?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-home', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/home/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                success: function () {
+                    alert('Success');
+                    currentItem.closest("tr").remove();
+                },
+                error: function () {
+                    alert('Error');
+                }
+            });
+        }
+    });
+    $('#check-all-home-ad').change(function () {
+        $('.check-item').prop('checked', $(this).is(':checked'));
+    });
+
+    $('#btn-apply-all-home').click(function () {
+        // kiểm tra người dùng đã check phần tử chưa.
+        var arrayId = new Array();
+        $('.check-item:checkbox:checked').each(function () {
+            arrayId.push($(this).val());
+        });
+        if (arrayId.length == 0) {
+            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+            return;
+        }
+        // kiểm tra người dùng đã chọn thao tác chưa.
+        var action = $('#select-action').val();
+
+        if (action == 0) {
+            alert('Vui lòng chọn thao tác muốn thực hiện!');
+            return;
+        }
+
+
+        // confirm lại người dùng.
+        if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
+            changeStatusUser(arrayId, action);
+        }
+
+    });
+
+    function changeStatusUser(arrayId, status) {
+        $.ajax({
+            url: '/admin/change-status-home',
+            method: 'POST',
+            data: {
+                '_token': $('meta[name=csrf-token]').attr("content"),
+                'ids': arrayId,
+                'status': status
+            },
+            success: function () {
+                alert("Thao tác thành công, reload lại page!");
+                location.reload();
+            },
+            error: function () {
+                alert("Thao tác thất bại, vui lòng thử lại sau");
+            }
+        });
+    }
 </script>
 
 </body>

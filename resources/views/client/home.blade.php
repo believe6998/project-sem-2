@@ -25,9 +25,10 @@
     <div class="home-gt">
         <div class=" home-title">Lợi ích của đào tạo cá nhân <br> trực tuyến</div>
         <div class="container">
+            @foreach($list as $index => $item)
             <div class="row gt-pt">
                 <div class="col-sm-6" data-aos="zoom-in">
-                    <div class="row text-gt"> Tiết kiệm tiền</div>
+                    <div class="row text-gt">{{$item->id}}</div>
                     <div class="row text-title-pt">Nhiều hơn cho ít hơn.</div>
                     <div class="row text-detail"> Đào tạo 1 kèm 1 với huấn luyện viên cá nhân trong phòng tập thể hình
                         hoặc
@@ -43,6 +44,7 @@
                                                                src="{{asset('image/pt.jpg')}}"
                                                                alt=""></div>
             </div>
+                @endforeach
 
 
             <div class="row gt-pt">
@@ -208,7 +210,7 @@
                             <rect x="5" y="5" rx="25" fill="none" stroke="url(#grad1)" width="266" height="50"></rect>
                         </svg>
                         <!--<span>Voir mes réalisations</span>-->
-                        <span >Welcome in my world</span>
+                        <span>Welcome in my world</span>
                     </a>
                 </div>
             </div>
@@ -295,15 +297,17 @@
         <div class="home-title mt-5 mb-2" data-aos="fade-down">Blog bài viết</div>
 
         <div class="row" style="padding-left: 11%">
-            @foreach($blog as $blogs)
+            @foreach($blogs as $blog)
                 <div class="col-sm-5 gt-blog">
                     <img width="100%" height="auto"
-                         src="{{$blogs->thumbnail}}" alt="">
-                    <div class="mt-5"><a class="showmore" style="text-decoration: none;color: #4d4d4d" href="{{route('client.blog.show',$blogs->id)}}"><h2>{{$blogs->title}}</h2></a></div>
-                    <div class="mt-4 "><a style="text-decoration: none" href=""><h4>{{$blogs->category}}</h4></a></div>
-                    <div class="mt-4"><h5 style="line-height: 1.7em">{{$blogs->detail}}</h5></div>
+                         src="{{$blog->thumbnail}}" alt="">
+                    <div class="mt-5"><a class="showmore" style="text-decoration: none;color: #4d4d4d"
+                                         href="{{route('client.blog.show',$blog->id)}}"><h2>{{$blog->title}}</h2></a>
+                    </div>
+                    <div class="mt-4 "><a style="text-decoration: none" href=""><h4>{{$blog->category}}</h4></a></div>
+                    <div class="mt-4"><h5 style="line-height: 1.7em">{{$blog->detail}}</h5></div>
                     <div class="mt-4"><a class="showmore" style="text-decoration: none;color: gray"
-                                         href="{{route('client.blog.show',$blogs->id)}}"><h4 >Đọc tiếp</h4></a></div>
+                                         href="{{route('client.blog.show',$blog->id)}}"><h4>Đọc tiếp</h4></a></div>
                 </div>
             @endforeach
         </div>
