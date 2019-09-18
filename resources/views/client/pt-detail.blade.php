@@ -7,17 +7,19 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img width="100%" height="auto"
-                             src="https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png" alt="">
+                             src="{{$personalTraining->image}}" alt="">
                     </div>
                 </div><!--inner-->
             </div><!-- col-sm-6  -->
             <div class="col-sm-6 ml-5">
-                <div class="star-ratings-sprite-pt-detail"><span style="width:70%"
+                <div class="star-ratings-sprite-pt-detail"><span style="width:{{$personalTraining->rating}}"
                                                                  class="star-ratings-sprite-rating-pt-detail"></span>
                 </div>
                 <div class="text-secondary">(1 đánh giá)</div>
-                <div class="pt-2"><h1>Phan Hoài Nam</h1></div>
-                <div class="text-secondary"><h5>Personal Training</h5></div>
+                <div class="pt-2"><h1>{{$personalTraining->name}}</h1></div>
+                <div class="text-secondary"><h5
+                        class="category-name">@foreach($list as $item){{$item->name}}, @endforeach</h5>
+                </div>
                 <div class="row">
                     <div class="col-sm-7 mt-3">
                         <div class="container">
@@ -66,54 +68,27 @@
                     <button class="btn btn-link" style="text-decoration: none;font-size: 22px;line-height: 26px;"
                             type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                             aria-controls="collapseOne">
-                        Description
+                        Giới thiệu
                     </button>
                 </h2>
             </div>
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
+                   <p><b>Tiểu sử:</b> {{$personalTraining->description}}</p>
+                   <p><b>Trình độ chyên môn:</b> {{$personalTraining->qualification}}</p>
+                   <p><b>Kinh nghiệm:</b> {{$personalTraining->experience}}</p>
                 </div>
             </div>
         </div>
         <div class="card">
-            <div class="card-header" id="headingTwo" style="text-align: center">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed"
-                            style="text-decoration: none;font-size: 22px;line-height: 26px;" type="button"
-                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                            aria-controls="collapseTwo">
-                        Additional information
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingThree" style="text-align: right">
+            <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
                     <button class="btn btn-link collapsed"
                             style="text-decoration: none;font-size: 22px;line-height: 26px;" type="button"
                             data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                             aria-controls="collapseThree">
-                        Reviews (1)
+                        Đánh giá (1)
                     </button>
                 </h2>
             </div>

@@ -684,8 +684,12 @@
             $(this).removeClass('btn-primary').addClass('btn-secondary');
         }
         $('.time').not(this).addClass('btn-secondary').removeClass('btn-primary');
-    })
-    ;
+    });
+</script>
+<script>
+    $('.category-name').text(function (_, txt) {
+        return txt.slice(0, -2);
+    });
 </script>
 </body>
 </html>

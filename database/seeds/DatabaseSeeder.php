@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PersonalTrainingSeeder::class);
         $this->call(CategoryPTSeeder::class);
         $this->call(BlogSeeder::class);
+        $this->call(TimeSeeder::class);
+        $this->call(TimePTSeeder::class);
         $this->call(RolesTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
         $this->call(ConnectRelationshipsSeeder::class);
