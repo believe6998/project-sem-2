@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\personalTraining;
+use App\Time;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -52,10 +53,16 @@ class PersonalTrainingController extends Controller
         $list = DB::table('categories')
             ->join('personal_training_category', function ($join) use ($personalTraining) {
                 $join->on('categories.id', '=', 'personal_training_category.category_id')
-                    ->where('personal_training_category.personal_training_id', '=', $personalTraining->id);
+                    ->where('personal_training_category.personal_training_id', $personalTraining->id);
             })
             ->get();
-        return view('client.pt-detail', compact('personalTraining', 'list'));
+        $times = DB::table('times')
+            ->join('personal_training_time', function ($join) use ($personalTraining) {
+                $join->on('times.id', '=', 'personal_training_time.time_id')
+                    ->where('personal_training_time.personal_training_id', $personalTraining->id);
+            })
+            ->get();
+        return view('client.pt-detail', compact('personalTraining', 'list', 'times'));
     }
 
     /**

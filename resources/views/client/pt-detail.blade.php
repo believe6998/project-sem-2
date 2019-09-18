@@ -44,12 +44,9 @@
                 </div>
                 <div class="mt-4 ml-3 row">
                     <div class="row list-time" style="width: 100%">
-                        <div class="col-6 time btn btn-secondary"> 05:00 - 07:00</div>
-                        <div class="col-6 time btn btn-secondary"> 07:00 - 09:00</div>
-                        <div class="col-6 time btn btn-secondary"> 09:00 - 11:00</div>
-                        <div class="col-6 time btn btn-secondary"> 02:00 - 04:00</div>
-                        <div class="col-6 time btn btn-secondary"> 04:00 - 06:00</div>
-                        <div class="col-6 time btn btn-secondary"> 06:00 - 09:00</div>
+                        @foreach($times as $time)
+                        <div class="col-6 time btn btn-secondary">{{$time->time}}</div>
+                        @endforeach
                     </div>
                 </div>
                 <div style="margin-left: 0.5%;margin-top: 9%">
