@@ -43,7 +43,7 @@
         {{--        <a href="#"></a>--}}
         {{--    </div>--}}
 
-        <div class=" col-2 dropdown icon-user-header ">
+        <div class=" col-2 dropdown icon-user-header pr-5">
             @guest
                 <i class="fas fa-user fa dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
                    aria-haspopup="true"
@@ -54,9 +54,9 @@
                         <a class="dropdown-item" href="{{ route('register') }}">Đăng ký</a>
                     @endif
                 @else
-                    <div class="nav-item dropdown  logged-cl">
+                    <div class="nav-item dropdown  logged-cl ">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            {{ Auth::user()->lastName }} <span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
