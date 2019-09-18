@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\personalTraining;
 use App\Time;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class PersonalTrainingController extends Controller
 {
@@ -15,10 +17,20 @@ class PersonalTrainingController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
+    public function index(Request $request)
     {
-        $list = personalTraining::paginate(20);
-        return view('client/list-pt', compact('list'));
+        $list = DB::table('personal_trainings');
+        $orderBy = Input::get('orderBy');
+        if ($orderBy == 'rate') {
+            $list = $list->orderBy('rating', 'asc');
+        } else if ($orderBy == 'date') {
+            $list = $list->orderBy('created_at', 'desc');
+        } else {
+            $orderBy = null;
+        }
+        $list = $list->paginate(20);
+        $currentOrderBy = $request->get('orderBy');
+        return view('client/list-pt', compact('list','currentOrderBy'));
     }
 
     /**
