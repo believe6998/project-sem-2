@@ -61,7 +61,7 @@ Route::get('/admin/personal-training', function () {
 });
 
 Route::get('/admin/blog', function () {
-    return view('admin/blog');
+    return view('admin/blog/list-blog');
 });
 
 Route::get('/admin/user/edit', function () {

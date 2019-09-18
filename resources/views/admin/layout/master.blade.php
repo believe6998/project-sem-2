@@ -79,11 +79,6 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Blog</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/blog/create">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Form-Blog</span></a>
-        </li>
 
 
         <!-- Divider -->
@@ -271,23 +266,25 @@
 @yield('js')
 
 <script>
-    $('.btn-delete').click(function () {
-        if (!confirm('Are you sure wanna delete this game?')) {
-            return;
+    $('.btn-delete-blog').click(function () {
+        if (confirm('Bạn có chắc muốn xóa blog này không?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-blog', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/blog/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                success: function () {
+                    alert('Xóa blog thành công!');
+                    currentItem.closest("tr").remove();
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau!');
+                }
+            });
         }
-        var deleteId = $(this).attr('id').replace('id-delete-', '');
-        $.ajax({
-            url: '/admin/blog/' + deleteId,
-            method: 'DELETE',
-            data: {
-                // language=JQuery-CSS
-                '_token': $("meta[name=csrf-token]").attr('content')
-            },
-            error: function () {
-                alert('Success');
-                location.reload();
-            }
-        });
     });
 
     $('.btn-delete-user').click(function () {
