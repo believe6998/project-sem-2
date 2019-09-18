@@ -47,10 +47,7 @@ Route::get('/index-body-4', function () {
     return view('client/index-body/index-body-4');
 });
 
-
-Route::get('/admin', function () {
-    return view('admin/home');
-});
+Route::get('/admin','RoleController@roleAdmin');
 
 Route::get('/admin/personal-training', function () {
     return view('admin/pt');
@@ -69,7 +66,7 @@ Route::get('/pt/detail', function () {
 });
 Route::resource('admin/blog','BlogController');
 
-Route::resource('admin/pt','AdminPTController');
+Route::resource('/admin/pt','AdminPTController');
 
 Route::resource('/blog','ClientBlogController',['as' => 'client']);
 
@@ -81,6 +78,6 @@ Route::resource('/admin/user', 'UserController');
 
 Auth::routes();
 
-Route::get('/','ClientBlogController@indexhome')->name('home');
+Route::get('/','ClientBlogController@indexhome','RoleController@roleUser')->name('home');
 
 
