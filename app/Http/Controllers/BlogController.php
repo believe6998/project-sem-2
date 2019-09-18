@@ -18,8 +18,15 @@ class BlogController extends Controller
 
     public function index()
     {
-        $blog = Blog::latest()->paginate(6);
+        $blog = Blog::whereNotIn('status', [-1])->latest()->paginate(6);
         return view('admin/blog/list-blog')->with(['blog' => $blog]);
+    }
+
+    public function index2()
+    {
+        $blog = Blog::whereNotIn('status', [1]) ->paginate(6);
+        $data = ['blog' => $blog];
+        return view('admin/blog/deleted-blog', $data);
     }
 
     /**
@@ -131,12 +138,22 @@ class BlogController extends Controller
 
         error_log('Some message here.');
         $blog = Blog::find($id);
-        $blog->delete();
+        $blog->status = -1;
+        $blog->save();
         return response()->json(['status' => '200', 'message' => 'Okie']);
 //        $blog = Blog::findOrFail($id);
 //        $blog->delete();
 //        return redirect('admin/blog');
 
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $listItem = Blog::whereIn('id', $request->input('ids'));
+        $listItem->update(array(
+            'status' => (int)$request->input('status'),
+            'updated_at' => date('Y-m-d H:i:s')));
+        return response()->json(['status' => '200', 'message' => 'Good']);
     }
 
 }

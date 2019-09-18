@@ -4,11 +4,10 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header">
-                <h2 class="text-center mt-1 font-weight-bold">Thêm mới danh mục</h2>
+                <h3 class="text-center mt-2 font-weight-bold">THÊM DANH MỤC</h3>
             </div>
             <div class="card-body card-hd-list-category">
-                <h5 class="m-0 font-weight-bold text-primary mt-2 "><a href="/admin/category"><i
-                            class="fas fa-bars"></i> Danh sách danh mục</a></h5>
+                <h5 class="m-0  text-primary mt-2 "><a href="/admin/category"><i class="fas fa-bars"></i> Danh sách danh mục</a></h5>
                 <form action="/admin/category" method="post">
                     @csrf
                     <div class="form-row d-flex justify-content-center mb-5 form-cr-cate-ad">

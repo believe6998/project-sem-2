@@ -16,9 +16,16 @@ class AdminPTController extends Controller
      */
     public function index()
     {
-        $list = PersonalTraining::paginate(10);
+        $list = PersonalTraining::whereNotIn('status', [-1]) ->paginate(10);
         $data = ['list' => $list];
         return view('admin.pt.list', $data);
+    }
+
+    public function index2()
+    {
+        $list = PersonalTraining::whereNotIn('status', [1]) ->paginate(6);
+        $data = ['list' => $list];
+        return view('admin/pt/deleted-pt', $data);
     }
 
     /**
@@ -126,7 +133,17 @@ class AdminPTController extends Controller
     {
         error_log('Some message here.');
         $PersonalTraining = PersonalTraining::find($id);
-        $PersonalTraining->delete();
+        $PersonalTraining->status = -1;
+        $PersonalTraining->save();
         return response()->json(['status' => '200', 'message' => 'Okie']);
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $listItem = PersonalTraining::whereIn('id', $request->input('ids'));
+        $listItem->update(array(
+            'status' => (int)$request->input('status'),
+            'updated_at' => date('Y-m-d H:i:s')));
+        return response()->json(['status' => '200', 'message' => 'Good']);
     }
 }
