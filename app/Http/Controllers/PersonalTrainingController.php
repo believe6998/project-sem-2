@@ -16,7 +16,7 @@ class PersonalTrainingController extends Controller
     public function index()
     {
         $list = personalTraining::paginate(20);
-        return view('client/list-pt',compact('list'));
+        return view('client/list-pt', compact('list'));
     }
 
     /**
@@ -48,7 +48,13 @@ class PersonalTrainingController extends Controller
      */
     public function show(personalTraining $personalTraining)
     {
-        return view('client.pt-detail',compact('personalTraining'));
+        $list = DB::table('categories')
+            ->join('personal_training_category', function ($join) use ($personalTraining) {
+                $join->on('categories.id', '=', 'personal_training_category.category_id')
+                    ->where('personal_training_category.personal_training_id', '=', $personalTraining->id);
+            })
+            ->get();
+        return view('client.pt-detail', compact('personalTraining', 'list'));
     }
 
     /**

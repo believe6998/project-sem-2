@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PersonalTrainingSeeder::class);
         $this->call(CategoryPTSeeder::class);
         $this->call(BlogSeeder::class);
+        $this->call(TimeSeeder::class);
+        $this->call(TimePTSeeder::class);
         Model::reguard();
     }
 }
