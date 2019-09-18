@@ -25,108 +25,34 @@
     <div class="home-gt">
         <div class=" home-title">Lợi ích của đào tạo cá nhân <br> trực tuyến</div>
         <div class="container">
-            @foreach($list as $index => $item)
-            <div class="row gt-pt">
-                <div class="col-sm-6" data-aos="zoom-in">
-                    <div class="row text-gt">{{$item->id}}</div>
-                    <div class="row text-title-pt">Nhiều hơn cho ít hơn.</div>
-                    <div class="row text-detail"> Đào tạo 1 kèm 1 với huấn luyện viên cá nhân trong phòng tập thể hình
-                        hoặc
-                        phòng thu rất tốn kém, đặc biệt nếu bạn muốn tập luyện nhiều hơn một lần một tuần để có kết quả
-                        tối
-                        ưu.
-                        Một tháng đào tạo trực tuyến tốn ít hơn hai giờ đào tạo 1 kèm 1 với huấn luyện viên cá nhân
-                        trung
-                        bình.
+            @foreach ($list as $index => $item)
+                @if($index % 2 !=0)
+                    <div class="row gt-pt">
+                        <div class="col-sm-6" data-aos="zoom-in">
+                            <div class="row text-gt">{{$item->title}}</div>
+                            <div class="row text-title-pt">{{$item->description}}</div>
+                            <div class="row text-detail">{{$item->content}}
+                            </div>
+                        </div>
+                        <div class="col-sm-6 " data-aos="zoom-in"><img class="img-gt" width="100%" height="auto"
+                                                                       src="{{$item->image}}"
+                                                                       alt=""></div>
                     </div>
-                </div>
-                <div class="col-sm-6 " data-aos="zoom-in"><img class="img-gt" width="100%" height="auto"
-                                                               src="{{asset('image/pt.jpg')}}"
-                                                               alt=""></div>
-            </div>
-                @endforeach
+                @else
+                    <div class="row gt-pt">
+                        <div class="col-sm-6" data-aos="fade-in"><img class="img-gt" width="100%" height="auto"
+                                                                      src="{{$item->image}}"
+                                                                      alt=""></div>
+                        <div class="col-sm-6 pl-5" data-aos="fade-up">
+                            <div class="row text-gt"> {{$item->title}}</div>
+                            <div class="row text-title-pt">{{$item->description}}</div>
 
-
-            <div class="row gt-pt">
-                <div class="col-sm-6" data-aos="fade-in"><img class="img-gt" width="100%" height="auto"
-                                                              src="{{asset('image/coms.jpg')}}"
-                                                              alt=""></div>
-                <div class="col-sm-6 pl-5" data-aos="fade-up">
-                    <div class="row text-gt"> Liên lạc 24/7</div>
-                    <div class="row text-title-pt">Ở đâu & khi nào bạn muốn!</div>
-
-                    <div class="row text-detail"> Với một huấn luyện viên thường xuyên, bạn theo dõi khoảng 1-2 buổi đào
-                        tạo
-                        mỗi tuần.
+                            <div class="row text-detail">{{$item->content}}
+                            </div>
+                        </div>
                     </div>
-                    <div class="row text-detail"> Đây là những khoảnh khắc liên lạc duy nhất mà bạn có thể hỏi tất cả
-                        các
-                        câu hỏi mà bạn đã chạy trong suốt cả tuần (nếu bạn không quên chúng).
-                    </div>
-                    <div class="row text-detail"> Và điều này cũng phải xảy ra trong khóa đào tạo của bạn, nơi sự chú ý
-                        của
-                        bạn thực sự nên tập trung vào chính khóa đào tạo đó.
-                    </div>
-                    <div class="row text-detail"> Với ứng dụng MY-PT, bạn có thể liên hệ với huấn luyện viên cá nhân của
-                        mình và đặt câu hỏi bất cứ lúc nào. Bằng cách này bạn sẽ có được câu trả lời nhanh chóng cho tất
-                        cả
-                        các câu hỏi khẩn cấp của mình mà không phải chờ đến buổi đào tạo tiếp theo.
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="row gt-pt">
-                <div class="col-sm-6" data-aos="fade-right">
-                    <div class="row text-gt">Chế độ ăn uống phù hợp</div>
-                    <div class="row text-title-pt">Không có giới hạn, ăn như thế nào bạn muốn.</div>
-                    <div class="row text-detail"> Một kế hoạch ăn kiêng bao gồm 6 bữa cơm gà và rau mỗi ngày không thể
-                        duy
-                        trì.
-                    </div>
-                    <div class="row text-detail"> Điểm của lịch trình cho ăn là gì nếu bạn không thể gắn bó với nó trong
-                        một
-                        thời gian dài hơn?
-                    </div>
-                    <div class="row text-detail"> Tôi muốn bạn đạt được mục tiêu của mình và đó là lý do tại sao tôi
-                        hoàn
-                        toàn sắp xếp dinh dưỡng với bạn.
-                    </div>
-                    <div class="row text-detail"> Với kế hoạch dinh dưỡng "ăn thứ này và xem kết quả" chi tiết hoặc chế
-                        độ
-                        ăn "linh hoạt", phù hợp với loại cơ thể, mục tiêu và hoạt động hàng ngày của bạn, chúng tôi lập
-                        kế
-                        hoạch dinh dưỡng với các loại thực phẩm mà bạn thích!
-                    </div>
-                </div>
-                <div class="col-sm-6" data-aos="fade-left"><img class="img-gt" width="100%" height="auto"
-                                                                src="{{asset('image/communication.jpg')}}" alt="">
-                </div>
-            </div>
-
-
-            <div class="row gt-pt">
-                <div class="col-sm-6 " data-aos="fade-right"><img class="img-gt" width="100%" height="auto"
-                                                                  src="{{asset('image/traing.jpg')}}"
-                                                                  alt=""></div>
-                <div class="col-sm-6 pl-5" data-aos="zoom-in">
-                    <div class="row text-gt">Đào tạo khi nó phù hợp với bạn</div>
-                    <div class="row text-title-pt">Tôi nói với bạn như thế nào, bạn xác định khi nào.</div>
-                    <div class="row text-detail"> Vì đào tạo cá nhân trực tuyến không phải là 1 trên 1 về địa điểm
-                        , bạn có thể đào tạo khi nó phù hợp với bạn.
-                    </div>
-                    <div class="row text-detail"> Không có vấn đề với việc phối hợp lịch.
-                    </div>
-                    <div class="row text-detail">Bạn không trả tiền cho việc đào tạo mà bạn phải hủy vào phút cuối vì có
-                        gì đó đã xảy ra.
-                    </div>
-                    <div class="row text-detail">Không vội vã từ công việc vì bạn phải nhanh chóng chuyển sang đào tạo,
-                        nhưng tốt đẹp và yên tĩnh khi bạn muốn. Ngay cả khi bạn không muốn tập luyện trong phòng tập thể
-                        dục, việc tập luyện có thể được điều chỉnh tại nhà.
-                    </div>
-                </div>
-            </div>
+                @endif
+            @endforeach
         </div>
     </div>
     <div style="background:linear-gradient(180deg,#0072ff 0%,#00c6ff 100%) !important;position: relative;background-position: center;">
