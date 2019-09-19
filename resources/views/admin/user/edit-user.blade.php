@@ -4,10 +4,10 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header">
-                <h2 class="text-center mt-1 font-weight-bold">Sửa thông tin người dùng</h2>
+                <h2 class="text-center mt-2 font-weight-bold">SỬA THÔNG TIN NGƯỜI DÙNG</h2>
             </div>
             <div class="card-body card-hd-list-category">
-                <h5 class=" font-weight-bold text-primary mt-2 "><a href="/admin/user"><i
+                <h5 class="  text-primary mt-2 "><a href="/admin/user"><i
                             class="fas fa-bars"></i> Danh sách người dùng</a></h5>
                 <div class="form-create-user-ad">
                     <form action="{{route('user.update',$user->id)}}" method="POST" class="mt-5 mb-5 ">

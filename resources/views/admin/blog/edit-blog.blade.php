@@ -4,10 +4,10 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header">
-                <h3 class="text-center mt-1 font-weight-bold">SỬA THÔNG TIN BLOG</h3>
+                <h3 class="text-center mt-2 font-weight-bold">SỬA THÔNG TIN BLOG</h3>
             </div>
             <div class="card-body card-hd-list-category">
-                <h5 class=" font-weight-bold text-primary mt-2 "><a href="/admin/blog"><i
+                <h5 class="  text-primary mt-2 "><a href="/admin/blog"><i
                             class="fas fa-bars"></i> Danh sách blog</a></h5>
                 <div class="mt-5 mb-5">
                     <form action="{{route('blog.update',$blog->id)}}" enctype="multipart/form-data" method="POST">

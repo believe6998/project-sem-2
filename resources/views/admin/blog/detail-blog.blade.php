@@ -4,11 +4,11 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header text-centerr">
-                <h3 class="text-center mt-1 font-weight-bold">CHI TIẾT BLOG </h3>
+                <h3 class="text-center mt-2 font-weight-bold">CHI TIẾT BLOG </h3>
                 <small id="emailHelp" class=" form-text text-muted text-center">#id: {{$blog->id}} </small>
             </div>
             <div class="card-body card-hd-list-category">
-                <h5 class=" font-weight-bold text-primary mt-2 "><a href="/admin/blog"><i
+                <h5 class="  text-primary mt-2 "><a href="/admin/blog"><i
                             class="fas fa-bars"></i> Danh sách blog</a></h5>
                 <div class="mt-5 mb-5">
 {{--                    <img src="http://changkangkung.com.vn/assets/upload/changkangkung.com.vn/res/CTKM/ho-ngoc-ha-banner-web.png"--}}
