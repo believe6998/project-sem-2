@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Category;
+use App\Duration;
 use App\personalTraining;
 use App\Time;
 use Illuminate\Http\Request;
@@ -74,7 +76,8 @@ class PersonalTrainingController extends Controller
                     ->where('personal_training_time.personal_training_id', $personalTraining->id);
             })
             ->get();
-        return view('client.pt-detail', compact('personalTraining', 'list', 'times'));
+        $durations = Duration::all();
+        return view('client.pt-detail', compact('personalTraining', 'list', 'times','durations'));
     }
 
     /**
