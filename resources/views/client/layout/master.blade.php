@@ -53,49 +53,48 @@
                     @if (Route::has('register'))
                         <a class="dropdown-item" href="{{ route('register') }}">Đăng ký</a>
                     @endif
-                @else
-                    <div class="nav-item dropdown  logged-cl ">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->lastName }} <span class="caret"></span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a href="/user-detail" class="dropdown-item">Thông tin</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Đăng xuất') }}
+                    @else
+                        <div class="nav-item dropdown  logged-cl ">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->lastName }}
                             </a>
-
+                            <span class="d-none" id="user_id">{{ Auth::user()->id }}</span>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a href="#" class="dropdown-item">Thông tin</a>
+                                <a href="/user-detail" class="dropdown-item">Thông tin</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Đăng xuất') }}
                                 </a>
 
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a href="#" class="dropdown-item">Thông tin</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Đăng xuất') }}
+                                    </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    @csrf
-                                </form>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
                             </div>
                         </div>
+                    @endguest
                 </div>
-            @endguest
         </div>
     </div>
-</div>
-<i  class="fas fa-chevron-up" onclick="topFunction()" id="myBtn" title="Lên đầu trang"></i>
-<div>
-    @section('content')
-    @show()
+    <i class="fas fa-chevron-up" onclick="topFunction()" id="myBtn" title="Lên đầu trang"></i>
+    <div>
+        @section('content')
+        @show()
+    </div>
 </div>
 <footer class="page-footer font-small unique-color-dark footer-layout" style="margin-top: 30px">
-
-
-    <!-- Footer Links -->
     <div class="container text-center text-md-left ">
 
         <!-- Grid row -->
@@ -107,7 +106,8 @@
                 <!-- Content -->
                 <h6 class="text-uppercase font-weight-bold">My pt online</h6>
                 <hr class="deep-purple accent-2 mb-2 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>Chúng tôi luôn mang lại sự hài lòng và những bài hướng dẫn tốt nhất cho các bạn với dịch vụ tập luyện
+                <p>Chúng tôi luôn mang lại sự hài lòng và những bài hướng dẫn tốt nhất cho các bạn với dịch vụ tập
+                    luyện
                     trực tuyến mới mẻ và bổ ích của My PT Online.</p>
 
             </div>
@@ -174,21 +174,10 @@
         </div>
 
     </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <!-- Footer -->
-
     <div class="social-icon d-flex justify-content-center">
-
-        <!-- Grid row-->
         <div class="row ">
-
-            <!-- Grid column -->
             <div class="col-md-12  py-5 social-icon-layout">
-
                 <div class=" flex-center">
-
                     <!-- Facebook -->
                     <a class="fb-ic" href="#">
                         <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 "> </i>
@@ -216,20 +205,12 @@
                 </div>
             </div>
             <!-- Grid column -->
-
         </div>
         <!-- Grid row-->
-
     </div>
-
     <div class="footer-copyright text-center py-3 ">Copyright MY-PT.Online 2018 | Ontworpen door inDSGN <br>
         <a href="#">Algemene voorwaarden</a> | <a href="#">Cookies</a>
     </div>
-
-    </div>
-
-    <!-- Copyright -->
-
 </footer>
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/client/layout.js')}}"></script>
@@ -503,6 +484,7 @@
 </script>
 <script>
     $('.time').click(function () {
+        $('input[name=personal_training_time_id]').val($(this).next().text());
         if ($(this).hasClass('btn-secondary')) {
             $(this).removeClass('btn-secondary').addClass('btn-primary');
         } else if ($(this).hasClass('btn-primary')) {
@@ -510,10 +492,12 @@
         }
         $('.time').not(this).addClass('btn-secondary').removeClass('btn-primary');
     });
-</script>
-<script>
     $('.category-name').text(function (_, txt) {
         return txt.slice(0, -2);
+    });
+    $('input[name=user_id]').val($('#user_id').text());
+    $('.duration').click(function () {
+        $('input[name=duration_id]').val($(this).next().text());
     });
 </script>
 </body>

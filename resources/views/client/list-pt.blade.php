@@ -44,7 +44,7 @@
                                     </h2>
                                     <p class="pb-3">
                                         {{$item->description}}</p>
-                                    <a href="#">View more</a>
+                                    <a href="/personal-training/{{$item->id}}">View more</a>
                                 </figcaption>
                             </figure>
                         </div>

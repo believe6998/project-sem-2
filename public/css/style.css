@@ -947,8 +947,7 @@ padding-left:5% ;
 }
 
 .rate:not(:checked) > input {
-    position: absolute;
-    top: -9999px;
+   display: none;
 }
 
 .rate:not(:checked) > label {

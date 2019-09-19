@@ -87,4 +87,6 @@ Auth::routes();
 
 Route::get('/','ClientBlogController@indexhome','RoleController@roleUser')->name('home');
 
+Route::resource('order', 'OrderController');
+
 
