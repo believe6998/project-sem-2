@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Http\Requests\AddBlogValidate;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -50,9 +51,9 @@ class BlogController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return string
      */
-    public function store(Request $request)
+    public function store(AddBlogValidate $request)
     {
-
+        $request ->validated();
         $blog = new Blog();
         $blog->category = $request->category;
         $blog->title = $request->title;
