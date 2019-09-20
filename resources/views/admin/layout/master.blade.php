@@ -8,15 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="csrf-token" content="{{csrf_token()}}">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
     <title>SB Admin 2 - Dashboard</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <!-- Custom fonts for this template-->
     <link href="{{ URL::asset("ad/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="{{ URL::asset("ad/css/sb-admin-2.min.css")}}" rel="stylesheet">
@@ -84,7 +88,11 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Form-Blog</span></a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/review">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Đánh giá</span></a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -250,7 +258,14 @@
 <script src="{{ URL::asset("ad")}}"></script>
 <script src="{{ URL::asset("ad/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
 
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
 <!-- Core plugin JavaScript-->
 <script src="{{ URL::asset("ad/vendor/jquery-easing/jquery.easing.min.js")}}"></script>
 
@@ -272,7 +287,7 @@
 
 <script>
     $('.btn-delete').click(function () {
-        if (!confirm('Are you sure wanna delete this game?')) {
+        if (!confirm('Bạn có chắc muốn blog dùng này?')) {
             return;
         }
         var deleteId = $(this).attr('id').replace('id-delete-', '');
@@ -307,6 +322,23 @@
                 error: function () {
                     alert('Có lỗi xảy ra, vui lòng thử lại sau.');
                 }
+            });
+        }
+    });
+
+    $('.btn-delete-review').click(function () {
+        if (confirm('Bạn có chắc muốn xóa đánh giá này?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-review', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/review/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                error: function () {
+                    location.reload();
+                },
             });
         }
     });
@@ -353,6 +385,81 @@
             });
         }
     });
+    $(".alert").delay(4000).slideUp(200, function () {
+        $(this).alert('close');
+    });
+
+
+    $('#check-all').change(function () {
+        $('.check-item').prop('checked', $(this).is(':checked'));
+    });
+
+    $('#btn-apply-all').click(function () {
+        // kiểm tra người dùng đã check phần tử chưa.
+        var arrayId = new Array();
+        $('.check-item:checkbox:checked').each(function () {
+            arrayId.push($(this).val());
+        });
+        if (arrayId.length == 0) {
+            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+            return;
+        }
+        // kiểm tra người dùng đã chọn thao tác chưa.
+        var action = $('#select-action').val();
+        if (action == 5) {
+            alert('Vui lòng chọn thao tác muốn thực hiện!');
+            return;
+        }
+
+        // confirm lại người dùng.
+        if (confirm('Bạn có chắc muốn thực hiện thao tác ')) {
+            changeStatus(arrayId, action);
+        }
+    });
+
+    function changeStatus(arrayId, status) {
+        $.ajax({
+            url: '/admin/review/change-status',
+            method: 'POST',
+            data: {
+                '_token': $('meta[name=csrf-token]').attr("content"),
+                'ids': arrayId,
+                'status': status
+            },
+            success: function () {
+                alert("Thao tác thành công")
+                location.reload();
+            },
+            error: function () {
+                alert("Thao tác thất bại, vui lòng thử lại sau");
+            }
+        });
+    }
+  var count=0;
+    $('.btn-show').click(function (event) {
+        count++;
+        var editId = $(this).attr('id').replace('btn-show-', '');
+        $.ajax({
+            url: '/admin/review/get-by-id/' + editId,
+            method: 'GET',
+            success: function (response) {
+                $('.content1').html(response.data.review);
+
+                $('.rated').width(response.data.rating);
+
+                $('#fullHeightModalRight').modal('show');
+
+
+
+
+            },
+            error: function () {
+                alert('Error');
+            }
+        });
+    });
+
+
 </script>
 
 </body>

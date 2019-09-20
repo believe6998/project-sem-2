@@ -139,5 +139,15 @@
             </div>
         </section>
     </div>
+    @if(session('success'))
+        <div style="position: fixed;top: 89%;left: 3% ;z-index: 10;"
+             class="alert alert-success alert-dismissible fade show"
+             role="alert">
+            <strong> Thông báo</strong> {{session('success')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
 
 @endsection

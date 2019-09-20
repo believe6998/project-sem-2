@@ -129,4 +129,6 @@ class AdminPTController extends Controller
         $PersonalTraining->delete();
         return response()->json(['status' => '200', 'message' => 'Okie']);
     }
+
+
 }

@@ -10,4 +10,8 @@ class personalTraining extends Model
     {
         return $this->belongsToMany('App\Category');
     }
+    public function reviews()
+    {
+        return $this->belongsToMany('App\Review');
+    }
 }

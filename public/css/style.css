@@ -901,12 +901,11 @@ rotateY(180 deg)
 
 .rate {
     height: 46px;
-    padding-right: 100px;
+    padding-right: 82%;
 }
 
 .rate:not(:checked) > input {
-    position: absolute;
-    top: -9999px;
+    display: none;
 }
 
 .rate:not(:checked) > label {
@@ -915,7 +914,7 @@ rotateY(180 deg)
     overflow: hidden;
     white-space: nowrap;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 21px;
     color: #ccc;
 }
 
@@ -1825,15 +1824,18 @@ a {
 
 }
 
-.name-pt{
+.name-pt {
     font-family: 'Averta Regular', Helvetica, Arial, Lucida, sans-serif;
     padding-left: 420px;
     height: 50px;
-
+}
 .form-create-user-ad{
     margin-right: -16%;
     padding-left: 29%;
 }
 
 
-
+td{
+    font-size: 14px!important;
+    font-weight:600 !important;
+}
