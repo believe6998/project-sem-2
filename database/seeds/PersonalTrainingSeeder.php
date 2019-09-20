@@ -164,7 +164,7 @@ class PersonalTrainingSeeder extends Seeder
                 'description' => 'no pain no gain',
                 'qualification' => 'Chứng nhận huấn luyện viên thể hình -fitness, Huấn luyện viên thể hình liên đoàn cử tạ Quốc Tế...',
                 'experience' => 'personal trainer ( 01/2011 - 09/2018 )',
-                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeWiPRyYgkP2ZkBT8H_PDs-LZtXwiVLxbjBOlLX0CgGNVZ1l92',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWshFYD4ZZWl0IEYjKaRmAPidgZhICt1gK-gEpS3tg5P6_k5o',
                 'rating' => '90%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -175,7 +175,7 @@ class PersonalTrainingSeeder extends Seeder
                 'description' => 'Kinh niệm 10 năm giảng dạy tại trung tâm và tự do. Giúp rất nhiều khách hàng đat đc mục tiêu. Tận tình và chuyên nghiệp',
                 'qualification' => 'Chứng nhận huấn luyện viên thể hình -fitness, Huấn luyện viên thể hình liên đoàn cử tạ Quốc Tế...',
                 'experience' => 'personal trainer ,yoga( 01/2011 - 09/2018 )',
-                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeWiPRyYgkP2ZkBT8H_PDs-LZtXwiVLxbjBOlLX0CgGNVZ1l92',
+                'image' => 'http://midiabahia.com.br/wp-content/uploads/2015/11/GABRIELA-PUGLIESI-ACADEMIA-400x400.jpg',
                 'rating' => '90%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
