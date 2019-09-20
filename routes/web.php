@@ -103,4 +103,11 @@ Route::get('/','ClientBlogController@indexhome','RoleController@roleUser')->name
 
 Route::resource('order', 'OrderController');
 
+Route::resource('admin/home', 'HomeController');
+
+Route::post('/admin/change-status-home', 'HomeController@changeStatus');
+Route::get('/admin/deleted-home', 'HomeController@index2');
+
+Route::get('/', 'HomeController@index3');
+
 
