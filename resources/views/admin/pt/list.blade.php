@@ -2,22 +2,22 @@
 @section('content')
     <div class="container-fluid">
 
-        <div class="card-header text-center"><h2 class="mt-1 font-weight-bold">Danh sách PT</h2></div>
+        <div class="card-header text-center"><h2 class="mt-1 font-weight-bold">Danh sách Huấn Luyện Viên Cá Nhân</h2></div>
         <div class="card-body card-hd-list-category">
 
             <h5 class="m-0 font-weight-bold text-primary mt-2 "><a href="/admin/pt/create"><i
-                            class="fas fa-plus-square"></i> Thêm PT</a></h5>
+                            class="fas fa-plus-square"></i> Chỉnh Sửa Huấn Luyện Viên</a></h5>
             <div class="table-responsive mt-3">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Rating</th>
-                        <th>Status</th>
-                        <th>Create_at</th>
-                        <th>Updated_at</th>
+                        <th>Ảnh</th>
+                        <th>Tên</th>
+                        <th>Đánh Giá</th>
+                        <th>Trạng Thái</th>
+                        <th>Ngày Tạo</th>
+                        <th>Ngày Cập Nhập</th>
                         <th></th>
                     </tr>
                     </thead>

@@ -5,8 +5,8 @@
              alt="Responsive image">
     </div>
     <div class="detail" style="padding-top: 40px">
-        <h1 class="text-center">Oefening diensten en</h1>
-        <h1 class="text-center">Effectieve manieren om af te vallen</h1>
+        <h1 class="text-center">Dịch vụ luyện tập thể dục</h1>
+        <h1 class="text-center">Và các lưu ý giảm cân hiệu quả</h1>
         <hr class="coll-divider short-red-line center">
     </div>
     <div class="container">
@@ -39,12 +39,12 @@
             </div>
         </section>
         <div class="detail" style="padding-top: 40px">
-            <h1 class="text-center" style="color: #0072ff">REGISTREER NU</h1>
+            <h1 class="text-center" style="color: #0072ff">ĐĂNG KÝ NGAY</h1>
             <hr class="coll-divider short-red-line center">
             <div class="row" style="padding-top: 40px">
                 <div class="col-3">
                     <p>
-                    <h3 style="color: #0072ff" class="text-register">Nieuwe artikels in je mailbox?</h3></p>
+                    <h3 style="color: #0072ff" class="text-register">Bài viết mới trong hộp thư điện tử của bạn</h3></p>
                 </div>
                 <div class="col-3" style="padding-top: 50px">
                     <input class="form-control" type="text" placeholder="Name">

@@ -208,7 +208,7 @@
                             <rect x="5" y="5" rx="25" fill="none" stroke="url(#grad1)" width="266" height="50"></rect>
                         </svg>
                         <!--<span>Voir mes réalisations</span>-->
-                        <span >Welcome in my world</span>
+                        <span >Chào Mừng Bạn Đến Với Chúng Tôi</span>
                     </a>
                 </div>
             </div>
