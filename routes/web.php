@@ -86,6 +86,7 @@ Route::resource('/admin/user', 'UserController');
 Route::post('/admin/change-status-category', 'AdminCategoryController@changeStatus');
 Route::get('/admin/deleted-category', 'AdminCategoryController@index2');
 
+
 Route::post('/admin/change-status-blog', 'BlogController@changeStatus');
 Route::get('/admin/deleted-blog', 'BlogController@index2');
 

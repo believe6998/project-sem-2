@@ -153,4 +153,7 @@ class Usercontroller extends Controller
             'updated_at' => date('Y-m-d H:i:s')));
         return response()->json(['status' => '200', 'message' => 'Good']);
     }
+
+
+
 }

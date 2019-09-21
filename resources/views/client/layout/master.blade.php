@@ -22,7 +22,7 @@
             <a href="/"><img src="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" alt="..."
                              class=" logo-image"></a>
         </div>
-        <div class="col-7  navbar-header">
+        <div class="col-6  navbar-header">
             <nav class="navbar navbar-expand-lg navbar-light bg-light layout-nav-bar navbar-header-control ">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
         {{--        <a href="#"></a>--}}
         {{--    </div>--}}
 
-        <div class=" col-2 dropdown icon-user-header pr-5">
+        <div class=" col-3 dropdown icon-user-header pr-5">
             @guest
                 <i class="fas fa-user fa dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
                    aria-haspopup="true"
@@ -54,7 +54,7 @@
                         <a class="dropdown-item" href="{{ route('register') }}">Đăng ký</a>
                     @endif
                     @else
-                        <div class="nav-item dropdown  logged-cl ">
+                        <div class="nav-item dropdown   logged-cl ">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->lastName }}
@@ -500,5 +500,6 @@
         $('input[name=duration_id]').val($(this).next().text());
     });
 </script>
+
 </body>
 </html>
