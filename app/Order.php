@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    //
+
+    public function duration()
+    {
+        return $this->belongsTo('App\Duration');
+    }
 }

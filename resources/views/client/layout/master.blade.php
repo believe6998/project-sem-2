@@ -482,23 +482,8 @@
     });
 
 </script>
-<script>
-    $('.time').click(function () {
-        $('input[name=personal_training_time_id]').val($(this).next().text());
-        if ($(this).hasClass('btn-secondary')) {
-            $(this).removeClass('btn-secondary').addClass('btn-primary');
-        } else if ($(this).hasClass('btn-primary')) {
-            $(this).removeClass('btn-primary').addClass('btn-secondary');
-        }
-        $('.time').not(this).addClass('btn-secondary').removeClass('btn-primary');
-    });
-    $('.category-name').text(function (_, txt) {
-        return txt.slice(0, -2);
-    });
-    $('input[name=user_id]').val($('#user_id').text());
-    $('.duration').click(function () {
-        $('input[name=duration_id]').val($(this).next().text());
-    });
-</script>
+<link href="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.css" rel="stylesheet"/>
+<script src="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.js"></script>
+<script src="{{asset('js/checkout.js')}}"></script>
 </body>
 </html>
