@@ -108,4 +108,11 @@ Route::get('/return-vnpay', function (){
     return view('client.return-payment');
 });
 
+Route::resource('admin/home', 'HomeController');
+
+Route::post('/admin/change-status-home', 'HomeController@changeStatus');
+Route::get('/admin/deleted-home', 'HomeController@index2');
+
+Route::get('/', 'HomeController@index3');
+
 
