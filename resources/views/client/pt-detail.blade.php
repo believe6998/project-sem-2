@@ -39,6 +39,7 @@
                                             @foreach($durations as $duration)
                                                 <li class="duration">{{$duration->duration}}</li>
                                                 <span class="d-none duration_id">{{$duration->id}}</span>
+                                                <span class="d-none duration_price">{{$duration->price}}</span>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -58,9 +59,14 @@
                 <div style="margin-left: 0.5%;margin-top: 9%">
                     <form action="{{route('order.store')}}" method="post">
                         @csrf
+                        <input type="text" class="d-none" name="order_id" value="{{date("YmdHis")}}"/>
                         <input type="text" class="d-none" name="user_id">
                         <input type="text" class="d-none" name="personal_training_time_id">
+                        <input type="text" class="" name="time">
                         <input type="text" class="d-none" name="duration_id">
+                        <input type="text" class="" name="duration">
+                        <input type="text" class="" name="pt-name" value="{{$personalTraining->name}}">
+                        <input type="text" class="" name="price">
                         <button type="submit" class="btn btn-outline-primary w-100" style="font-size: 20px">
                             ĐẶT LỊCH
                         </button>
