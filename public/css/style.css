@@ -370,11 +370,35 @@ rotateY(180 deg)
 
 
 .card-header-ifmt-user h2{
-
     font-weight: bold;
 }
+
 .card-body-detail-user{
     padding-left: 40%;
+}
+
+
+
+.txt-body-user-detail ul li a i {
+    color: #3f9ae5;
+    opacity: 0.5;
+}
+
+.txt-body-user-detail ul li a i:hover {
+    opacity: 1;
+}
+
+.txt-body-user-detail ul li {
+    font-size: 16px;
+
+}
+
+.txt-body-user-detail ul {
+    list-style: none;
+}
+
+.txt-body-user-detail {
+    padding-left: 5%;
 }
 
 
@@ -399,7 +423,8 @@ rotateY(180 deg)
 .gender-register-client {
     margin-left: 10px;
 }
-.btn-user-detail .btn{
+
+.btn-user-detail .btn {
     font-weight: bold;
     font-size: 16px;
 }
@@ -919,11 +944,11 @@ rotateY(180 deg)
 
 .rate {
     height: 46px;
-    padding-right: 100px;
+    padding-right: 82%;
 }
 
 .rate:not(:checked) > input {
-   display: none;
+    display: none;
 }
 
 .rate:not(:checked) > label {
@@ -932,7 +957,7 @@ rotateY(180 deg)
     overflow: hidden;
     white-space: nowrap;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 21px;
     color: #ccc;
 }
 
@@ -1849,47 +1874,54 @@ a {
     height: 50px;
 }
 
-.form-create-user-ad{
+.form-create-user-ad {
     margin-right: -16%;
     padding-left: 29%;
 }
-.img-edit-blog{
+
+.img-edit-blog {
     height: 200px;
 }
 
-.btn-choice-cate{
+.btn-choice-cate {
     padding-left: 27%;
 }
-.btn-choice-blog{
+
+.btn-choice-blog {
     padding-left: 27%;
 }
 
 .tr-pt-ad-item th {
-text-align: center;
+    text-align: center;
 }
 
-.tr-pt-ad-item .item-pt-ad{
+.tr-pt-ad-item .item-pt-ad {
     text-align: center;
     padding-top: 65px;
 }
 
-.user-tr-item-ad .item-user-ad{
+.user-tr-item-ad .item-user-ad {
     padding-top: 28px;
 }
 
-.user-dlt-item-ad .item-user-ad{
+.user-dlt-item-ad .item-user-ad {
     padding-top: 25px;
 }
 
-.tr-blog-ad .item-blog-ad{
+.tr-blog-ad .item-blog-ad {
     padding-top: 85px;
 }
-.tr-blog-ad .item-blog-ad-2{
+
+.tr-blog-ad .item-blog-ad-2 {
     padding-top: 110px;
 }
-.tr-blog-ad .item-blog-ad-3{
+
+.tr-blog-ad .item-blog-ad-3 {
     padding-top: 95px;
 }
 
 
-
+td {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}

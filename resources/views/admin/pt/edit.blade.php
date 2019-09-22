@@ -26,7 +26,7 @@
                             <div class="">
                                 <div class="col-6 ">
                                     <div class="form-group">
-                                        <label  class="font-weight-bold">&nbsp;Description</label>
+                                        <label  class="font-weight-bold">&nbsp;Mô Tả</label>
                                         <textarea type="text" rows="4" cols="50" name="description">{{$PersonalTraining->description}}</textarea>
                                         @if ($errors->has('description'))
                                             <span class="text-danger">{{ $errors->first('description') }}</span>
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="col-6 ">
                                     <div class="form-group">
-                                        <label  class="font-weight-bold">&nbsp;Qualification</label>
+                                        <label  class="font-weight-bold">&nbsp;Trình Độ Chuyên Môn</label>
                                         <textarea type="text" rows="4" cols="50" name="qualification">{{$PersonalTraining->qualification}}</textarea>
                                         @if ($errors->has('qualification'))
                                             <span class="text-danger">{{ $errors->first('qualification') }}</span>
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-6 ">
                                     <div class="form-group">
-                                        <label  class="font-weight-bold">&nbsp;Experience</label>
+                                        <label  class="font-weight-bold">&nbsp;Kinh Nghiệm</label>
                                         <textarea type="text" rows="4" cols="50" name="experience">{{$PersonalTraining->experience}}</textarea>
                                         @if ($errors->has('experience'))
                                             <span class="text-danger">{{ $errors->first('experience') }}</span>
@@ -56,7 +56,7 @@
                             <div class="">
                                 <div class="col-8 ">
                                     <div class="form-group">
-                                        <label class="font-weight-bold">&nbsp;Avatar</label>
+                                        <label class="font-weight-bold">&nbsp;Ảnh</label>
                                         <input multiple type="file"  value={{$PersonalTraining->image}} name="image[]">
                                         @if ($errors->has('image'))
                                             <span class="text-danger">{{ $errors->first('image') }}</span>
@@ -68,7 +68,7 @@
                             <div class="">
                                 <div class="col-8 ">
                                     <div class="form-group">
-                                        <label class="font-weight-bold">&nbsp;Rating</label>
+                                        <label class="font-weight-bold">&nbsp;Đánh Giá</label>
                                         <input type="text" class="form-control" name="rating" value="{{$PersonalTraining->rating}}" placeholder="Rating">
                                         @if ($errors->has('rating'))
                                             <span class="text-danger">{{ $errors->first('rating') }}</span>
@@ -79,7 +79,7 @@
                             <div class="">
                                 <div class="col-4 ">
                                     <div class="form-group">
-                                        <label class="font-weight-bold">&nbsp;Status</label>
+                                        <label class="font-weight-bold">&nbsp;Trạng Thái</label>
                                         <input type="number" class="form-control" name="status" value="{{$PersonalTraining->status}}" placeholder="Status">
                                         @if ($errors->has('status'))
                                             <span class="text-danger">{{ $errors->first('status') }}</span>

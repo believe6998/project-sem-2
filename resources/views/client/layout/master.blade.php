@@ -459,7 +459,9 @@
             }
         });
     });
-
+    $(".alert").delay(4000).slideUp(200, function() {
+        $(this).alert('close');
+    });
     $(document).on("mouseup touchend", function (e) {
         $(document).off("mousemove touchmove");
         if (mL == 0 && diff > 4) {
@@ -482,6 +484,7 @@
     });
 
 </script>
+
 <script>
     $('.time').click(function () {
         $('input[name=personal_training_time_id]').val($(this).next().text());
@@ -500,6 +503,11 @@
         $('input[name=duration_id]').val($(this).next().text());
     });
 </script>
+
+
+<link href="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.css" rel="stylesheet"/>
+<script src="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.js"></script>
+<script src="{{asset('js/checkout.js')}}"></script>
 
 </body>
 </html>

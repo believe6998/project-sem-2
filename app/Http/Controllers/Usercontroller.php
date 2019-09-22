@@ -14,6 +14,10 @@ class Usercontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $list = User::whereNotIn('status', [-1])->paginate(10);
@@ -82,8 +86,6 @@ class Usercontroller extends Controller
         return view('admin/user/edit-user')->with('user', $user);
 
     }
-
-
 
     /**
      * Update the specified resource in storage.

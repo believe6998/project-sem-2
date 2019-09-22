@@ -68,9 +68,9 @@ Route::get('/admin/user/edit', function () {
     return view('admin/user/edit-user');
 });
 
-Route::get('/pt/detail', function () {
-    return view('client/pt-detail');
-});
+//Route::get('/pt/detail', function () {
+//    return view('client/pt-detail');
+//});
 Route::resource('admin/blog','BlogController');
 
 Route::resource('/admin/pt','AdminPTController');
@@ -103,5 +103,21 @@ Auth::routes();
 Route::get('/','ClientBlogController@indexhome','RoleController@roleUser')->name('home');
 
 Route::resource('order', 'OrderController');
+Route::resource('payment', 'PaymentController');
+Route::post('/payment', 'OrderController@createPayment');
+Route::get('/return-vnpay', function (){
+    return view('client.return-payment');
+});
 
+Route::resource('admin/home', 'HomeController');
 
+Route::post('/admin/change-status-home', 'HomeController@changeStatus');
+Route::get('/admin/deleted-home', 'HomeController@index2');
+
+Route::get('/', 'HomeController@index3');
+
+Route::get('/admin/review{review}','ReviewController@edit2')->name('review.edit2');
+Route::resource('/pt','ClientPTController',['as' => 'client']) ;
+Route::resource('/admin/review','ReviewController') ;
+Route::post('/admin/review/change-status', 'ReviewController@changeStatus');
+Route::get('/admin/review/get-by-id/{id}', 'ReviewController@getById');
