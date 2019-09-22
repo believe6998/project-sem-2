@@ -43,7 +43,6 @@
                                 <td class="item-pt-ad">{{$item->status}}</td>
                                 <td class="item-pt-ad">{{$item->created_at}}</td>
                                 <td class="item-pt-ad">{{$item->updated_at}}</td>
-
                             </tr>
                         @endforeach
                         </tbody>

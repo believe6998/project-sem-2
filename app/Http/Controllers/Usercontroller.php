@@ -14,6 +14,10 @@ class Usercontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $list = User::whereNotIn('status', [-1])->paginate(10);
@@ -83,8 +87,6 @@ class Usercontroller extends Controller
 
     }
 
-
-
     /**
      * Update the specified resource in storage.
      *
@@ -153,4 +155,7 @@ class Usercontroller extends Controller
             'updated_at' => date('Y-m-d H:i:s')));
         return response()->json(['status' => '200', 'message' => 'Good']);
     }
+
+
+
 }

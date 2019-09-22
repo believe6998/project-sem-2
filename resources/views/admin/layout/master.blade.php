@@ -8,8 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="csrf-token" content="{{csrf_token()}}">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
     <title>SB Admin 2 - Dashboard</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <!-- Custom fonts for this template-->
@@ -62,17 +66,17 @@
         <li class="nav-item">
             <a class="nav-link" href="/admin/user">
                 <i class="fas fa-fw fa-table"></i>
-                <span>User</span></a>
+                <span>Người Dùng</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/category">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Category</span></a>
+                <span>Danh mục</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/pt">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Personal Training</span></a>
+                <span>Huấn luyện viên cá nhân</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/blog">
@@ -90,6 +94,16 @@
                 <span>Duration</span></a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/home">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Home</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/review">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Đánh giá</span></a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -255,7 +269,14 @@
 <script src="{{ URL::asset("ad")}}"></script>
 <script src="{{ URL::asset("ad/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
 
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
 <!-- Core plugin JavaScript-->
 <script src="{{ URL::asset("ad/vendor/jquery-easing/jquery.easing.min.js")}}"></script>
 
@@ -443,6 +464,12 @@
         }
     });
 
+    $('.btn-delete').click(function () {
+        if (!confirm('Bạn có chắc muốn blog dùng này?')) {
+            return;
+        }
+    });
+
     $('.btn-delete-user').click(function () {
         if (confirm('Bạn có chắc muốn xóa người dùng này?')) {
             var deleteId = $(this).attr('id').replace('btn-delete-user', '');
@@ -459,6 +486,23 @@
                 },
                 error: function () {
                     alert('Có lỗi xảy ra, vui lòng thử lại sau.');
+                }
+            });
+        }
+    });
+
+    $('.btn-delete-review').click(function () {
+        if (confirm('Bạn có chắc muốn xóa đánh giá này?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-review', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/review/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                error: function () {
+                    location.reload();
                 }
             });
         }
@@ -513,22 +557,22 @@
     });
 
     $('#btn-apply-all-category').click(function () {
-            // kiểm tra người dùng đã check phần tử chưa.
-            var arrayId = new Array();
-            $('.check-item:checkbox:checked').each(function () {
-                arrayId.push($(this).val());
-            });
-            if (arrayId.length == 0) {
-                alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
-                return;
-            }
-            // kiểm tra người dùng đã chọn thao tác chưa.
-            var action = $('#select-action').val();
+        // kiểm tra người dùng đã check phần tử chưa.
+        var arrayId = new Array();
+        $('.check-item:checkbox:checked').each(function () {
+            arrayId.push($(this).val());
+        });
+        if (arrayId.length == 0) {
+            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+            return;
+        }
+        // kiểm tra người dùng đã chọn thao tác chưa.
+        var action = $('#select-action').val();
 
-            if (action == 0) {
-                alert('Vui lòng chọn thao tác muốn thực hiện!');
-                return;
-            }
+        if (action == 0) {
+            alert('Vui lòng chọn thao tác muốn thực hiện!');
+            return;
+        }
 
 
         // confirm lại người dùng.
@@ -562,150 +606,253 @@
     });
 
     $('#btn-apply-all-blog').click(function () {
-        // kiểm tra người dùng đã check phần tử chưa.
-        var arrayId = new Array();
-        $('.check-item:checkbox:checked').each(function () {
-            arrayId.push($(this).val());
+        $(".alert").delay(4000).slideUp(200, function () {
+            $(this).alert('close');
         });
-        if (arrayId.length == 0) {
-            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
-            return;
-        }
-        // kiểm tra người dùng đã chọn thao tác chưa.
-        var action = $('#select-action').val();
-
-        if (action == 0) {
-            alert('Vui lòng chọn thao tác muốn thực hiện!');
-            return;
-        }
-
-
-        // confirm lại người dùng.
-        if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
-            changeStatusBlog(arrayId, action);
-        }
-
     });
 
-    function changeStatusBlog(arrayId, status) {
-        $.ajax({
-            url: '/admin/change-status-blog',
-            method: 'POST',
-            data: {
-                '_token': $('meta[name=csrf-token]').attr("content"),
-                'ids': arrayId,
-                'status': status
-            },
-            success: function () {
-                alert("Thao tác thành công, reload lại page!");
-                location.reload();
-            },
-            error: function () {
-                alert("Thao tác thất bại, vui lòng thử lại sau");
+
+        $('#check-all').change(function () {
+            $('.check-item').prop('checked', $(this).is(':checked'));
+        });
+
+        $('#btn-apply-all').click(function () {
+                // kiểm tra người dùng đã check phần tử chưa.
+                var arrayId = new Array();
+                $('.check-item:checkbox:checked').each(function () {
+                    arrayId.push($(this).val());
+                });
+                if (arrayId.length == 0) {
+                    alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+                    return;
+                }
+                // kiểm tra người dùng đã chọn thao tác chưa.
+                var action = $('#select-action').val();
+                if (action == 0) {
+                    alert('Vui lòng chọn thao tác muốn thực hiện!');
+                    return;
+                }
+                // confirm lại người dùng.
+                if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
+                    changeStatusBlog(arrayId, action);
+                }
+            });
+
+        function changeStatusBlog(arrayId, status) {
+            $.ajax({
+                url: '/admin/change-status-blog',
+                method: 'POST',
+                data:
+                    {
+                        '_token':
+                            $('meta[name=csrf-token]').attr("content"),
+                        'ids':
+                        arrayId,
+                        'status':
+                        status
+                    }
+                ,
+                success: function () {
+                    alert("Thao tác thành công, reload lại page!");
+                    location.reload();
+                }
+                ,
+                error: function () {
+                    alert("Thao tác thất bại, vui lòng thử lại sau");
+                }
+            });
+        }
+
+        $('#check-all-user-ad').change(function () {
+            $('.check-item').prop('checked', $(this).is(':checked'));
+        });
+
+        $('#btn-apply-all-user').click(function () {
+            // kiểm tra người dùng đã check phần tử chưa.
+            var arrayId = new Array();
+            $('.check-item:checkbox:checked').each(function () {
+                arrayId.push($(this).val());
+            });
+            if (arrayId.length == 0) {
+                alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+                return;
+            }
+            // kiểm tra người dùng đã chọn thao tác chưa.
+            var action = $('#select-action').val();
+
+            if (action == 0) {
+                alert('Vui lòng chọn thao tác muốn thực hiện!');
+                return;
+            }
+
+
+            // confirm lại người dùng.
+            if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
+                changeStatusUser(arrayId, action);
+            }
+
+        });
+
+        function changeStatusUser(arrayId, status) {
+            $.ajax({
+                url: '/admin/change-status-user',
+                method: 'POST',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr("content"),
+                    'ids': arrayId,
+                    'status': status
+                },
+                success: function () {
+                    alert("Thao tác thành công, reload lại page!");
+                    location.reload();
+                },
+                error: function () {
+                    alert("Thao tác thất bại, vui lòng thử lại sau");
+                }
+            });
+        }
+
+        $('#check-all-pt-ad').change(function () {
+            $('.check-item').prop('checked', $(this).is(':checked'));
+        });
+
+        $('#btn-apply-all-pt').click(function () {
+            // kiểm tra người dùng đã check phần tử chưa.
+            var arrayId = new Array();
+            $('.check-item:checkbox:checked').each(function () {
+                arrayId.push($(this).val());
+            });
+            if (arrayId.length == 0) {
+                alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+                return;
+            }
+            // kiểm tra người dùng đã chọn thao tác chưa.
+            var action = $('#select-action').val();
+
+            if (action == 0) {
+                alert('Vui lòng chọn thao tác muốn thực hiện!');
+                return;
+            }
+
+
+            // confirm lại người dùng.
+            if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
+                changeStatusPT(arrayId, action);
+            }
+
+        });
+
+
+        function changeStatusPT(arrayId, status) {
+            $.ajax({
+                url: '/admin/change-status-pt',
+                method: 'POST',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr("content"),
+                    'ids': arrayId,
+                    'status': status
+                },
+                success: function () {
+                    alert("Thao tác thành công, reload lại page!");
+                    location.reload();
+                },
+                error: function () {
+                    alert("Thao tác thất bại, vui lòng thử lại sau");
+                }
+            });
+        };
+
+        function changeStatusHome(arrayId, status) {
+            $.ajax({
+                url: '/admin/change-status-home',
+                method: 'POST',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr("content"),
+                    'ids': arrayId,
+                    'status': status
+                },
+                success: function () {
+                    alert("Thao tác thành công, reload lại page!");
+                    location.reload();
+                },
+                error: function () {
+                    alert("Thao tác thất bại, vui lòng thử lại sau");
+                }
+            });
+        };
+
+
+        $('.btn-delete-home').click(function () {
+            if (confirm('Are you sure wanna delete this user?')) {
+                var deleteId = $(this).attr('id').replace('btn-delete-home', '');
+                var currentItem = $(this);
+                $.ajax({
+                    url: '/admin/home/' + deleteId,
+                    method: 'DELETE',
+                    data: {
+                        '_token': $('meta[name=csrf-token]').attr('content')
+                    },
+                    success: function () {
+                        alert('Success');
+                        currentItem.closest("tr").remove();
+                    },
+                    error: function () {
+                        alert('Error');
+                    }
+                });
             }
         });
-    }
 
-
-    $('#check-all-user-ad').change(function () {
-        $('.check-item').prop('checked', $(this).is(':checked'));
-    });
-
-    $('#btn-apply-all-user').click(function () {
-        // kiểm tra người dùng đã check phần tử chưa.
-        var arrayId = new Array();
-        $('.check-item:checkbox:checked').each(function () {
-            arrayId.push($(this).val());
+        $('#check-all-home-ad').change(function () {
+            $('.check-item-home').prop('checked', $(this).is(':checked'));
         });
-        if (arrayId.length == 0) {
-            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
-            return;
-        }
-        // kiểm tra người dùng đã chọn thao tác chưa.
-        var action = $('#select-action').val();
 
-        if (action == 0) {
-            alert('Vui lòng chọn thao tác muốn thực hiện!');
-            return;
-        }
+        $('#btn-apply-all-home').click(function () {
+            // kiểm tra người dùng đã check phần tử chưa.
+            var arrayId = new Array();
 
+            $('.check-item-home:checkbox:checked').each(function () {
 
-        // confirm lại người dùng.
-        if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
-            changeStatusUser(arrayId, action);
-        }
-
-    });
-
-    function changeStatusUser(arrayId, status) {
-        $.ajax({
-            url: '/admin/change-status-user',
-            method: 'POST',
-            data: {
-                '_token': $('meta[name=csrf-token]').attr("content"),
-                'ids': arrayId,
-                'status': status
-            },
-            success: function () {
-                alert("Thao tác thành công, reload lại page!");
-                location.reload();
-            },
-            error: function () {
-                alert("Thao tác thất bại, vui lòng thử lại sau");
+                arrayId.push($(this).val());
+            });
+            if (arrayId.length == 0) {
+                alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+                return;
+            }
+            // kiểm tra người dùng đã chọn thao tác chưa.
+            var action = $('#select-action').val();
+            if (action == 0) {
+                alert('Vui lòng chọn thao tác muốn thực hiện!');
+                return;
+            }
+            // confirm lại người dùng.
+            if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
+                changeStatusHome(arrayId, action);
             }
         });
-    }
 
-    $('#check-all-pt-ad').change(function () {
-        $('.check-item').prop('checked', $(this).is(':checked'));
-    });
+        var count = 0;
+        $('.btn-show').click(function (event) {
+            count++;
+            var editId = $(this).attr('id').replace('btn-show-', '');
+            $.ajax({
+                url: '/admin/review/get-by-id/' + editId,
+                method: 'GET',
+                success: function (response) {
+                    $('.content1').html(response.data.review);
 
-    $('#btn-apply-all-pt').click(function () {
-        // kiểm tra người dùng đã check phần tử chưa.
-        var arrayId = new Array();
-        $('.check-item:checkbox:checked').each(function () {
-            arrayId.push($(this).val());
+                    $('.rated').width(response.data.rating);
+
+                    $('#fullHeightModalRight').modal('show');
+
+
+                },
+                error: function () {
+                    alert('Error');
+                }
+            });
         });
-        if (arrayId.length == 0) {
-            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
-            return;
-        }
-        // kiểm tra người dùng đã chọn thao tác chưa.
-        var action = $('#select-action').val();
 
-        if (action == 0) {
-            alert('Vui lòng chọn thao tác muốn thực hiện!');
-            return;
-        }
-
-
-        // confirm lại người dùng.
-        if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
-            changeStatusPT(arrayId, action);
-        }
-
-    });
-
-
-
-    function changeStatusPT(arrayId, status) {
-        $.ajax({
-            url: '/admin/change-status-pt',
-            method: 'POST',
-            data: {
-                '_token': $('meta[name=csrf-token]').attr("content"),
-                'ids': arrayId,
-                'status': status
-            },
-            success: function () {
-                alert("Thao tác thành công, reload lại page!");
-                location.reload();
-            },
-            error: function () {
-                alert("Thao tác thất bại, vui lòng thử lại sau");
-            }
-        });
-    }
 </script>
 
 </body>

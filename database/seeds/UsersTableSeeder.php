@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
 
         if (config('roles.models.defaultUser')::where('email', '=', 'phannamheot@gmail.com')->first() === null) {
             $newUser = config('roles.models.defaultUser')::create([
-                'id' => 3,
+                'id' => 2,
                 'firstName' => 'Phan',
                 'lastName' => 'Hoài Anh',
                 'phone' => '09123688762',
@@ -59,7 +59,7 @@ class UsersTableSeeder extends Seeder
 
         if (config('roles.models.defaultUser')::where('email', '=', 'beledat@gmail.com')->first() === null) {
             $newUser = config('roles.models.defaultUser')::create([
-                'id' => 2,
+                'id' => 3,
                 'firstName' => 'Phùng',
                 'lastName' => 'Hoa Đạt',
                 'phone' => '0349872712',

@@ -22,21 +22,35 @@
                                     <div class="input-group mb-3">
                                         <div class="custom-file">
                                             <input multiple type="file"   name="thumbnail[]">
+
+                                            @if ($errors->has('thumbnail'))
+
+                                                <span class="text-danger">{{ $errors->first('thumbnail') }}</span>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="row font-weight-bold" for="category">Danh mục</label>
                                     <input class="col-12 form-control" type="text" name="category">
+                                    @if ($errors->has('category'))
+                                        <span class="text-danger">{{ $errors->first('category') }}</span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <label class="row font-weight-bold" for="title">Tiêu đề</label>
                                     <textarea class="col-12 form-control" type="text" name="title" rows="3"></textarea>
+                                    @if ($errors->has('title'))
+                                        <span class="text-danger">{{ $errors->first('title') }}</span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <label class="row font-weight-bold" for="detail">Mô tả</label>
                                     <textarea class="col-12 form-control"  type="text" name="detail" rows="6">
                                     </textarea>
+                                    @if ($errors->has('detail'))
+                                        <span class="text-danger">{{ $errors->first('detail') }}</span>
+                                    @endif
                                 </div>
 
                             </div>
@@ -46,6 +60,9 @@
                                     <textarea contenteditable="true" name="contentcheck" class="  form-control rounded-0"
                                               id="ckeditor1"
                                               rows="20"></textarea>
+                                    @if ($errors->has('content'))
+                                        <span class="text-danger">{{ $errors->first('content') }}</span>
+                                    @endif
                                 </div>
 
                             </div>
