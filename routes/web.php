@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::resource('personal-training', 'PersonalTrainingController');
 Route::resource('/admin/category', 'AdminCategoryController');
 Route::resource('category', 'CategoryController');
+Route::resource('category', 'CategoryController');
+Route::resource('admin/time', 'TimeController');
+Route::resource('admin/duration', 'DurationController');
 
 Route::get('cl/blog', function () {
     return view('client/main-blog');
@@ -85,6 +88,13 @@ Route::resource('/admin/user', 'UserController');
 
 Route::post('/admin/change-status-category', 'AdminCategoryController@changeStatus');
 Route::get('/admin/deleted-category', 'AdminCategoryController@index2');
+
+
+Route::post('/admin/change-status-duration', 'DurationController@changeStatus');
+Route::get('/admin/deleted-duration', 'DurationController@index2');
+
+Route::post('/admin/change-status-time', 'TimeController@changeStatus');
+Route::get('/admin/deleted-time', 'TimeController@index2');
 
 
 Route::post('/admin/change-status-blog', 'BlogController@changeStatus');
