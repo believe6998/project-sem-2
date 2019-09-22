@@ -11,7 +11,6 @@ class RoleController extends Controller
     {
         $this->middleware('auth');
     }
-
     public function roleAdmin(){
         $user =Auth::user();
         if ($user->hasRole('admin')) {

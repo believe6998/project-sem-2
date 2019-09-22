@@ -14,8 +14,13 @@ class personalTraining extends Model
     {
         return $this->belongsToMany('App\Category');
     }
+
     public function times()
     {
         return $this->belongsToMany('App\Time');
+    }
+    public function reviews()
+    {
+        return $this->belongsToMany('App\Review');
     }
 }

@@ -24,57 +24,99 @@
                 <div class="text-secondary"><h5
                         class="category-name">@foreach($list as $item){{$item->name}}, @endforeach</h5>
                 </div>
-                <div class="row">
-                    <div class="col-sm-7 mt-3">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="dropdown w-25">
-                                        <button id="dLabel" class="dropdown-select font-weight-bolder" type="button"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Thời Gian
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu w-25" aria-labelledby="dLabel">
-                                            @foreach($durations as $duration)
-                                                <li class="duration">{{$duration->duration}}</li>
-                                                <span class="d-none duration_id">{{$duration->id}}</span>
-                                                <span class="d-none duration_price">{{$duration->price}}</span>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
+            </div>
+        </div><!--inner-->
+    </div><!-- col-sm-6  -->
+    <div class="col-sm-6" style="margin-left: 9%">
+        <div>
+            <h3><span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </h3>
+        </div>
+        <div class="text-secondary">(1 đánh giá)</div>
+        <div class="pt-2"><h3>Phan Hoài Nam</h3></div>
+        <div class=""><h3>Heart Bag</h3></div>
+        >>>>>>> b608825702d842cd5a03be6008bbdae91a15e607
+        <div class="row">
+            <div class="col-sm-7 mt-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="dropdown">
+                                <button id="dLabel" class="dropdown-select " type="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Thời Gian
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu w-25" aria-labelledby="dLabel">
+                                    @foreach($durations as $duration)
+                                        <li class="duration">{{$duration->duration}}</li>
+                                        <span class="d-none duration_id">{{$duration->id}}</span>
+                                        <span class="d-none duration_price">{{$duration->price}}</span>
+                                    @endforeach
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-4 ml-3 row">
-                    <div class="row list-time" style="width: 100%">
-                        @foreach($times as $time)
-                            <div class="col-6 time btn btn-secondary">{{$time->time}}</div>
-                            <span class="d-none time_id">{{$time->id}}</span>
-                        @endforeach
-                    </div>
+            </div>
+        </div>
+        <<<<<<< HEAD
+        <div class="mt-4 ml-3 row">
+            <div class="row list-time" style="width: 100%">
+                @foreach($times as $time)
+                    <div class="col-6 time btn btn-secondary">{{$time->time}}</div>
+                    <span class="d-none time_id">{{$time->id}}</span>
+                @endforeach
+            </div>
+        </div>
+        <div style="margin-left: 0.5%;margin-top: 9%">
+            <form action="{{route('order.store')}}" method="post">
+                @csrf
+                <input type="text" class="d-none" name="order_id" value="{{date("YmdHis")}}"/>
+                <input type="text" class="d-none" name="user_id">
+                <input type="text" class="d-none" name="personal_training_time_id">
+                <input type="text" class="" name="time">
+                <input type="text" class="d-none" name="duration_id">
+                <input type="text" class="" name="duration">
+                <input type="text" class="" name="pt-name" value="{{$personalTraining->name}}">
+                <input type="text" class="" name="price">
+                <button type="submit" class="btn btn-outline-primary w-100" style="font-size: 20px">
+                    ĐẶT LỊCH
+                </button>
+            </form>
+            =======
+            <div class="mt-5 ml-4 row">
+                <div class="row" style="width: 100%">
+                    <div class="col-3 time"> 05:00 - 07:00</div>
+                    <div class="col-3 time"> 05:00 - 07:00</div>
+                    <div class="col-3 time"> 05:00 - 07:00</div>
+                    <div class="col-3 time"> 05:00 - 07:00</div>
                 </div>
-                <div style="margin-left: 0.5%;margin-top: 9%">
-                    <form action="{{route('order.store')}}" method="post">
-                        @csrf
-                        <input type="text" class="d-none" name="order_id" value="{{date("YmdHis")}}"/>
-                        <input type="text" class="d-none" name="user_id">
-                        <input type="text" class="d-none" name="personal_training_time_id">
-                        <input type="text" class="" name="time">
-                        <input type="text" class="d-none" name="duration_id">
-                        <input type="text" class="" name="duration">
-                        <input type="text" class="" name="pt-name" value="{{$personalTraining->name}}">
-                        <input type="text" class="" name="price">
-                        <button type="submit" class="btn btn-outline-primary w-100" style="font-size: 20px">
-                            ĐẶT LỊCH
-                        </button>
-                    </form>
+                <div class="row" style="width: 100%">
+                    <div class="col-3 time"> 05:00 - 07:00</div>
+                    <div class="col-3 time"> 05:00 - 07:00</div>
+                    <div class="col-3 time"> 05:00 - 07:00</div>
+                    <div class="col-3 time"> 05:00 - 07:00</div>
                 </div>
             </div>
-        </div><!--row-->
+            <div class="row mt-5">
+                <div class="col-sm-7"></div>
+                <div class="col-sm-5" style="width: 190px; height: 50px;float: right">
+                    <button
+                        style="width: 100%;height: 100%;background: #4a9bbf;color: white;border-radius: 3px;font-size: 16px">
+                        Trải nghiệm ngay
+                    </button>
+                </div>
+                >>>>>>> b608825702d842cd5a03be6008bbdae91a15e607
+            </div>
+        </div>
+    </div><!--row-->
     </div><!--container-->
+    </div>
 
     <div class="accordion container" id="accordionExample" style="margin-top: 10%">
         <div class="card">
@@ -103,117 +145,105 @@
                             style="text-decoration: none;font-size: 22px;line-height: 26px;" type="button"
                             data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                             aria-controls="collapseThree">
+                        <<<<<<< HEAD
                         Đánh giá (1)
+                        =======
+                        Reviews ({{count($review)}})
+                        >>>>>>> b608825702d842cd5a03be6008bbdae91a15e607
                     </button>
                 </h2>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <img width="100%" src="https://www.w3schools.com/howto/img_avatar2.png" alt="">
-                        </div>
-                        <div class="col-sm-11">
-                            <div class="row">
-                                <h5 style="text-align: left"><span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(2)</span>
-                                </h5>
-
+                    @foreach($review as $item)
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <img width="60px" height="60px" src="https://www.w3schools.com/howto/img_avatar2.png"
+                                     alt="">
                             </div>
-                            <div class="row ml-1">
+                            <div class="col-sm-11">
                                 <div class="row">
-                                    <div class="nameuser "><strong style="color: black"> nguyendat </strong></div>
-                                </div>
-                                <div class="row w-100">
-                                    mình thể với các bạn là sự ra đời của chiếc túi này quả là tuyệt với. Nó ko chỉ to
-                                    đựng nhiều đồ khi đi chợ, siêu thị,… mà nó còn được thiết kế cực kì sáng tạo, nó có
-                                    thể gói gọn lại thành hình trái tim như hình, bạn có thể để nó trong túi vải của bạn
-                                    và mang nó đi và sử dụng nó bất cứ khi nào bạn cần. Mình ưng thực sự luôn♥️♥️♥️n
-                                </div>
-                            </div>
-                            <div style="float: right;display: inline">12/12/1012</div>
+                                    <h5 style="text-align: left"><span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span>(1)</span>
+                                    </h5>
 
+                                </div>
+                                <div class="row ml-1">
+                                    <div class="row">
+                                        <div class="nameuser "><strong
+                                                style="color: black"> {{$item->user->firstName}} {{$item->user->lastName}} </strong>
+                                        </div>
+                                    </div>
+                                    <div class="row w-100">
+                                        <div style="width: 90%;display: inline-block">
+                                            {{$item->review}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    style="float: right;display: inline">{{date_format($item->created_at,'d-m-Y')}}</div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
+
                     <hr class="coll-divider short-bg-line center">
 
                     <div class="mt-4">
-                        <div style="font-size: 28px ;color: black">Add a review</div>
+                        <div style="font-size: 28px ;color: black">Thêm một bài đánh giá</div>
                         <div class="card-body"> Your email address will not be published. Required fields are marked *
                         </div>
+                        <hr class="coll-divider short-bg-line center">
+                        @if (\Illuminate\Support\Facades\Auth::check())
+
+                            <form action=" {{route('review.store')}}" method="POST">
+                                @csrf
+                                <div>
+                                    <input type="hidden" name="personalTraining-id" value="{{$PersonalTraining->id}}">
+                                    <!-- Default form contact -->
+                                    <div class="rate">
+                                        <span style="font-size: 21px;color: black"> Đánh giá</span>
+                                        <input type="radio" id="star5" name="rate" value="5"/>
+                                        <label for="star5" title="text">5</label>
+                                        <input type="radio" id="star4" name="rate" value="4"/>
+                                        <label for="star4" title="text">4</label>
+                                        <input type="radio" id="star3" name="rate" value="3"/>
+                                        <label for="star3" title="text">3</label>
+                                        <input type="radio" id="star2" name="rate" value="2"/>
+                                        <label for="star2" title="text">2</label>
+                                        <input type="radio" id="star1" name="rate" value="1"/>
+                                        <label for="star1" title="text">1</label>
+                                    </div>
+                                    <div class="mt-5">
+                                        <div class="form-group">
+                                            <label style="font-size: 21px;color: black">Review</label>
+                                            <textarea style="height:300px" class="form-control"
+                                                      name="review" cols="10" rows="7"></textarea>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn-review btn btn-dark"
+                                                style="height: 50px;width: 180px"> GỬI
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        @else
+                            <div style="text-align: center">
+                                <h2>Vui lòng đăng nhập </h2>
+                            </div>
+                        @endif
                     </div>
-                {{--                    <div class="card" style="width: 50%">--}}
-
-                {{--                        <h5 class="card-header info-color white-text text-center py-4">--}}
-                {{--                            <strong>Contact us</strong>--}}
-                {{--                        </h5>--}}
-
-                {{--                        <!--Card content-->--}}
-                {{--                        <div class="card-body px-lg-5 pt-0">--}}
-
-                {{--                            <!-- Form -->--}}
-                {{--                            <form class="text-center" style="color: #757575;" action="#!">--}}
-
-                {{--                                <!-- Name -->--}}
-                {{--                                <div class="md-form mt-3">--}}
-                {{--                                    <input type="text" id="materialContactFormName" class="form-control">--}}
-                {{--                                    <label for="materialContactFormName">Name</label>--}}
-                {{--                                </div>--}}
-
-                {{--                                <!-- E-mail -->--}}
-                {{--                                <div class="md-form">--}}
-                {{--                                    <input type="email" id="materialContactFormEmail" class="form-control">--}}
-                {{--                                    <label for="materialContactFormEmail">E-mail</label>--}}
-                {{--                                </div>--}}
-
-                {{--                                <!-- Subject -->--}}
-                {{--                                <span>Subject</span>--}}
-                {{--                                <select class="mdb-select">--}}
-                {{--                                    <option value="" disabled>Choose option</option>--}}
-                {{--                                    <option value="1" selected>Feedback</option>--}}
-                {{--                                    <option value="2">Report a bug</option>--}}
-                {{--                                    <option value="3">Feature request</option>--}}
-                {{--                                    <option value="4">Feature request</option>--}}
-                {{--                                </select>--}}
-
-                {{--                                <!--Message-->--}}
-                {{--                                <div class="md-form">--}}
-                {{--                                    <textarea id="materialContactFormMessage" class="form-control md-textarea"--}}
-                {{--                                              rows="3"></textarea>--}}
-                {{--                                    <label for="materialContactFormMessage">Message</label>--}}
-                {{--                                </div>--}}
-
-                {{--                                <!-- Copy -->--}}
-                {{--                                <div class="form-check">--}}
-                {{--                                    <input type="checkbox" class="form-check-input" id="materialContactFormCopy">--}}
-                {{--                                    <label class="form-check-label" for="materialContactFormCopy">Send me a copy of this--}}
-                {{--                                        message</label>--}}
-                {{--                                </div>--}}
-
-                {{--                                <!-- Send button -->--}}
-                {{--                                <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"--}}
-                {{--                                        type="submit">Send--}}
-                {{--                                </button>--}}
-
-                {{--                            </form>--}}
-                {{--                            <!-- Form -->--}}
-
-                {{--                        </div>--}}
-
-                {{--                    </div>--}}
-                <!-- Material form contact -->                </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="container">
         <div id="cont">
             <div id="slider-container">
-
-
                 <div class="item-container">
                     <div class="item-image-wrapper">
                         <img
@@ -391,7 +421,16 @@
 
             </div>
         </div>
-
     </div>
-
+    @if(session('success'))
+        <div style="position: fixed;top: 89%;left: 3% ;z-index: 10;"
+             class="alert alert-success alert-dismissible fade show"
+             role="alert">
+            <strong> Thông báo</strong> {{session('success')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
 @endsection
+

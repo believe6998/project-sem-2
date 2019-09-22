@@ -459,7 +459,9 @@
             }
         });
     });
-
+    $(".alert").delay(4000).slideUp(200, function() {
+        $(this).alert('close');
+    });
     $(document).on("mouseup touchend", function (e) {
         $(document).off("mousemove touchmove");
         if (mL == 0 && diff > 4) {
