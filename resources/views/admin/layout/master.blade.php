@@ -79,6 +79,16 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Blog</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/time">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Time</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/duration">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Duration</span></a>
+        </li>
 
 
         <!-- Divider -->
@@ -351,6 +361,7 @@
         }
     });
 
+
     $('#check-all-category-ad').change(function () {
         $('.check-item').prop('checked', $(this).is(':checked'));
     });
@@ -534,6 +545,150 @@
     function changeStatusPT(arrayId, status) {
         $.ajax({
             url: '/admin/change-status-pt',
+            method: 'POST',
+            data: {
+                '_token': $('meta[name=csrf-token]').attr("content"),
+                'ids': arrayId,
+                'status': status
+            },
+            success: function () {
+                alert("Thao tác thành công, reload lại page!");
+                location.reload();
+            },
+            error: function () {
+                alert("Thao tác thất bại, vui lòng thử lại sau");
+            }
+        });
+    }
+
+    $('.btn-delete-duration').click(function () {
+        if (confirm('Bạn có chắc muốn xóa không?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-duration', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/duration/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                success: function () {
+                    alert('Xóa thành công!');
+                    currentItem.closest("tr").remove();
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau.');
+                }
+            });
+        }
+    });
+
+    $('#check-all-duration-ad').change(function () {
+        $('.check-item').prop('checked', $(this).is(':checked'));
+    });
+
+    $('#btn-apply-all-duration').click(function () {
+        // kiểm tra người dùng đã check phần tử chưa.
+        var arrayId = new Array();
+        $('.check-item:checkbox:checked').each(function () {
+            arrayId.push($(this).val());
+        });
+        if (arrayId.length == 0) {
+            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+            return;
+        }
+        // kiểm tra người dùng đã chọn thao tác chưa.
+        var action = $('#select-action').val();
+
+        if (action == 0) {
+            alert('Vui lòng chọn thao tác muốn thực hiện!');
+            return;
+        }
+
+
+        // confirm lại người dùng.
+        if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
+            changeStatusDuration(arrayId, action);
+        }
+
+    });
+
+
+    function changeStatusDuration(arrayId, status) {
+        $.ajax({
+            url: '/admin/change-status-duration',
+            method: 'POST',
+            data: {
+                '_token': $('meta[name=csrf-token]').attr("content"),
+                'ids': arrayId,
+                'status': status
+            },
+            success: function () {
+                alert("Thao tác thành công, reload lại page!");
+                location.reload();
+            },
+            error: function () {
+                alert("Thao tác thất bại, vui lòng thử lại sau");
+            }
+        });
+    }
+
+
+
+    $('.btn-delete-time').click(function () {
+        if (confirm('Bạn có chắc muốn xóa không?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-time', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/time/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                success: function () {
+                    alert('Xóa thành công!');
+                    currentItem.closest("tr").remove();
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau.');
+                }
+            });
+        }
+    });
+
+    $('#check-all-time-ad').change(function () {
+        $('.check-item').prop('checked', $(this).is(':checked'));
+    });
+
+    $('#btn-apply-all-time').click(function () {
+        // kiểm tra người dùng đã check phần tử chưa.
+        var arrayId = new Array();
+        $('.check-item:checkbox:checked').each(function () {
+            arrayId.push($(this).val());
+        });
+        if (arrayId.length == 0) {
+            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+            return;
+        }
+        // kiểm tra người dùng đã chọn thao tác chưa.
+        var action = $('#select-action').val();
+
+        if (action == 0) {
+            alert('Vui lòng chọn thao tác muốn thực hiện!');
+            return;
+        }
+
+
+        // confirm lại người dùng.
+        if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
+            changeStatusTime(arrayId, action);
+        }
+
+    });
+
+
+    function changeStatusTime(arrayId, status) {
+        $.ajax({
+            url: '/admin/change-status-time',
             method: 'POST',
             data: {
                 '_token': $('meta[name=csrf-token]').attr("content"),
