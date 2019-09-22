@@ -62,17 +62,17 @@
         <li class="nav-item">
             <a class="nav-link" href="/admin/user">
                 <i class="fas fa-fw fa-table"></i>
-                <span>User</span></a>
+                <span>Người Dùng</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/category">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Category</span></a>
+                <span>Danh mục</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/pt">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Personal Training</span></a>
+                <span>Huấn luyện viên cá nhân</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/blog">
