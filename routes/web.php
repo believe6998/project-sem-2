@@ -65,7 +65,7 @@ Route::get('/admin/blog', function () {
 });
 
 Route::get('/admin/user/edit', function () {
-    return view('admin/user/edit');
+    return view('admin/user/edit-user');
 });
 
 Route::get('/pt/detail', function () {
@@ -83,8 +83,36 @@ Route::get('/admin/form', function () {
 
 Route::resource('/admin/user', 'UserController');
 
+Route::post('/admin/change-status-category', 'AdminCategoryController@changeStatus');
+Route::get('/admin/deleted-category', 'AdminCategoryController@index2');
+
+Route::post('/admin/change-status-blog', 'BlogController@changeStatus');
+Route::get('/admin/deleted-blog', 'BlogController@index2');
+
+Route::post('/admin/change-status-user', 'UserController@changeStatus');
+Route::get('/admin/deleted-user', 'UserController@index2');
+
+Route::post('/admin/change-status-pt', 'AdminPTController@changeStatus');
+Route::get('/admin/deleted-PT', 'AdminPTController@index2');
+
+
+
 Auth::routes();
 
 Route::get('/','ClientBlogController@indexhome','RoleController@roleUser')->name('home');
+
+Route::resource('order', 'OrderController');
+Route::resource('payment', 'PaymentController');
+Route::post('/payment', 'OrderController@createPayment');
+Route::get('/return-vnpay', function (){
+    return view('client.return-payment');
+});
+
+Route::resource('admin/home', 'HomeController');
+
+Route::post('/admin/change-status-home', 'HomeController@changeStatus');
+Route::get('/admin/deleted-home', 'HomeController@index2');
+
+Route::get('/', 'HomeController@index3');
 
 

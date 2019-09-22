@@ -29,7 +29,7 @@ class PersonalTrainingSeeder extends Seeder
             [
                 'id' => 2,
                 'name' => 'Nguyễn Văn Tư',
-                'description' => 'Cao 1m79 - nặng 74kg - PT Gym - PT Boxing, Kickboxing',
+                'description' => 'PT Gym - PT Boxing, Kickboxing',
                 'qualification' => 'Cử nhân chuyên ngành Huấn luyện viên Thể dục thể thao trường Đại học Thể dục Thể Thao TP.HCM, Huấn luyện viên Kickboxing quóc gia, Huấn luyện viên Võ cổ truyền, HCV Vô địch thế giới Võ cổ truyền 2018',
                 'experience' => '3 năm',
                 'image' => 'https://huonganhyoga.vn/Data/upload/images/Banner/fitness/65924059_270076713843517_153033129320251392_n.jpg',
@@ -55,10 +55,11 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng nhận tham dự giải vô địch Châu Á trẻ, Chứng chỉ cứu hộ, Chứng chỉ huấn luyện viên bơi lội',
                 'experience' => 'Swimming ( 12/2015 - 09/2018), Personal trainer ( 07/2015 - 09/2018 )',
                 'image' => 'http://www.nshapefitness.vn/wp-content/uploads/2015/11/IMG_7473-crop-1.jpg',
-                'rating' => '100%',
+                'rating' => '80%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-            ],[
+            ],
+            [
                 'id' => 5,
                 'name' => 'Gunnar Peterson',
                 'description' => 'Kinh niệm trên 18 năm giảng dạy tại trung tâm và tự do. Giúp rất nhiều khách hàng đat đc mục tiêu. Tận tình và chuyên nghiệp',
@@ -68,27 +69,30 @@ class PersonalTrainingSeeder extends Seeder
                 'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-            ],[
+            ],
+            [
                 'id' => 6,
                 'name' => 'Tracy Anderson',
                 'description' => 'Bằng kinh nghiệm nhiều năm và sức trẻ của mình, tôi muốn dành tất cả thời gian cho bộ môn tôi yêu và hướng dẫn cho tất cả mọi người.',
                 'qualification' => 'Chứng nhận huấn luyện viên thể hình fitness,đã dạy tại(California fitness, yoga center), PTX2,... ',
                 'experience' => 'Personal trainer, yoga(07/2014 - 09/2018)',
                 'image' => 'https://www.uaepersonaltrainers.com/wp-content/uploads/2017/04/dubai-ladies-female-personal-trainer-josephine.jpg',
-                'rating' => '100%',
+                'rating' => '90%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-            ],[
+            ],
+            [
                 'id' => 7,
                 'name' => 'Massy Arias',
                 'description' => 'Yoga đến với tôi bằng sự đơn giản. Trả hóa cơ thể và tâm trí. Nắng lượng tích cực suy nghĩ lạc quan và lối sống lành mạnh. Chỉ cần bạn có nền tảng vững chắc mọi thứ sẽ trở nên dễ dàng hơn. Tôi được và bạn cũng sẽ được.',
                 'qualification' => 'Chứng nhận Yoga Siromani, Yoga for children, huấn luyện viên yoga - liên đoàn yoga việt nam cấp',
                 'experience' => 'Yoga ( 11/2017 - 09/2018 )',
                 'image' => 'http://advancefitnessgym.com/files/sanpham/87/1/jpg/trainer-su.jpg',
-                'rating' => '100%',
+                'rating' => '95%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-            ],[
+            ],
+            [
                 'id' => 8,
                 'name' => 'Bob Greene',
                 'description' => 'PT kickboxing, MuayThai, Boxing, Gym',
@@ -98,7 +102,8 @@ class PersonalTrainingSeeder extends Seeder
                 'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-            ],[
+            ],
+            [
                 'id' => 9,
                 'name' => 'Jennifer Widerstrom',
                 'description' => 'no pain no gain',
@@ -108,17 +113,19 @@ class PersonalTrainingSeeder extends Seeder
                 'rating' => '100%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-            ],[
+            ],
+            [
                 'id' => 10,
                 'name' => 'John Beradi',
                 'description' => 'Giúp mọi người giảm cân và có body đẹp bằng boxing. Tập luyện vào sáng sớm trước 7h hoặc chiều tối từ 6h.',
                 'qualification' => 'Chứng chỉ boxing liên đoàn boxing Việt Nam,huấn luyện viên kickboxing cấp quốc gia, HCV boxing 2017',
                 'experience' => 'Boxing ( 12/2015 - 09/2018 )',
                 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPXdwsOLtuLt5GeKUle3iPoWZOP6LVOwCy3M7jOSb2UQJmMr42',
-                'rating' => '100%',
+                'rating' => '80%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-            ],[
+            ],
+            [
                 'id' => 11,
                 'name' => 'Katrina Scott',
                 'description' => 'Tốt nghiệp hệ chính quy về thể thao của trường Đh TDTT. ĐÃ tốt nghiệp khóa đà tạo kĩ năng và nghiệp vu sư phạm về dạy bơi theo tiêu chuẩn quốc tế của Úc. Có nhiều năm kinh nghiệm dạy bơi cho trẻ e dưới 6 tuổi.',
@@ -128,7 +135,8 @@ class PersonalTrainingSeeder extends Seeder
                 'rating' => '99,9%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-            ],[
+            ],
+            [
                 'id' => 12,
                 'name' => 'Shawn Booth',
                 'description' => 'Sức khỏe và thể hình là 2 yếu tố uan trọng trong cuốc sống. Và chọn được người huấn luyện viên phù hợp là yếu tố tiên quyết dẫn đến thành công. Tôi chính là lừa chọn đúng đăn của bạn.',
@@ -136,6 +144,39 @@ class PersonalTrainingSeeder extends Seeder
                 'experience' => 'personal trainer ( 12/2015 - 09/2018 )',
                 'image' => 'https://fit23dubai.com/wp-content/uploads/2018/10/Justin_mic.jpg?189db0&189db0',
                 'rating' => '100%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'id' => 13,
+                'name' => 'Scott Laider',
+                'description' => 'Sức khỏe và thể hình là 2 yếu tố uan trọng trong cuốc sống. Và chọn được người huấn luyện viên phù hợp là yếu tố tiên quyết dẫn đến thành công. Tôi chính là lừa chọn đúng đăn của bạn.',
+                'qualification' => 'Chứng chỉ huấn luyện viên cá nhân cấp quốc gia, Bằng cử nhân ngành giáo dục thể chất, bằng chứng nhận huấn luyện viên của INTERNATIONAL KETTLEBELL ASOCIATION',
+                'experience' => 'personal trainer ( 12/2015 - 09/2018 )',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJX2PpJwl0Y2EU60lwWKb_BayKgUDsGRJh0YfaqImz9UTh-GST',
+                'rating' => '790%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'id' => 14,
+                'name' => 'Miley Cirus',
+                'description' => 'no pain no gain',
+                'qualification' => 'Chứng nhận huấn luyện viên thể hình -fitness, Huấn luyện viên thể hình liên đoàn cử tạ Quốc Tế...',
+                'experience' => 'personal trainer ( 01/2011 - 09/2018 )',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeWiPRyYgkP2ZkBT8H_PDs-LZtXwiVLxbjBOlLX0CgGNVZ1l92',
+                'rating' => '90%',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'id' => 15,
+                'name' => 'Katy Anderson',
+                'description' => 'Kinh niệm 10 năm giảng dạy tại trung tâm và tự do. Giúp rất nhiều khách hàng đat đc mục tiêu. Tận tình và chuyên nghiệp',
+                'qualification' => 'Chứng nhận huấn luyện viên thể hình -fitness, Huấn luyện viên thể hình liên đoàn cử tạ Quốc Tế...',
+                'experience' => 'personal trainer ,yoga( 01/2011 - 09/2018 )',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeWiPRyYgkP2ZkBT8H_PDs-LZtXwiVLxbjBOlLX0CgGNVZ1l92',
+                'rating' => '90%',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],

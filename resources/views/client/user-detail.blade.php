@@ -17,12 +17,12 @@
                     </div>
                     <div class="col-5 txt-body-user-detail mb-4">
                         <ul>
-                            <li ><label for="">Tên: </label>&nbsp;ahihi &nbsp;<a href="#"><i class="far fa-edit"></i></a></li>
-                            <li class="mt-2"><label for="">Họ: </label>&nbsp;qwwer &nbsp;<a href="#"><i class="far fa-edit"></i></a></li>
-                            <li class="mt-2"><label for="">Email: </label>&nbsp;qqqqqq@gmail.com  &nbsp;<a href="#"><i class="far fa-edit"></i></a></li>
-                            <li class="mt-2"><label for="">Số điện thoại: </label>&nbsp;098989898  &nbsp;<a href="#"><i class="far fa-edit"></i></a></li>
-                            <li class="mt-2"><label for="">Giới tính: </label>&nbsp;Nam  &nbsp;<a href="#"><i class="far fa-edit"></i></a></li>
-                            <li class="mt-2"><label for="">Ngày tạo: </label>&nbsp;05/20/2019 </li>
+                            <li ><label for="">Tên: </label>&nbsp;{{ Auth::user()->lastName }} &nbsp;<a href="#"><i class="far fa-edit"></i></a></li>
+                            <li class="mt-2"><label for="">Họ: </label>&nbsp;{{ Auth::user()->firstName }} &nbsp;<a href="#"><i class="far fa-edit"></i></a></li>
+                            <li class="mt-2"><label for="">Email: </label>&nbsp;{{ Auth::user()->gmail }} &nbsp;<a href="#"><i class="far fa-edit"></i></a></li>
+                            <li class="mt-2"><label for="">Số điện thoại: </label>&nbsp;{{ Auth::user()->phone }}  &nbsp;<a href="#"><i class="far fa-edit"></i></a></li>
+                            <li class="mt-2"><label for="">Giới tính: </label>&nbsp;{{ Auth::user()->gender }}  &nbsp;<a href="#"><i class="far fa-edit"></i></a></li>
+                            <li class="mt-2"><label for="">Ngày tạo: </label>&nbsp;{{ Auth::user()->created_at }} </li>
                         </ul>
                     </div>
                 </div>

@@ -22,9 +22,11 @@ class DatabaseSeeder extends Seeder
         $this->call(BlogSeeder::class);
         $this->call(TimeSeeder::class);
         $this->call(TimePTSeeder::class);
+        $this->call(DurationSeeder::class);
         $this->call(RolesTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
         $this->call(ConnectRelationshipsSeeder::class);
+        $this->call(HomeSeeder::class);
         Model::reguard();
     }
 }

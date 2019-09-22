@@ -15,10 +15,19 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::paginate(5);
+        $category = Category::whereNotIn('status', [-1]) ->paginate(5);
         $data = ['category' => $category];
         return view('admin.category.list-category', $data);
     }
+
+    public function index2()
+    {
+        $category = Category::whereNotIn('status', [1]) ->paginate(5);
+        $data = ['category' => $category];
+        return view('admin.category.deleted-category', $data);
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -96,7 +105,17 @@ class AdminCategoryController extends Controller
     {
         error_log('Some message here.');
         $adCategory = Category::find($id);
-        $adCategory->delete();
+        $adCategory->status = -1;
+        $adCategory->save();
         return response()->json(['status' => '200', 'message' => 'Okie']);
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $listItem = Category::whereIn('id', $request->input('ids'));
+        $listItem->update(array(
+            'status' => (int)$request->input('status'),
+            'updated_at' => date('Y-m-d H:i:s')));
+        return response()->json(['status' => '200', 'message' => 'Good']);
     }
 }

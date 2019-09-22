@@ -1,6 +1,10 @@
 @extends('client.layout.master')
 @section('content')
-
+    @if(session()->has('message'))
+        <div class="alert alert-success text-center">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <div class="container" style="padding-left: 10% ;margin-top: 80px">
         <div class="row no-gutters">
             <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -32,9 +36,11 @@
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu w-25" aria-labelledby="dLabel">
-                                            <li>1 Ngày</li>
-                                            <li>1 Tuần</li>
-                                            <li>1 Tháng</li>
+                                            @foreach($durations as $duration)
+                                                <li class="duration">{{$duration->duration}}</li>
+                                                <span class="d-none duration_id">{{$duration->id}}</span>
+                                                <span class="d-none duration_price">{{$duration->price}}</span>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
@@ -45,14 +51,26 @@
                 <div class="mt-4 ml-3 row">
                     <div class="row list-time" style="width: 100%">
                         @foreach($times as $time)
-                        <div class="col-6 time btn btn-secondary">{{$time->time}}</div>
+                            <div class="col-6 time btn btn-secondary">{{$time->time}}</div>
+                            <span class="d-none time_id">{{$time->id}}</span>
                         @endforeach
                     </div>
                 </div>
                 <div style="margin-left: 0.5%;margin-top: 9%">
-                    <button class="btn btn-outline-primary w-100" style="font-size: 20px">
-                        ĐẶT LỊCH
-                    </button>
+                    <form action="{{route('order.store')}}" method="post">
+                        @csrf
+                        <input type="text" class="d-none" name="order_id" value="{{date("YmdHis")}}"/>
+                        <input type="text" class="d-none" name="user_id">
+                        <input type="text" class="d-none" name="personal_training_time_id">
+                        <input type="text" class="" name="time">
+                        <input type="text" class="d-none" name="duration_id">
+                        <input type="text" class="" name="duration">
+                        <input type="text" class="" name="pt-name" value="{{$personalTraining->name}}">
+                        <input type="text" class="" name="price">
+                        <button type="submit" class="btn btn-outline-primary w-100" style="font-size: 20px">
+                            ĐẶT LỊCH
+                        </button>
+                    </form>
                 </div>
             </div>
         </div><!--row-->
@@ -72,9 +90,9 @@
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-                   <p><b>Tiểu sử:</b> {{$personalTraining->description}}</p>
-                   <p><b>Trình độ chyên môn:</b> {{$personalTraining->qualification}}</p>
-                   <p><b>Kinh nghiệm:</b> {{$personalTraining->experience}}</p>
+                    <p><b>Tiểu sử:</b> {{$personalTraining->description}}</p>
+                    <p><b>Trình độ chyên môn:</b> {{$personalTraining->qualification}}</p>
+                    <p><b>Kinh nghiệm:</b> {{$personalTraining->experience}}</p>
                 </div>
             </div>
         </div>

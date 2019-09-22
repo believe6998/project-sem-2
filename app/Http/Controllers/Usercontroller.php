@@ -16,9 +16,16 @@ class Usercontroller extends Controller
      */
     public function index()
     {
-        $list = User::paginate(10);
+        $list = User::whereNotIn('status', [-1])->paginate(10);
         $data = ['list' => $list];
-        return view('admin.user.list',$data);
+        return view('admin.user.list-user',$data);
+    }
+
+    public function index2()
+    {
+        $list = User::whereNotIn('status', [1]) ->paginate(10);
+        $data = ['list' => $list];
+        return view('admin.user.deleted-user', $data);
     }
 
     /**
@@ -61,7 +68,7 @@ class Usercontroller extends Controller
     {
         $user = User::find($id);
         $data = ['user' => $user];
-        return view('admin.user.list', $data);
+        return view('admin.user.list-user', $data);
     }
 
     /**
@@ -72,11 +79,9 @@ class Usercontroller extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin/user/edit')->with('user', $user);
+        return view('admin/user/edit-user')->with('user', $user);
 
     }
-
-
 
     /**
      * Update the specified resource in storage.
@@ -133,7 +138,17 @@ class Usercontroller extends Controller
     {
         error_log('Some message here.');
         $user = User::find($id);
-        $user->delete();
+        $user->status = -1;
+        $user->save();
         return response()->json(['status' => '200', 'message' => 'Okie']);
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $listItem = User::whereIn('id', $request->input('ids'));
+        $listItem->update(array(
+            'status' => (int)$request->input('status'),
+            'updated_at' => date('Y-m-d H:i:s')));
+        return response()->json(['status' => '200', 'message' => 'Good']);
     }
 }
