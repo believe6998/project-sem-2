@@ -48,8 +48,10 @@ class AdminOrderController extends Controller
     {
         $orders = new Order();
         $orders->user_id = $request->get('user_id');
+        $orders->personal_training_id = $request->get('personal_training_id');
         $orders->personal_training_time_id = $request->get('personal_training_time_id');
         $orders->duration_id = $request->get('duration_id');
+        $orders->price = $request->get('price');
         $orders->save();
         return redirect('admin/orders');
     }
@@ -91,8 +93,10 @@ class AdminOrderController extends Controller
     {
         $orders = Order::find($id);
         $orders->user_id = $request->get('user_id');
+        $orders->personal_training_id = $request->get('personal_training_id');
         $orders->personal_training_time_id = $request->get('personal_training_time_id');
         $orders->duration_id = $request->get('duration_id');
+        $orders->price = $request->get('price');
         $orders->save();
         return redirect('admin/orders');
     }
@@ -112,11 +116,12 @@ class AdminOrderController extends Controller
         return response()->json(['status' => '200', 'message' => 'Okie']);
     }
 
+
     public function changeStatus(Request $request)
     {
         $listItem = Order::whereIn('id', $request->input('ids'));
         $listItem->update(array(
-            'status' => (int)$request->input('status'),
+            'status' => $request->input('status'),
             'updated_at' => date('Y-m-d H:i:s')));
         return response()->json(['status' => '200', 'message' => 'Good']);
     }

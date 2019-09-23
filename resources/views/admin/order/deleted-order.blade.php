@@ -8,7 +8,8 @@
             <div class="card-body card-hd-list-category">
                 <div class="row">
                     <div class="col-6">
-                        <h5 class="mb-1  text-primary mt-2 "><a href="/admin/orders"><i class="far fa-plus-square"></i> Danh sách đơn hàng</a></h5>
+                        <h5 class="mb-1  text-primary mt-2 "><a href="/admin/orders"><i
+                                    class="fas fa-bars"></i> Danh sách đơn hàng</a></h5>
 
                     </div>
 
@@ -22,8 +23,10 @@
                             </th>
                             <th>ID</th>
                             <th>user_id</th>
+                            <th>personal_training_id</th>
                             <th>personal_training_time_id</th>
                             <th>duration_id</th>
+                            <th>Giá</th>
                             <th>Trạng thái</th>
                             <th>Ngày tạo</th>
                             <th>Ngày cập nhật</th>
@@ -39,8 +42,10 @@
                                 </th>
                                 <td class="item-user-ad">{{$item->id}}</td>
                                 <td class="item-user-ad">{{$item->user_id}}</td>
+                                <td class="item-user-ad">{{$item->personal_training_id}}</td>
                                 <td class="item-user-ad">{{$item->personal_training_time_id}}</td>
                                 <td class="item-user-ad">{{$item->duration_id}}</td>
+                                <td class="item-user-ad">{{$item->price}}</td>
                                 <td class="item-user-ad">{{$item->status}}</td>
 
                                 <td>{{$item->created_at}}</td>
