@@ -20,6 +20,7 @@ Route::resource('category', 'CategoryController');
 Route::resource('category', 'CategoryController');
 Route::resource('admin/time', 'TimeController');
 Route::resource('admin/duration', 'DurationController');
+Route::resource('admin/orders', 'AdminOrderController');
 
 Route::get('cl/blog', function () {
     return view('client/main-blog');
@@ -104,7 +105,10 @@ Route::post('/admin/change-status-user', 'UserController@changeStatus');
 Route::get('/admin/deleted-user', 'UserController@index2');
 
 Route::post('/admin/change-status-pt', 'AdminPTController@changeStatus');
-Route::get('/admin/deleted-PT', 'AdminPTController@index2');
+Route::get('/admin/deleted-PT', 'AdminPTController@index2')
+
+;Route::post('/admin/change-status-order', 'AdminOrderController@changeStatus');
+Route::get('/admin/deleted-order', 'AdminOrderController@index2');
 
 
 
