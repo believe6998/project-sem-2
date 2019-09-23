@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Duration;
 use App\Order;
 use App\personalTraining;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use JD\Cloudder\Facades\Cloudder;
@@ -44,6 +45,7 @@ class OrderController extends Controller
         $orderID = date("YmdHis");
         $order->id = $orderID;
         $order->user_id = $request->get('user_id');
+        $order->personal_training_id = $request->get('personal_training_id');
         $order->personal_training_time_id = $request->get('personal_training_time_id');
         $order->duration_id = $durationID->id;
         $order->price = $durationID->price;
@@ -161,7 +163,6 @@ class OrderController extends Controller
                 $vnpSecureHash = hash('sha256', $vnp_HashSecret . $hashdata);
                 $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
             }
-            $user_id = $request->get('user_id');
             DB::commit();
             return redirect($vnp_Url);
 
@@ -181,4 +182,5 @@ class OrderController extends Controller
         session()->forget('url_prev');
         return redirect($url)->with('errors', 'Lỗi trong quá trình thanh toán phí dịch vụ');
     }
+
 }

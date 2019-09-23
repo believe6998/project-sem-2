@@ -117,7 +117,6 @@ Auth::routes();
 Route::get('/','ClientBlogController@indexhome','RoleController@roleUser')->name('home');
 
 Route::resource('order', 'OrderController');
-Route::resource('payment', 'PaymentController');
 Route::post('/payment', 'OrderController@createPayment');
 Route::get('/return-vnpay', function (){
     return view('client.return-payment');
