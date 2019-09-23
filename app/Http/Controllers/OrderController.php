@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Order;
 use App\personalTraining;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use JD\Cloudder\Facades\Cloudder;
 
 class OrderController extends Controller
@@ -32,13 +33,15 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+
         $order = new Order();
-        $order->id = $request->get('order_id');
+        $orderID = date("YmdHis");
+        $order->id = $orderID;
         $order->user_id = $request->get('user_id');
         $order->personal_training_time_id = $request->get('personal_training_time_id');
         $order->duration_id = $request->get('duration_id');
@@ -50,15 +53,15 @@ class OrderController extends Controller
             'duration' => $request->get('duration'),
             'time' => $request->get('time'),
             'price' => $request->get('price'),
-            'orderID' => $request->get('order_id'),
+            'orderID' => $orderID,
         ];
-        return view('client.payment',$data);
+        return view('client.payment', $data);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param \App\Order $order
      * @return \Illuminate\Http\Response
      */
     public function show(Order $order)
@@ -69,7 +72,7 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param \App\Order $order
      * @return \Illuminate\Http\Response
      */
     public function edit(Order $order)
@@ -80,8 +83,8 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Order $order
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Order $order)
@@ -92,7 +95,7 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Order  $order
+     * @param \App\Order $order
      * @return \Illuminate\Http\Response
      */
     public function destroy(Order $order)
@@ -102,69 +105,77 @@ class OrderController extends Controller
 
     public function createPayment(Request $request)
     {
-        session(['cost_id' => $request->get('order_id')]);
-        session(['url_prev' => url()->previous()]);
-        $vnp_TmnCode = "Z1YPV5PL"; //Mã website tại VNPAY
-        $vnp_HashSecret = "DUNDLUFVPSUAWWAWOTPPRTZIPIBBFWKJ"; //Chuỗi bí mật
-        $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = "http://localhost:8000/return-vnpay";
-        $vnp_TxnRef = $request->get('order_id'); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-        $vnp_OrderInfo = "Thanh toán thuê huấn luyện viên";
-        $vnp_OrderType = 'billpayment';
-        $vnp_Amount = $request->get('amount') * 100;
-        $vnp_Locale = $request->get('language');
-        $vnp_IpAddr = request()->ip();
-        $vnp_BankCode = $request->get('bank_code');
+        DB::beginTransaction();
+        try {
+            session(['cost_id' => $request->get('order_id')]);
+            session(['url_prev' => url()->previous()]);
+            $vnp_TmnCode = "Z1YPV5PL"; //Mã website tại VNPAY
+            $vnp_HashSecret = "DUNDLUFVPSUAWWAWOTPPRTZIPIBBFWKJ"; //Chuỗi bí mật
+            $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+            $vnp_Returnurl = "http://localhost:8000/return-vnpay";
+            $vnp_TxnRef = $request->get('order_id'); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+            $vnp_OrderInfo = "Thanh toán thuê huấn luyện viên";
+            $vnp_OrderType = 'billpayment';
+            $vnp_Amount = $request->get('amount') * 100;
+            $vnp_Locale = $request->get('language');
+            $vnp_IpAddr = request()->ip();
+            $vnp_BankCode = $request->get('bank_code');
 
-        $inputData = array(
-            "vnp_Version" => "2.0.0",
-            "vnp_TmnCode" => $vnp_TmnCode,
-            "vnp_Amount" => $vnp_Amount,
-            "vnp_Command" => "pay",
-            "vnp_CreateDate" => date('YmdHis'),
-            "vnp_CurrCode" => "VND",
-            "vnp_IpAddr" => $vnp_IpAddr,
-            "vnp_Locale" => $vnp_Locale,
-            "vnp_OrderInfo" => $vnp_OrderInfo,
-            "vnp_OrderType" => $vnp_OrderType,
-            "vnp_ReturnUrl" => $vnp_Returnurl,
-            "vnp_TxnRef" => $vnp_TxnRef,
-        );
+            $inputData = array(
+                "vnp_Version" => "2.0.0",
+                "vnp_TmnCode" => $vnp_TmnCode,
+                "vnp_Amount" => $vnp_Amount,
+                "vnp_Command" => "pay",
+                "vnp_CreateDate" => date('YmdHis'),
+                "vnp_CurrCode" => "VND",
+                "vnp_IpAddr" => $vnp_IpAddr,
+                "vnp_Locale" => $vnp_Locale,
+                "vnp_OrderInfo" => $vnp_OrderInfo,
+                "vnp_OrderType" => $vnp_OrderType,
+                "vnp_ReturnUrl" => $vnp_Returnurl,
+                "vnp_TxnRef" => $vnp_TxnRef,
+            );
 
-        if (isset($vnp_BankCode) && $vnp_BankCode != "") {
-            $inputData['vnp_BankCode'] = $vnp_BankCode;
-        }
-        ksort($inputData);
-        $query = "";
-        $i = 0;
-        $hashdata = "";
-        foreach ($inputData as $key => $value) {
-            if ($i == 1) {
-                $hashdata .= '&' . $key . "=" . $value;
-            } else {
-                $hashdata .= $key . "=" . $value;
-                $i = 1;
+            if (isset($vnp_BankCode) && $vnp_BankCode != "") {
+                $inputData['vnp_BankCode'] = $vnp_BankCode;
             }
-            $query .= urlencode($key) . "=" . urlencode($value) . '&';
-        }
+            ksort($inputData);
+            $query = "";
+            $i = 0;
+            $hashdata = "";
+            foreach ($inputData as $key => $value) {
+                if ($i == 1) {
+                    $hashdata .= '&' . $key . "=" . $value;
+                } else {
+                    $hashdata .= $key . "=" . $value;
+                    $i = 1;
+                }
+                $query .= urlencode($key) . "=" . urlencode($value) . '&';
+            }
 
-        $vnp_Url = $vnp_Url . "?" . $query;
-        if (isset($vnp_HashSecret)) {
-            // $vnpSecureHash = md5($vnp_HashSecret . $hashdata);
-            $vnpSecureHash = hash('sha256', $vnp_HashSecret . $hashdata);
-            $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
+            $vnp_Url = $vnp_Url . "?" . $query;
+            if (isset($vnp_HashSecret)) {
+                // $vnpSecureHash = md5($vnp_HashSecret . $hashdata);
+                $vnpSecureHash = hash('sha256', $vnp_HashSecret . $hashdata);
+                $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
+            }
+            DB::commit();
+            return redirect($vnp_Url);
+
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            return 'Có lỗi xảy ra.' . $exception->getMessage();
         }
-        return redirect($vnp_Url);
     }
 
     public function return(Request $request)
     {
-        $url = session('url_prev','/');
-        if($request->vnp_ResponseCode == "00") {
+        $url = session('url_prev', '/');
+        if ($request->vnp_ResponseCode == "00") {
             $this->apSer->thanhtoanonline(session('cost_id'));
-            return redirect($url)->with('success' ,'Đã thanh toán phí dịch vụ');
+            return redirect($url)->with('success', 'Đã thanh toán phí dịch vụ');
         }
         session()->forget('url_prev');
-        return redirect($url)->with('errors' ,'Lỗi trong quá trình thanh toán phí dịch vụ');
+        return redirect($url)->with('errors', 'Lỗi trong quá trình thanh toán phí dịch vụ');
     }
 }

@@ -26,8 +26,7 @@
         //$secureHash = md5($vnp_HashSecret . $hashData);
         $secureHash = hash('sha256',$vnp_HashSecret . $hashData);
     @endphp
-    <div class="container">
-        <div style="padding-left: 400px">
+        <div style="padding-left: 650px">
             <div class="header clearfix pt-5">
                 <h1 class="text-primary">Kết quả thanh toán</h1>
             </div>
@@ -43,10 +42,6 @@
                 <div class="form-group">
                     <label class="font-weight-bold">Nội dung thanh toán:</label>
                     <label>{{Request::get('vnp_OrderInfo')}}</label>
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-bold">Mã phản hồi:</label>
-                    <label>{{Request::get('vnp_ResponseCode')}}</label>
                 </div>
                 <div class="form-group">
                     <label class="font-weight-bold">Mã GD Tại VNPAY:</label>
@@ -66,12 +61,12 @@
                         @php
                             if ($secureHash == $vnp_SecureHash) {
                                 if ($_GET['vnp_ResponseCode'] == '00') {
-                                    echo "Giao dịch thành công";
+                                   echo "<div class='btn-success'>Giao dịch thành công<div>";
                                 } else {
-                                    echo "Giao dịch không thành công";
+                                    echo "<div class='btn-danger'>Giao dịch không thành công<div>";
                                 }
                             } else {
-                                echo "Chu kỳ không hợp lệ";
+                                echo "<div class='btn-warning'Chu kỳ không hợp lệ<div>";
                             }
                         @endphp
                     </label>

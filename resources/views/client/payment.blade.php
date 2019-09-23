@@ -21,7 +21,9 @@
                     <option value="en">English</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary" id="btnPopup">Thanh toán Popup</button>
-            <button type="submit" class="btn btn-default">Thanh toán Redirect</button>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary mr-2">Thanh toán</button>
+                <a href="/" class="btn btn-danger">Để sau</a>
+            </div>
         </form>
 @endsection

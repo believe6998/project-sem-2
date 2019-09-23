@@ -24,100 +24,56 @@
                 <div class="text-secondary"><h5
                         class="category-name">@foreach($list as $item){{$item->name}}, @endforeach</h5>
                 </div>
-            </div>
-        </div><!--inner-->
-    </div><!-- col-sm-6  -->
-    <div class="col-sm-6" style="margin-left: 9%">
-        <div>
-            <h3><span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </h3>
-        </div>
-        <div class="text-secondary">(1 đánh giá)</div>
-        <div class="pt-2"><h3>Phan Hoài Nam</h3></div>
-        <div class=""><h3>Heart Bag</h3></div>
-        >>>>>>> b608825702d842cd5a03be6008bbdae91a15e607
-        <div class="row">
-            <div class="col-sm-7 mt-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="dropdown">
-                                <button id="dLabel" class="dropdown-select " type="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Thời Gian
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu w-25" aria-labelledby="dLabel">
-                                    @foreach($durations as $duration)
-                                        <li class="duration">{{$duration->duration}}</li>
-                                        <span class="d-none duration_id">{{$duration->id}}</span>
-                                        <span class="d-none duration_price">{{$duration->price}}</span>
-                                    @endforeach
-                                </ul>
+                <div class="row">
+                    <div class="col-sm-7 mt-3">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="dropdown w-25">
+                                        <button id="dLabel" class="dropdown-select font-weight-bolder" type="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Thời Gian
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu w-25" aria-labelledby="dLabel">
+                                            @foreach($durations as $duration)
+                                                <li class="duration">{{$duration->duration}}</li>
+                                                <span class="d-none duration_id">{{$duration->id}}</span>
+                                                <span class="d-none duration_price">{{$duration->price}}</span>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <<<<<<< HEAD
-        <div class="mt-4 ml-3 row">
-            <div class="row list-time" style="width: 100%">
-                @foreach($times as $time)
-                    <div class="col-6 time btn btn-secondary">{{$time->time}}</div>
-                    <span class="d-none time_id">{{$time->id}}</span>
-                @endforeach
-            </div>
-        </div>
-        <div style="margin-left: 0.5%;margin-top: 9%">
-            <form action="{{route('order.store')}}" method="post">
-                @csrf
-                <input type="text" class="d-none" name="order_id" value="{{date("YmdHis")}}"/>
-                <input type="text" class="d-none" name="user_id">
-                <input type="text" class="d-none" name="personal_training_time_id">
-                <input type="text" class="" name="time">
-                <input type="text" class="d-none" name="duration_id">
-                <input type="text" class="" name="duration">
-                <input type="text" class="" name="pt-name" value="{{$personalTraining->name}}">
-                <input type="text" class="" name="price">
-                <button type="submit" class="btn btn-outline-primary w-100" style="font-size: 20px">
-                    ĐẶT LỊCH
-                </button>
-            </form>
-            =======
-            <div class="mt-5 ml-4 row">
-                <div class="row" style="width: 100%">
-                    <div class="col-3 time"> 05:00 - 07:00</div>
-                    <div class="col-3 time"> 05:00 - 07:00</div>
-                    <div class="col-3 time"> 05:00 - 07:00</div>
-                    <div class="col-3 time"> 05:00 - 07:00</div>
+                <div class="mt-4 ml-3 row">
+                    <div class="row list-time" style="width: 100%">
+                        @foreach($times as $time)
+                            <div class="col-6 time btn btn-secondary">{{$time->time}}</div>
+                            <span class="d-none time_id">{{$time->id}}</span>
+                        @endforeach
+                    </div>
                 </div>
-                <div class="row" style="width: 100%">
-                    <div class="col-3 time"> 05:00 - 07:00</div>
-                    <div class="col-3 time"> 05:00 - 07:00</div>
-                    <div class="col-3 time"> 05:00 - 07:00</div>
-                    <div class="col-3 time"> 05:00 - 07:00</div>
+                <div style="margin-left: 0.5%;margin-top: 9%">
+                    <form action="{{route('order.store')}}" method="post">
+                        @csrf
+                        <input type="text" class="d-none" name="user_id">
+                        <input type="text" class="d-none" name="personal_training_time_id">
+                        <input type="text" class="d-none" name="time">
+                        <input type="text" class="d-none" name="duration_id">
+                        <input type="text" class="d-none" name="duration">
+                        <input type="text" class="d-none" name="pt-name" value="{{$personalTraining->name}}">
+                        <input type="text" class="d-none" name="price">
+                        <button type="submit" class="btn btn-outline-primary w-100" style="font-size: 20px">
+                            ĐẶT LỊCH
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-sm-7"></div>
-                <div class="col-sm-5" style="width: 190px; height: 50px;float: right">
-                    <button
-                        style="width: 100%;height: 100%;background: #4a9bbf;color: white;border-radius: 3px;font-size: 16px">
-                        Trải nghiệm ngay
-                    </button>
-                </div>
-                >>>>>>> b608825702d842cd5a03be6008bbdae91a15e607
-            </div>
-        </div>
-    </div><!--row-->
+        </div><!--row-->
     </div><!--container-->
-    </div>
-
     <div class="accordion container" id="accordionExample" style="margin-top: 10%">
         <div class="card">
             <div class="card-header" id="headingOne">
@@ -145,11 +101,7 @@
                             style="text-decoration: none;font-size: 22px;line-height: 26px;" type="button"
                             data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                             aria-controls="collapseThree">
-                        <<<<<<< HEAD
-                        Đánh giá (1)
-                        =======
-                        Reviews ({{count($review)}})
-                        >>>>>>> b608825702d842cd5a03be6008bbdae91a15e607
+                        Đánh giá ({{count($review)}})
                     </button>
                 </h2>
             </div>
@@ -202,7 +154,7 @@
                             <form action=" {{route('review.store')}}" method="POST">
                                 @csrf
                                 <div>
-                                    <input type="hidden" name="personalTraining-id" value="{{$PersonalTraining->id}}">
+                                    <input type="hidden" name="personalTraining-id" value="{{$personalTraining->id}}">
                                     <!-- Default form contact -->
                                     <div class="rate">
                                         <span style="font-size: 21px;color: black"> Đánh giá</span>

@@ -14,8 +14,7 @@
                     <div><a href="/personal-training" class="pt-cate">Tất cả</a></div>
                     <div><img class="mr-3" width="40px"
                               src="https://img.icons8.com/ios-filled/50/000000/personal-trainer.png"><a href="/category/1"
-                                                                                                        class="pt-cate">Huấn Luyện
-                            Viên Cá Nhân</a></div>
+                                                                                                        class="pt-cate">HLV Cá Nhân</a></div>
                     <div><img class="mr-3" width="40px" src="https://img.icons8.com/ios-filled/50/000000/yoga.png"> <a
                                 href="/category/2" class="pt-cate">Yoga</a></div>
                     <div><img class="mr-3" width="40px"
@@ -62,11 +61,7 @@
                                     </h2>
                                     <p class="pb-3">
                                         {{$item->description}}</p>
-<<<<<<< HEAD
                                     <a href="/personal-training/{{$item->id}}">View more</a>
-=======
-                                    <a href="{{route('client.pt.show',$item->id)}}">View more</a>
->>>>>>> b608825702d842cd5a03be6008bbdae91a15e607
                                 </figcaption>
                             </figure>
                         </div>
