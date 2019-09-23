@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Duration;
 use App\Order;
 use App\personalTraining;
 use Illuminate\Http\Request;
@@ -38,13 +39,14 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-
+        $durationID = Duration::find($request->get('duration_id'));
         $order = new Order();
         $orderID = date("YmdHis");
         $order->id = $orderID;
         $order->user_id = $request->get('user_id');
         $order->personal_training_time_id = $request->get('personal_training_time_id');
-        $order->duration_id = $request->get('duration_id');
+        $order->duration_id = $durationID->id;
+        $order->price = $durationID->price;
         $order->created_at = date('Y-m-d H:i:s');
         $order->updated_at = date('Y-m-d H:i:s');
         $order->save();
@@ -159,6 +161,7 @@ class OrderController extends Controller
                 $vnpSecureHash = hash('sha256', $vnp_HashSecret . $hashdata);
                 $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
             }
+            $user_id = $request->get('user_id');
             DB::commit();
             return redirect($vnp_Url);
 

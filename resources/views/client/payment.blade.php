@@ -8,6 +8,7 @@
             @csrf
             <input class="d-none" id="order_id" name="order_id" type="text" value="{{$orderID}}"/>
             <input class="d-none" id="amount" name="amount" type="number" value="{{$price}}"/>
+            <input class="d-none"  name="user_id" type="text"/>
             <div><b>Mã đơn hàng:</b> {{$orderID}}</div>
             <div><b>Tên khách hàng:</b> Phan Hoài Nam</div>
             <div><b>Tên huấn luyện viên:</b> {{$ptName}}</div>

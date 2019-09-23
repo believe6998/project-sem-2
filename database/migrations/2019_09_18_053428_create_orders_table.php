@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('personal_training_time_id')->references('id')->on('personal_training_time')->onDelete('cascade');
             $table->unsignedBigInteger('duration_id')->unsigned()->index();
             $table->foreign('duration_id')->references('id')->on('durations')->onDelete('cascade');
+            $table->integer('price');
             $table->integer('status')->default(1);
             $table->timestamps();
         });
