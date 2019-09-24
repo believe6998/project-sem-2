@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 
 class AdminOrderController extends Controller
@@ -14,12 +15,27 @@ class AdminOrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $orders = Order::whereNotIn('status', [-1])->paginate(10);
-        $data = ['orders' => $orders];
-        return view('admin.order.list-order',$data);
-    }
+        $personal_training_id = Input::get('personal_training_id');
+        $created_at = Input::get('created_at');
+        $orders = DB::table('orders')
+            ->whereNotIn('status', [-1]);
+        if ($personal_training_id != null) {
+            $orders = $orders->where('personal_training_id',$personal_training_id);
+        } else {
+            $personal_training_id = null;
+        }
+        if ($created_at != null) {
+            $orders = $orders->where('created_at',$created_at);
+        } else {
+            $created_at = null;
+        }
+        $orders = $orders->paginate(10);
+        $currentPersonalTrainingID = $request->get('personal_training_id');
+        $currentCreated_at=$request->get('created_at');
+        return view('admin.order.list-order', compact('orders','currentPersonalTrainingID','currentCreated_at'));
+  }
 
     public function index2()
     {
