@@ -60,6 +60,7 @@
                     <form action="{{route('order.store')}}" method="post">
                         @csrf
                         <input type="text" class="d-none" name="user_id">
+                        <input type="text" class="d-none" name="personal_training_id" value="{{$personalTraining->id}}">
                         <input type="text" class="d-none" name="personal_training_time_id">
                         <input type="text" class="d-none" name="time">
                         <input type="text" class="d-none" name="duration_id">

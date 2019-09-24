@@ -17,6 +17,8 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('personal_training_id')->unsigned()->index();
+            $table->foreign('personal_training_id')->references('id')->on('personal_trainings')->onDelete('cascade');
             $table->unsignedBigInteger('personal_training_time_id')->unsigned()->index();
             $table->foreign('personal_training_time_id')->references('id')->on('personal_training_time')->onDelete('cascade');
             $table->unsignedBigInteger('duration_id')->unsigned()->index();

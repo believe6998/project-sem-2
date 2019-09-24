@@ -30,7 +30,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+      //
     }
 
     /**
@@ -46,6 +46,7 @@ class OrderController extends Controller
         $orderID = date("YmdHis");
         $order->id = $orderID;
         $order->user_id = $request->get('user_id');
+        $order->personal_training_id = $request->get('personal_training_id');
         $order->personal_training_time_id = $request->get('personal_training_time_id');
         $order->duration_id = $durationID->id;
         $order->price = $durationID->price;
@@ -70,7 +71,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-
+    //
     }
 
     /**

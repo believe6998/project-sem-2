@@ -20,6 +20,7 @@ Route::resource('category', 'CategoryController');
 Route::resource('category', 'CategoryController');
 Route::resource('admin/time', 'TimeController');
 Route::resource('admin/duration', 'DurationController');
+Route::resource('admin/orders', 'AdminOrderController');
 
 Route::get('cl/blog', function () {
     return view('client/main-blog');
@@ -104,7 +105,10 @@ Route::post('/admin/change-status-user', 'UserController@changeStatus');
 Route::get('/admin/deleted-user', 'UserController@index2');
 
 Route::post('/admin/change-status-pt', 'AdminPTController@changeStatus');
-Route::get('/admin/deleted-PT', 'AdminPTController@index2');
+Route::get('/admin/deleted-PT', 'AdminPTController@index2')
+
+;Route::post('/admin/change-status-order', 'AdminOrderController@changeStatus');
+Route::get('/admin/deleted-order', 'AdminOrderController@index2');
 
 
 
@@ -113,7 +117,6 @@ Auth::routes();
 Route::get('/','ClientBlogController@indexhome','RoleController@roleUser')->name('home');
 
 Route::resource('order', 'OrderController');
-Route::resource('payment', 'PaymentController');
 Route::post('/payment', 'OrderController@createPayment');
 Route::get('/return-vnpay', function (){
     return view('client.return-payment');
@@ -131,5 +134,3 @@ Route::resource('/pt','ClientPTController',['as' => 'client']) ;
 Route::resource('/admin/review','ReviewController') ;
 Route::post('/admin/review/change-status', 'ReviewController@changeStatus');
 Route::get('/admin/review/get-by-id/{id}', 'ReviewController@getById');
-
-Route::get('send','EmailController@send');
