@@ -14,15 +14,15 @@
                     <div><a href="/personal-training" class="pt-cate">Tất cả</a></div>
                     <div><img class="mr-3" width="40px"
                               src="https://img.icons8.com/ios-filled/50/000000/personal-trainer.png"><a href="/category/1"
-                                                                                                        class="pt-cate">Huấn Luyện
-                            Viên Cá Nhân</a></div>
+                                                                                                        class="pt-cate">HLV Cá Nhân</a></div>
                     <div><img class="mr-3" width="40px" src="https://img.icons8.com/ios-filled/50/000000/yoga.png"> <a
-                            href="/category/2" class="pt-cate">Yoga</a></div>
+                                href="/category/2" class="pt-cate">Yoga</a></div>
                     <div><img class="mr-3" width="40px"
                               src="https://img.icons8.com/ios-filled/50/000000/swimming.png"><a href="/category/3" class="pt-cate">Bơi Lội</a>
                     </div>
                     <div><img class="mr-3" width="40px"
-                              src="https://img.icons8.com/ios-glyphs/60/000000/boxing-2.png"><a href="/category/4" class="pt-cate">Kick
+                              src="https://img.icons8.com/ios-glyphs/60/000000/boxing-2.png"><a href="/category/4"
+                                                                                                class="pt-cate">Kick
                             Boxing</a></div>
                     <div><img class="mr-3" width="40px" src="https://img.icons8.com/ios-filled/50/000000/dancing.png"><a
                             href="/category/5" class="pt-cate">Khiêu Vũ</a></div>
@@ -48,9 +48,11 @@
                     @foreach($list as $item)
                         <div class="grid col-sm-4">
                             <figure class="effect-goliath" data-aos="zoom-in">
+
                                 <img width="100%" height="auto"
                                      src="{{$item->image}}"
                                      alt="img23"/>
+
                                 <figcaption>
                                     <h2 class="text-center">{{$item->name}}<br>
                                         <div class="star-ratings-sprite"><span style="width:{{$item->rating}}"

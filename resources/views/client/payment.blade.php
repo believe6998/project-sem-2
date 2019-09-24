@@ -8,6 +8,7 @@
             @csrf
             <input class="d-none" id="order_id" name="order_id" type="text" value="{{$orderID}}"/>
             <input class="d-none" id="amount" name="amount" type="number" value="{{$price}}"/>
+            <input class="d-none"  name="user_id" type="text"/>
             <div><b>Mã đơn hàng:</b> {{$orderID}}</div>
             <div><b>Tên khách hàng:</b> Phan Hoài Nam</div>
             <div><b>Tên huấn luyện viên:</b> {{$ptName}}</div>
@@ -21,7 +22,9 @@
                     <option value="en">English</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary" id="btnPopup">Thanh toán Popup</button>
-            <button type="submit" class="btn btn-default">Thanh toán Redirect</button>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary mr-2">Thanh toán</button>
+                <a href="/" class="btn btn-danger">Để sau</a>
+            </div>
         </form>
 @endsection

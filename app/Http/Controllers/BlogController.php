@@ -17,9 +17,9 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function __construct()
-{
-    $this->middleware('auth');
-}
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -74,7 +74,7 @@ class BlogController extends Controller
         //dd($userImage);
 
 
-        return redirect('admin/blog');
+        return redirect('admin/blog')->withSuccess('thêm thành công');
     }
 
 
@@ -86,11 +86,12 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-         $blog = Blog::find($id);
-         if ($blog == null) {
-             return view('error.404');
-         }
-         return view('admin/blog/detail-blog')->with('blog', $blog);
+
+        $blog = Blog::find($id);
+        if ($blog == null) {
+            return view('error.404');
+        }
+        return view('admin/detail-blog')->with('blog', $blog);
     }
 
     /**
@@ -129,7 +130,7 @@ class BlogController extends Controller
         }
         $obj->thumbnail = $image_url;
         $obj->save();
-        return redirect('admin/blog');
+        return redirect('admin/blog') ->withSuccess('sửa thành công');
     }
 
     /**
@@ -140,25 +141,9 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-
-        error_log('Some message here.');
-        $blog = Blog::find($id);
-        $blog->status = -1;
-        $blog->save();
-        return response()->json(['status' => '200', 'message' => 'Okie']);
-//        $blog = Blog::findOrFail($id);
-//        $blog->delete();
-//        return redirect('admin/blog');
-
-    }
-
-    public function changeStatus(Request $request)
-    {
-        $listItem = Blog::whereIn('id', $request->input('ids'));
-        $listItem->update(array(
-            'status' => (int)$request->input('status'),
-            'updated_at' => date('Y-m-d H:i:s')));
-        return response()->json(['status' => '200', 'message' => 'Good']);
+        $blog = Blog::findOrFail($id);
+        $blog->delete();
+        return redirect('admin/blog')->withSuccess('Xoá thành công');
     }
 
 }

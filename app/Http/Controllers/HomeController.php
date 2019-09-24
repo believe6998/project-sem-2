@@ -101,7 +101,7 @@ class HomeController extends Controller
     public function index3()
     {
         $list = Home::all();
-        $blogs = Blog::latest();
+        $blogs = Blog::latest()->get();
         return view('client.home',compact('list','blogs'));
     }
 }
