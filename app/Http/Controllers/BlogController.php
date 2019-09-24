@@ -91,7 +91,7 @@ class BlogController extends Controller
         if ($blog == null) {
             return view('error.404');
         }
-        return view('admin/detail-blog')->with('blog', $blog);
+        return view('admin/blog/detail-blog')->with('blog', $blog);
     }
 
     /**
@@ -141,9 +141,20 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        $blog = Blog::findOrFail($id);
-        $blog->delete();
-        return redirect('admin/blog')->withSuccess('Xoá thành công');
+        error_log('Some message here.');
+        $blog = Blog::find($id);
+        $blog->status = -1;
+        $blog->save();
+        return response()->json(['status' => '200', 'message' => 'Okie']);
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $listItem = Blog::whereIn('id', $request->input('ids'));
+        $listItem->update(array(
+            'status' => (int)$request->input('status'),
+            'updated_at' => date('Y-m-d H:i:s')));
+        return response()->json(['status' => '200', 'message' => 'Good']);
     }
 
 }
