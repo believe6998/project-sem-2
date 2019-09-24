@@ -21,3 +21,8 @@ $('.duration').click(function () {
     $('input[name=price]').val($(this).next().next().text());
 });
 
+$.each($('.time'), function () {
+  if ($(this).next().next().text() === '0'){
+      $(this).attr("disabled", true);
+  }
+});
