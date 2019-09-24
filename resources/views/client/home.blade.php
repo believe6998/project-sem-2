@@ -179,9 +179,10 @@
                                     có.</h5>
                             </div>
                         </div>
+                        @endif
+                        @endforeach
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-6">
                         <div class="row row-gtdingduong" data-aos="zoom-in">

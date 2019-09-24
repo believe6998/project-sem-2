@@ -8,6 +8,7 @@ use App\personalTraining;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use JD\Cloudder\Facades\Cloudder;
 
@@ -187,6 +188,52 @@ class OrderController extends Controller
         session()->forget('url_prev');
         return redirect($url)->with('errors', 'Lỗi trong quá trình thanh toán phí dịch vụ');
     }
+
+    public function getChartDataApi()
+    {
+        $start_date = Input::get('startDate');
+        $end_date = Input::get('endDate');
+        $chart_data = Order::select(DB::raw('sum(price) as revenue'), DB::raw('date(created_at) as day'))
+            ->whereRaw('created_at >= "' . $start_date . ' 00:00:00" AND created_at <= "' . $end_date . ' 23:59:59" AND status = 1')
+            ->groupBy('day')
+            ->orderBy('day', 'desc')
+            ->get();
+        return $chart_data;
+    }
+    public function getDataToTimeApi()
+    {
+        $start_date = Input::get('startDate');
+        $end_date = Input::get('endDate');
+        $orders = Order::select()
+            ->whereBetween('orders.created_at', array($start_date . ' 00:00:00', $end_date . ' 23:59:59'))
+            ->orderBy('created_at','desc')
+            ->get();
+        foreach ($orders as $data) {
+            $data->statusLabel = $data->getStatusLabelAttribute();
+        }
+        return response()->json(['list_obj' => $orders], 200);
+    }
+    public function getPieChartDataApi()
+    {
+        //DB::connection()->enableQueryLog();
+        $start_date = Input::get('startDate');
+        $end_date = Input::get('endDate');
+//        $chart_data = OrderDetail::select(DB::raw('sum(quantity) as totalQuantity'), DB::raw('product_id as product_id'))
+//            ->whereRaw('created_at >= "'.$start_date.' 00:00:00" AND created_at <= "'.$end_date . ' 23:59:59"')
+//            ->groupBy('product_id')
+//            ->get();
+        $orders = PersonalTraining::whereRaw('status=1')->get();
+        $id = $orders->pluck('id')->all();
+        $chart_data = Order::select(DB::raw('sum(personal_training_time_id) as totalQuantity'), 'personal_training_id')
+            ->whereRaw('updated_at >= "'.$start_date.' 00:00:00" AND updated_at <= "'.$end_date . ' 23:59:59"')
+            ->whereIn('personal_training_id',$id)
+            ->groupBy('personal_training_id')
+            ->orderBy('totalQuantity', 'desc')
+            ->get();
+        return $chart_data;
+    }
+}
+    }
     public function send($email)
     {
         Mail::send(['text'=>'mail'],['name','Phong'],function ($message) use ($email) {
@@ -194,8 +241,4 @@ class OrderController extends Controller
             $message->from('sieuphamyasuo393@gmail.com','Phong');
         });
     }
-//    public function send()
-//    {
-//        Mail::send(new Mail());
-//    }
 }

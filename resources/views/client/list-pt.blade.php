@@ -38,7 +38,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="/personal-training/?orderBy=rate">Rating</a>
-                                <a class="dropdown-item" href="/personal-training/?orderBy=date">New</a>
+                                <a class="dropdown-item" href="/personal-training/?orderBy=created_at">New</a>
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </div>

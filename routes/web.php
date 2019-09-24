@@ -127,6 +127,10 @@ Route::get('/admin/deleted-home', 'HomeController@index2');
 
 Route::get('/', 'HomeController@index3');
 
+
+Route::get('/api-get-chart-data', 'OrderController@getChartDataApi');
+Route::get('/api-get-data-to-time', 'OrderController@getDataToTimeApi');
+Route::get('/api-get-pie-chart-data', 'OrderController@getPieChartDataApi');
 Route::get('/admin/review{review}', 'ReviewController@edit2')->name('review.edit2');
 Route::resource('/pt', 'ClientPTController', ['as' => 'client']);
 Route::resource('/admin/review', 'ReviewController');
