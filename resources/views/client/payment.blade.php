@@ -24,7 +24,6 @@
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary mr-2">Thanh toán</button>
-                <a href="/" class="btn btn-danger">Để sau</a>
             </div>
         </form>
 @endsection
