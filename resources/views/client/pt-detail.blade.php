@@ -59,6 +59,7 @@
                 <div style="margin-left: 0.5%;margin-top: 9%">
                     <form action="{{route('order.store')}}" method="post">
                         @csrf
+                        <input type="text" class="d-none" name="personal_training_id" value="{{$personalTraining->id}}">
                         <input type="text" class="d-none" name="order_id" value="{{date("YmdHis")}}"/>
                         <input type="text" class="d-none" name="user_id">
                         <input type="text" class="d-none" name="personal_training_time_id">

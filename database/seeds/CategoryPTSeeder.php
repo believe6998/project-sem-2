@@ -42,6 +42,13 @@ class CategoryPTSeeder extends Seeder
                 'personal_training_id' => 3,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'id' => 5,
+                'category_id' => 3,
+                'personal_training_id' => 8,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ]
 
         ]);

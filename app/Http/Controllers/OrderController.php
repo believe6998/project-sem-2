@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Duration;
 use App\Order;
 use App\personalTraining;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use JD\Cloudder\Facades\Cloudder;
 
 class OrderController extends Controller
@@ -32,16 +35,20 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $durationID = Duration::find($request->get('duration_id'));
         $order = new Order();
-        $order->id = $request->get('order_id');
+        $orderID = date("YmdHis");
+        $order->id = $orderID;
         $order->user_id = $request->get('user_id');
+        $order->personal_training_id = $request->get('personal_training_id');
         $order->personal_training_time_id = $request->get('personal_training_time_id');
-        $order->duration_id = $request->get('duration_id');
+        $order->duration_id = $durationID->id;
+        $order->price = $durationID->price;
         $order->created_at = date('Y-m-d H:i:s');
         $order->updated_at = date('Y-m-d H:i:s');
         $order->save();
@@ -50,15 +57,15 @@ class OrderController extends Controller
             'duration' => $request->get('duration'),
             'time' => $request->get('time'),
             'price' => $request->get('price'),
-            'orderID' => $request->get('order_id'),
+            'orderID' => $orderID,
         ];
-        return view('client.payment',$data);
+        return view('client.payment', $data);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param \App\Order $order
      * @return \Illuminate\Http\Response
      */
     public function show(Order $order)
@@ -69,7 +76,7 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param \App\Order $order
      * @return \Illuminate\Http\Response
      */
     public function edit(Order $order)
@@ -80,8 +87,8 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Order $order
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Order $order)
@@ -92,7 +99,7 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Order  $order
+     * @param \App\Order $order
      * @return \Illuminate\Http\Response
      */
     public function destroy(Order $order)
@@ -159,12 +166,56 @@ class OrderController extends Controller
 
     public function return(Request $request)
     {
-        $url = session('url_prev','/');
-        if($request->vnp_ResponseCode == "00") {
+        $url = session('url_prev', '/');
+        if ($request->vnp_ResponseCode == "00") {
             $this->apSer->thanhtoanonline(session('cost_id'));
-            return redirect($url)->with('success' ,'Đã thanh toán phí dịch vụ');
+            return redirect($url)->with('success', 'Đã thanh toán phí dịch vụ');
         }
         session()->forget('url_prev');
-        return redirect($url)->with('errors' ,'Lỗi trong quá trình thanh toán phí dịch vụ');
+        return redirect($url)->with('errors', 'Lỗi trong quá trình thanh toán phí dịch vụ');
+    }
+
+    public function getChartDataApi()
+    {
+        $start_date = Input::get('startDate');
+        $end_date = Input::get('endDate');
+        $chart_data = Order::select(DB::raw('sum(price) as revenue'), DB::raw('date(created_at) as day'))
+            ->whereRaw('created_at >= "' . $start_date . ' 00:00:00" AND created_at <= "' . $end_date . ' 23:59:59" AND status = 1')
+            ->groupBy('day')
+            ->orderBy('day', 'desc')
+            ->get();
+        return $chart_data;
+    }
+    public function getDataToTimeApi()
+    {
+        $start_date = Input::get('startDate');
+        $end_date = Input::get('endDate');
+        $orders = Order::select()
+            ->whereBetween('orders.created_at', array($start_date . ' 00:00:00', $end_date . ' 23:59:59'))
+            ->orderBy('created_at','desc')
+            ->get();
+        foreach ($orders as $data) {
+            $data->statusLabel = $data->getStatusLabelAttribute();
+        }
+        return response()->json(['list_obj' => $orders], 200);
+    }
+    public function getPieChartDataApi()
+    {
+        //DB::connection()->enableQueryLog();
+        $start_date = Input::get('startDate');
+        $end_date = Input::get('endDate');
+//        $chart_data = OrderDetail::select(DB::raw('sum(quantity) as totalQuantity'), DB::raw('product_id as product_id'))
+//            ->whereRaw('created_at >= "'.$start_date.' 00:00:00" AND created_at <= "'.$end_date . ' 23:59:59"')
+//            ->groupBy('product_id')
+//            ->get();
+        $orders = PersonalTraining::whereRaw('status=1')->get();
+        $id = $orders->pluck('id')->all();
+        $chart_data = Order::select(DB::raw('sum(personal_training_time_id) as totalQuantity'), 'personal_training_id')
+            ->whereRaw('updated_at >= "'.$start_date.' 00:00:00" AND updated_at <= "'.$end_date . ' 23:59:59"')
+            ->whereIn('personal_training_id',$id)
+            ->groupBy('personal_training_id')
+            ->orderBy('totalQuantity', 'desc')
+            ->get();
+        return $chart_data;
     }
 }
