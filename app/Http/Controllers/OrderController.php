@@ -192,7 +192,7 @@ class OrderController extends Controller
         Mail::send(['text'=>'mail'],['name','Phong'],function ($message) use ($email) {
             $message->to($email)->subject('Thanh toán thành công!');
             $message->from('sieuphamyasuo393@gmail.com','Phong');
-        })
+        });
     }
 //    public function send()
 //    {
