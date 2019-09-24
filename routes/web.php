@@ -134,3 +134,4 @@ Route::resource('/pt','ClientPTController',['as' => 'client']) ;
 Route::resource('/admin/review','ReviewController') ;
 Route::post('/admin/review/change-status', 'ReviewController@changeStatus');
 Route::get('/admin/review/get-by-id/{id}', 'ReviewController@getById');
+Route::get('send','EmailController@send');
