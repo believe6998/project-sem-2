@@ -51,8 +51,9 @@
                 <div class="mt-4 ml-3 row">
                     <div class="row list-time" style="width: 100%">
                         @foreach($times as $time)
-                            <div class="col-6 time btn btn-secondary">{{$time->time}}</div>
+                            <button class="col-6 time btn btn-secondary">{{$time->time}}</button>
                             <span class="d-none time_id">{{$time->id}}</span>
+                            <span class="d-none">{{$time->status}}</span>
                         @endforeach
                     </div>
                 </div>

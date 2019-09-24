@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 
 class AdminOrderController extends Controller
@@ -18,12 +18,12 @@ class AdminOrderController extends Controller
     {
         $orders = Order::whereNotIn('status', [-1])->paginate(10);
         $data = ['orders' => $orders];
-        return view('admin.order.list-order',$data);
+        return view('admin.order.list-order', $data);
     }
 
     public function index2()
     {
-        $orders = Order::whereNotIn('status', [1]) ->paginate(10);
+        $orders = Order::whereNotIn('status', [1])->paginate(10);
         $data = ['orders' => $orders];
         return view('admin.order.deleted-order', $data);
     }
@@ -59,7 +59,7 @@ class AdminOrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -72,7 +72,7 @@ class AdminOrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -86,7 +86,7 @@ class AdminOrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -104,7 +104,7 @@ class AdminOrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -120,8 +120,15 @@ class AdminOrderController extends Controller
     public function changeStatus(Request $request)
     {
         $listItem = Order::whereIn('id', $request->input('ids'));
+        $listID = DB::table('orders')
+            ->whereIn('id', $request->input('ids'))
+            ->select('personal_training_time_id');
+        $listTime = DB::table('personal_training_time')->whereIn('id', $listID);
         $listItem->update(array(
             'status' => $request->input('status'),
+            'updated_at' => date('Y-m-d H:i:s')));
+        $listTime->update(array(
+            'status' => 0,
             'updated_at' => date('Y-m-d H:i:s')));
         return response()->json(['status' => '200', 'message' => 'Good']);
     }
