@@ -25,6 +25,7 @@
                             </th>
                             <th>ID</th>
                             <th>user_id</th>
+                            <th>personal_training_id</th>
                             <th>personal_training_time_id</th>
                             <th>duration_id</th>
                             <th>Trạng thái</th>
@@ -43,6 +44,7 @@
                                 </th>
                                 <td class="item-user-ad">{{$item->id}}</td>
                                 <td class="item-user-ad">{{$item->user_id}}</td>
+                                <td class="item-user-ad">{{$item->personal_training_id}}</td>
                                 <td class="item-user-ad">{{$item->personal_training_time_id}}</td>
                                 <td class="item-user-ad">{{$item->duration_id}}</td>
                                 <td class="item-user-ad">{{$item->status}}</td>
@@ -51,11 +53,14 @@
                                 <td>{{$item->updated_at}}</td>
                                 <td class="item-user-ad">
                                     <div class="row">
-                                        <div class="col-6 "><a href="{{route('orders.edit',$item->id)}}"
+                                        <div class="col-4">
+                                            <a href="javascript:void(0)" val class="text-success btn-confirm-order" id="btn-confirm-order{{$item->id}}"><i class="fas fa-check"></i></a>
+                                        </div>
+                                        <div class="col-4 "><a href="{{route('orders.edit',$item->id)}}"
                                                                class="text-primary"><i class="fas fa-edit"></i></a>
                                         </div>
 
-                                        <div class="col-6"><a class="btn-delete-order text-danger"
+                                        <div class="col-4"><a class="btn-delete-order text-danger"
                                                               href="javascript:void(0)"
                                                               id="btn-delete-order{{$item->id}}"><i
                                                     class="fas fa-trash-alt"></i></a></div>
@@ -80,7 +85,7 @@
                             <select class="form-control mr-2" id="select-action">
                                 <option value="0">--Chọn thao tác--</option>
                                 <option value="-1">Xoá</option>
-                                {{--                            <option value="1">Hiển thị</option>--}}
+                                <option value="2">Xác nhận đơn hàng</option>
 
                             </select>
                         </div>

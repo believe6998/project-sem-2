@@ -21,6 +21,13 @@
                     </div>
                     <div class="row mt-4 d-flex justify-content-center">
                         <div class="col-3">
+                            <h5 class="font-weight-bold">personal_training_id</h5>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                   name="personal_training_id" value="{{$orders->personal_training_id}}" required>
+                        </div>
+                    </div>
+                    <div class="row mt-4 d-flex justify-content-center">
+                        <div class="col-3">
                             <h5 class="font-weight-bold">personal_training_time_id</h5>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                                    name="personal_training_time_id" value="{{$orders->personal_training_time_id}}" required>
@@ -31,6 +38,13 @@
                             <h5 class="font-weight-bold">duration_id</h5>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                                    name="duration_id" value="{{$orders->duration_id}}" required>
+                        </div>
+                    </div>
+                    <div class="row mt-4 d-flex justify-content-center">
+                        <div class="col-3">
+                            <h5 class="font-weight-bold">Giád</h5>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                   name="price" value="{{$orders->price}}" required>
                         </div>
                     </div>
                     <div class="row mt-3 " style="padding-left: 39%;">

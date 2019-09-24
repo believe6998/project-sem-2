@@ -4,13 +4,15 @@
         <div class="card-header text-center"><h2 class="mt-1 font-weight-bold">Danh sách Huấn Luyện Viên Cá Nhân</h2></div>
         <div class="card-body card-hd-list-category">
             <div class="row">
+                <div class="col-6">
 
                     <div class="col-6 mb-1"> <h5 class="mt-2  text-primary  "><a href="/admin/pt/create"><i class="far fa-plus-square"></i> Thêm
                                 mới PT</a></h5></div>
-
-            <h5 class="m-0 font-weight-bold text-primary mt-2 "><a href="/admin/pt/create"><i
-                            class="fas fa-plus-square"></i> Chỉnh Sửa Huấn Luyện Viên</a></h5>
-            <div class="table-responsive mt-3">
+                </div>
+            <div class="col-6">
+                <h5 class="m-0  text-primary mt-2 d-flex justify-content-end "><a href="/admin/pt/deleted-pt"><i class="far fa-trash-alt"></i> Danh sách PT đã xóa</a></h5>
+            </div>
+                <div class="table-responsive mt-3">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr class="tr-pt-ad-item text-center">

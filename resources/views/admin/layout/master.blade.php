@@ -303,18 +303,22 @@
 
 <script>
 
+
+
+
+
     $('.btn-delete-order').click(function () {
-        if (confirm('Bạn có chắc muốn xóa không?')) {
+        if (confirm('Bạn có chắc muốn xóa đơn hàng này không?')) {
             var deleteId = $(this).attr('id').replace('btn-delete-order', '');
             var currentItem = $(this);
             $.ajax({
-                url: '/admin/order/' + deleteId,
+                url: '/admin/orders/' + deleteId,
                 method: 'DELETE',
                 data: {
                     '_token': $('meta[name=csrf-token]').attr('content')
                 },
                 success: function () {
-                    alert('Xóa thành công!');
+                    alert('Xóa đơn hàng thành công!');
                     currentItem.closest("tr").remove();
                 },
                 error: function () {

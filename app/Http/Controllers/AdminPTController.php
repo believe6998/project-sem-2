@@ -69,7 +69,7 @@ class AdminPTController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\AdminPT $adminPT
+     * @param $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
