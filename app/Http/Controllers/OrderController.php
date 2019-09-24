@@ -8,6 +8,7 @@ use App\personalTraining;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use JD\Cloudder\Facades\Cloudder;
 
 class OrderController extends Controller
@@ -163,6 +164,10 @@ class OrderController extends Controller
                 $vnpSecureHash = hash('sha256', $vnp_HashSecret . $hashdata);
                 $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
             }
+            $user_id = $request->get('user_id');
+            $user = User::find($user_id);
+            $email = $user->email;
+            $this->send($email);
             DB::commit();
             return redirect($vnp_Url);
 
@@ -182,5 +187,15 @@ class OrderController extends Controller
         session()->forget('url_prev');
         return redirect($url)->with('errors', 'Lỗi trong quá trình thanh toán phí dịch vụ');
     }
-
+    public function send($email)
+    {
+        Mail::send(['text'=>'mail'],['name','Phong'],function ($message) use ($email) {
+            $message->to($email)->subject('Thanh toán thành công!');
+            $message->from('sieuphamyasuo393@gmail.com','Phong');
+        })
+    }
+//    public function send()
+//    {
+//        Mail::send(new Mail());
+//    }
 }
