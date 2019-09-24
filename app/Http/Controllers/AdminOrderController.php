@@ -18,6 +18,7 @@ class AdminOrderController extends Controller
     public function index(Request $request)
     {
         $personal_training_id = Input::get('personal_training_id');
+        $created_at = Input::get('created_at');
         $orders = DB::table('orders')
             ->whereNotIn('status', [-1]);
         if ($personal_training_id != null) {
@@ -25,10 +26,16 @@ class AdminOrderController extends Controller
         } else {
             $personal_training_id = null;
         }
+        if ($created_at != null) {
+            $orders = $orders->where('created_at',$created_at);
+        } else {
+            $created_at = null;
+        }
         $orders = $orders->paginate(10);
         $currentPersonalTrainingID = $request->get('personal_training_id');
-        return view('admin.order.list-order', compact('orders','currentPersonalTrainingID'));
-    }
+        $currentCreated_at=$request->get('created_at');
+        return view('admin.order.list-order', compact('orders','currentPersonalTrainingID','currentCreated_at'));
+  }
 
     public function index2()
     {
