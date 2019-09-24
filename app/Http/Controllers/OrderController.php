@@ -31,7 +31,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-      //
+        //
     }
 
     /**
@@ -72,7 +72,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-    //
+        //
     }
 
     /**
@@ -200,19 +200,21 @@ class OrderController extends Controller
             ->get();
         return $chart_data;
     }
+
     public function getDataToTimeApi()
     {
         $start_date = Input::get('startDate');
         $end_date = Input::get('endDate');
         $orders = Order::select()
             ->whereBetween('orders.created_at', array($start_date . ' 00:00:00', $end_date . ' 23:59:59'))
-            ->orderBy('created_at','desc')
+            ->orderBy('created_at', 'desc')
             ->get();
         foreach ($orders as $data) {
             $data->statusLabel = $data->getStatusLabelAttribute();
         }
         return response()->json(['list_obj' => $orders], 200);
     }
+
     public function getPieChartDataApi()
     {
         //DB::connection()->enableQueryLog();
@@ -225,20 +227,19 @@ class OrderController extends Controller
         $orders = PersonalTraining::whereRaw('status=1')->get();
         $id = $orders->pluck('id')->all();
         $chart_data = Order::select(DB::raw('sum(personal_training_time_id) as totalQuantity'), 'personal_training_id')
-            ->whereRaw('updated_at >= "'.$start_date.' 00:00:00" AND updated_at <= "'.$end_date . ' 23:59:59"')
-            ->whereIn('personal_training_id',$id)
+            ->whereRaw('updated_at >= "' . $start_date . ' 00:00:00" AND updated_at <= "' . $end_date . ' 23:59:59"')
+            ->whereIn('personal_training_id', $id)
             ->groupBy('personal_training_id')
             ->orderBy('totalQuantity', 'desc')
             ->get();
         return $chart_data;
     }
-}
-    }
+
     public function send($email)
     {
-        Mail::send(['text'=>'mail'],['name','Phong'],function ($message) use ($email) {
+        Mail::send(['text' => 'mail'], ['name', 'Phong'], function ($message) use ($email) {
             $message->to($email)->subject('Thanh toán thành công!');
-            $message->from('sieuphamyasuo393@gmail.com','Phong');
+            $message->from('sieuphamyasuo393@gmail.com', 'Phong');
         });
     }
 }

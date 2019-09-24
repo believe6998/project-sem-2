@@ -21,27 +21,3 @@ $('.duration').click(function () {
     $('input[name=price]').val($(this).next().next().text());
 });
 
-$("#btnPopup").click(function () {
-    var postData = $("#create_form").serialize();
-    var submitUrl = $("#create_form").attr("action");
-    $.ajax({
-        type: "POST",
-        url: submitUrl,
-        data: postData,
-        dataType: 'JSON',
-        success: function (x) {
-            if (x.code === '00') {
-                if (window.vnpay) {
-                    vnpay.open({width: 768, height: 600, url: x.data});
-                } else {
-                    location.href = x.data;
-                }
-                return false;
-            } else {
-                alert(x.Message);
-            }
-        }
-    });
-    return false;
-});
-
