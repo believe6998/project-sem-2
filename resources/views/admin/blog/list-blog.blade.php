@@ -54,7 +54,7 @@
 
                                     <div class="row">
                                         <div class="col-4">
-                                            <a style="text-decoration: none; padding-right: 60px" href="{{route('blog.show',$blogs->id)}}" ><i class="fas fa-angle-double-right"></i>
+                                            <a style="text-decoration: none; padding-right: 60px"  href="{{route('blog.show',$blogs->id)}}" ><i class="fas fa-angle-double-right"></i>
                                             </a>
                                         </div>
                                         <div class="col-4 "><a href="{{route('blog.edit',$blogs->id)}}"

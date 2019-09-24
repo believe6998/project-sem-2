@@ -300,6 +300,56 @@
 
 <script>
 
+    $('#check-all-blog-ad').change(function () {
+        $('.check-item').prop('checked', $(this).is(':checked'));
+    });
+
+    $('#btn-apply-all-blog').click(function () {
+        // kiểm tra người dùng đã check phần tử chưa.
+        var arrayId = new Array();
+        $('.check-item:checkbox:checked').each(function () {
+            arrayId.push($(this).val());
+        });
+        if (arrayId.length == 0) {
+            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+            return;
+        }
+        // kiểm tra người dùng đã chọn thao tác chưa.
+        var action = $('#select-action').val();
+
+        if (action == 0) {
+            alert('Vui lòng chọn thao tác muốn thực hiện!');
+            return;
+        }
+
+
+        // confirm lại người dùng.
+        if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
+            changeStatusBlog(arrayId, action);
+        }
+
+    });
+
+    function changeStatusBlog(arrayId, status) {
+        $.ajax({
+            url: '/admin/change-status-blog',
+            method: 'POST',
+            data: {
+                '_token': $('meta[name=csrf-token]').attr("content"),
+                'ids': arrayId,
+                'status': status
+            },
+            success: function () {
+                alert("Thao tác thành công, reload lại page!");
+                location.reload();
+            },
+            error: function () {
+                alert("Thao tác thất bại, vui lòng thử lại sau");
+            }
+        });
+    }
+
+
 
 
 
@@ -522,7 +572,7 @@
 
 
     $('.btn-delete-blog').click(function () {
-        if (confirm('Bạn có chắc muốn xóa vĩnh viễn blog này không?')) {
+        if (confirm('Bạn có chắc muốn xóa blog này không?')) {
             var deleteId = $(this).attr('id').replace('btn-delete-blog', '');
             var currentItem = $(this);
             $.ajax({
@@ -536,7 +586,7 @@
                     currentItem.closest("tr").remove();
                 },
                 error: function () {
-                    alert('Có lỗi xảy ra, vui lòng thử lại sau!');
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau.');
                 }
             });
         }
@@ -679,15 +729,9 @@
         });
     }
 
-    $('#check-all-blog-ad').change(function () {
-        $('.check-item').prop('checked', $(this).is(':checked'));
-    });
 
-    $('#btn-apply-all-blog').click(function () {
-        $(".alert").delay(4000).slideUp(200, function () {
-            $(this).alert('close');
-        });
-    });
+
+
 
 
         $('#check-all').change(function () {
@@ -716,30 +760,7 @@
                 }
             });
 
-        function changeStatusBlog(arrayId, status) {
-            $.ajax({
-                url: '/admin/change-status-blog',
-                method: 'POST',
-                data:
-                    {
-                        '_token':
-                            $('meta[name=csrf-token]').attr("content"),
-                        'ids':
-                        arrayId,
-                        'status':
-                        status
-                    }
-                ,
-                success: function () {
-                    alert("Thao tác thành công, reload lại page!");
-                    location.reload();
-                }
-                ,
-                error: function () {
-                    alert("Thao tác thất bại, vui lòng thử lại sau");
-                }
-            });
-        }
+
 
         $('#check-all-user-ad').change(function () {
             $('.check-item').prop('checked', $(this).is(':checked'));
