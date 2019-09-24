@@ -19,7 +19,6 @@
                             <label for="" style="font-weight: bold; font-size: 18px; color: #1d68a7;">Tên: </label>&nbsp;{{Auth::user()->lastName}}
                         </div>
                     </div>
-
                     <div class="row mt-2">
                         <div class="col-6">
                             <label for="" style="font-weight: bold; font-size: 18px; color: #1d68a7;">Email: </label>&nbsp;{{Auth::user()->email}}
@@ -32,7 +31,6 @@
                                 thoại: </label>&nbsp;{{Auth::user()->phone}} &nbsp;
                         </div>
                     </div>
-
                     <div class="row mt-2">
                         <div class="col-6">
                             <label for="" style="font-weight: bold; font-size: 18px; color: #1d68a7;">Giới
@@ -41,18 +39,12 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-6">
-                            <label for="" style="font-weight: bold; font-size: 18px; color: #1d68a7;">Thời gian tạo: </label>&nbsp;{{Auth::user()->created_at}}
+                            <label for="" style="font-weight: bold; font-size: 18px; color: #1d68a7;">Thời gian
+                                tạo: </label>&nbsp;{{Auth::user()->created_at}}
                         </div>
                     </div>
-
-
-
-
-
                 </div>
-
             </div>
-
         </div>
     </div>
 
