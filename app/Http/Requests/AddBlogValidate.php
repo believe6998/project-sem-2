@@ -27,7 +27,6 @@ class AddBlogValidate extends FormRequest
             'category' => 'required|min:3|max:50',
             'title' => 'required|min:3|max:100',
             'detail' => 'required|min:10|max:255',
-            'content' => 'required|min:20|max:1000',
             'thumbnail' => 'required',
         ];
     }
@@ -44,9 +43,6 @@ class AddBlogValidate extends FormRequest
             'detail.required' => '*Vui lòng nhập chi tiết.',
           'detail.min' => '*Chi tiết không được ngắn hơn 10 kí tự.',
           'detail.max' => '*Chi tiết không được dài quá 255 kí tự.',
-          'content.required' => '*Vui lòng nhập nội dung.',
-          'content.min' => '*Nội không được ngắn hơn 20 kí tự.',
-          'content.max' => '*Tên chi tiết không được dài quá 1000 kí tự.',
           'thumbnail.required' => '*Vui lòng chọn ảnh.',
       ];
     }
