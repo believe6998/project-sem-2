@@ -63,49 +63,54 @@
 
         <li class="nav-item">
             <a class="nav-link" href="/admin/user">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-user-circle"></i>
                 <span>Người Dùng</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/category">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-bars"></i>
                 <span>Danh mục</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/pt">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-user-circle"></i>
                 <span>Huấn luyện viên cá nhân</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/blog">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fab fa-blogger"></i>
                 <span>Blog</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/time">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Time</span></a>
+                <i class="fas fa-clock"></i>
+                <span>Thời gian</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/duration">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Duration</span></a>
+                <i class="fas fa-calendar-alt"></i>
+                <span>Thời hạn</span></a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="/admin/home">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Home</span></a>
+                <i class="fas fa-home"></i>
+                <span>Trang chủ</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/review">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-star"></i>
                 <span>Đánh giá</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/orders">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-clipboard-list"></i>
                 <span>Đơn hàng</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/time-pt">
+                <i class="fas fa-clock"></i>
+                <span>Thời gian PT</span></a>
         </li>
 
         <!-- Divider -->
@@ -134,17 +139,6 @@
                 </button>
 
                 <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                               aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
@@ -184,30 +178,11 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->lastName}}</span>
+
                         </a>
                         <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                             aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Profile
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Settings
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Activity Log
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
-                            </a>
-                        </div>
+
                     </li>
 
                 </ul>
@@ -299,6 +274,69 @@
 @yield('js')
 
 <script>
+
+    $('.btn-delete-time-pt').click(function () {
+        if (confirm('Bạn có chắc muốn xóa không?')) {
+            var deleteId = $(this).attr('id').replace('btn-delete-time-pt', '');
+            var currentItem = $(this);
+            $.ajax({
+                url: '/admin/time-pt/' + deleteId,
+                method: 'DELETE',
+                data: {
+                    '_token': $('meta[name=csrf-token]').attr('content')
+                },
+                success: function () {
+                    alert('Xóa thành công!');
+                    currentItem.closest("tr").remove();
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau.');
+                }
+            });
+        }
+    });
+    $('#check-all-time-pt-ad').change(function () {
+        $('.check-item').prop('checked', $(this).is(':checked'));
+    });
+    $('#btn-apply-all-time-pt').click(function () {
+        // kiểm tra người dùng đã check phần tử chưa.
+        var arrayId = new Array();
+        $('.check-item:checkbox:checked').each(function () {
+            arrayId.push($(this).val());
+        });
+        if (arrayId.length == 0) {
+            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+            return;
+        }
+        // kiểm tra người dùng đã chọn thao tác chưa.
+        var action = $('#select-action').val();
+        if (action == 0) {
+            alert('Vui lòng chọn thao tác muốn thực hiện!');
+            return;
+        }
+        // confirm lại người dùng.
+        if (confirm('Bạn có chắc muốn thực hiện thao tác này? ')) {
+            changeStatusPTTime(arrayId, action);
+        }
+    });
+    function changeStatusPTTime(arrayId, status) {
+        $.ajax({
+            url: '/admin/change-status-time-pt',
+            method: 'POST',
+            data: {
+                '_token': $('meta[name=csrf-token]').attr("content"),
+                'ids': arrayId,
+                'status': status
+            },
+            success: function () {
+                alert("Thao tác thành công, reload lại page!");
+                location.reload();
+            },
+            error: function () {
+                alert("Thao tác thất bại, vui lòng thử lại sau");
+            }
+        });
+    }
 
     $('#check-all-blog-ad').change(function () {
         $('.check-item').prop('checked', $(this).is(':checked'));
