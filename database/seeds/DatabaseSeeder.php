@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionsTableSeeder::class);
         $this->call(ConnectRelationshipsSeeder::class);
         $this->call(HomeSeeder::class);
+        $this->call(ReviewSeeder::class);
         Model::reguard();
     }
 }

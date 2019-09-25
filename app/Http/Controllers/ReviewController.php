@@ -23,9 +23,23 @@ class ReviewController extends Controller
     public function index()
     {
         $review = Review::with('personal_training', 'user')->where('status', 0)->paginate(8);
+        return view('admin/review', compact('review'));
+
+    }
+
+    public function index2()
+    {
+        $review_success = Review::with('personal_training', 'user')->where('status', 1)->paginate(5);
+
+        return view('admin/review-success', compact('review_success'));
+
+    }
+
+    public function index3()
+    {
         $reviewdelete = Review::with('personal_training', 'user')->where('status', -1)->paginate(5);
-        $reviewsuccsess = Review::with('personal_training', 'user')->where('status', 1) ->paginate(5);
-        return view('admin/review', compact('review', 'reviewdelete','reviewsuccsess'));
+
+        return view('admin/review-deleted', compact('reviewdelete'));
 
     }
 
@@ -68,11 +82,13 @@ class ReviewController extends Controller
     {
 
     }
+
     public function getById($id)
     {
         $reviewshow = Review::find($id);
         return response()->json(['status' => '200', 'message' => 'Okie', 'data' => $reviewshow]);
     }
+
     /**
      * Show the form for editing the specified resource.
      *

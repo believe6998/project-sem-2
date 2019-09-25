@@ -967,6 +967,45 @@
                 changeStatusHome(arrayId, action);
             }
         });
+    $('#btn-apply-all-review').click(function () {
+        // kiểm tra người dùng đã check phần tử chưa.
+        var arrayId = new Array();
+        $('.check-item:checkbox:checked').each(function () {
+            arrayId.push($(this).val());
+        });
+        if (arrayId.length == 0) {
+            alert('Vui lòng chọn ít nhất một phần tử trước khi thực hiện thao tác!');
+            return;
+        }
+        // kiểm tra người dùng đã chọn thao tác chưa.
+        var action = $('#select-action').val();
+        if (action == 5) {
+            alert('Vui lòng chọn thao tác muốn thực hiện!');
+            return;
+        }
+        // confirm lại người dùng.
+        if (confirm('Bạn có chắc muốn thực hiện thao tác ')) {
+            changeStatus(arrayId, action);
+        }
+    });
+    function changeStatus(arrayId, status) {
+        $.ajax({
+            url: '/admin/review/change-status',
+            method: 'POST',
+            data: {
+                '_token': $('meta[name=csrf-token]').attr("content"),
+                'ids': arrayId,
+                'status': status
+            },
+            success: function () {
+                alert("Thao tác thành công")
+                location.reload();
+            },
+            error: function () {
+                alert("Thao tác thất bại, vui lòng thử lại sau");
+            }
+        });
+    }
 
         var count = 0;
         $('.btn-show').click(function (event) {

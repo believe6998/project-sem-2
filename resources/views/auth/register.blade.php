@@ -5,7 +5,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="/register">
+                    <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="modal-body">
                             <div class="title">\

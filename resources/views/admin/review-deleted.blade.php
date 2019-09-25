@@ -1,3 +1,4 @@
+
 @extends('admin.layout.master')
 @section('content')
 
@@ -42,19 +43,19 @@
 
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header text-center"><h2 class="mt-1 font-weight-bold">Danh sách đánh giá chờ phê duyệt</h2></div>
+            <div class="card-header text-center"><h2 class="mt-1 font-weight-bold">Danh sách đánh giá đã xoá</h2></div>
             <div class="card-body card-hd-list-category">
                 <h5 style="cursor: pointer ;display: inline-block " data-toggle="modal" data-target="#centralModalSm"
-                    class="m-0 font-weight-bold text-primary mt-2 "><a href="/admin/review-deleted"><i class="fas fa-plus-square"></i> Danh sách đã xoá</a>
+                    class="m-0 font-weight-bold text-primary mt-2 "><a href="/admin/review"><i class="fas fa-plus-square"></i> Danh sách chờ phê duyệt</a>
                 </h5>
                 <h5 style="cursor: pointer;float:right; display: inline-block " data-toggle="modal"
                     data-target="#modal2"
                     id="showmodal" class="m-0 font-weight-bold text-primary mt-2 "><a href="/admin/review-success"><i class="fas fa-plus-square"></i>
-                        Danh</a>
-                    sách đã duyệt</h5>
+                        Danh
+                        sách đã duyệt</a></h5>
                 <div class="table-responsive mt-3">
 
-                    @if(count($review)!=0)
+                    @if(count($reviewdelete)!=0)
                         <table style="  maxwidth: 100%;   word-wrap:break-word" class="table table-bordered"
                                id="dataTable" width="100%"
                                cellspacing="0">
@@ -71,7 +72,7 @@
                             </thead>
                             <tbody>
 
-                            @foreach($review as $item)
+                            @foreach($reviewdelete as $item)
                                 <tr class="text-center">
                                     <th scope="row">
                                         <input type="checkbox" class="check-item" value="{{$item->id}}">
@@ -87,18 +88,12 @@
                                                                    class="text-primary btn-show"><i
                                                             class="fas fa-angle-double-right"></i></a>
                                             </div>
-                                            <div class="col-6 "><a href="{{route('review.edit',$item->id)}}"
-                                                                   class="text-primary">
-                                                    <button class="btn  btn-primary">Phê duyệt</button>
+
+                                            <div class="col-7"><a href="{{route('review.edit2',$item->id)}}"
+                                                                  class="text-primary">
+                                                    <button class="btn  btn-primary">Khôi phục</button>
                                                 </a>
                                             </div>
-
-                                            <div style="cursor: pointer"
-                                                 class=" col-3">
-                                                <a id="btn-delete-review{{$item->id}}"
-                                                   class="text-danger btn-delete-review"
-                                                   href="javascript:void(0)"><i
-                                                            class="fas fa-trash-alt"></i></a></div>
                                         </div>
                                     </td>
                                 </tr>
@@ -110,9 +105,7 @@
                 <div class="row ml-3 mt-5 mb-5">
                     <div class="col-3 mr-3">
                         <select class="form-control mr-2" id="select-action">
-                            <option value="5">--Chọn thao tác--</option>
-                            <option value="-1">Xoá</option>
-                            <option value="1"> Phê duyệt</option>
+                            <option value="0">Khôi phục</option>
                         </select>
                     </div>
                     <div class="col-3">
@@ -121,7 +114,7 @@
                         </button>
 
                     </div>
-                    <div style="margin-left: 50%">                {{$review->links()}}
+                    <div style="margin-left: 50%">                {{$reviewdelete->links()}}
                     </div>
                 </div>
 
@@ -145,9 +138,7 @@
         </div>
     @endif
 
-    <!-- Modal -->
+<!-- Modal -->
 
 
-
-    <!-- Modal -->
 @endsection

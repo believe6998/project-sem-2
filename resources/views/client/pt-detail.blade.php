@@ -22,7 +22,7 @@
                 <div class="text-secondary">(1 đánh giá)</div>
                 <div class="pt-2"><h1>{{$personalTraining->name}}</h1></div>
                 <div class="text-secondary"><h5
-                        class="category-name">@foreach($list as $item){{$item->name}}, @endforeach</h5>
+                            class="category-name">@foreach($list as $item){{$item->name}}, @endforeach</h5>
                 </div>
                 <div class="row">
                     <div class="col-sm-7 mt-3">
@@ -112,24 +112,26 @@
                     @foreach($review as $item)
                         <div class="row">
                             <div class="col-sm-1">
-                                <img width="60px" height="60px" src="https://www.w3schools.com/howto/img_avatar2.png"
-                                     alt="">
+                                @if($item->user->gender=='0')
+                                    <img width="60px" height="60px" src="https://www.w3schools.com/howto/img_avatar.png"
+                                         alt="">
+                                @else
+                                    <img width="60px" height="60px"
+                                         src="https://www.w3schools.com/howto/img_avatar2.png"
+                                         alt="">
+                                @endif
                             </div>
                             <div class="col-sm-11">
                                 <div class="row">
-                                    <h5 style="text-align: left"><span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span>(1)</span>
-                                    </h5>
+                                    <div class="star-ratings-sprite-pt-detail"><span style="width:{{$item->rating}};"
+                                                                                     class="star-ratings-sprite-rating-pt-detail"></span>
+                                    </div>
 
                                 </div>
                                 <div class="row ml-1">
                                     <div class="row">
                                         <div class="nameuser "><strong
-                                                style="color: black"> {{$item->user->firstName}} {{$item->user->lastName}} </strong>
+                                                    style="color: black"> {{$item->user->firstName}} {{$item->user->lastName}} </strong>
                                         </div>
                                     </div>
                                     <div class="row w-100">
@@ -139,7 +141,7 @@
                                     </div>
                                 </div>
                                 <div
-                                    style="float: right;display: inline">{{date_format($item->created_at,'d-m-Y')}}</div>
+                                        style="float: right;display: inline">{{date_format($item->created_at,'d-m-Y')}}</div>
                             </div>
                         </div>
                     @endforeach
@@ -148,52 +150,51 @@
 
                     <div class="mt-4">
                         <div style="font-size: 28px ;color: black">Thêm một bài đánh giá</div>
-                        <div class="card-body"> Your email address will not be published. Required fields are marked *
-                        </div>
-                        <hr class="coll-divider short-bg-line center">
-                        @if (\Illuminate\Support\Facades\Auth::check())
+                    </div>
+                    <hr class="coll-divider short-bg-line center">
+                    @if (\Illuminate\Support\Facades\Auth::check())
 
-                            <form action=" {{route('review.store')}}" method="POST">
-                                @csrf
-                                <div>
-                                    <input type="hidden" name="personalTraining-id" value="{{$personalTraining->id}}">
-                                    <!-- Default form contact -->
-                                    <div class="rate">
-                                        <span style="font-size: 21px;color: black"> Đánh giá</span>
-                                        <input type="radio" id="star5" name="rate" value="5"/>
-                                        <label for="star5" title="text">5</label>
-                                        <input type="radio" id="star4" name="rate" value="4"/>
-                                        <label for="star4" title="text">4</label>
-                                        <input type="radio" id="star3" name="rate" value="3"/>
-                                        <label for="star3" title="text">3</label>
-                                        <input type="radio" id="star2" name="rate" value="2"/>
-                                        <label for="star2" title="text">2</label>
-                                        <input type="radio" id="star1" name="rate" value="1"/>
-                                        <label for="star1" title="text">1</label>
-                                    </div>
-                                    <div class="mt-5">
-                                        <div class="form-group">
-                                            <label style="font-size: 21px;color: black">Review</label>
-                                            <textarea style="height:300px" class="form-control"
-                                                      name="review" cols="10" rows="7"></textarea>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <button type="submit" class="btn-review btn btn-dark"
-                                                style="height: 50px;width: 180px"> GỬI
-                                        </button>
+                        <form action=" {{route('review.store')}}" method="POST">
+                            @csrf
+                            <div>
+                                <input type="hidden" name="personalTraining-id" value="{{$personalTraining->id}}">
+                                <!-- Default form contact -->
+                                <div class="rate">
+                                    <span style="font-size: 21px;color: black"> Đánh giá</span>
+                                    <input type="radio" id="star5" name="rate" value="5"/>
+                                    <label for="star5" title="text">5</label>
+                                    <input type="radio" id="star4" name="rate" value="4"/>
+                                    <label for="star4" title="text">4</label>
+                                    <input type="radio" id="star3" name="rate" value="3"/>
+                                    <label for="star3" title="text">3</label>
+                                    <input type="radio" id="star2" name="rate" value="2"/>
+                                    <label for="star2" title="text">2</label>
+                                    <input type="radio" id="star1" name="rate" value="1"/>
+                                    <label for="star1" title="text">1</label>
+                                </div>
+                                <div class="mt-5">
+                                    <div class="form-group">
+                                        <label style="font-size: 21px;color: black">Review</label>
+                                        <textarea style="height:300px" class="form-control"
+                                                  name="review" cols="10" rows="7"></textarea>
                                     </div>
                                 </div>
-                            </form>
-                        @else
-                            <div style="text-align: center">
-                                <h2>Vui lòng đăng nhập </h2>
+                                <div>
+                                    <button type="submit" class="btn-review btn btn-dark"
+                                            style="height: 50px;width: 180px"> GỬI
+                                    </button>
+                                </div>
                             </div>
-                        @endif
-                    </div>
+                        </form>
+                    @else
+                        <div style="text-align: center">
+                            <h2>Vui lòng đăng nhập </h2>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="container">
         <div id="cont">
@@ -201,8 +202,8 @@
                 <div class="item-container">
                     <div class="item-image-wrapper">
                         <img
-                            src="https://thumbs.dreamstime.com/x/afro-american-woman-juggling-objects-beautiful-multiple-over-air-60663715.jpg"
-                            alt=""/>
+                                src="https://thumbs.dreamstime.com/x/afro-american-woman-juggling-objects-beautiful-multiple-over-air-60663715.jpg"
+                                alt=""/>
                     </div>
                     <h2 class="item-title"><a href="#">First Item</a></h2>
                     <p class="item-desc">
@@ -239,8 +240,8 @@
                 <div class="item-container">
                     <div class="item-image-wrapper">
                         <img
-                            src="https://thumbs.dreamstime.com/x/business-communications-technology-people-hand-digital-tablet-smartphone-papers-various-office-objects-table-flat-70058937.jpg"
-                            alt=""/>
+                                src="https://thumbs.dreamstime.com/x/business-communications-technology-people-hand-digital-tablet-smartphone-papers-various-office-objects-table-flat-70058937.jpg"
+                                alt=""/>
                     </div>
                     <h2 class="item-title"><a href="#">Third Item</a></h2>
                     <p class="item-desc">
@@ -295,8 +296,8 @@
                 <div class="item-container">
                     <div class="item-image-wrapper">
                         <img
-                            src="https://thumbs.dreamstime.com/x/happiness-free-happy-woman-enjoying-sunset-beautiful-white-dress-embracing-golden-sunshine-glow-arms-54515131.jpg"
-                            alt=""/>
+                                src="https://thumbs.dreamstime.com/x/happiness-free-happy-woman-enjoying-sunset-beautiful-white-dress-embracing-golden-sunshine-glow-arms-54515131.jpg"
+                                alt=""/>
                     </div>
                     <h2 class="item-title"><a href="#">sixth Item</a></h2>
                     <p class="item-desc">
@@ -334,8 +335,8 @@
                 <div class="item-container">
                     <div class="item-image-wrapper">
                         <img
-                            src="http://www.freeimageslive.com/galleries/workplace/education/preview/computer_learning.jpg"
-                            alt=""/>
+                                src="http://www.freeimageslive.com/galleries/workplace/education/preview/computer_learning.jpg"
+                                alt=""/>
                     </div>
                     <h2 class="item-title"><a href="#">Eighth Item</a></h2>
                     <p class="item-desc">
@@ -354,8 +355,8 @@
                 <div class="item-container">
                     <div class="item-image-wrapper">
                         <img
-                            src="http://www.freeimageslive.com/galleries/workplace/education/preview/university_certificate.jpg"
-                            alt=""/>
+                                src="http://www.freeimageslive.com/galleries/workplace/education/preview/university_certificate.jpg"
+                                alt=""/>
                     </div>
                     <h2 class="item-title"><a href="#">Ninth Item</a></h2>
                     <p class="item-desc">

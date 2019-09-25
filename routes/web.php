@@ -29,6 +29,11 @@ Route::get('cl/blog', function () {
 //Route::get('/', 'ClientBlogController@indexhome');
 
 
+
+Route::get('/admin/review-success','ReviewController@index2');
+Route::get('/admin/review-deleted','ReviewController@index3');
+
+
 Route::get('/contact-us', function () {
     return view('client/contact');
 });

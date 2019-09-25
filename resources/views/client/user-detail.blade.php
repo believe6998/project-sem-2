@@ -33,8 +33,13 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-6">
+                            @if(Auth::user()->gender==0)
                             <label for="" style="font-weight: bold; font-size: 18px; color: #1d68a7;">Giới
-                                tính: </label>&nbsp;{{Auth::user()->gender}}&nbsp;
+                                tính: </label>&nbsp;Nam
+                                @else
+                                <label for="" style="font-weight: bold; font-size: 18px; color: #1d68a7;">Giới
+                                    tính: </label>&nbsp;Nữ
+                            @endif
                         </div>
                     </div>
                     <div class="row mt-2">
