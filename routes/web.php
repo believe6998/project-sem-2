@@ -58,7 +58,7 @@ Route::get('/index-body-4', function () {
     return view('client/index-body/index-body-4');
 });
 
-Route::get('/admin', 'RoleController@roleAdmin');
+Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/personal-training', function () {
     return view('admin/pt');

@@ -24,8 +24,8 @@ class OrderSeeder extends Seeder
                 'duration_id' => 2,
                 'price' => 500000,
                 'status' => 1,
-                'created_at' => date('2019-09-23'),
-                'updated_at' => date('2019-09-23')
+                'created_at' => date('2019-08-22'),
+                'updated_at' => date('2019-08-22')
             ],
             [
                 'id' => 2,
@@ -35,8 +35,8 @@ class OrderSeeder extends Seeder
                 'duration_id' => 4,
                 'price' => 4000000,
                 'status' => 1,
-                'created_at' => date('2019-09-23'),
-                'updated_at' => date('2019-09-23')
+                'created_at' => date('2019-08-25'),
+                'updated_at' => date('2019-08-25')
             ],
             [
                 'id' => 3,
@@ -46,8 +46,8 @@ class OrderSeeder extends Seeder
                 'duration_id' => 1,
                 'price' => 200000,
                 'status' => 1,
-                'created_at' => date('2019-09-23'),
-                'updated_at' => date('2019-09-23')
+                'created_at' => date('2019-08-30'),
+                'updated_at' => date('2019-08-30')
             ],
             [
                 'id' => 4,
@@ -134,9 +134,31 @@ class OrderSeeder extends Seeder
                 'duration_id' => 2,
                 'price' => 200000,
                 'status' => 1,
-                'created_at' => date('2019-09-17'),
-                'updated_at' => date('2019-09-17')
-            ]
+                'created_at' => date('2019-09-22'),
+                'updated_at' => date('2019-09-22')
+            ],
+            [
+                'id' => 12,
+                'user_id' => 4,
+                'personal_training_id' => 7,
+                'personal_training_time_id' => 2,
+                'duration_id' => 2,
+                'price' => 2000000,
+                'status' => 1,
+                'created_at' => date('2019-09-23'),
+                'updated_at' => date('2019-09-23')
+            ],
+            [
+                'id' => 13,
+                'user_id' => 2,
+                'personal_training_id' => 6,
+                'personal_training_time_id' => 2,
+                'duration_id' => 4,
+                'price' => 4000000,
+                'status' => 1,
+                'created_at' => date('2019-09-25'),
+                'updated_at' => date('2019-09-25')
+            ],
         ]);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }

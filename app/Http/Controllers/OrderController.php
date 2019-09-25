@@ -195,7 +195,7 @@ class OrderController extends Controller
         $start_date = Input::get('startDate');
         $end_date = Input::get('endDate');
         $chart_data = Order::select(DB::raw('sum(price) as revenue'), DB::raw('date(created_at) as day'))
-            ->whereRaw('created_at >= "' . $start_date . ' 00:00:00" AND created_at <= "' . $end_date . ' 23:59:59" AND status = 1')
+            ->whereRaw('created_at >= "' . $start_date . ' 00:00:00" AND created_at <= "' . $end_date . ' 23:59:59" AND status = 2')
             ->groupBy('day')
             ->orderBy('day', 'desc')
             ->get();
