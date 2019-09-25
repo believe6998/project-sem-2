@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,7 @@ class AdminController extends Controller
         $end = new Carbon('last day of this month');
         $monthly_price = DB::table('orders')->whereRaw('created_at >= "' . $start . ' 00:00:00" AND created_at <= "' . $end . ' 23:59:59" AND status = 2')->sum('price');
         $not_pay = DB::table('orders')->where('status',1)->count();
-        return view('admin.home',compact('total_price','monthly_price','not_pay'));
+        $review = DB::table('reviews')->where('status',0)->count();
+        return view('admin.home',compact('total_price','monthly_price','not_pay','review'));
     }
 }

@@ -22,7 +22,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Đại học thể dục thể thao tphcm',
                 'experience' => 'Olympus gym, Green garden fitness center, Vinhomes central park',
                 'image' => 'https://huonganhyoga.vn/Data/upload/images/Banner/fitness/ngoc-dung.png',
-                'rating' => '80%',
+                'rating' => '80',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -33,7 +33,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Cử nhân chuyên ngành Huấn luyện viên Thể dục thể thao trường Đại học Thể dục Thể Thao TP.HCM, Huấn luyện viên Kickboxing quóc gia, Huấn luyện viên Võ cổ truyền, HCV Vô địch thế giới Võ cổ truyền 2018',
                 'experience' => '3 năm',
                 'image' => 'https://huonganhyoga.vn/Data/upload/images/Banner/fitness/65924059_270076713843517_153033129320251392_n.jpg',
-                'rating' => '100%',
+                'rating' => '100',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -44,7 +44,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng chỉ huấn luyện viên - Liên đoàn thể hình, Certificate of Nutrifort - American',
                 'experience' => 'Personal trainer ( 12/2015 - 09/2018 )',
                 'image' => 'https://2.bp.blogspot.com/-Z7zY0AKDqzQ/XCcIDB_yQMI/AAAAAAAACWA/f_Jo6REK6roxVqc6u3buMMXS57sefnewACLcBGAs/s1600/IMG_9899.jpg',
-                'rating' => '50%',
+                'rating' => '50',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -55,7 +55,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng nhận tham dự giải vô địch Châu Á trẻ, Chứng chỉ cứu hộ, Chứng chỉ huấn luyện viên bơi lội',
                 'experience' => 'Swimming ( 12/2015 - 09/2018), Personal trainer ( 07/2015 - 09/2018 )',
                 'image' => 'http://www.nshapefitness.vn/wp-content/uploads/2015/11/IMG_7473-crop-1.jpg',
-                'rating' => '80%',
+                'rating' => '80',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -66,7 +66,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng nhận Huấn luyện viên MuayThai(hạng C) của liên đoàn World Muaythai Bangkok, Khóa đào tạo trọng tài muaythai toàn quốc, Khóa đào tạo HLV Thể lực do tiến sĩ William Sullivan cấp',
                 'experience' => 'Boxing, Personal trainer(2002 - 09/2018 )',
                 'image' => 'https://www.tigermuaythai.com/wp-core/wp-content/uploads/2016/03/tmt-trainer-kay-600x900.jpg',
-                'rating' => '100%',
+                'rating' => '100',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -77,7 +77,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng nhận huấn luyện viên thể hình fitness,đã dạy tại(California fitness, yoga center), PTX2,... ',
                 'experience' => 'Personal trainer, yoga(07/2014 - 09/2018)',
                 'image' => 'https://www.uaepersonaltrainers.com/wp-content/uploads/2017/04/dubai-ladies-female-personal-trainer-josephine.jpg',
-                'rating' => '90%',
+                'rating' => '90',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -88,7 +88,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng nhận Yoga Siromani, Yoga for children, huấn luyện viên yoga - liên đoàn yoga việt nam cấp',
                 'experience' => 'Yoga ( 11/2017 - 09/2018 )',
                 'image' => 'http://advancefitnessgym.com/files/sanpham/87/1/jpg/trainer-su.jpg',
-                'rating' => '95%',
+                'rating' => '95',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -99,7 +99,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'HCV môn Whusu năm 2016, HCV võ cổ truyền 2018, HCB vovinam 2017,...',
                 'experience' => 'kickboxing, MuayThai, Boxing, Personal trainer ( 08/2011 - 09/2018 )',
                 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG4sl4r6D3Q-nq_mMbVk68RK5cx6ZyngLQnxSzRJMrokczvYMDyQ',
-                'rating' => '100%',
+                'rating' => '100',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -110,7 +110,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng nhận huấn luyện viên thể hình -fitness, Huấn luyện viên thể hình liên đoàn cử tạ Việt Nam...',
                 'experience' => 'personal trainer ( 01/2011 - 09/2018 )',
                 'image' => 'https://myrealdomain.com/images/female-athletic-body-3.png',
-                'rating' => '100%',
+                'rating' => '100',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -121,7 +121,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng chỉ boxing liên đoàn boxing Việt Nam,huấn luyện viên kickboxing cấp quốc gia, HCV boxing 2017',
                 'experience' => 'Boxing ( 12/2015 - 09/2018 )',
                 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPXdwsOLtuLt5GeKUle3iPoWZOP6LVOwCy3M7jOSb2UQJmMr42',
-                'rating' => '80%',
+                'rating' => '80',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -132,7 +132,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng chỉ dạy bơi theo tiêu chuẩn của Úc, bằng an toàn dưới nước (CPR) AUSTSWIM',
                 'experience' => 'Swimming ( 12/2015 - 09/2018 )',
                 'image' => 'http://iptfitness.co.uk/wp-content/uploads/2015/03/aimee-personal-trainer-1.jpg',
-                'rating' => '99,9%',
+                'rating' => '99,9',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -143,7 +143,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng chỉ huấn luyện viên cá nhân cấp quốc gia, Bằng cử nhân ngành giáo dục thể chất, bằng chứng nhận huấn luyện viên của INTERNATIONAL KETTLEBELL ASOCIATION',
                 'experience' => 'personal trainer ( 12/2015 - 09/2018 )',
                 'image' => 'https://fit23dubai.com/wp-content/uploads/2018/10/Justin_mic.jpg?189db0&189db0',
-                'rating' => '100%',
+                'rating' => '100',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -154,7 +154,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng chỉ huấn luyện viên cá nhân cấp quốc gia, Bằng cử nhân ngành giáo dục thể chất, bằng chứng nhận huấn luyện viên của INTERNATIONAL KETTLEBELL ASOCIATION',
                 'experience' => 'personal trainer ( 12/2015 - 09/2018 )',
                 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJX2PpJwl0Y2EU60lwWKb_BayKgUDsGRJh0YfaqImz9UTh-GST',
-                'rating' => '790%',
+                'rating' => '70',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -165,7 +165,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng nhận huấn luyện viên thể hình -fitness, Huấn luyện viên thể hình liên đoàn cử tạ Quốc Tế...',
                 'experience' => 'personal trainer ( 01/2011 - 09/2018 )',
                 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWshFYD4ZZWl0IEYjKaRmAPidgZhICt1gK-gEpS3tg5P6_k5o',
-                'rating' => '90%',
+                'rating' => '90',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -176,7 +176,7 @@ class PersonalTrainingSeeder extends Seeder
                 'qualification' => 'Chứng nhận huấn luyện viên thể hình -fitness, Huấn luyện viên thể hình liên đoàn cử tạ Quốc Tế...',
                 'experience' => 'personal trainer ,yoga( 01/2011 - 09/2018 )',
                 'image' => 'http://midiabahia.com.br/wp-content/uploads/2015/11/GABRIELA-PUGLIESI-ACADEMIA-400x400.jpg',
-                'rating' => '90%',
+                'rating' => '90',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],

@@ -64,8 +64,9 @@ class ReviewController extends Controller
 
         $review = new Review();
         $review->user_id = auth()->user()->id;
-        $review->personal_training_id = $request->get('personalTraining-id');
-        $review->rating = ($request->get('rate') / 5 * 100) . '%';
+        $pt_id = $request->get('personalTraining-id');
+        $review->personal_training_id = $pt_id;
+        $review->rating = (string)((double)$request->get('rate') / 5 * 100);
         $review->review = $request->get('review');
         $review->save();
         return redirect()->back()->withSuccess('Đã gửi đánh giá');
@@ -102,7 +103,11 @@ class ReviewController extends Controller
         $date = Carbon::now()->toDateTimeString();
         $review->deleted_at = $date;
         $review->save();
-
+        $current_review = DB::table('reviews');
+        $total_rating = $current_review->whereRaw('status = 1 and personal_training_id = ' . $review->personal_training_id)->sum('rating');
+        $count_rating = $current_review->where('personal_training_id', $review->personal_training_id)->count();
+        $current_rating = $total_rating / $count_rating;
+        DB::table('personal_trainings')->where('id', $review->personal_training_id)->update(['rating' => $current_rating]);
         return redirect()->back()->withSuccess('Phê duyệt thành công');
     }
 

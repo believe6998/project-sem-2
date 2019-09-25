@@ -55,7 +55,7 @@
 
                                 <figcaption>
                                     <h2 class="text-center">{{$item->name}}<br>
-                                        <div class="star-ratings-sprite"><span style="width:{{$item->rating}}"
+                                        <div class="star-ratings-sprite"><span style="width:{{$item->rating}}%"
                                                                                class="star-ratings-sprite-rating"></span>
                                         </div>
                                     </h2>

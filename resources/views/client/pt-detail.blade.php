@@ -16,7 +16,7 @@
                 </div><!--inner-->
             </div><!-- col-sm-6  -->
             <div class="col-sm-6 ml-5">
-                <div class="star-ratings-sprite-pt-detail"><span style="width:{{$personalTraining->rating}}"
+                <div class="star-ratings-sprite-pt-detail"><span style="width:{{$personalTraining->rating}}%"
                                                                  class="star-ratings-sprite-rating-pt-detail"></span>
                 </div>
                 <div class="text-secondary">(1 đánh giá)</div>
@@ -123,7 +123,7 @@
                             </div>
                             <div class="col-sm-11">
                                 <div class="row">
-                                    <div class="star-ratings-sprite-pt-detail"><span style="width:{{$item->rating}};"
+                                    <div class="star-ratings-sprite-pt-detail"><span style="width:{{$item->rating}}%"
                                                                                      class="star-ratings-sprite-rating-pt-detail"></span>
                                     </div>
 
@@ -192,188 +192,6 @@
                         </div>
                     @endif
                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="container">
-        <div id="cont">
-            <div id="slider-container">
-                <div class="item-container">
-                    <div class="item-image-wrapper">
-                        <img
-                                src="https://thumbs.dreamstime.com/x/afro-american-woman-juggling-objects-beautiful-multiple-over-air-60663715.jpg"
-                                alt=""/>
-                    </div>
-                    <h2 class="item-title"><a href="#">First Item</a></h2>
-                    <p class="item-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <div class="item-stars">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <a style="text-decoration: none" href="#" class="item-link">Submit</a>
-                </div>
-
-                <div class="item-container">
-                    <div class="item-image-wrapper">
-                        <img src="https://images.pexels.com/photos/272228/pexels-photo-272228.jpeg" alt=""/>
-                    </div>
-                    <h2 class="item-title"><a href="#">Second Item</a></h2>
-                    <p class="item-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <div class="item-stars">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <a href="#" class="item-link">Submit</a>
-                </div>
-
-                <div class="item-container">
-                    <div class="item-image-wrapper">
-                        <img
-                                src="https://thumbs.dreamstime.com/x/business-communications-technology-people-hand-digital-tablet-smartphone-papers-various-office-objects-table-flat-70058937.jpg"
-                                alt=""/>
-                    </div>
-                    <h2 class="item-title"><a href="#">Third Item</a></h2>
-                    <p class="item-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <div class="item-stars">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <a href="#" class="item-link">Submit</a>
-                </div>
-
-                <div class="item-container">
-                    <div class="item-image-wrapper">
-                        <img src="https://thumbs.dreamstime.com/x/morning-meditation-28835030.jpg" alt=""/>
-                    </div>
-                    <h2 class="item-title"><a href="#">Fourth Item</a></h2>
-                    <p class="item-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <div class="item-stars">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <a href="#" class="item-link">Submit</a>
-                </div>
-
-                <div class="item-container">
-                    <div class="item-image-wrapper">
-                        <img src="https://cdn.pixabay.com/photo/2017/01/11/18/09/toddler-1972493_960_720.jpg" alt=""/>
-                    </div>
-                    <h2 class="item-title"><a href="#">fifth Item</a></h2>
-                    <p class="item-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <div class="item-stars">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <a href="#" class="item-link">Submit</a>
-                </div>
-
-                <div class="item-container">
-                    <div class="item-image-wrapper">
-                        <img
-                                src="https://thumbs.dreamstime.com/x/happiness-free-happy-woman-enjoying-sunset-beautiful-white-dress-embracing-golden-sunshine-glow-arms-54515131.jpg"
-                                alt=""/>
-                    </div>
-                    <h2 class="item-title"><a href="#">sixth Item</a></h2>
-                    <p class="item-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <div class="item-stars">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <a href="#" class="item-link">Submit</a>
-                </div>
-
-                <div class="item-container">
-                    <div class="item-image-wrapper">
-                        <img src="http://www.freeimageslive.com/galleries/workplace/education/preview/maths_school.jpg"
-                             alt=""/>
-                    </div>
-                    <h2 class="item-title"><a href="#">Seventh Item</a></h2>
-                    <p class="item-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <div class="item-stars">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <a href="#" class="item-link">Submit</a>
-                </div>
-
-                <div class="item-container">
-                    <div class="item-image-wrapper">
-                        <img
-                                src="http://www.freeimageslive.com/galleries/workplace/education/preview/computer_learning.jpg"
-                                alt=""/>
-                    </div>
-                    <h2 class="item-title"><a href="#">Eighth Item</a></h2>
-                    <p class="item-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <div class="item-stars">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <a href="#" class="item-link">Submit</a>
-                </div>
-
-                <div class="item-container">
-                    <div class="item-image-wrapper">
-                        <img
-                                src="http://www.freeimageslive.com/galleries/workplace/education/preview/university_certificate.jpg"
-                                alt=""/>
-                    </div>
-                    <h2 class="item-title"><a href="#">Ninth Item</a></h2>
-                    <p class="item-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <div class="item-stars">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <a href="#" class="item-link">Submit</a>
-                </div>
-                <span id="right-btn" class="fa fa-arrow-circle-right" aria-hidden="true"></span>
-                <span id="left-btn" class="fa fa-arrow-circle-left" aria-hidden="true"></span>
-
             </div>
         </div>
     </div>
