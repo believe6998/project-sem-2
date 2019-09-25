@@ -122,7 +122,7 @@ t/dist/sweetalert.min.js"></script>
         function selectHandler(e) {
             for (var i = 0; i < chart.getSelection().length; i++) {
                 var item = chart.getSelection()[i];
-                window.location.href = '/admin/order?created_at=' + chart_data[item.row].day;
+                window.location.href = '/admin/orders?created_at=' + chart_data[item.row].day;
             }
         }
     }
