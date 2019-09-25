@@ -21,6 +21,7 @@ Route::resource('category', 'CategoryController');
 Route::resource('admin/time', 'TimeController');
 Route::resource('admin/duration', 'DurationController');
 Route::resource('admin/orders', 'AdminOrderController');
+Route::resource('admin/time-pt', 'TimePTController');
 
 Route::get('cl/blog', function () {
     return view('client/main-blog');
@@ -106,8 +107,12 @@ Route::get('/admin/deleted-user', 'UserController@index2');
 
 Route::post('/admin/change-status-pt', 'AdminPTController@changeStatus');
 Route::get('/admin/deleted-pt', 'AdminPTController@index2');
+
 Route::post('/admin/change-status-order', 'AdminOrderController@changeStatus');
 Route::get('/admin/deleted-order', 'AdminOrderController@index2');
+
+Route::post('/admin/change-status-time-pt', 'TimePTController@changeStatus');
+Route::get('/admin/deleted-time-pt', 'TimePTController@index2');
 
 
 Auth::routes();
