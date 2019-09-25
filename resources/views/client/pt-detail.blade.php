@@ -19,7 +19,7 @@
                 <div class="star-ratings-sprite-pt-detail"><span style="width:{{$personalTraining->rating}}%"
                                                                  class="star-ratings-sprite-rating-pt-detail"></span>
                 </div>
-                <div class="text-secondary">(1 đánh giá)</div>
+                <div class="text-secondary">({{count($review)}} đánh giá)</div>
                 <div class="pt-2"><h1>{{$personalTraining->name}}</h1></div>
                 <div class="text-secondary"><h5
                             class="category-name">@foreach($list as $item){{$item->name}}, @endforeach</h5>
