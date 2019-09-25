@@ -13,6 +13,10 @@ class AdminCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $category = Category::whereNotIn('status', [-1]) ->paginate(5);

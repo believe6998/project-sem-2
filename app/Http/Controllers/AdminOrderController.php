@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
@@ -15,27 +16,49 @@ class AdminOrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         $personal_training_id = Input::get('personal_training_id');
         $created_at = Input::get('created_at');
+        $status = Input::get('status');
         $orders = DB::table('orders')
-            ->whereNotIn('status', [-1]);
+            ->whereNotIn('status', [-1])
+            ->orderBy('created_at', 'desc');
         if ($personal_training_id != null) {
-            $orders = $orders->where('personal_training_id',$personal_training_id);
+            $orders = $orders->where('personal_training_id', $personal_training_id);
         } else {
             $personal_training_id = null;
         }
         if ($created_at != null) {
-            $orders = $orders->where('created_at',$created_at);
+            $orders = $orders->where('created_at', $created_at);
         } else {
             $created_at = null;
         }
+        if ($status != null) {
+            $orders = $orders->where('status', $status);
+        } else {
+            $status = null;
+        }
+        $start_date = Input::get('startDate');
+        $end_date = Input::get('endDate');
+        if ($start_date != null && $end_date != null)
+        {
+            $orders = $orders->whereRaw('created_at >= "' . $start_date . ' 00:00:00" AND created_at <= "' . $end_date . ' 23:59:59" AND status = 2');
+        }
+        else {
+            $start_date = null;
+            $end_date = null;
+        }
         $orders = $orders->paginate(10);
         $currentPersonalTrainingID = $request->get('personal_training_id');
-        $currentCreated_at=$request->get('created_at');
-        return view('admin.order.list-order', compact('orders','currentPersonalTrainingID','currentCreated_at'));
-  }
+        $currentCreated_at = $request->get('created_at');
+        return view('admin.order.list-order', compact('orders', 'currentPersonalTrainingID', 'currentCreated_at'));
+    }
 
     public function index2()
     {
