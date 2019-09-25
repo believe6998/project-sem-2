@@ -10,7 +10,7 @@
                                 mới PT</a></h5></div>
                 </div>
             <div class="col-6">
-                <h5 class="m-0  text-primary mt-2 d-flex justify-content-end "><a href="/admin/pt/deleted-pt"><i class="far fa-trash-alt"></i> Danh sách PT đã xóa</a></h5>
+                <h5 class="m-0  text-primary mt-2 d-flex justify-content-end "><a href="/admin/deleted-pt"><i class="far fa-trash-alt"></i> Danh sách PT đã xóa</a></h5>
             </div>
                 <div class="table-responsive mt-3">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
