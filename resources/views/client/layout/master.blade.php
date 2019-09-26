@@ -12,8 +12,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
     <script src="{{asset('js/app.js')}}"></script>
-    <!-- Styles -->
-    <title>Document</title>
+    <link rel="icon" href="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" sizes="16x16 32x32">
+    <title>My-PT Online</title>
 </head>
 <body>
 <div class="hh">

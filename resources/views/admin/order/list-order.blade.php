@@ -4,12 +4,12 @@
 
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header text-center"><h2 class="mt-2 font-weight-bold">DANH SÁCH ĐƠN HÀNG</h2></div>
+            <div class="card-header text-center"><h2 class="mt-2 font-weight-bold">DANH SÁCH ĐƠN HÀNG CHỜ PHÊ DUYỆT</h2></div>
             <div class="card-body card-hd-list-category">
                 <div class="row">
                     <div class="col-6">
-                        <h5 class="mb-1  text-primary mt-2 "><a href="/admin/orders/create"><i class="far fa-plus-square"></i> Thêm mới</a></h5>
-
+                        <h5 class="mb-1  text-primary mt-2 "><a href="/admin/orders">
+                                <i class="far fa-trash-alt"></i> Đơn hàng  đã duyệt</a></h5>
                     </div>
                     <div class="col-6">
                         <h5 class="mb-1  text-primary mt-2 d-flex justify-content-end"><a href="/admin/deleted-order">
@@ -54,10 +54,7 @@
                                 <td class="item-user-ad">
                                     <div class="row">
                                         <div class="col-4">
-                                            <a href="javascript:void(0)" val class="text-success btn-confirm-order" id="btn-confirm-order{{$item->id}}"><i class="fas fa-check"></i></a>
-                                        </div>
-                                        <div class="col-4 "><a href="{{route('orders.edit',$item->id)}}"
-                                                               class="text-primary"><i class="fas fa-edit"></i></a>
+                                            <a href="{{route('orders.edit',$item->id)}}" val class="text-success btn-confirm-order" id="btn-confirm-order{{$item->id}}"><i class="fas fa-check"></i></a>
                                         </div>
 
                                         <div class="col-4"><a class="btn-delete-order text-danger"

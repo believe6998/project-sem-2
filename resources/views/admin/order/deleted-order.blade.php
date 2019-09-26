@@ -8,9 +8,13 @@
             <div class="card-body card-hd-list-category">
                 <div class="row">
                     <div class="col-6">
-                        <h5 class="mb-1  text-primary mt-2 "><a href="/admin/orders"><i
-                                    class="fas fa-bars"></i> Danh sách đơn hàng</a></h5>
-
+                        <h5 class="mb-1  text-primary mt-2 "><a href="/admin/orders">
+                                <i class="far fa-trash-alt"></i> Đơn hàng đã đã duyệt</a></h5>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="mb-1  text-primary mt-2 d-flex justify-content-end "><a
+                                    href="/admin/order/list-order">
+                                <i class="far fa-trash-alt"></i> Đơn hàng chờ phê duyệt</a></h5>
                     </div>
 
                 </div>
@@ -50,7 +54,15 @@
 
                                 <td>{{$item->created_at}}</td>
                                 <td>{{$item->updated_at}}</td>
-
+                                <td class="item-user-ad">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <a href="{{route('orders.edit2',$item->id)}}" val
+                                               class="text-success btn-confirm-order"
+                                               id="btn-confirm-order{{$item->id}}"><i class="fas fa-check"></i></a>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -69,14 +81,13 @@
                             <select class="form-control mr-2" id="select-action">
                                 <option value="0">--Chọn thao tác--</option>
                                 <option value="1">Hiển thị</option>
-                                {{--                            <option value="1">Hiển thị</option>--}}
-
                             </select>
                         </div>
                     </div>
                     <div class="col-9">
                         <div class="form-group btn-choice-cate" id="select-action">
-                            <button type="button" class="btn btn-outline-primary  " id="btn-apply-all-order">Xác nhận</button>
+                            <button type="button" class="btn btn-outline-primary  " id="btn-apply-all-order">Xác nhận
+                            </button>
 
                         </div>
                     </div>
