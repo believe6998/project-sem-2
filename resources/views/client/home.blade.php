@@ -138,7 +138,7 @@
                         của chúng tôi. Để biết thêm thông tin bấm vào nút bên dưới.</h4>
                 </div>
                 <div data-aos="zoom-in" class="container-gt-pt">
-                    <a href="#" style="text-decoration: none" class="btn-gt-pt">
+                    <a href="/index-body" style="text-decoration: none" class="btn-gt-pt">
                         <svg width="277" height="62">
                             <defs>
                                 <linearGradient id="grad1">
@@ -150,7 +150,7 @@
                                   height="50"></rect>
                         </svg>
                         <!--<span>Voir mes réalisations</span>-->
-                        <span>Welcome in my world</span>
+                        <span class="text-uppercase font-weight-bold">Đo chỉ số cơ thể</span>
                     </a>
                 </div>
             </div>

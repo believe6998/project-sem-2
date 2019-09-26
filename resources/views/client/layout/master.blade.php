@@ -18,7 +18,7 @@
 <body>
 <div class="hh">
     <div class="row  header-style  " id="navbar">
-        <div class="col-3 logo-header mt-2 mb-2 ">
+        <div class="col-2 logo-header mt-2 mb-2 ">
             <a href="/"><img src="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" alt="..."
                              class=" logo-image"></a>
         </div>
@@ -29,10 +29,11 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav dropdown link-header  text-title-header ml-5">
+                    <div class="navbar-nav dropdown link-header  text-title-header ">
                         <a class="navbar-brand nav-link " href="/">Trang chủ </a>
                         <a class="navbar-brand nav-link " href="/personal-training">Tập luyện trực tuyến</a>
-                        <a class="navbar-brand nav-link " href="/blog">Blog</a>
+                        <a class="navbar-brand nav-link " href="/blog">Bài viết</a>
+                        <a class="navbar-brand nav-link " href="/index-body">Đo chỉ số cơ thể</a>
                         <a class="navbar-brand nav-link " href="/contact-us">Liên hệ</a>
                         <a class="navbar-brand nav-link " href="/policy">Điều khoản</a>
                     </div>
@@ -43,7 +44,7 @@
         {{--        <a href="#"></a>--}}
         {{--    </div>--}}
 
-        <div class=" col-3 dropdown icon-user-header pr-5">
+        <div class=" col-3 dropdown icon-user-header pr-5" style="margin-left: 8%">
             @guest
                 <i class="fas fa-user fa dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
                    aria-haspopup="true"
