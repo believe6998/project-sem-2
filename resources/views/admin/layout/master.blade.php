@@ -14,7 +14,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
-    <title>SB Admin 2 - Dashboard</title>
+    <title>My-PT Online</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <!-- Custom fonts for this template-->
     <link href="{{ URL::asset("ad/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">
@@ -24,6 +24,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ URL::asset("ad/css/sb-admin-2.min.css")}}" rel="stylesheet">
+    <link rel="icon" href="https://my-pt.online/wp-content/uploads/2017/11/alleen-mypt-text-2.png" sizes="16x16 32x32">
 
 </head>
 
@@ -103,7 +104,7 @@
                 <span>Đánh giá</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/admin/orders">
+            <a class="nav-link" href="/admin/order/list-order">
                 <i class="fas fa-clipboard-list"></i>
                 <span>Đơn hàng</span></a>
         </li>

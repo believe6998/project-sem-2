@@ -80,6 +80,9 @@ Route::get('/admin/deleted-pt', 'AdminPTController@index2');
 Route::resource('admin/orders', 'AdminOrderController');
 Route::post('/admin/change-status-order', 'AdminOrderController@changeStatus');
 Route::get('/admin/deleted-order', 'AdminOrderController@index2');
+Route::get('/admin/order/list-order', 'AdminOrderController@index3');
+Route::get('/admin/orders{orders}', 'AdminOrderController@edit2')->name('orders.edit2');
+
 
 Route::resource('admin/home', 'HomeController');
 Route::post('/admin/change-status-home', 'HomeController@changeStatus');

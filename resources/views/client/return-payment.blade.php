@@ -26,7 +26,7 @@
         //$secureHash = md5($vnp_HashSecret . $hashData);
         $secureHash = hash('sha256',$vnp_HashSecret . $hashData);
     @endphp
-        <div style="padding-left: 650px">
+        <div style="padding-left: 550px">
             <div class="header clearfix pt-5">
                 <h1 class="text-primary">Kết quả thanh toán</h1>
             </div>

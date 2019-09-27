@@ -27,7 +27,7 @@ class AdminOrderController extends Controller
         $created_at = Input::get('created_at');
         $status = Input::get('status');
         $orders = DB::table('orders')
-            ->whereNotIn('status', [-1])
+            ->where('status', 2)
             ->orderBy('created_at', 'desc');
         if ($personal_training_id != null) {
             $orders = $orders->where('personal_training_id', $personal_training_id);
@@ -57,14 +57,20 @@ class AdminOrderController extends Controller
         $orders = $orders->paginate(10);
         $currentPersonalTrainingID = $request->get('personal_training_id');
         $currentCreated_at = $request->get('created_at');
-        return view('admin.order.list-order', compact('orders', 'currentPersonalTrainingID', 'currentCreated_at'));
+        return view('admin.order.order-success', compact('orders', 'currentPersonalTrainingID', 'currentCreated_at'));
     }
 
     public function index2()
     {
-        $orders = Order::whereNotIn('status', [1])->paginate(10);
+        $orders = Order::where('status', [-1])->paginate(10);
         $data = ['orders' => $orders];
         return view('admin.order.deleted-order', $data);
+    }
+    public function index3()
+    {
+        $orders = Order::where('status', 1)->paginate(10);
+        $data = ['orders' => $orders];
+        return view('admin.order.list-order', $data);
     }
 
     /**
@@ -117,10 +123,17 @@ class AdminOrderController extends Controller
     public function edit($id)
     {
         $orders = Order::find($id);
-        $data = ['orders' => $orders];
-        return view('admin.order.edit-order', $data);
+        $orders->status = 2;
+        $orders->save();
+        return redirect()->back()->withSuccess('Phê duyệt thành công');
     }
-
+    public function edit2($id)
+    {
+        $orders = Order::find($id);
+        $orders->status = 1;
+        $orders->save();
+        return redirect()->back()->withSuccess('Phê duyệt thành công');
+    }
     /**
      * Update the specified resource in storage.
      *
