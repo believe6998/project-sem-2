@@ -169,6 +169,7 @@ class OrderController extends Controller
             $user_id = $request->get('user_id');
             $user = User::find($user_id);
             $email = $user->email;
+            $this->send($email);
             DB::commit();
             return redirect($vnp_Url);
 

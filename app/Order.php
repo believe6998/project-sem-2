@@ -15,6 +15,14 @@ class Order extends Model
     {
         return $this->belongsTo('App\Duration');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+    public function personal_training()
+    {
+        return $this->belongsTo('App\PersonalTraining');
+    }
     public function product()
     {
         return $this->belongsTo('App\PersonalTraining', 'personal_training_id')->attributes['product'];

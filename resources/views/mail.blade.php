@@ -1,2 +1,2 @@
-Thanh Toán Thành Công!
+Thanh Toán Thành Công bằng VN Pay!
 

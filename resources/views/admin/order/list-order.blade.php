@@ -24,11 +24,11 @@
                                 <input type="checkbox" id="check-all-order-ad">
                             </th>
                             <th>ID</th>
-                            <th>user_id</th>
-                            <th>personal_training_id</th>
-                            <th>personal_training_time_id</th>
-                            <th>duration_id</th>
-                            <th>Trạng thái</th>
+                            <th>Tên khách hàng</th>
+                            <th>Tên huấn luyện viên</th>
+                            <th>Mã thời gian</th>
+                            <th>Thời hạn</th>
+                            <th>Giá</th>
                             <th>Ngày tạo</th>
                             <th>Ngày cập nhật</th>
                             <th>Hành động</th>
@@ -43,14 +43,13 @@
                                     <input type="checkbox" class="check-item " value="{{$item->id}}">
                                 </th>
                                 <td class="item-user-ad">{{$item->id}}</td>
-                                <td class="item-user-ad">{{$item->user_id}}</td>
-                                <td class="item-user-ad">{{$item->personal_training_id}}</td>
+                                <td class="item-user-ad">{{$item->user->lastName}}</td>
+                                <td class="item-user-ad">{{$item->personal_training->name}}</td>
                                 <td class="item-user-ad">{{$item->personal_training_time_id}}</td>
-                                <td class="item-user-ad">{{$item->duration_id}}</td>
-                                <td class="item-user-ad">{{$item->status}}</td>
-
-                                <td>{{$item->created_at}}</td>
-                                <td>{{$item->updated_at}}</td>
+                                <td class="item-user-ad">{{$item->duration->duration}}</td>
+                                <td class="item-user-ad">{{$item->price}}</td>
+                                <td class="item-user-ad">{{$item->created_at}}</td>
+                                <td class="item-user-ad">{{$item->updated_at}}</td>
                                 <td class="item-user-ad">
                                     <div class="row">
                                         <div class="col-4">

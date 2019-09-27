@@ -26,7 +26,7 @@ class AdminOrderController extends Controller
         $personal_training_id = Input::get('personal_training_id');
         $created_at = Input::get('created_at');
         $status = Input::get('status');
-        $orders = DB::table('orders')
+        $orders = Order::with('user', 'duration', 'personal_training')
             ->where('status', 2)
             ->orderBy('created_at', 'desc');
         if ($personal_training_id != null) {
@@ -46,11 +46,9 @@ class AdminOrderController extends Controller
         }
         $start_date = Input::get('startDate');
         $end_date = Input::get('endDate');
-        if ($start_date != null && $end_date != null)
-        {
+        if ($start_date != null && $end_date != null) {
             $orders = $orders->whereRaw('created_at >= "' . $start_date . ' 00:00:00" AND created_at <= "' . $end_date . ' 23:59:59" AND status = 2');
-        }
-        else {
+        } else {
             $start_date = null;
             $end_date = null;
         }
@@ -66,6 +64,7 @@ class AdminOrderController extends Controller
         $data = ['orders' => $orders];
         return view('admin.order.deleted-order', $data);
     }
+
     public function index3()
     {
         $orders = Order::where('status', 1)->paginate(10);
@@ -125,8 +124,13 @@ class AdminOrderController extends Controller
         $orders = Order::find($id);
         $orders->status = 2;
         $orders->save();
+        $time = DB::table('personal_training_time')->where('id', $orders->personal_training_time_id);
+        $time->update(array(
+            'status' => 0,
+            'updated_at' => date('Y-m-d H:i:s')));
         return redirect()->back()->withSuccess('Phê duyệt thành công');
     }
+
     public function edit2($id)
     {
         $orders = Order::find($id);
@@ -134,6 +138,7 @@ class AdminOrderController extends Controller
         $orders->save();
         return redirect()->back()->withSuccess('Phê duyệt thành công');
     }
+
     /**
      * Update the specified resource in storage.
      *
